@@ -173,7 +173,12 @@
   position: absolute;
   left: 21px;
   top: 154px;
-}
+      cursor: pointer; /* 마우스 포인터 */
+        transition: background-color 0.3s ease; /* 호버 시 색 변경 효과 */
+    }
+        .jump:hover {
+        background-color: #808080; /* 진한 회색 */
+    }
 .jump2 {
   color: #000000;
   text-align: left;

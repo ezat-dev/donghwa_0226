@@ -85,7 +85,7 @@ body {
     <div class="distance-tolerance">Distance Tolerance</div>
     <div class="holding-time-1">Holding time 1</div>
     <div class="holding-time-2">Holding time 2</div>
-    <div class="number-of-loops">Number of Loops</div>
+    <div class="number-of-loops">Bonding ratio</div>
     <div class="speed-of-plunger">Speed of Plunger</div>
     <div class="gradient-of-force">Gradient of Force</div>
 
@@ -1268,7 +1268,7 @@ body {
     <div class="fastcooling">Fastcooling</div>
     <div class="gas-nTwo">Gas N2</div>
     <div class="gas-ar">Gas Ar</div>
-    <div class="spare">Spare</div>
+    <div class="spare">Auto Bonding</div>
     <div class="hydraulic-unlt-off">Hydraulic Unlt OFF</div>
     <div class="press-capacity-control">Press capacity control</div>
     <div class="press-position-control-abs">Press position control (abs.)</div>
@@ -1301,7 +1301,7 @@ body {
     <div class="_0-program-end">0 - Program end</div>
     <div class="_3-cooling-vacuum">3 - Cooling vacuum</div>
     <div class="_1-heating-vacuum">1 - Heating vacuum</div>
-    <div class="_2-heating-gas-stationary">2 - Heating gas stationary</div>
+    <div class="_2-heating-gas-stationary">2 - Heating vacuum with about bonding</div>
     <div class="_4-cooling-gas-stationary">4 - Cooling gas stationary</div>
     <div class="process-step2">Process step</div>
   </div>

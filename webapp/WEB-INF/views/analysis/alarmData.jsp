@@ -146,8 +146,8 @@
                 type: "POST",
                 dataType: "json",
                 data: {
-                    "sendTagDir": "DONGHWA.OVERVIEW", 
-                    "sendTagName": "M-8035",
+                    "sendTagDir": "DONGHWA.AUTOMATIC_PROGRAM.PROGRAMMER", 
+                    "sendTagName": "jump_bt",
                     "sendTagValue": 1
                 },
                 success: function(result) {

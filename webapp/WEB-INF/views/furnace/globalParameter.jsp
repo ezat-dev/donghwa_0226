@@ -111,11 +111,11 @@
     <div class="name-12"></div>
     <div class="batch-tc-3-typ-n-pos-4-28">Batch TC 3 (Typ N) Pos 4.28</div>
     <div class="name-13"></div>
-    <div class="spare">Spare</div>
+    <div class="spare">Jig Height</div>
     <div class="name-14"></div>
-    <div class="spare2">Spare</div>
+    <div class="spare2">Ram type</div>
     <div class="name-15"></div>
-    <div class="spare3">Spare</div>
+    <div class="spare3">Load of checking the work height </div>
     <div class="name-16"></div>
     <div class="ams-operation">AMS operation</div>
     <div class="name-17"></div>
@@ -313,11 +313,11 @@
     	if(!$("div").hasClass("anlog-popup-div-color")){
     		$("."+keys).text(value);	
     	}
-    	
+    	 $("."+keys).css("background-color", "white");
     	$("."+keys).css("display","");
     	$("."+keys).css("text-align","center");
     //	$("."+keys).css("font-weight","700");
-    	$("."+keys).css("font-size","21pt");
+    	$("."+keys).css("font-size","19pt");
 
     	$("."+keys).attr("ondblclick","popupOpenAna('"+keys+"','DONGHWA.PLC.GLOBAL')");
     	$("."+keys).css("cursor","pointer");

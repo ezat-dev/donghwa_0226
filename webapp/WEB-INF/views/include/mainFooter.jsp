@@ -184,19 +184,19 @@
 
     <div class="section status">
         <p><strong>Status 1:</strong> <span class="status1">NULL</span></p>
-     <!--    <div class="ST1_8040 st1">AUTO </div>
+       <div class="ST1_8040 st1">AUTO </div>
        <div class="ST1_8041 st1">Manual </div>        
        <div class="ST1_8042 st1">Heating vacuum </div> 
        <div class="ST1_8043 st1">Heating gas stationary </div>
        <div class="ST1_8044 st1"> Cooling vacuum</div>
-       <div class="ST1_8045 st1">Cooling gas stationary </div> -->
+       <div class="ST1_8045 st1">Cooling gas stationary </div> 
                              
         <p><strong>Status 2:</strong> <span class="status2">NULL</span></p>
-     <!--    <div class="ST2_8051 st2"> MANUAL LEAK TEST (REPEAT 1ST)</div>
+       <div class="ST2_8051 st2"> MANUAL LEAK TEST (REPEAT 1ST)</div>
        <div class="ST2_8052 st2">MANUAL LEAK TEST (REPEAT 2ND) </div>       
        <div class="ST2_8053 st2">LEAK TEST OK </div>       
        <div class="ST2_8054 st2"> LEAK TEST FAIL</div>     
-       <div class="ST2_8138 st2">MANUAL LEAKTEST LAMP </div>   -->
+       <div class="ST2_8138 st2">MANUAL LEAKTEST LAMP </div>  
        
        
                
@@ -250,7 +250,7 @@ function openPopup2() {
                 window.open(
                     "/donghwa/furnace/automaticProgramPop2",  
                     "popupWindow",  
-                    "width=502,height=379.8,left=730,top=235,menubar=no,toolbar=no,scrollbars=no,status=no,location=no,directories=no,resizable=no"
+                    "width=508,height=392,left=730,top=235,menubar=no,toolbar=no,scrollbars=no,status=no,location=no,directories=no,resizable=no"
                 );
             });
         } else {

@@ -19,6 +19,8 @@ public interface AnalysisService {
 	List<Alarm> alarmlist(Alarm alarm);
 	
 	List<Alarm> alarmlistOverview();
+	
+	List<Alarm> alarmData();
 
 	void penGroupPenAdd(Temper temper);
 

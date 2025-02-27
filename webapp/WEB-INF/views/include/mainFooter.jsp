@@ -176,20 +176,57 @@
         <div class="button bt_man lamp-8031"><img src="/donghwa/css/furnace/img/danger3.png" alt="Alarm"></div>
         <div class="button bt_death lamp-8032"><img src="/donghwa/css/furnace/img/death3.png" alt="Info"></div>
         <div class="button bt_sound lamp-8033"><img src="/donghwa/css/furnace/img/sound3.png" alt="no_sound"></div>
-        <div class="button bt_siren lamp-8034"><img src="/donghwa/css/furnace/img/siren3.png" alt="alarm"></div>
-         <div class="button bt_reset M-8035"><img src="/donghwa/css/furnace/img/reset3.png" alt="alarm"></div>
+        <div class="button bt_siren M8034" onclick="openPopup2()" ><img src="/donghwa/css/furnace/img/siren3.png" alt="alarm"></div>
+     <!--   <div class="button bt_reset M-8035"><img src="/donghwa/css/furnace/img/reset3.png" alt="alarm"></div> --> 
     </div>
 	<div id="tabulator-table2" class="tabulator"></div> 
  
 
     <div class="section status">
         <p><strong>Status 1:</strong> <span class="status1">NULL</span></p>
+     <!--    <div class="ST1_8040 st1">AUTO </div>
+       <div class="ST1_8041 st1">Manual </div>        
+       <div class="ST1_8042 st1">Heating vacuum </div> 
+       <div class="ST1_8043 st1">Heating gas stationary </div>
+       <div class="ST1_8044 st1"> Cooling vacuum</div>
+       <div class="ST1_8045 st1">Cooling gas stationary </div> -->
+                             
         <p><strong>Status 2:</strong> <span class="status2">NULL</span></p>
+     <!--    <div class="ST2_8051 st2"> MANUAL LEAK TEST (REPEAT 1ST)</div>
+       <div class="ST2_8052 st2">MANUAL LEAK TEST (REPEAT 2ND) </div>       
+       <div class="ST2_8053 st2">LEAK TEST OK </div>       
+       <div class="ST2_8054 st2"> LEAK TEST FAIL</div>     
+       <div class="ST2_8138 st2">MANUAL LEAKTEST LAMP </div>   -->
+       
+       
+               
         <p><strong>Status 3:</strong> <span class="status3">NULL</span></p>
+       <div class="ST3_8060 st3">Ram in upper position </div>       
+       <div class="ST3_8061 st3">pressing loop </div>       
+       <div class="ST3_8062 st3"> auto bonding</div>       
+        
+        
+        
+        
     </div>
 </div>
 
 <script>
+
+function openPopup2() {
+    // 팝업 창의 크기
+    var width = 700;
+    var height = 700;
+    
+
+    var left = window.screenX + (window.innerWidth - width) / 3;
+    var top = window.screenY + (window.innerHeight - height) / 3.5;
+    window.open('/donghwa/analysis/alarmData', 'alarmPopup', 
+                'width=' + width + ',height=' + height + 
+                ',top=' + top + ',left=' + left + 
+                ',scrollbars=yes,resizable=yes');
+}
+
     function fetchAlarmData() {
         $.ajax({
             url: "/donghwa/analysis/alarmHistory/alarmlistOverivew", 
@@ -246,7 +283,24 @@
     });
 
 
-
+    $(".lamp-8033").click(function () {
+        $.ajax({
+            url: "/donghwa/common/valueDigitalSet",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "sendTagDir": "DONGHWA.OVERVIEW", 
+                "sendTagName": "lamp-8033",
+                "sendTagValue": 1
+            },
+            success: function(result) {
+                console.log("전송 성공:", result);
+            },
+            error: function(xhr, status, error) {
+                console.error("전송 실패", status, error);
+            }
+        });
+    });
 
 
 

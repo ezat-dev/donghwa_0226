@@ -66,14 +66,18 @@ public class AnalysisController {
 	@RequestMapping(value = "/analysis/alarmHistory/alarmlist", method = RequestMethod.POST)
 	@ResponseBody
 	public List<Alarm> alarmlist(@RequestParam String sdate,
-								@RequestParam String edate) {
-	
-		
-		 Alarm alarm = new Alarm();
-	     alarm.setSdate(sdate);
-	     alarm.setEdate(edate);
-	    return analysisService.alarmlist(alarm); 
+	                              @RequestParam String edate) {
+	    
+	    String startDateTime = sdate + " 00:00:00";
+	    String endDateTime = edate + " 23:59:59";
+	    
+	    Alarm alarm = new Alarm();
+	    alarm.setSdate(startDateTime);
+	    alarm.setEdate(endDateTime);
+
+	    return analysisService.alarmlist(alarm);
 	}
+
 	
 	@RequestMapping(value = "/analysis/alarmHistory/alarmlistOverivew", method = RequestMethod.POST)
 	@ResponseBody
@@ -81,6 +85,12 @@ public class AnalysisController {
 	    return analysisService.alarmlistOverview(); 
 	}
 
+	
+	@RequestMapping(value = "/analysis/alarmData", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Alarm> alarmData() {
+	    return analysisService.alarmData(); 
+	}
 
 	//펜그룹의 태그목록 조회
 	@RequestMapping(value = "/analysis/historyTrendPenGroupSelect", method = RequestMethod.POST)

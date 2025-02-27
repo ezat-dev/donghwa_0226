@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
+   <jsp:include page="../include/commonPopup.jsp"/>
 <link rel="stylesheet" href="/donghwa/css/furnace/automaticProgramPop4.css">
     <jsp:include page="../include/pluginpage.jsp"/>
   
@@ -130,10 +130,10 @@
 
     function v(keys, value){
     	if(value == true){
-    		$("."+keys).css("background-color","green");
+    	
     		$("."+keys).css("color","white");
     	}else{
-    		$("."+keys).css("background-color","#E3E3E3");
+    		
     		$("."+keys).css("color","black");
     	}
 
@@ -141,7 +141,8 @@
 			|| keys.indexOf("reset") != -1){
 //			$("."+keys)
         }
-    	    
+        $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '"+keys+"')")
+        .css("cursor", "pointer"); 
     }
 
 

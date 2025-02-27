@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/donghwa/css/process/pressureSwitchesPop.css">
   <jsp:include page="../include/pluginpage.jsp"/>
-  <jsp:include page="../include/commonPopup.jsp"/>
+
   
   <style>
    a,
@@ -108,8 +108,7 @@ function v(keys, value){
 		$("."+keys).css("color","black");
 	}
 
-	$("."+keys).attr("onclick","digitalSet('DONGHWA.PROCESS_VALUES.PRESSURE_SWITCHES','"+keys+"')");
-	$("."+keys).css("cursor","pointer");
+
 }
 /*
 function c(keys, value){

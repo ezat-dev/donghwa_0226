@@ -218,7 +218,7 @@ public class OpcDataMap {
 	public void setOpcDataReset(String opcGroup, boolean opcData) throws InterruptedException, ExecutionException{
 		
 		//5초 타이머
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		

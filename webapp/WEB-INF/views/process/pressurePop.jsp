@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/donghwa/css/process/pressurePop.css">
-  
+    <jsp:include page="../include/pluginpage.jsp"/>
   
   <style>
    a,
@@ -47,10 +47,10 @@
     <div class="furnace-pressure">Furnace pressure</div>
     <div class="auto">Auto</div>
     <div class="fur-pressure-box-1"></div>
-    <div class="pis-6-x-13-5">PIS 6.x/ 13.5</div>
+    <div class="pis-6-x-13-5">Furnace Vacuum</div>
     <div class="fur-pressure-val-1"></div>
     <div class="fur-pressure-box-2"></div>
-    <div class="psp-6">PSP 6</div>
+    <div class="psp-6">Diffusion Pump Vacuum</div>
     <div class="fur-pressure-val-2"></div>
     <div class="rel"></div>
     <div class="rel-box-1"></div>

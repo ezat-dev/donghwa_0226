@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="/donghwa/css/furnace/manualOperationPop.css">
    <jsp:include page="../include/pluginpage.jsp"/>
    <jsp:include page="../include/commonPopup.jsp"/>
+
+
   <style>
   
 	.offbt {

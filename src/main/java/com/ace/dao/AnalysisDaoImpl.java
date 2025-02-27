@@ -49,10 +49,13 @@ public class AnalysisDaoImpl implements AnalysisDao{
     }
     
     @Override
+    public List<Alarm> alarmData() {
+    	return sessionSQLite.selectList("alarm.alarmData");
+    }
+    @Override
     public List<Alarm> alarmlistOverview() {
     	return sessionSQLite.selectList("alarm.alarmlistOverview");
     }
-
 	@Override
 	public void penGroupPenAdd(Temper temper) {
 		sqlSession.insert("temper.penGroupPenAdd", temper);

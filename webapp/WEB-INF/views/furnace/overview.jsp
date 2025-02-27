@@ -128,7 +128,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 21px;
+        font-size: 17px;
         text-align: center;
     }
 
@@ -160,7 +160,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
-        font-size: 20px;
+        font-size: 17px;
         text-align: center;
         background-color: white;
     }
@@ -306,8 +306,18 @@
 	    height: 74px;
 	    background-color: red;
 	    border-radius: 50%;
+	    }
+	@keyframes blinkOrange {
+	    0% {
+	        background-color: orange;
+	    }
+	    50% {
+	        background-color: #5A6D8A; 
+	    }
+	    100% {
+	        background-color: orange;
+	    }
 	}
-		
 
   </style>
 
@@ -321,36 +331,36 @@
   
 	 <div class="table table1" onclick="popupClick('/donghwa/process/temperaturePop', 779, 498, 450, 165);">
 	  <div class="table-header">Furance temperature     Auto</div>
-	  <div class="temper_1">TIC 4.x</div>
+	  <div class="temper_1">Current Temp.</div>
 	  <div class="table-cell overTb1">79°C</div>
-	  <div class="temper_2">TSP 4</div>
+	  <div class="temper_2">Set Temp</div>
 	  <div class="table-cell overTb2">20°C</div>
 	</div>
 
 
     <div class="table table2" onclick="popupClick('/donghwa/process/pressPop', 940, 490, 450, 160);">
       <div class="table-header">Position</div>
-      <div class="Position_1">GIC 22.260.10</div>
-      <div class="table-cell overTb3">1.16 mm</div>
-      <div class="Position_2">GSP 22.260.10</div>
-      <div class="table-cell overTb4">0.00 mm</div>
+      <div class="Position_1">Front Press Position</div>
+      <div class="table-cell overTb3 D11101">1.16 mm</div>
+      <div class="Position_2">Rear Press Position</div>
+      <div class="table-cell overTb4 D11102">0.00 mm</div>
     </div>
  	
     <div class="table table3"  onclick="popupClick('/donghwa/process/pressurePop', 391, 441, 680, 180);">
       <div class="table-header">Furnace Pressure</div>
-      <div class="Pressure_1">PIS 6.x / 13.5</div>
+      <div class="Pressure_1">Furnace Vacuum</div>
       <div class="table-cell D-7800"> mbar</div>
-      <div class="Pressure_2">PSP 6</div>
+      <div class="Pressure_2">Diffusion Pump Vacuum</div>
       <div class="table-cell D-7810"> mabar</div>	
     </div>
 
     <div class="table table4" onclick="popupClick('/donghwa/process/pressPop', 940, 490, 450, 160);">
       <div class="table-header">Press capacity</div>
-      <div class="capacity_1">WIC 22.4.2 X</div>
-      <div class="table-cell overTb7">-5 kN</div>
-      <div class="capacity_2">WSC 22.4.2 X</div>
-      <div class="table-cell overTb8">0 kN</div>
-    </div>
+      <div class="capacity_1">Current Press Load</div>
+      <div class="table-cell overTb7 D11105">-5 kN</div>
+      <div class="capacity_2">Set Press Load</div>
+      <div class="table-cell overTb8 D11013">0 kN</div>
+    </div> 
   </div>
   
  <div class="text18" >
@@ -520,7 +530,7 @@ function overviewListView(){
         		var d = data[key];
 
 	        		 if (d[keys].action == "v") {
-	        			 console.log("V 값 확인:", keys, d[keys].value);
+	    				 console.log("V 값 확인:", keys, d[keys].value);
 	                     v(keys, d[keys].value);
 					}else if(d[keys].action == "Ropen"){
 						Ropen(keys, d[keys].value);
@@ -535,8 +545,12 @@ function overviewListView(){
 					}else if(d[keys].action == "rover"){
 						rover(keys, d[keys].value);	
 					}else if(d[keys].action == "lamp"){
+						 console.log("V 값 확인:", keys, d[keys].value);
 						lamp(keys, d[keys].value);
+					}else if(d[keys].action == "rover"){
+						rover(keys, d[keys].value);
 					}else if(d[keys].action == "value"){
+		
 						value(keys, d[keys].value);
 					}
 
@@ -548,23 +562,21 @@ function overviewListView(){
 
 function lamp(keys, value) {
 
+    if (value === true) {
+        $("." + keys).css("background-color", "red"); 
+    } else {
+        $("." + keys).css("background-color", ""); 
+    }
 
+    if (keys === "lamp-8033") {
         if (value === true) {
-            $("." + keys).css("background-color", "red"); 
-        } else {
-            $("." + keys).css("background-color", ""); 
+            $("." + keys).css("background-color", "green");
+        } else if (value === false) {
+            $("." + keys).css("background-color", "");
         }
-
-        if (keys === "lamp-8033") {
-            if (value === true) {
-                $("." + keys).css("background-color", "green");
-            } else if (value === false) {
-                $("." + keys).css("background-color", "");
-            }
-            $("."+keys).attr("onclick","digitalSet('DONGHWA.OVERVIEW','"+keys+"')");
-        	$("."+keys).css("cursor","pointer");
-        }
-
+       
+    }
+    
 }
 
 
@@ -585,6 +597,19 @@ function v(keys, value){
     if(value === true){
         $("."+keys).css("color", "black");
     }
+    if (keys === "M8034") {
+        if (value === true) {
+            $("." + keys).css({
+                "animation": "blinkOrange 2s infinite" // 2초 주기로 주황색과 원래 색을 번갈아 변경
+            });
+        } else {
+            $("." + keys).css({
+                "background-color": "",  // 배경색 초기화 (원래 색상으로 돌아감)
+                "animation": ""  // 애니메이션 초기화
+            });
+        }
+    }
+
     
     if (keys === "Ldclose") {
         if (value === true) {
@@ -657,6 +682,7 @@ function v(keys, value){
         } else {
             $("." + keys).css("color", ""); 
         }
+
         
     }
 
@@ -680,44 +706,45 @@ function v(keys, value){
     	    }
     	}
 
+            
+
+}
+
+
+
+
+function value(keys, value) {
+    var truncatedValue = Math.floor(value * 10) / 10;
+
+    // -rover가 포함된 경우, 값을 그대로 사용
+    var finalValue = keys.includes("-rover") ? value : truncatedValue;
+
+    // D-7800 처리
+    if (keys === "D-7800") {
+        var d7802Value = parseFloat($(".D-7802").text()) || 0;
+        var eValue = "E"; 
+        var torrValue = "Torr"; 
+        var newValue = truncatedValue + " " + eValue + " " + d7802Value + " " + torrValue;        
+        $("." + keys).text(newValue);
+    }
+    // D-7810 처리
+    else if (keys === "D-7810") {
+        var d7812Value = parseFloat($(".D-7812").text()) || 0;
+        var eValue = "E"; 
+        var torrValue = "Torr"; 
+        var newValue = truncatedValue + " " + eValue + " " + d7812Value + " " + torrValue;        
+        $("." + keys).text(newValue);
+    }
+    else {
+        $("." + keys).text(finalValue);
+    }
+    
+    $("." + keys).css("text-align", "center");
+    $("." + keys).css("font-size", "14pt");
 }
 
 
 
-function value(keys, value){
-
-	if(keys.indexOf("D-") != -1){
-	    var truncatedValue = Math.floor(value * 10) / 10;
-	   
-	    // D-7800 처리
-	    if (keys === "D-7800") {
-	
-	        var d7802Value = parseFloat($(".D-7802").text()) || 0;
-	
-	        var eValue = "E"; 
-	        var torrValue = "Torr"; 
-	        var newValue = truncatedValue  + " " + eValue + " " + d7802Value  +" " + torrValue ;        
-	        $("."+keys).text(newValue);
-	    }
-	    // D-7810 처리
-	    else if (keys === "D-7810") {
-	
-	        var d7812Value = parseFloat($(".D-7812").text()) || 0;
-	
-	        var eValue = "E"; 
-	        var torrValue = "Torr"; 
-	        var newValue = truncatedValue  + " " + eValue + " " + d7812Value  +" " + torrValue ;        
-	        $("."+keys).text(newValue);
-	    }
-	    else {
-	        $("."+keys).text(truncatedValue);
-	    }
-	}
-	$("."+keys).text(value);
-    $("."+keys).css("text-align", "center");
-    $("."+keys).css("font-size", "14pt");
-
-}
 
 
 

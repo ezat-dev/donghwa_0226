@@ -175,7 +175,7 @@
 <!-- 팝업 내용 -->
 <div id="commonPopup">
     <button class="close-btn" onclick="closePopup()">✖</button>
-    <h3>Bit ON/OFF</h3>
+    <h3>STOP</h3>
     <button class="bt_on" type="button">ON</button>
     <button class="bt_off" type="button">OFF</button>
     

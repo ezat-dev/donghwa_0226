@@ -45,6 +45,11 @@ public class AnalysisServiceImpl implements AnalysisService{
     public List<Alarm> alarmlistOverview() {
         return analysisDao.alarmlistOverview();
     }
+    @Override
+    public List<Alarm> alarmData() {
+        return analysisDao.alarmData();
+    }
+    
     
 
 	@Override

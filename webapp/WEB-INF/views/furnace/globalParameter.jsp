@@ -14,16 +14,32 @@
   <title>Document</title>
 </head>
 <style>
-  .back, .back2 {
-    cursor: pointer; 
-   
-    transition: background-color 0.3s ease; 
-  }
+.back {
+    background-color: #888;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 1542px;
+    transition: background-color 0.3s;
+}
 
-  /* 호버 시 배경색 변화 */
-  .back:hover, .back2:hover {
-    background-color: #D3D3D3; 
-  }
+.back:hover {
+    background-color: #555;
+}
+
+
+.back:hover {
+    background-color: #555;
+}
+
+
 </style>
 
 <body style="background-color: #CCCCCC;">
@@ -202,10 +218,10 @@
     <div class="unit-17"></div>
     <div class="k-n-s">kN / s</div>
     <div class="edit-global-data">Edit global data</div>
-    <div class="save"></div>
-    <div class="save2">Save</div>
-    <div class="back"></div>
-    <div class="back2">Back</div>
+  <!--  <div class="save"></div>
+    <div class="save2">Save</div>-->
+    <div class="back">Back</div>
+
   </div>
     <script>
     document.querySelector('.back').addEventListener('click', function() {
@@ -302,11 +318,11 @@
     	$("."+keys).css("text-align","center");
     //	$("."+keys).css("font-weight","700");
     	$("."+keys).css("font-size","21pt");
-    	$("."+keys).css("padding-top","5px");
+
     	$("."+keys).attr("ondblclick","popupOpenAna('"+keys+"','DONGHWA.PLC.GLOBAL')");
     	$("."+keys).css("cursor","pointer");
     	$("."+keys).attr("align-items","center");
-    	$("."+keys).attr("margin-botoom","7px");
+
 
     }
 

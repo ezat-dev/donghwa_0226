@@ -142,8 +142,8 @@
       Furnace
       <ul class="submenu">
         <li onclick="menuClick('/donghwa/');">Overview</li>
-        <li onclick="popupClick('/donghwa/furnace/manualOperationPop', 323, 612, 730, 180);">Manual Operation</li> <!--가로 세로 오른쪽 시작 위쪽 시작 -->
-		<li onclick="popupClick('/donghwa/furnace/operationPressPop', 410.5, 482.5, 730, 210);">Operation Press</li><!--길면 180 짧으면 225이상 -->
+        <li onclick="popupClick('/donghwa/furnace/manualOperationPop', 329, 619, 730, 180);">Manual Operation</li> <!--가로 세로 오른쪽 시작 위쪽 시작 -->
+		<li onclick="popupClick('/donghwa/furnace/operationPressPop', 412, 484, 730, 210);">Operation Press</li><!--길면 180 짧으면 225이상 -->
 		<li onclick="popupClick('/donghwa/furnace/automaticProgramPop4', 508, 392, 730, 235);">Automatic program</li>
 
         <li onclick="menuClick('/donghwa/furnace/recipe');">Recipe</li>
@@ -152,7 +152,7 @@
     <li>
       Process values
       <ul class="submenu">
-        <li onclick="popupClick('/donghwa/process/temperaturePop', 779, 498, 680, 165);">Temperature</li>
+        <li onclick="popupClick('/donghwa/process/temperaturePop', 799, 451, 680, 165);">Temperature</li>
 		<li onclick="popupClick('/donghwa/process/pressurePop', 391, 441, 680, 180);">Pressure</li>
 		<li onclick="popupClick('/donghwa/process/pressureSwitchesPop', 400, 258, 680, 204);">Pressure switches</li>
 		<li onclick="popupClick('/donghwa/process/heaterPop', 518, 420, 680, 204);">Heater</li>

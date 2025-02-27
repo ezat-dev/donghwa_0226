@@ -55,10 +55,10 @@
     <div class="press-move-up2">Press Move Up</div>
     <div class="force-f-1"></div>
     <div class="_3"></div>
-    <div class="pressing-with-force-f-1">Pressing with Force F1</div>
+    <div class="pressing-with-force-f-1">Press Move Down</div>
     <div class="force-f-2"></div>
     <div class="_4"></div>
-    <div class="pressing-with-force-f-2">Pressing with Force F2</div>
+    <div class="pressing-with-force-f-2">Pressing with Force F1</div>
     <div class="position-dc"></div>
     <div class="_5"></div>
     <div class="position-distance-control">Position-/ Distance Control</div>
@@ -114,16 +114,13 @@ function overviewListView(){
 function v(keys, value){
 	
 	if(value == true){
-		$("."+keys).css("background-color","green");
+		$("."+keys).css("color","green");
 		$("."+keys).css("color","white");
 	}else{
-		$("."+keys).css("background-color","#E3E3E3");
+		$("."+keys).css("color","#E3E3E3");
 		$("."+keys).css("color","black");
 	}
 
-	$("."+keys).attr("onclick","digitalSet('DONGHWA.FURNACE.OPERATION_PRESS','"+keys+"')");
-	$("."+keys).css("cursor","pointer");
-}
 /*
 function c(keys, value){
 //	$("."+keys).text(value);

@@ -169,13 +169,41 @@
 }
 
 .plc-high-vacuum-pump {
-  background: #e3e3e3;
-  width: 7px;
-  height: 28px;
-  position: absolute;
-  left: 352px;
-  top: 99px;
+	  background: #e3e3e3;
+    width: 7px;
+    height: 28px;
+    position: absolute;
+    left: 352px;
+    top: 143px;
 }
+
+.plc-fur-pre-control{
+	
+  	  background: #e3e3e3;
+    width: 7px;
+    height: 28px;
+    position: absolute;
+    left: 352px;
+    top: 273px;
+	
+	
+}
+.plc-manual-leaktest{
+	
+	
+   background: #e3e3e3;
+    width: 7px;
+    height: 28px;
+    position: absolute;
+    left: 352px;
+    top: 618px;
+	
+	
+}
+
+
+
+
 .pumping-station {
   color: #000000;
   text-align: left;

@@ -20,6 +20,8 @@ public interface AnalysisDao {
 	
 	List<Alarm> alarmlistOverview();
 	
+	List<Alarm> alarmData();
+	
 
 	void penGroupPenAdd(Temper temper);
 

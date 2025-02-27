@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/donghwa/css/process/pressPop.css">
-  
+    <jsp:include page="../include/pluginpage.jsp"/>
   
   <style>
    a,
@@ -43,42 +47,42 @@
     <div class="press-header"></div>
     <div class="press-main"></div>
 
-    <div class="press">Press</div>
+    <div class="press		">Press</div>
     <div class="press-cap"></div>
     <div class="press-capacity">Press capacity</div>
     <div class="press-cap-box-1"></div>
     <div class="auto">Auto</div>
-    <div class="wic-22-4-2-x">WIC 22.4.2.x</div>
-    <div class="press-cap-val-1"></div>
+    <div class="wic-22-4-2-x">Current Load</div>
+    <div class="press-cap-val-1 D11105"></div>
     <div class="press-cap-box-2"></div>
-    <div class="wsp-22-4-2-x">WSP 22.4.2.x</div>
-    <div class="press-cap-val-2"></div>
+    <div class="wsp-22-4-2-x">Set Load</div>
+    <div class="press-cap-val-2 D11013	"></div>
     <div class="force-sensor"></div>
     <div class="force-sensor2">Force sensor</div>
     <div class="force-sensor-box-1"></div>
-    <div class="wic-22-4-2-1">WIC 22.4.2.1</div>
-    <div class="force-sensor-val-1"></div>
+    <div class="wic-22-4-2-1 ">Load censor1</div>
+    <div class="force-sensor-val-1 D7981"></div>
     <div class="force-sensor-box-2"></div>
-    <div class="wic-22-4-2-2">WIC 22.4.2.2</div>
+    <div class="wic-22-4-2-2">Load censor2</div>
     <div class="force-sensor-val-2"></div>
     <div class="force-sensor-box-3"></div>
-    <div class="wic-22-4-2-3">WIC 22.4.2.3</div>
+    <div class="wic-22-4-2-3">Load censor3</div>
     <div class="force-sensor-val-3"></div>
     <div class="force-sensor-box-4"></div>
-    <div class="wic-22-4-2-4">WIC 22.4.2.4</div>
+    <div class="wic-22-4-2-4">Load censor4</div>
     <div class="force-sensor-val-4"></div>
     <div class="force-sensor-box-5"></div>
-    <div class="wic-22-4-2-5">WIC 22.4.2.5</div>
+    <div class="wic-22-4-2-5">Load censor5</div>
     <div class="force-sensor-val-5"></div>
     <div class="force-sensor-box-6"></div>
-    <div class="wic-22-4-2-6">WIC 22.4.2.6</div>
+    <div class="wic-22-4-2-6">Load censor6</div>
     <div class="force-sensor-val-6"></div>
     <div class="force-sensor-box-7"></div>
-    <div class="wic-22-4-2-7">WIC 22.4.2.7</div>
+    <div class="wic-22-4-2-7">Load censor7</div>
     <div class="force-sensor-val-7"></div>
     <div class="force-sensor-box-8"></div>
-    <div class="wic-22-4-2-8">WIC 22.4.2.8</div>
-    <div class="force-sensor-val-8"></div>
+    <div class="wic-22-4-2-8 ">Load censor12</div>
+    <div class="force-sensor-val-8 D7992"></div>
     <div class="tara"></div>
     <div class="tara-box-1"></div>
     <div class="tara2">Tara</div>
@@ -91,10 +95,10 @@
     <div class="position">Position</div>
     <div class="position-box-1"></div>
     <div class="gic-22-2-60-10">GIC 22.2.60.10</div>
-    <div class="position-val-1"></div>
+    <div class="position-val-1 D11101"></div>
     <div class="position-box-2"></div>
     <div class="gsp-22-2-60-10">GSP 22.2.60.10</div>
-    <div class="position-val-2"></div>
+    <div class="position-val-2 D11102"></div>
     <div class="position2"></div>
     <div class="position3">Position</div>
     <div class="position-box-3"></div>
@@ -168,6 +172,80 @@
     <div class="level-val-1"></div>
     <div class="wis-22-1-5-1">WIS 22.1.5.1</div>
 
-  
+<script>
+
+var overviewInterval;
+
+//로드
+$(function(){
+	overviewListView();
+	overviewInterval = setInterval("overviewListView()", 500);
+});
+
+//OPC값 알람 조회
+function overviewListView(){
+	$.ajax({
+		url:"/donghwa/process/press/view",
+		type:"post",
+		dataType:"json",
+		success:function(result){				
+			var data = result.multiValues;
+			
+        for(let key in data){
+        	for(let keys in data[key]){
+        		var d = data[key];
+
+					if(d[keys].action == "v"){
+						v(keys, d[keys].value);
+					}else if(d[keys].action == "c"){
+						c(keys, d[keys].value);
+					}else if(d[keys].action == "b"){
+						b(keys, d[keys].value);
+					}else if(d[keys].action == "value"){
+						value(keys, d[keys].value);
+					}
+
+        	}                    	
+        }
+		}
+	});
+}
+
+function v(keys, value){
+	
+	if(value == true){
+		$("."+keys).css("background-color","green");
+		$("."+keys).css("color","white");
+	}else{
+		$("."+keys).css("background-color","#E3E3E3");
+		$("."+keys).css("color","black");
+	}
+
+}
+/*
+function c(keys, value){
+//	$("."+keys).text(value);
+	
+	if(value == true){
+		$("."+keys).css("background-color","red");
+		$("."+keys).css("color","white");
+	}else{
+		$("."+keys).css("background-color","green");
+		$("."+keys).css("color","black");
+	}
+	
+}
+*/
+
+function value(keys, value){
+	$("."+keys).text(value);
+	$("."+keys).css("text-align","center");
+	$("."+keys).css("font-size","17pt");
+	
+	
+}
+
+</script>  
+ 
 </body>
 </html>

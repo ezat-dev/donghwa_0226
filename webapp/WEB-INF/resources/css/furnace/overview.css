@@ -200,7 +200,18 @@
   font-size: 10px;
   font-weight: 700;
   position: absolute;
-  left: 1160px;
+  left: 1163px;
+  top: 605px;
+}
+
+.value-1-1 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  position: absolute;
+  left: 600px;
   top: 605px;
 }
 
@@ -231,7 +242,7 @@
   font-size: 10px;
   font-weight: 700;
   position: absolute;
-    left: 1610px;
+    left: 1590px;
     top: 704px;
 }
 .value-6 {

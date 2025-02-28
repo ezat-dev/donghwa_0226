@@ -161,14 +161,14 @@
 
 <div class="footer">
     <div class="section">
-        <p><strong>Program Number:</strong> <span class="programNumber">NULL</span></p>
-        <p><strong>Program Name:</strong> <span class="programName R7100-name-rover">NULL</span></p>
-        <p><strong>Program Comment:</strong> <span class="programComment R7000-comment-rover">NULL</span></p>
+        <p><strong>Prg.Number:</strong> <span class="programNumber">NULL</span></p>
+        <p><strong>Prg.Name:</strong> <span class="programName R7100-name-rover">NULL</span></p>
+        <p><strong>Prg.Comment:</strong> <span class="programComment R7000-comment-rover">NULL</span></p>
     </div>
     <div class="section">
-        <p><strong>Segment number:</strong> <span class="segmentNumber">NULL</span></p>
-        <p><strong>Seg. remaining time:</strong> <span class="segRemainingTime">NULL</span></p>
-        <p><strong>Prg. remaining time:</strong> <span class="prgRemainingTime">NULL</span></p>
+        <p><strong>Segment number:</strong> <span class="segmentNumber D-7948">NULL</span></p>
+        <p><strong>Seg.remaining time:</strong> <span class="segRemainingTime D-7950">NULL</span></p>
+        <p><strong>Prg.remaining time:</strong> <span class="prgRemainingTime">NULL</span></p>
     </div>
     <div class="buttons">
         <div class="button bt_pause"><img src="/donghwa/css/furnace/img/pause3.png" alt="Stop"></div>

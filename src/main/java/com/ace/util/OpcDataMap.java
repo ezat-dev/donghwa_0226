@@ -215,6 +215,8 @@ public class OpcDataMap {
 		}
 	}
 	
+	
+	
 	public void setOpcDataReset(String opcGroup, boolean opcData) throws InterruptedException, ExecutionException{
 		
 		//5초 타이머

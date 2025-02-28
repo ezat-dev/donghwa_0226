@@ -72,7 +72,29 @@ public class MainController {
     	opcDataMap.setOpcData(sendTagDir+"."+sendTagName, sendTagValue);
     	
     	return returnMap;    	
-    }		
+    }	
+    
+    
+	//valueDigitalSetNone
+    @RequestMapping(value= "/common/valueDigitalSetNone", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> valueDigitalSetNone(
+    		@RequestParam String sendTagDir,
+    		@RequestParam String sendTagName,
+    		@RequestParam boolean sendTagValue
+    		) throws UaException, InterruptedException, ExecutionException {
+    	Map<String, Object> returnMap = new HashMap<String, Object>();
+
+    	//사용자 권한체크
+    	
+    	
+    	OpcDataMap opcDataMap = new OpcDataMap();
+    	
+    	System.out.println("sendTagDir : "+sendTagDir+"// sendTagName : "+sendTagName+"// sendTagValue : "+sendTagValue);
+    	opcDataMap.setOpcData(sendTagDir+"."+sendTagName, sendTagValue);
+    	
+    	return returnMap;    	
+    }	
     
     //
     @RequestMapping(value= "/common/valueAnalogSet", method = RequestMethod.POST)

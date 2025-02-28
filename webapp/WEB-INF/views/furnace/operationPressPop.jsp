@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/donghwa/css/furnace/operationPressPop.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <jsp:include page="../include/OnOffPop.jsp"/>
+   <jsp:include page="../include/pluginpage.jsp"/>
 
   
   
@@ -47,13 +48,13 @@
     <div class="operation-press-main"></div>
 
     <div class="operation-press">Operation Press</div>
-    <div class="hydraulic"></div>
+    <div class="hydraulic D7970"></div>
     <div class="_1"></div>
     <div class="hydraulic2">Hydraulic</div>
-    <div class="press-move-up"></div>
+    <div class="press-move-up D7971"></div>
     <div class="_2"></div>
-    <div class="press-move-up2">Press Move Up</div>
-    <div class="force-f-1"></div>
+    <div class="press-move-up2 ">Press Move Up</div>
+    <div class="force-f-1 D7972"></div>
     <div class="_3"></div>
     <div class="pressing-with-force-f-1">Press Move Down</div>
     <div class="force-f-2"></div>
@@ -120,6 +121,9 @@ function v(keys, value){
 		$("."+keys).css("color","#E3E3E3");
 		$("."+keys).css("color","black");
 	}
+    $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.MANUAL_OPERATION', '"+keys+"')")
+    .css("cursor", "pointer");  
+}
 
 /*
 function c(keys, value){
@@ -140,7 +144,7 @@ function value(keys, value){
 	$("."+keys).text(value);
 	$("."+keys).css("text-align","center");
 	$("."+keys).css("font-size","20pt");
-	
+	  console.log(`value 함수 호출 - Key: ${key}, Value: ${val}`);
 	
 }
 

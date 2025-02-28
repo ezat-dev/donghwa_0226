@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <jsp:include page="../include/pluginpage.jsp"/>
+  
     <meta charset="UTF-8">
     <title>SEND</title>
     <style>

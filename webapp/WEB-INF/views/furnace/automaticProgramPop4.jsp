@@ -11,7 +11,7 @@
    button,
    input,
    select,
-   h1,
+   h1,	
    h2,
    h3,
    h4,
@@ -76,10 +76,10 @@
     <div class="program-name-value"></div>
     <div class="program-comment-value"></div>
     <div class="id-value"></div>
-    <div class="start"></div>
+    <div class="start-real"></div>
     <div class="start-text">Start</div>
-    <div class="start-delay"></div>
-    <div class="start-delay-text">Start delay</div>
+    <div class="start-delay start"></div>
+    <div class="start-delay-text ">Start delay</div>
     <div class="reset"></div>
     <div class="reset-text">Reset</div>
     <div class="_1 delayTime"></div>

@@ -43,7 +43,7 @@
         grid-template-rows: repeat(2, 1fr);
         gap: 27px;
         width: 35%;
-        left: 511px; 
+        left: 500px; 
     }
 
 
@@ -374,14 +374,14 @@
    <div class="table-container2">
     
      <div class="table2 table7" onclick="popupClick('/donghwa/process/pressurePop', 391, 441, 680, 180);">
-      <div class="table-header">High-vacuum</div>
+      <div class="table-header">Furnace Pressure</div>
       
       <div class="capacity_3 D-7800">-- kN</div>
     </div>
     
     
     <div class="table2 table8" onclick="popupClick('/donghwa/process/pressurePop', 391, 441, 680, 180);">
-      <div class="table-header">Fore-vacuum</div>
+      <div class="table-header">Diff Pump Vacuum</div>
      
       <div class="capacity_3 D-7810">--</div>
     </div>
@@ -420,17 +420,18 @@
     </div>
     <img class="component-3 Ldclose" src="/donghwa/css/furnace/img/component-30.svg" />
     <img class="component-4 Ldopen" src="/donghwa/css/furnace/img/component-40.svg" />
-    <div class="value-1 tx">12.2</div>
+    <div class="value-1 tx">Rear Clamp</div>
+    <div class="value-1-1 tx">Front CLAMP</div>
     <div class="value-2 tx">12.2</div>
-    <div class="value-3 tx">6.1</div>
-    <div class="value-4 tx">6.2</div>
-    <div class="value-5 tx">6.14</div>
-    <div class="value-6 tx">6.4</div>
-    <div class="value-7 tx">6.10</div>
-    <div class="value-8 tx">6.12</div>
-    <div class="value-9 tx">13.4</div>
-    <div class="value-10 tx">13.704</div>
-    <div class="value-11 tx">13.102</div>
+    <div class="value-3 tx">High Valve</div>
+    <div class="value-4 tx">Pumping Valve</div>
+    <div class="value-5 tx">Diff Pump</div>
+    <div class="value-6 tx">F-L Valve</div>
+    <div class="value-7 tx">Booster Pump</div>
+    <div class="value-8 tx">Rotary Pump</div>
+    <div class="value-9 tx">Ar Gas Valve</div>
+    <div class="value-10 tx">Vent Valve</div>
+    <div class="value-11 tx">.. </div>
     <div class="value-12 tx">Air</div>
     <div class="value-13 tx">Ar</div>
     <img class="component-5 Rdclose" src="/donghwa/css/furnace/img/component-50.svg" />
@@ -530,7 +531,7 @@ function overviewListView(){
         		var d = data[key];
 
 	        		 if (d[keys].action == "v") {
-	    				 console.log("V 값 확인:", keys, d[keys].value);
+	    		//		 console.log("V 값 확인:", keys, d[keys].value);
 	                     v(keys, d[keys].value);
 					}else if(d[keys].action == "Ropen"){
 						Ropen(keys, d[keys].value);
@@ -545,7 +546,7 @@ function overviewListView(){
 					}else if(d[keys].action == "rover"){
 						rover(keys, d[keys].value);	
 					}else if(d[keys].action == "lamp"){
-						 console.log("V 값 확인:", keys, d[keys].value);
+			//			 console.log("V 값 확인:", keys, d[keys].value);
 						lamp(keys, d[keys].value);
 					}else if(d[keys].action == "rover"){
 						rover(keys, d[keys].value);
@@ -711,8 +712,6 @@ function v(keys, value){
 }
 
 
-
-
 function value(keys, value) {
     var truncatedValue = Math.floor(value * 10) / 10;
 
@@ -735,6 +734,17 @@ function value(keys, value) {
         var newValue = truncatedValue + " " + eValue + " " + d7812Value + " " + torrValue;        
         $("." + keys).text(newValue);
     }
+    // 값이 99이면 "-"로 표시
+    else if (value === 99) {
+        $("." + keys).text("-");
+    }
+    // D-7950을 시:분 형식으로 변환
+    else if (keys === "D-7950") {
+        var hours = Math.floor(value / 60);  // 시간 계산
+        var minutes = value % 60;  // 분 계산
+        var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes);  // "H:MM" 형식 유지
+        $("." + keys).text(timeString);
+    }
     else {
         $("." + keys).text(finalValue);
     }
@@ -742,7 +752,6 @@ function value(keys, value) {
     $("." + keys).css("text-align", "center");
     $("." + keys).css("font-size", "14pt");
 }
-
 
 
 

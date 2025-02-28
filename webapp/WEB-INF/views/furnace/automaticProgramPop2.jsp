@@ -107,7 +107,7 @@
     <div class="startconditions-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop3', 508, 392, 730, 235);">Startconditions</div>
     <div class="batch-data"></div>
     <div class="batch-data-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop1', 508, 392, 730, 235);">Batch data</div>
-    <div class="jump M8004"></div>
+    <div class="jump jump_bt"></div>
     
     <div class="button-container">
 	   <div class="button start_bt" onclick="startProgram()">
@@ -201,6 +201,7 @@
     }
 
 
+    /*
     $(".jump").click(function () {
         $.ajax({
             url: "/donghwa/common/valueDigitalSet",
@@ -215,20 +216,19 @@
                 console.log("전송 성공:", result);
 
                 // 배경색을 초록색으로 변경
-                $(".jump").css("background-color", "green");
-                $(".jump").css("color", "white");
+                $(".jump").css({"background-color": "green", "color": "white"});
 
                 // 5초 후 배경색 원래대로 되돌리기
                 setTimeout(function() {
-                    $(".jump").css("background-color", "");
-                    $(".jump").css("color", "");
-                }, 5000);  // 5000ms = 5초
+                    $(".jump").css({"background-color": "", "color": ""});
+                }, 5000);
             },
             error: function(xhr, status, error) {
                 console.error("전송 실패", status, error);
             }
         });
     });
+    */
 
 
     function value(keys, value){

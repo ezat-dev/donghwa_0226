@@ -31,7 +31,7 @@
   <button class="back">Back</button>
 
 	<div class="save_popup" style="display:none;">
-  <span class="close_btn" id="close_btn">X</span>
+  <!--<span class="close_btn" id="close_btn">X</span>-->
   <div class="content">
     <h2>Sent recipe</h2>
     <input type="text" id="input1" placeholder="input1" class="input_field" readonly>
@@ -44,7 +44,8 @@
     </div>
     
     <div class="button-container">
-    <button class="ok_btn" id="ok_close_btn" onclick="valueDigitalSend();">OK</button>
+   <button class="ok_btn" id="ok_close_btn" onclick="valueDigitalSend();" style="display: none;">OK</button>
+
 
       <button class="retry_btn"id="retry_btn">Retry</button>
     </div>
@@ -85,6 +86,8 @@ function fetchSessionData() {
     });
 }
 
+
+
 function sendPlc(data, callback) {
     $.ajax({
         url: "/donghwa/furnace/recipe/plcWrite",
@@ -95,33 +98,18 @@ function sendPlc(data, callback) {
         success: function(response) {
             console.log('plcWrite 서버 응답:', response);
             callback(true); 
+            // sendPlc 성공 시 OK 버튼을 표시
+            $("#ok_close_btn").show(); 
         },
         error: function(xhr, status, error) {
             console.error('plcWrite AJAX 에러:', status, error);
             callback(false);  
+            // 실패 시 OK 버튼을 숨김
+            $("#ok_close_btn").hide(); 
         }
     });
 }
 
-
-	
-function sendPlcString(dataString, callback) {
-    $.ajax({
-        url: "/donghwa/furnace/recipe/plcWriteString",
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(dataString),
-        success: function(response) {
-            console.log('sendPlcString 서버 응답:', response);
-            callback(true); 
-        },
-        error: function(xhr, status, error) {
-            console.error('plcWriteString AJAX 에러:', status, error);
-            callback(false);  
-        }
-    });
-}
 
 document.getElementById("retry_btn").addEventListener("click", function() {
     let loadingBar = document.getElementById("loadingBar");

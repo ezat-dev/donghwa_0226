@@ -237,13 +237,14 @@ function c(keys, value){
 }
 */
 
-function value(keys, value){
+function value(keys, value) {
+    var finalValue = (keys === "D11101" || keys === "D11102") ? (value / 100).toFixed(2) : value;
 	$("."+keys).text(value);
-	$("."+keys).css("text-align","center");
-	$("."+keys).css("font-size","17pt");
-	
-	
+    $("." + keys).text(finalValue);  // 수정된 값 적용
+    $("." + keys).css("text-align", "center");
+    $("." + keys).css("font-size", "17pt");
 }
+
 
 </script>  
  

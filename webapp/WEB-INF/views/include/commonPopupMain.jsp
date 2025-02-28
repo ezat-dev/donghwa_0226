@@ -154,13 +154,6 @@
 </head>
 <body>
 
-<!-- 팝업 열기 버튼 -->
-<button onclick="openPopup()" style="padding: 12px 30px; font-size: 16px; background-color: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer;">
-    팝업 열기
-</button>
-
-<!-- ON/OFF 상태 전환 버튼 -->
-<button id="toggleButton" class="toggle-btn on-btn" onclick="togglePopup()">ON</button>
 
 <!-- 로딩 오버레이 및 스피너 -->
 <div id="loadingOverlay">

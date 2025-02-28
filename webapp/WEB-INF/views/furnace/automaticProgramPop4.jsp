@@ -76,7 +76,7 @@
     <div class="program-name-value"></div>
     <div class="program-comment-value"></div>
     <div class="id-value"></div>
-    <div class="start-real"></div>
+    <div class="start-real start_bt_M8001"></div>
     <div class="start-text">Start</div>
     <div class="start-delay start"></div>
     <div class="start-delay-text ">Start delay</div>
@@ -147,23 +147,25 @@
 
 
     function value(keys, value){
-    	if(!$("div").hasClass("anlog-popup-div-color")){
-    		$("."+keys).text(value);	
-    	}
-    	
-    	$("."+keys).css("display","");
-    	$("."+keys).css("text-align","center");
-    //	$("."+keys).css("font-weight","700");
-    	$("."+keys).css("font-size","16pt");
-    	$("."+keys).css("padding-top","5px");
-    	$("."+keys).attr("ondblclick","popupOpenAna('"+keys+"','DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')");
-    	$("."+keys).css("cursor","pointer");
-    	$("."+keys).attr("align-items","center");
-    	$("."+keys).attr("margin-botoom","7px");
+        if(!$("div").hasClass("anlog-popup-div-color")){
+            $("."+keys).text(value);	
+        }
+        
+        $("."+keys).css("display", "");
+        $("."+keys).css("text-align", "center");
+        $("."+keys).css("font-size", "16pt");
+        $("."+keys).css("padding-top", "5px");
 
+        $("."+keys).attr("align-items", "center");
+     
+
+        // keys가 "delayTime"일 때만 ondblclick 속성 추가
+        if(keys === "delayTime"){
+            $("."+keys).attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')");
+            $("."+keys).css("cursor", "pointer");
+            }
     }
 
-    
   var popup;
   
   function modalClick(location){

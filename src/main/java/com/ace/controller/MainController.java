@@ -91,7 +91,7 @@ public class MainController {
     	OpcDataMap opcDataMap = new OpcDataMap();
     	
     	System.out.println("sendTagDir : "+sendTagDir+"// sendTagName : "+sendTagName+"// sendTagValue : "+sendTagValue);
-    	opcDataMap.setOpcData(sendTagDir+"."+sendTagName, sendTagValue);
+    	opcDataMap.setOpcDataNoneZero(sendTagDir+"."+sendTagName, sendTagValue);
     	
     	return returnMap;    	
     }	

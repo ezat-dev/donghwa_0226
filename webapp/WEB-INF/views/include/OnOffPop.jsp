@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <jsp:include page="../include/pluginpage.jsp"/>
     <meta charset="UTF-8">
     <title>SEND</title>
     <style>
@@ -92,12 +93,12 @@
         }
 
         .on-btn {
-            background-color: #4CAF50;
+            background-color: #b4b4b4;
             color: white;
         }
 
         .off-btn {
-            background-color: #f44336;
+            background-color: #b4b4b4;
             color: white;
         }
 
@@ -175,7 +176,7 @@
 <!-- 팝업 내용 -->
 <div id="commonPopup">
     <button class="close-btn" onclick="closePopup()">✖</button>
-    <h3>STOP</h3>
+    <h3>ON / OFF</h3>
     <button class="bt_on" type="button">ON</button>
     <button class="bt_off" type="button">OFF</button>
     
@@ -191,18 +192,23 @@
         document.getElementById('popupOverlay').style.display = 'none';
         document.getElementById('commonPopup').style.display = 'none';
         document.getElementById('loadingOverlay').style.display = 'none'; // 로딩 스피너 숨기기
+        
+        // 페이지 로드 시 버튼의 배경을 회색으로 설정
+        $(".bt_on").css("background-color", "#b4b4b4");
+        $(".bt_off").css("background-color", "#b4b4b4");
     };
 
-    // ON/OFF 버튼 이벤트
+    // ON 버튼 클릭 이벤트
     $(".bt_on").on("click", function(e){
-        $(".bt_on").css("background-color","blue");
-        $(".bt_off").css("background-color","#F0F0F0");
+        $(".bt_on").css("background-color", "green"); // ON 버튼 초록색
+        $(".bt_off").css("background-color", "#b4b4b4");  // OFF 버튼 회색
         setTagValue = 1;
     });
 
+    // OFF 버튼 클릭 이벤트
     $(".bt_off").on("click", function(e){
-        $(".bt_off").css("background-color","blue");
-        $(".bt_on").css("background-color","#F0F0F0");
+        $(".bt_off").css("background-color", "red");  // OFF 버튼 빨간색
+        $(".bt_on").css("background-color", "#b4b4b4"); // ON 버튼 회색
         setTagValue = 0;
     });
 
@@ -254,7 +260,7 @@
         document.getElementById('loadingOverlay').style.display = 'flex';
 
         $.ajax({
-            url: "/donghwa/common/valueDigitalSet",
+            url: "/donghwa/common/valueDigitalSetNone",
             type: "post",
             dataType: "json",
             data: {
@@ -275,6 +281,7 @@
         });
     }
 </script>
+
 
 </body>
 </html>

@@ -110,7 +110,7 @@
     <div class="jump jump_bt"></div>
     
     <div class="button-container">
-	   <div class="button start_bt" onclick="startProgram()">
+	   <div class="button start_bt_M8006" onclick="startProgram()">
 		    <img src="/donghwa/css/furnace/img/start3.png" alt="Start">
 		</div>
 		<div class="button pause_bt" onclick="pauseProgram()">

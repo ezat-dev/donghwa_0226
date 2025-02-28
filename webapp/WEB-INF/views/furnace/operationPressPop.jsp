@@ -48,14 +48,14 @@
     <div class="operation-press-main"></div>
 
     <div class="operation-press">Operation Press</div>
-    <div class="hydraulic D7970"></div>
-    <div class="_1"></div>
+    <div class="hydraulic M8180"></div>
+    <div class="_1 lamp-M8180"></div>
     <div class="hydraulic2">Hydraulic</div>
-    <div class="press-move-up D7971"></div>
-    <div class="_2"></div>
+    <div class="press-move-up M8181"></div>
+    <div class="_2 lamp-M8181"></div>
     <div class="press-move-up2 ">Press Move Up</div>
-    <div class="force-f-1 D7972"></div>
-    <div class="_3"></div>
+    <div class="force-f-1 M8182"></div>
+    <div class="_3 lamp-M8182"></div>
     <div class="pressing-with-force-f-1">Press Move Down</div>
     <div class="force-f-2"></div>
     <div class="_4"></div>
@@ -83,7 +83,6 @@ $(function(){
 	overviewInterval = setInterval("overviewListView()", 500);
 });
 
-//OPC값 알람 조회
 function overviewListView(){
 	$.ajax({
 		url:"/donghwa/furnace/operationPressPop/view",
@@ -92,9 +91,9 @@ function overviewListView(){
 		success:function(result){				
 			var data = result.multiValues;
 			
-        for(let key in data){
-        	for(let keys in data[key]){
-        		var d = data[key];
+			for(let key in data){
+				for(let keys in data[key]){
+					var d = data[key];
 
 					if(d[keys].action == "v"){
 						v(keys, d[keys].value);
@@ -102,15 +101,26 @@ function overviewListView(){
 						c(keys, d[keys].value);
 					}else if(d[keys].action == "b"){
 						b(keys, d[keys].value);
-					}else if(d[keys].action == "value"){
+					}else if (d[keys].action == "lamp") {
+						lamp(keys, d[keys].value);
+					}else if(d[keys].action == "value"){ 
 						value(keys, d[keys].value);
 					}
-
-        	}                    	
-        }
+				}                    	
+			}
 		}
 	});
 }
+
+function lamp(keys, value) {
+
+    if (value == true) {
+        $("." + keys).css("background-color", "green"); 
+    } else {
+        $("." + keys).css("background-color", ""); 
+    }
+}
+
 
 function v(keys, value){
 	
@@ -121,7 +131,7 @@ function v(keys, value){
 		$("."+keys).css("color","#E3E3E3");
 		$("."+keys).css("color","black");
 	}
-    $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.MANUAL_OPERATION', '"+keys+"')")
+    $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.OPERATION_PRESS', '"+keys+"')")
     .css("cursor", "pointer");  
 }
 

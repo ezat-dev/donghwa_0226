@@ -718,6 +718,8 @@ function value(keys, value) {
     // -rover가 포함된 경우, 값을 그대로 사용
     var finalValue = keys.includes("-rover") ? value : truncatedValue;
 
+
+    var finalValue = (keys === "D11101" || keys === "D11102") ? (value / 100).toFixed(2) : value;
     // D-7800 처리
     if (keys === "D-7800") {
         var d7802Value = parseFloat($(".D-7802").text()) || 0;

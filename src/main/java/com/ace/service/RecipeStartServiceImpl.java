@@ -16,14 +16,14 @@ public class RecipeStartServiceImpl implements RecipeStartService{
 	public void recipeStart() throws InterruptedException, ExecutionException {
 		OpcDataMap opcData = new OpcDataMap();
 		
-		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.PROGRAMMER.start_bt", true);
+		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.start_bt_M8001", true);
 
 		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.setMinutes", (short)0);
 		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.realTime", (short)0);
 		
 		Thread.sleep(5000);
 		
-		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.PROGRAMMER.start_bt", false);
+		opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.PROGRAMMER.start_bt_M8001", false);
 	}
 	
 	

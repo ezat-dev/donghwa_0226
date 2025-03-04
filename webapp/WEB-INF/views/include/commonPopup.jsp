@@ -152,6 +152,12 @@
             align-items: center;
             display: flex;
         }
+        
+        .tage-name {
+	    font-size: 29px;
+	    font-weight: bold;
+}
+        
     </style>
 </head>
 <body>
@@ -170,7 +176,7 @@
 <!-- 팝업 내용 -->
 <div id="commonPopup">
     <button class="close-btn" onclick="closePopup()">✖</button>
-    <h3>Bit ON/OFF</h3>
+    <div class="tage-name"></div>
     <button class="bt_on" type="button">ON</button>
     <button class="bt_off" type="button">OFF</button>
     
@@ -227,13 +233,16 @@
         }
     }
 
-    function digitalSet(tagDir, tagName){
-        console.log(tagDir+"// "+tagName);
+    function digitalSet(tagDir, tagName) {
+        console.log(tagDir + "// " + tagName);
+        console.log(tagName);
         setTagDir = tagDir;
-        setTagName = tagName;
+        setTagName = tagName.charAt(0).toUpperCase() + tagName.slice(1); 
 
+        $(".tage-name").text(setTagName);
         openPopup();
     }
+
 
     // 전송 함수 (AJAX 포함)
     function valueDigitalSend() {

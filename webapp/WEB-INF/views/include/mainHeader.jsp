@@ -152,7 +152,7 @@
     <li>
       Process values
       <ul class="submenu">
-        <li onclick="popupClick('/donghwa/process/temperaturePop', 799, 451, 680, 165);">Temperature</li>
+        <li onclick="popupClick('/donghwa/process/temperaturePop', 799, 504, 680, 165);">Temperature</li>
 		<li onclick="popupClick('/donghwa/process/pressurePop', 391, 441, 680, 180);">Pressure</li>
 		<li onclick="popupClick('/donghwa/process/pressureSwitchesPop', 400, 258, 680, 204);">Pressure switches</li>
 		<li onclick="popupClick('/donghwa/process/heaterPop', 518, 420, 680, 204);">Heater</li>

@@ -329,7 +329,7 @@
   <div class="table-container">
   
   
-	 <div class="table table1" onclick="popupClick('/donghwa/process/temperaturePop', 779, 498, 450, 165);">
+	 <div class="table table1" onclick="popupClick('/donghwa/process/temperaturePop', 799, 504, 450, 165);">
 	  <div class="table-header">Furance temperature     Auto</div>
 	  <div class="temper_1">Current Temp.</div>
 	  <div class="table-cell overTb1">79°C</div>

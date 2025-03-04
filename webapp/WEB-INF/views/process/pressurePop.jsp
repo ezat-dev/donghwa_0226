@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +34,17 @@
        margin: 0;
        padding: 0;
    }
+	   .psp-6 {
+	    color: black;
+	    text-align: left;
+	    font-size: 20px;
+	    font-weight: 400;
+	    position: absolute;
+	    left: 26px;
+	    top: 148px;
+	    width: 171px;
+	    height: 21px;
+	}
    </style>
   <title>Document</title>
 </head>
@@ -50,7 +62,7 @@
     <div class="pis-6-x-13-5">Furnace Vacuum</div>
     <div class="fur-pressure-val-1"></div>
     <div class="fur-pressure-box-2"></div>
-    <div class="psp-6">Diffusion Pump Vacuum</div>
+    <div class="psp-6">Diffusion Pump</div>
     <div class="fur-pressure-val-2"></div>
     <div class="rel"></div>
     <div class="rel-box-1"></div>

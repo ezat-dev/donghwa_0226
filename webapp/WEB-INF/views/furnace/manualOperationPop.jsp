@@ -213,7 +213,7 @@ function overviewListView() {
                     } else if (d[keys].action == "c") {
                         c(keys, d[keys].value);
                     } else if (d[keys].action == "off") {
-                    	console.log("OFF 값 확인:", keys, d[keys].value);
+                    	//console.log("OFF 값 확인:", keys, d[keys].value);
                     	off(keys, d[keys].value);
                     } else if (d[keys].action == "value") {
                         value(keys, d[keys].value);

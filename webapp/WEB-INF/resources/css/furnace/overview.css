@@ -694,6 +694,19 @@
   left: 1512px;
   top: 684px;
 }
+
+.ball-on-60 {
+  background: #19a019;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0.5px;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  left: 1512px;
+  top: 684px;
+}
 .ball-off-2 {
   background: #d9d9d9;
   border-radius: 50%;

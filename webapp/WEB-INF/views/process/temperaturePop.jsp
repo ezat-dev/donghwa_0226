@@ -196,13 +196,13 @@ function c(keys, value){
 }
 */
 
-function value(keys, value){
-	$("."+keys).text(value);
-	$("."+keys).css("text-align","center");
-	$("."+keys).css("font-size","20pt");
-	
-	
+function value(keys, value) {
+    var finalValue = value + " °C"; 
+    $("." + keys).text(finalValue);
+    $("." + keys).css("text-align", "center");
+    $("." + keys).css("font-size", "17pt");
 }
+
 
 </script>  
   

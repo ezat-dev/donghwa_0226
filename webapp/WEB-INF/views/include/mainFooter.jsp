@@ -31,10 +31,11 @@
             gap: 20px;
         }
 
-        .footer .section {
-            padding: 10px;
-            flex: 1;
-        }
+		.footer .section {
+		    padding: 5px; /* 패딩을 줄여서 크기를 작게 */
+		    flex: 0.8; /* flex를 줄여서 크기 비율을 줄임 */
+		}
+
 
         .footer p {
              padding: 4px;
@@ -155,6 +156,45 @@
 	  background-color: #3A4A66;
 	  transform: scale(0.95);
 	}
+	
+	.status-ab {
+	    width: 333px;
+	    margin-left: 30px;
+	    margin-top:5px;
+	}
+	
+	.status-ab p {
+	    margin-bottom: 11px; 
+	}
+
+
+	.st1 {
+	 width: 250px;
+	position: absolute;
+    top: 5px;
+    left: 2150px;
+    display: none;
+	}
+
+
+	.st2 {
+	 width: 250px;
+	position: absolute;
+    top: 44px;
+    left: 2150px;
+    display: none;
+	}
+	
+	.st3 {
+	 width: 250px;
+	position: absolute;
+    top: 85px;
+    left: 2150px;
+    display: none;
+	}
+
+
+
     </style>
 </head>
 <body>
@@ -182,33 +222,32 @@
 	<div id="tabulator-table2" class="tabulator"></div> 
  
 
-    <div class="section status">
-        <p><strong>Status 1:</strong> <span class="status1">NULL</span></p>
-       <div class="ST1_8040 st1">AUTO </div>
-       <div class="ST1_8041 st1">Manual </div>        
-       <div class="ST1_8042 st1">Heating vacuum </div> 
-       <div class="ST1_8043 st1">Heating gas stationary </div>
-       <div class="ST1_8044 st1"> Cooling vacuum</div>
-       <div class="ST1_8045 st1">Cooling gas stationary </div> 
-                             
-        <p><strong>Status 2:</strong> <span class="status2">NULL</span></p>
-       <div class="ST2_8051 st2"> MANUAL LEAK TEST (REPEAT 1ST)</div>
-       <div class="ST2_8052 st2">MANUAL LEAK TEST (REPEAT 2ND) </div>       
-       <div class="ST2_8053 st2">LEAK TEST OK </div>       
-       <div class="ST2_8054 st2"> LEAK TEST FAIL</div>     
-       <div class="ST2_8138 st2">MANUAL LEAKTEST LAMP </div>  
-       
-       
-               
-        <p><strong>Status 3:</strong> <span class="status3">NULL</span></p>
-       <div class="ST3_8060 st3">Ram in upper position </div>       
-       <div class="ST3_8061 st3">pressing loop </div>       
-       <div class="ST3_8062 st3"> auto bonding</div>       
-        
-        
-        
-        
-    </div>
+
+	<div class="status-ab">
+	    <p><strong>Status 1:</strong> <span class="status1"></span></p>
+	    <div class="ST1-M8040 st1">AUTO </div>
+	    <div class="ST1-M8041 st1">Manual </div>        
+	    <div class="ST1-M8042 st1">Heating vacuum </div> 
+	    <div class="ST1-M8043 st1">Heating gas stationary </div>
+	    <div class="ST1-M8044 st1">Cooling vacuum</div>
+	    <div class="ST1-M8045 st1">Cooling gas stationary </div> 
+	
+	    <p><strong>Status 2:</strong> <span class="status2"></span></p>
+	
+	    <div class="ST2-M8051 st2">MANUAL LEAK TEST (REPEAT 1ST)</div>
+	    <div class="ST2-M8052 st2">MANUAL LEAK TEST (REPEAT 2ND) </div>       
+	    <div class="ST2-M8053 st2">LEAK TEST OK </div>       
+	    <div class="ST2-M8054 st2">LEAK TEST FAIL</div>     
+	    <div class="ST2-M8138 st2">MANUAL LEAKTEST LAMP </div>
+	
+	    <p><strong>Status 3:</strong> <span class="status3"></span></p>
+	
+	    <div class="ST3-M8060 st3">Ram in upper position </div>       
+	    <div class="ST3-M8061 st3">pressing loop </div>       
+	    <div class="ST3-M8062 st3">auto bonding</div>      
+	</div>
+
+
 </div>
 
 <script>

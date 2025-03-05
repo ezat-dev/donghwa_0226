@@ -319,6 +319,33 @@
 	    }
 	}
 
+	@keyframes blinkGreen {
+	    0% {
+	        background-color: green;
+	    }
+	    50% {
+	        background-color: transparent;
+	    }
+	    100% {
+	        background-color: green;
+	    }
+	}
+
+	
+	.ball-on-60{
+	
+  	  background: #19a019;
+	  border-radius: 50%;
+	  border-style: solid;
+	  border-color: #000000;
+	  border-width: 0.5px;
+	  width: 72px;
+	  height: 72px;
+	  position: absolute;
+	  left: 1512px;
+	  top: 684px;
+		
+	}
   </style>
 
   <title>Document</title>
@@ -437,13 +464,13 @@
     <img class="component-5 Rdclose" src="/donghwa/css/furnace/img/component-50.svg" />
     <img class="component-6 Rdopen" src="/donghwa/css/furnace/img/component-60.svg" />
   
-    <img class="vector-1 Lcopen" src="/donghwa/css/furnace/img/vector-10.svg" />
+    <img class="vector-1 Lcopen Lcopen-plc-off" src="/donghwa/css/furnace/img/vector-10.svg" />
     <img class="vector-2 Lcclose" src="/donghwa/css/furnace/img/vector-20.svg" style="background-color: green;" />
     <img class="vector-3 Lcopen" src="/donghwa/css/furnace/img/vector-30.svg" />
     <img class="vector-4 Lcclose" src="/donghwa/css/furnace/img/vector-40.svg" style="background-color: green;" />
    
     <img class="vector-5 Rcclose" src="/donghwa/css/furnace/img/vector-10.svg" />
-    <img class="vector-6 Rcopen" src="/donghwa/css/furnace/img/vector-20.svg"style="background-color: green;" />
+    <img class="vector-6 Rcopen Rcopen-plc-off" src="/donghwa/css/furnace/img/vector-20.svg"style="background-color: green;" />
     <img class="vector-7 Rcclose" src="/donghwa/css/furnace/img/vector-30.svg" />
     <img class="vector-8 Rcopen" src="/donghwa/css/furnace/img/vector-40.svg"style="background-color: green;" />
     
@@ -473,6 +500,9 @@
     <img class="component-15" src="/donghwa/css/furnace/img/component-150.svg" />
     <img class="component-16 component-16-img" src="/donghwa/css/furnace/img/component-160.svg" />
     <div class="ball-off-1"></div>
+    
+    <div class="ball-on-60"></div>
+   
     <div class="ball-on-1 ball-on-1-img"></div>
     <div class="ball-off-2"></div>
     <div class="ball-on-2 ball-on-2-img"></div>
@@ -561,155 +591,204 @@ function overviewListView(){
 	});
 }
 
-function lamp(keys, value) {
-
-    if (value === true) {
-        $("." + keys).css("background-color", "red"); 
-    } else {
-        $("." + keys).css("background-color", ""); 
-    }
-
-    if (keys === "lamp-8033") {
-        if (value === true) {
-            $("." + keys).css("background-color", "green");
-        } else if (value === false) {
-            $("." + keys).css("background-color", "");
-        }
-       
-    }
-    
-}
-
-
+	function lamp(keys, value) {
+	
+	    if (value === true) {
+	        $("." + keys).css("background-color", "red"); 
+	    } else {
+	        $("." + keys).css("background-color", ""); 
+	    }
+	
+	    if (keys === "lamp-8033") {
+	        if (value === true) {
+	            $("." + keys).css("background-color", "green");
+	        } else if (value === false) {
+	            $("." + keys).css("background-color", "");
+	        }
+	       
+	    }
+	    
+	}
+	
 
 
 	function img(keys, value) {
 	    if (value === true) {
-	        $("." + keys).fadeIn(200); 
+	        $("." + keys).fadeIn(200);
 	    } else {
-	        $("." + keys).fadeOut(200); 
+	        $("." + keys).fadeOut(200);
 	    }
 	}
+
 	
-
-function v(keys, value){
-
-    
-    if(value === true){
-        $("."+keys).css("color", "black");
-    }
-    if (keys === "M8034") {
-        if (value === true) {
-            $("." + keys).css({
-                "animation": "blinkOrange 2s infinite" // 2초 주기로 주황색과 원래 색을 번갈아 변경
-            });
-        } else {
-            $("." + keys).css({
-                "background-color": "",  // 배경색 초기화 (원래 색상으로 돌아감)
-                "animation": ""  // 애니메이션 초기화
-            });
-        }
-    }
-
-    
-    if (keys === "Ldclose") {
-        if (value === true) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
-
-    if (keys === "Ldopen") {
-        if (value === true) {
-            $("." + keys).css("visibility", "hidden");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "visible");
-        }
-    }
-
-    if (keys === "Rdclose") {
-        if (value === true) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
-
-    if (keys === "Rdopen") {
-        if (value === true) {
-            $("." + keys).css("visibility", "hidden");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "visible");
-        }
-    }
-
-    if (keys === "Lcclose") {
-        if (value === true) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
-
-    if (keys === "Lcopen") {
-        if (value === false) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === true) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
-
- 
-    if (keys === "Rcopen") {
-        if (value === true) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === false) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
+	function v(keys, value) {
+		if (keys === "ball-on-60") {
+		    console.log("Triggering styles for .ball-on-60");
+		    if (value === true) {
+		        $(".ball-on-60").css({
+		            "background-color": "green",
+		            "animation": "blinkGreen 1s infinite",
+		            "z-index": "9999",
+		            "position": "relative",
+		        });
+		       
+		    } else {
+		        $(".ball-on-60").css({
+		            "background-color": "",
+		            "animation": "",
+		            "z-index": "-1",
+		            "position": "",
+		        });
+		    }
+		}
 
 
-    if (keys === "Rcclose") {
-        if (value === false) {
-            $("." + keys).css("visibility", "visible");
-        } else if (value === true) {
-            $("." + keys).css("visibility", "hidden");
-        }
-    }
-    if (keys === "heaterView") {
-        if (value === 1) {
-            $("." + keys).css("color", "red");  
-        } else {
-            $("." + keys).css("color", ""); 
-        }
 
-        
-    }
+	    if (keys.startsWith("ST1-M80")) {
+	    //	  console.log("Key:", keys, "Value:", value);
+	        let numberPart = parseInt(keys.substring(5));
+	        if (numberPart >= 41 && numberPart <= 140) {
+	            if (value === true) {
+	                $("." + keys).css("display", "block !important");
+	            } else {
+	                $("." + keys).css("display", "none !important");
+	            }
+	        }
+	    }
 
-    const colorMapping = {
-    	    "RedX0CC": "red",
-    	    "GreenY140": "green"
-    	};
+	
+	    if (keys.startsWith("ST2-M80")) {
+	        let numberPart = parseInt(keys.substring(5));
+	        if (numberPart >= 38 && numberPart <= 51) {
+	            if (value === true) {
+	                $("." + keys).css("display", "block !important");
+	            } else {
+	                $("." + keys).css("display", "none !important");
+	            }
+	        }
+	    }
 
-    	if (keys in colorMapping) {
-    	    if (value === true) {
-    	        $("." + keys).css({
-    	            "background-color": colorMapping[keys],
-    	            "display": "block",
-    	            "z-index": "9999" 
-    	        });
-    	    } else {
-    	        $("." + keys).css({
-    	            "background-color": "",
-    	            "z-index": ""
-    	        });
-    	    }
-    	}
+	    
+	    if (keys.startsWith("ST3-M80")) {
+	        let numberPart = parseInt(keys.substring(5));
+	        if (numberPart >= 60 && numberPart <= 62) {
+	            if (value === true) {
+	                $("." + keys).css("display", "block !important");
+	            } else {
+	                $("." + keys).css("display", "none !important");
+	            }
+	        }
+	    }
 
-            
+	    if (value === true) {
+	        $("." + keys).css("color", "black");
+	    }
 
-}
+	    if (keys === "M8034") {
+	        if (value === true) {
+	            $("." + keys).css({
+	                "animation": "blinkOrange 2s infinite"
+	            });
+	        } else {
+	            $("." + keys).css({
+	                "background-color": "",
+	                "animation": ""
+	            });
+	        }
+	    }
+
+	    if (keys === "Ldclose") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "Ldopen") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "hidden");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "visible");
+	        }
+	    }
+
+	    if (keys === "Rdclose") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "Rdopen") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "hidden");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "visible");
+	        }
+	    }
+
+	    if (keys === "Lcclose") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "Lcopen") {
+	        if (value === false) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === true) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "Rcopen") {
+	        if (value === true) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === false) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "Rcclose") {
+	        if (value === false) {
+	            $("." + keys).css("visibility", "visible");
+	        } else if (value === true) {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+
+	    if (keys === "heaterView") {
+	        if (value === 1) {
+	            $("." + keys).css("color", "red");
+	        } else {
+	            $("." + keys).css("color", "");
+	        }
+	    }
+
+	    const colorMapping = {
+	        "RedX0CC": "red",
+	        "GreenY140": "green"
+	    };
+
+	    if (keys in colorMapping) {
+	        if (value === true) {
+	            $("." + keys).css({
+	                "background-color": colorMapping[keys],
+	                "display": "block",
+	                "z-index": "555"
+	            });
+	        } else {
+	            $("." + keys).css({
+	                "background-color": "",
+	                "z-index": ""
+	            });
+	        }
+	    }
+	}
 
 
 function value(keys, value) {

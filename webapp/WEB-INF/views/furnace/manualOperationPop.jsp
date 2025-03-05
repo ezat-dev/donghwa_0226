@@ -73,8 +73,27 @@
 	    top: 612px;
 	}	
 	
+		.off-fur-hit{
+						
+		position: absolute;
+	    left: 365px;
+	    top: 312px;
+	}	
 	
+		.off-ar{
+						
+		position: absolute;
+	    left: 365px;
+	    top: 399px;
+	}	
 	
+		.off-venting{
+						
+		position: absolute;
+	    left: 365px;
+	    top: 440px;
+	}	
+
 	   
   </style>
 </head>
@@ -182,6 +201,15 @@
 	<div class="off-manual-leaktest offbt"></div>
 	
 	<div class="off-fastcooling offbt"></div>
+	
+	
+	
+	
+	<div class="off-fur-hit offbt"></div>
+	
+	<div class="off-ar offbt"></div>
+	
+	<div class="off-venting offbt"></div>
 		
 <script>
 

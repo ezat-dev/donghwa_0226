@@ -156,39 +156,74 @@
     <div class="value-text"></div>
     <div class="value">Value</div>
     <div class="value-1"></div>
-    <div class="input-value-1"></div>
-    <div class="value-2"></div>
-    <div class="input-value-2"></div>
-    <div class="value-3"></div>
-    <div class="input-value-3"></div>
-    <div class="value-4"></div>
-    <div class="input-value-4"></div>
-    <div class="value-5"></div>
-    <div class="input-value-5"></div>
-    <div class="value-6"></div>
-    <div class="input-value-6"></div>
-    <div class="value-7"></div>
-    <div class="input-value-7"></div>
-    <div class="value-8"></div>
-    <div class="input-value-8"></div>
-    <div class="value-9"></div>
-    <div class="input-value-9"></div>
-    <div class="value-10"></div>
-    <div class="input-value-10"></div>
-    <div class="value-11"></div>
-    <div class="input-value-11"></div>
-    <div class="value-12"></div>
-    <div class="input-value-12"></div>
-    <div class="value-13"></div>
-    <div class="input-value-13"></div>
-    <div class="value-14"></div>
-    <div class="input-value-14"></div>
-    <div class="value-15"></div>
-    <div class="input-value-15"></div>
-    <div class="value-16"></div>
-    <div class="input-value-16"></div>
-    <div class="value-17"></div>
-    <div class="input-value-17"></div>
+	 <div class="input-value-1">
+	    <input type="text">
+	</div>
+	<div class="value-2"></div>
+	<div class="input-value-2">
+	    <input type="text">
+	</div>
+	<div class="value-3"></div>
+	<div class="input-value-3">
+	    <input type="text">
+	</div>
+	<div class="value-4"></div>
+	<div class="input-value-4">
+	    <input type="text">
+	</div>
+	<div class="value-5"></div>
+	<div class="input-value-5">
+	    <input type="text">
+	</div>
+	<div class="value-6"></div>
+	<div class="input-value-6">
+	    <input type="text">
+	</div>
+	<div class="value-7"></div>
+	<div class="input-value-7">
+	    <input type="text">
+	</div>
+	<div class="value-8"></div>
+	<div class="input-value-8">
+	    <input type="text">
+	</div>
+	<div class="value-9"></div>
+	<div class="input-value-9">
+	    <input type="text">
+	</div>
+	<div class="value-10"></div>
+	<div class="input-value-10">
+	    <input type="text">
+	</div>
+	<div class="value-11"></div>
+	<div class="input-value-11">
+	    <input type="text">
+	</div>
+	<div class="value-12"></div>
+	<div class="input-value-12">
+	    <input type="text">
+	</div>
+	<div class="value-13"></div>
+	<div class="input-value-13">
+	    <input type="text">
+	</div>
+	<div class="value-14"></div>
+	<div class="input-value-14">
+	    <input type="text">
+	</div>
+	<div class="value-15"></div>
+	<div class="input-value-15">
+	    <input type="text">
+	</div>
+	<div class="value-16"></div>
+	<div class="input-value-16">
+	    <input type="text">
+	</div>
+	<div class="value-17"></div>
+	<div class="input-value-17">
+	    <input type="text">
+	</div>
+
     <div class="unit-text"></div>
     <div class="unit">Unit</div>
     <div class="unit-1"></div>
@@ -310,6 +345,8 @@
     */
 
     function value(keys, value){
+
+        
     	if(!$("div").hasClass("anlog-popup-div-color")){
     		$("."+keys).text(value);	
     	}
@@ -319,7 +356,7 @@
     //	$("."+keys).css("font-weight","700");
     	$("."+keys).css("font-size","19pt");
 
-    	$("."+keys).attr("ondblclick","popupOpenAna('"+keys+"','DONGHWA.PLC.GLOBAL')");
+    
     	$("."+keys).css("cursor","pointer");
     	$("."+keys).attr("align-items","center");
 

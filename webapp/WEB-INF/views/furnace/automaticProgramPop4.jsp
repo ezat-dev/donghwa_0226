@@ -76,15 +76,15 @@
     <div class="program-name-value"></div>
     <div class="program-comment-value"></div>
     <div class="id-value"></div>
-    <div class="start-real start_bt_M8001"></div>
+    <div class="start-real start_bt_M8001 asd-start_on_M8005"></div>
     <div class="start-text">Start</div>
-    <div class="start-delay start"></div>
+    <div class="start-delay start "></div>
     <div class="start-delay-text ">Start delay</div>
     <div class="reset"></div>
     <div class="reset-text">Reset</div>
     <div class="_1 delayTime"></div>
     <div class="_2 realTime"></div>
-    <div class="_12"></div>
+    <div class="_12 "></div>
     <div class="_22"></div>
     <div class="_3"></div>
 
@@ -100,50 +100,57 @@
     });
 
   //OPC값 알람 조회
-    function overviewListView(){
-    	$.ajax({
-    		url:"/donghwa/furnace/automaticProgramPop4/view",
-    		type:"post",
-    		dataType:"json",
-    		success:function(result){				
-    			var data = result.multiValues;
-    			
-            for(let key in data){
-            	for(let keys in data[key]){
-            		var d = data[key];
+   function overviewListView() {
+    $.ajax({
+        url: "/donghwa/furnace/automaticProgramPop4/view",
+        type: "post",
+        dataType: "json",
+        success: function (result) {
+            var data = result.multiValues;
 
-    					if(d[keys].action == "v"){
-    						v(keys, d[keys].value);
-    					}else if(d[keys].action == "c"){
-    						c(keys, d[keys].value);
-    					}else if(d[keys].action == "b"){
-    						b(keys, d[keys].value);
-    					}else if(d[keys].action == "value"){
-    						value(keys, d[keys].value);
-    					}
+            for (let key in data) {
+                for (let keys in data[key]) {
+                    var d = data[key];
 
-            	}                    	
+                    if (d[keys].action == "v") {
+                        v(keys, d[keys].value);
+                    } else if (d[keys].action == "c") {
+                        c(keys, d[keys].value);
+                    } else if (d[keys].action == "b") {
+                        b(keys, d[keys].value);
+                    } else if (d[keys].action == "asd") {
+                        console.log("asd() 호출: keys =", keys, ", value =", d[keys].value);
+                        asd(keys, d[keys].value);
+                    } else if (d[keys].action == "value") {
+                        value(keys, d[keys].value);
+                    }
+                }
             }
-    		}
-    	});
-    }
-
-    function v(keys, value){
-    	if(value == true){
-    	
-    		$("."+keys).css("color","white");
-    	}else{
-    		
-    		$("."+keys).css("color","black");
-    	}
-
-    	if(keys.indexOf("start") != -1
-			|| keys.indexOf("reset") != -1){
-//			$("."+keys)
         }
-        $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '"+keys+"')")
-        .css("cursor", "pointer"); 
-    }
+    });
+}
+
+
+   function v(keys, value) {
+	    if (value == true) {
+	        $("." + keys).css("color", "white");
+	    } else {
+	        $("." + keys).css("color", "black");
+	    }
+
+	    if (keys.indexOf("start") != -1 || keys.indexOf("reset") != -1) {
+	        // 추가적인 처리 가능
+	    }
+
+	    if (keys !== "Start_bt_M8001") {  
+	       
+	        $("." + keys)
+	            .attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	            .css("cursor", "pointer");
+	    }
+	}
+
+
 
 
     function value(keys, value){
@@ -205,6 +212,27 @@
         }
     }
 
+    function asd(keys, value) {
+        if (value == true) {
+            $("." + keys).css({
+                "color": "#000000",
+                "background-color": "green",
+                "cursor": "pointer"
+            });
+            $("." + keys).removeAttr("disabled");
+
+        
+            $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', 'start_bt_M8001')");
+        } else {
+            $("." + keys).css({
+                "color": "#D3D3D3",
+                "background-color": "red",
+                "cursor": ""
+            });
+            $("." + keys).attr("disabled", true);
+            $("." + keys).removeAttr("onclick");
+        }
+    }
 
 
 

@@ -3,6 +3,7 @@
 <html>
 <head>
   <jsp:include page="../include/pluginpage.jsp"/>
+  
     <meta charset="UTF-8">
     <title>SEND</title>
     <style>
@@ -25,7 +26,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
             z-index: 999;
         }
 
@@ -93,12 +93,12 @@
         }
 
         .on-btn {
-            background-color: #b4b4b4;
+            background-color: #4CAF50;
             color: white;
         }
 
         .off-btn {
-            background-color: #b4b4b4;
+            background-color: #f44336;
             color: white;
         }
 
@@ -151,115 +151,88 @@
             align-items: center;
             display: flex;
         }
+        
+        .tage-name {
+	    font-size: 29px;
+	    font-weight: bold;
+}
+        
     </style>
 </head>
 <body>
+    <div id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
 
+    <div id="popupOverlay" onclick="closePopup()"></div>
 
-<!-- 로딩 오버레이 및 스피너 -->
-<div id="loadingOverlay">
-    <div class="spinner"></div>
-</div>
+    <div id="commonPopup">
+        <h3></h3>
+        <button class="close-btn" onclick="closePopup()">✖</button>
+        <div class="tage-name"></div>
+        <button class="bt_on" type="button">ON</button>
+        <button class="bt_off" type="button">OFF</button>
+        <button class="bt_send" type="button">전송</button>
+    </div>
 
-<!-- 팝업 오버레이 -->
-<div id="popupOverlay" onclick="closePopup()"></div>
-
-
-
-<!-- 팝업 내용 -->
-<div id="commonPopup">
-    <button class="close-btn" onclick="closePopup()">✖</button>
-    <h3>ON / OFF</h3>
-    <button class="bt_on" type="button">ON</button>
-    <button class="bt_off" type="button">OFF</button>
-    
-    <button class="bt_send" type="button" onclick="valueDigitalSend();">전송</button>
-</div>
-
-<script>
-    var setTagDir = "";
+   
+   
+   
+   <script>
+    var sendTagDir = "DONGHWA.OVERVIEW";
     var setTagName = "";
-    var setTagValue = 0;
+    var setTagValue = 1;  
 
     window.onload = function() {
         document.getElementById('popupOverlay').style.display = 'none';
         document.getElementById('commonPopup').style.display = 'none';
-        document.getElementById('loadingOverlay').style.display = 'none'; // 로딩 스피너 숨기기
-        
-        // 페이지 로드 시 버튼의 배경을 회색으로 설정
-        $(".bt_on").css("background-color", "#b4b4b4");
-        $(".bt_off").css("background-color", "#b4b4b4");
+        document.getElementById('loadingOverlay').style.display = 'none';
     };
 
-    // ON 버튼 클릭 이벤트
-    $(".bt_on").on("click", function(e){
-        $(".bt_on").css("background-color", "green"); // ON 버튼 초록색
-        $(".bt_off").css("background-color", "#b4b4b4");  // OFF 버튼 회색
-        setTagValue = 1;
+    $(document).ready(function() {
+        $(".bt_on").on("click", function(e){
+            $(".bt_on").css("background-color", "blue");
+            $(".bt_off").css("background-color", "#F0F0F0");
+            setTagName = $(this).attr("class").split(" ")[1];  // 클래스를 통해 setTagName 설정
+            setTagValue = 1;  
+            console.log("ON 버튼 클릭됨");
+            console.log("setTagName:", setTagName);
+            console.log("setTagValue:", setTagValue);
+        });
+
+        $(".bt_off").on("click", function(e){
+            $(".bt_off").css("background-color", "blue");
+            $(".bt_on").css("background-color", "#F0F0F0");
+            setTagName = $(this).attr("class").split(" ")[1]; 
+            setTagValue = 1;  
+            console.log("OFF 버튼 클릭됨");
+            console.log("setTagName:", setTagName);
+            console.log("setTagValue:", setTagValue);
+        });
+
+        $(".bt_send").on("click", function() {
+            if (!setTagName) {
+                alert("ON/OFF 버튼을 먼저 클릭해주세요.");
+                return;
+            }
+            console.log("전송 시작");
+            valueDigitalSend(sendTagDir, setTagName, setTagValue);
+        });
     });
 
-    // OFF 버튼 클릭 이벤트
-    $(".bt_off").on("click", function(e){
-        $(".bt_off").css("background-color", "red");  // OFF 버튼 빨간색
-        $(".bt_on").css("background-color", "#b4b4b4"); // ON 버튼 회색
-        setTagValue = 0;
-    });
-
-    // 팝업 열기
-    function openPopup() {
-        document.getElementById('popupOverlay').style.display = 'block';
-        document.getElementById('commonPopup').style.display = 'flex';
-    }
-
-    // 팝업 닫기
-    function closePopup() {
-        document.getElementById('popupOverlay').style.display = 'none';
-        document.getElementById('commonPopup').style.display = 'none';
-    }
-
-    // ON/OFF 버튼 상태 토글
-    function togglePopup() {
-        var button = document.getElementById('toggleButton');
-        if (button.classList.contains('on-btn')) {
-            button.classList.remove('on-btn');
-            button.classList.add('off-btn');
-            button.textContent = 'OFF';
-        } else {
-            button.classList.remove('off-btn');
-            button.classList.add('on-btn');
-            button.textContent = 'ON';
-        }
-    }
-
-    function digitalSet(tagDir, tagName){
-        console.log(tagDir+"// "+tagName);
-        setTagDir = tagDir;
-        setTagName = tagName;
-
-        openPopup();
-    }
-
-    // 전송 함수 (AJAX 포함)
-    function valueDigitalSend() {
-        var sendTagDir = setTagDir;
-        var sendTagName = setTagName;
-        var sendTagValue = setTagValue == 1 ? true : false;
-
-        console.log(sendTagDir);
-        console.log(sendTagName);
-        console.log(sendTagValue);
-
-        // 로딩 스피너 보이기
-        document.getElementById('loadingOverlay').style.display = 'flex';
+    function valueDigitalSend(tagDir, tagName, tagValue) {
+        console.log("TagDir:", tagDir);
+        console.log("TagName:", tagName);
+        console.log("TagValue:", tagValue);
 
         $.ajax({
-            url: "/donghwa/common/valueDigitalSetNone",
+            url: "/donghwa/common/valueDigitalSet",
             type: "post",
             dataType: "json",
             data: {
-                "sendTagDir": sendTagDir,
-                "sendTagName": sendTagName,
-                "sendTagValue": sendTagValue
+                "sendTagDir": tagDir,
+                "sendTagName": tagName,
+                "sendTagValue": tagValue
             },
             success: function(result) {
                 console.log(result);
@@ -273,8 +246,18 @@
             }
         });
     }
+
+    function openPopup() {
+        document.getElementById('popupOverlay').style.display = 'block';
+        document.getElementById('commonPopup').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popupOverlay').style.display = 'none';
+        document.getElementById('commonPopup').style.display = 'none';
+    }
 </script>
 
-
 </body>
+
 </html>

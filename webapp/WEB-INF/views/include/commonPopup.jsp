@@ -233,16 +233,14 @@
         }
     }
 
-    function digitalSet(tagDir, tagName) {
-        console.log(tagDir + "// " + tagName);
+    function digitalSet(tagDir, tagName){
+        console.log(tagDir+"// "+tagName);
         console.log(tagName);
         setTagDir = tagDir;
-        setTagName = tagName.charAt(0).toUpperCase() + tagName.slice(1); 
-
+        setTagName = tagName;
         $(".tage-name").text(setTagName);
         openPopup();
     }
-
 
     // 전송 함수 (AJAX 포함)
     function valueDigitalSend() {

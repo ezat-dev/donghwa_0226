@@ -9,7 +9,7 @@
   <%@ include file="../include/mainFooter.jsp" %>
   <jsp:include page="../include/pluginpage.jsp"/>
   <link rel="stylesheet" href="/donghwa/css/furnace/overview.css">
-  <%@ include file="../include/commonPopupMain.jsp" %>
+  <%@ include file="../include/OnOffPop.jsp" %>
   <style>
     a, button, input, select, h1, h2, h3, h4, h5, * {
         box-sizing: border-box;
@@ -346,6 +346,12 @@
 	  top: 684px;
 		
 	}
+	
+	.hover-effect:hover {
+    transform: scale(1.2);  
+    transition: transform 0.2s ease;  
+}
+	
   </style>
 
   <title>Document</title>
@@ -451,7 +457,7 @@
     <div class="value-1-1 tx">Front CLAMP</div>
     <div class="value-2 tx">12.2</div>
     <div class="value-3 tx">High Valve</div>
-    <div class="value-4 tx">Pumping Valve</div>
+    <div class="value-4 tx">Roughing Valve</div>
     <div class="value-5 tx">Diff Pump</div>
     <div class="value-6 tx">F-L Valve</div>
     <div class="value-7 tx">Booster Pump</div>
@@ -464,15 +470,15 @@
     <img class="component-5 Rdclose" src="/donghwa/css/furnace/img/component-50.svg" />
     <img class="component-6 Rdopen" src="/donghwa/css/furnace/img/component-60.svg" />
   
-    <img class="vector-1 Lcopen Lcopen-plc-off" src="/donghwa/css/furnace/img/vector-10.svg" />
-    <img class="vector-2 Lcclose" src="/donghwa/css/furnace/img/vector-20.svg" style="background-color: green;" />
-    <img class="vector-3 Lcopen" src="/donghwa/css/furnace/img/vector-30.svg" />
-    <img class="vector-4 Lcclose" src="/donghwa/css/furnace/img/vector-40.svg" style="background-color: green;" />
+    <img class="vector-1 Lcopen Lcopen-plc-off 	FRONT_CALMP pop-on-fc-M18 pop-off-fc-M20 onClickStatus" src="/donghwa/css/furnace/img/vector-10.svg" />
+    <img class="vector-2 Lcclose 3 				FRONT_CALMP pop-on-fc-M18 pop-off-fc-M20 onClickStatus" src="/donghwa/css/furnace/img/vector-20.svg" style="background-color: green;" />
+    <img class="vector-3 Lcopen 3 				FRONT_CALMP pop-on-fc-M18 pop-off-fc-M20 onClickStatus" src="/donghwa/css/furnace/img/vector-30.svg" />
+    <img class="vector-4 Lcclose 3 				FRONT_CALMP pop-on-fc-M18 pop-off-fc-M20 onClickStatus" src="/donghwa/css/furnace/img/vector-40.svg" style="background-color: green;" />
    
-    <img class="vector-5 Rcclose" src="/donghwa/css/furnace/img/vector-10.svg" />
-    <img class="vector-6 Rcopen Rcopen-plc-off" src="/donghwa/css/furnace/img/vector-20.svg"style="background-color: green;" />
-    <img class="vector-7 Rcclose" src="/donghwa/css/furnace/img/vector-30.svg" />
-    <img class="vector-8 Rcopen" src="/donghwa/css/furnace/img/vector-40.svg"style="background-color: green;" />
+    <img class="vector-5 Rcclose 3 				REAR_CLAMP pop-on-rc-M22 pop-off-rc-M24 onClickStatus" src="/donghwa/css/furnace/img/vector-10.svg" />
+    <img class="vector-6 Rcopen Rcopen-plc-off 	REAR_CLAMP pop-on-rc-M22 pop-off-rc-M24 onClickStatus" src="/donghwa/css/furnace/img/vector-20.svg"style="background-color: green;" />
+    <img class="vector-7 Rcclose 3 				REAR_CLAMP pop-on-rc-M22 pop-off-rc-M24 onClickStatus" src="/donghwa/css/furnace/img/vector-30.svg" />
+    <img class="vector-8 Rcopen 3 				REAR_CLAMP pop-on-rc-M22 pop-off-rc-M24 onClickStatus" src="/donghwa/css/furnace/img/vector-40.svg"style="background-color: green;" />
     
     <div class="pipe-1"></div>
     <div class="pipe-2"></div>
@@ -489,25 +495,36 @@
     <div class="pipe-13"></div>
     <div class="pipe-14"></div>
     <div class="pipe-15"></div>
-    <img class="component-7 " src="/donghwa/css/furnace/img/component-70.svg" />
-    <img class="component-8 component-8-img" src="/donghwa/css/furnace/img/component-80.svg" />
-    <img class="component-9" src="/donghwa/css/furnace/img/component-90.svg" />
-    <img class="component-10 component-10-img" src="/donghwa/css/furnace/img/component-100.svg" />
-    <img class="component-11" src="/donghwa/css/furnace/img/component-110.svg" />
-    <img class="component-12 component-12-img" src="/donghwa/css/furnace/img/component-120.svg" />
-    <img class="component-13" src="/donghwa/css/furnace/img/component-130.svg" />
-    <img class="component-14 component-14-img" src="/donghwa/css/furnace/img/component-140.svg" />
-    <img class="component-15" src="/donghwa/css/furnace/img/component-150.svg" />
-    <img class="component-16 component-16-img" src="/donghwa/css/furnace/img/component-160.svg" />
-    <div class="ball-off-1"></div>
     
-    <div class="ball-on-60"></div>
+    <img class="component-7 2 3 						High_Valve pop-on-hv-M12 pop-off-hv-M13 onClickStatus" src="/donghwa/css/furnace/img/component-70.svg" />
+   
+    <img class="component-8 component-8-img" src="/donghwa/css/furnace/img/component-80.svg" />
+    
+    <img class="component-9 2 3  			Pumping_valve pop-on-rv-M6 pop-off-rv-M7 onClickStatus" src="/donghwa/css/furnace/img/component-90.svg" />
+   
+    <img class="component-10 component-10-img" src="/donghwa/css/furnace/img/component-100.svg" />
+   
+    <img class="component-11 2 3						Fore_Line_Valve	pop-on-fv-M9 pop-off-fv-M10 onClickStatus" src="/donghwa/css/furnace/img/component-110.svg" />
+    <img class="component-12 component-12-img 3			Fore_Line_Valve	pop-on-fv-M9 pop-off-fv-M10 onClickStatus" src="/donghwa/css/furnace/img/component-120.svg" />
+   
+    <img class="component-13 2 3 						Ar_Gas_Value pop-on-asv-M15 pop-off-asv-M16 onClickStatus" src="/donghwa/css/furnace/img/component-130.svg" />
+    <img class="component-14 component-14-img 3 	   Ar_Gas_Value pop-on-asv-M15 pop-off-asv-M16 onClickStatus" src="/donghwa/css/furnace/img/component-140.svg" />
+  
+    <img class="component-15 2 3 						Vent_valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-150.svg" />
+    <img class="component-16 component-16-img  3 	    Vent_valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-160.svg" />
+   
+    <div class="ball-off-1 2 3 							Diff_pump(Now:OFF) pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
+    <div class="ball-on-60 2 3 							Diff_pump(Now:ON) pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
    
     <div class="ball-on-1 ball-on-1-img"></div>
-    <div class="ball-off-2"></div>
-    <div class="ball-on-2 ball-on-2-img"></div>
-    <div class="ball-off-3"></div>
-    <div class="ball-on-3 ball-on-3-img"></div>
+   
+   
+    <div class="ball-off-2 2 3 Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus"></div>
+    <div class="ball-on-2 ball-on-2-img Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus"></div>
+    
+    
+    <div class="ball-off-3 2 3 							Rotary_Pump pop-on-rp-M3  pop-off-rp-M4 onClickStatus"></div>
+    <div class="ball-on-3 ball-on-3-img 3 				Rotary_Pump pop-on-rp-M3  pop-off-rp-M4 onClickStatus"></div>
     
     <div class="ball-red-1-img"></div>
     <div class="ball-red-2-img"></div>
@@ -533,8 +550,8 @@
     <img class="arrow-3" src="/donghwa/css/furnace/img/arrow-30.svg" />
     <div class="box-off-1"></div>
     <div class="box-on-1"></div>
-   <div class="GreenPen GreenY140"></div>
-   <div class="RedPen  RedX0CC"></div>
+   <div class="GreenPen GreenY140 3 		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
+   <div class="RedPen  RedX0CC    3	   		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
     <img class="arrow-1" src="/donghwa/css/furnace/img/arrow-10.svg" />
 
   <script>
@@ -578,8 +595,8 @@ function overviewListView(){
 					}else if(d[keys].action == "lamp"){
 			//			 console.log("V 값 확인:", keys, d[keys].value);
 						lamp(keys, d[keys].value);
-					}else if(d[keys].action == "rover"){
-						rover(keys, d[keys].value);
+					}else if(d[keys].action == "pop"){
+						pop(keys, d[keys].value);
 					}else if(d[keys].action == "value"){
 		
 						value(keys, d[keys].value);
@@ -609,9 +626,48 @@ function overviewListView(){
 	    }
 	    
 	}
+
+	function pop(keys, value) {
+	   
+	        $("." + keys).addClass("hover-effect");
+	        $("." + keys).css("cursor", "pointer"); 
+
+	}
+
+	function handleClickStatus(event) {
+	    var classList = event.currentTarget.className.split(" ");
+
+	    console.log("클래스 목록:", classList); // 실제 클래스 목록 확인하기
+
+	    if (classList.length < 6) {
+	        console.error("클래스 배열이 충분하지 않습니다.", classList);
+	        return;
+	    }
+
+	    var popupTitle = classList[3]; // 팝업 제목 (4번째 클래스)
+	    var onClass = classList[4]; // ON 버튼 클래스 (5번째 클래스)
+	    var offClass = classList[5]; // OFF 버튼 클래스 (6번째 클래스)
+
+	    console.log("Popup Title:", popupTitle); 
+	    console.log("ON Button Class:", onClass);
+	    console.log("OFF Button Class:", offClass);
+
+	    $("#commonPopup h3").text(popupTitle); // 팝업 제목 설정
+
+	    $(".bt_on").removeClass().addClass("bt_on " + onClass); // ON 버튼 클래스 설정
+	    $(".bt_off").removeClass().addClass("bt_off " + offClass); // OFF 버튼 클래스 설정
+
+	    openPopup(); // 팝업 열기
+	}
+
+
+	// 클릭 이벤트 바인딩
+	$(document).on("click", ".onClickStatus", handleClickStatus);
+
+
+
+
 	
-
-
 	function img(keys, value) {
 	    if (value === true) {
 	        $("." + keys).fadeIn(200);
@@ -620,10 +676,14 @@ function overviewListView(){
 	    }
 	}
 
+
+
+
+
 	
 	function v(keys, value) {
 		if (keys === "ball-on-60") {
-		    console.log("Triggering styles for .ball-on-60");
+		    //console.log("Triggering styles for .ball-on-60");
 		    if (value === true) {
 		        $(".ball-on-60").css({
 		            "background-color": "green",
@@ -794,7 +854,7 @@ function overviewListView(){
 function value(keys, value) {
     var truncatedValue = Math.floor(value * 10) / 10;
 
-    // -rover가 포함된 경우, 값을 그대로 사용
+
     var finalValue = keys.includes("-rover") ? value : truncatedValue;
 
 

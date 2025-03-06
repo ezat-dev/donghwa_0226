@@ -52,6 +52,8 @@ public class ActionMap {
 				result = "asd";
 			}else if(tagName.contains("plc-")) {
 				result = "plc"; // v는 .val 포함
+			}else if(tagName.contains("pop-")) {
+				result = "pop";			
 			}else if(tagName.contains("M-")) {
 				result = "M";
 			}else if(tagName.contains("lamp-")) {

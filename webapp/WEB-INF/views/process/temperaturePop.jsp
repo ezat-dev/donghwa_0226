@@ -48,7 +48,7 @@
 
  <div class="temperature">Temperature</div>
   <div class="cz-1"></div>
-  <div class="heater-bottom-top-cz-1">Heater Bottom-/Top (CZ1)</div>
+  <div class="heater-bottom-top-cz-1">Heater 1Zone Left/Right</div>
   <div class="cz-1-box-1"></div>
   <div class="tic-4-1-1">Zone 1.1</div>
   <div class="cz-1-val-1"></div>
@@ -56,7 +56,7 @@
   <div class="tic-4-1-2">Zone 1.2</div>
   <div class="cz-1-val-2"></div>
   <div class="cz-3"></div>
-  <div class="heater-doors-cz-3">Heater Doors (CZ3)</div>
+  <div class="heater-doors-cz-3">Heater 2Zone Front/Rear</div>
   <div class="cz-3-box-1"></div>
   <div class="tic-4-3-1">Zone 2.1</div>
   <div class="cz-3-val-1"></div>
@@ -64,7 +64,7 @@
   <div class="tic-4-3-2">Zone 2.2</div>
   <div class="cz-3-val-2"></div>
   <div class="cz-5"></div>
-  <div class="heater-walls-cz-5">Heater Walls (CZ5)</div>
+  <div class="heater-walls-cz-5">Heater 3Zone Bottom/Top</div>
   <div class="cz-5-box-1"></div>
   <div class="tic-4-5-1">Zone 3.1</div>
   <div class="cz-5-val-1"></div>
@@ -72,9 +72,9 @@
   <div class="tic-4-5-2">Zone 3.2</div>
   <div class="cz-5-val-2"></div>
   <div class="load"></div>
-  <div class="load2">Load</div>
+  <div class="load2">Protect</div>
   <div class="load-box-1"></div>
-  <div class="ti-4-61">Load 1</div>
+  <div class="ti-4-61">Protect 1</div>
   <div class="load-val-1"></div>
   <div class="charge"></div>
   <div class="charge-box-1"></div>

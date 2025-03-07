@@ -662,7 +662,7 @@ function overviewListView(){
 
 
 	// 클릭 이벤트 바인딩
-	$(document).on("click", ".onClickStatus", handleClickStatus);
+
 
 
 
@@ -682,44 +682,83 @@ function overviewListView(){
 
 	
 	function v(keys, value) {
-		if (keys === "ball-on-60") {
-		    //console.log("Triggering styles for .ball-on-60");
-		    if (value === true) {
-		        $(".ball-on-60").css({
-		            "background-color": "green",
-		            "animation": "blinkGreen 1s infinite",
-		            "z-index": "9999",
-		            "position": "relative",
-		        });
-		       
-		    } else {
-		        $(".ball-on-60").css({
-		            "background-color": "",
-		            "animation": "",
-		            "z-index": "-1",
-		            "position": "",
-		        });
-		    }
-		}
+		//console.log("Key:", keys, "Value:", value);
+	    if (keys === "ball-on-60") {
+	        //console.log("Triggering styles for .ball-on-60");
+	        if (value === true) {
+	            $(".ball-on-60").css({
+	                "background-color": "green",
+	                "animation": "blinkGreen 1s infinite",
+	                "z-index": "9999",
+	                "position": "relative",
+	            });
+	        } else {
+	            $(".ball-on-60").css({
+	                "background-color": "",
+	                "animation": "",
+	                "z-index": "-1",
+	                "position": "",
+	            });
+	        }
+	    }
 
+	    if (keys === "manual-ck") {
+	        if (value === true) {
+	            $(document).on("click", ".onClickStatus", handleClickStatus);
+	            console.log("Click status enabled for .onClickStatus");
+	            
+	            $(".onClickStatus").css({
+	                "pointer-events": "auto",
+	                "cursor": "pointer"
+	            });
 
+	            $("." + keys).css({
+	                "pointer-events": "auto",
+	                "cursor": "pointer"
+	            });
+	        } else {
+	            $(document).off("click", ".onClickStatus", handleClickStatus);
+	            console.log("Click status disabled for .onClickStatus");
+
+	            $(document).off("click", ".onClickStatus");
+	            $(document).on("click", ".onClickStatus", function() {
+	        
+	            });
+
+	            $(".onClickStatus").css({
+	                "pointer-events": "none",
+	                "cursor": "default"
+	            });
+
+	            $("." + keys).css({
+	                "pointer-events": "none",
+	                "cursor": "default"
+	            });
+	        }
+	    }
 
 	    if (keys.startsWith("ST1-M80")) {
-	    //	  console.log("Key:", keys, "Value:", value);
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 41 && numberPart <= 140) {
+	        if (numberPart >= 8040 && numberPart <= 8045) {
+	            console.log("Key:", keys, "Value:", value);
+
+	            // 값이 true일 때는 보이고, false일 때는 숨기기
 	            if (value === true) {
+	                console.log("True case - Showing element for key:", keys);
 	                $("." + keys).css("display", "block !important");
 	            } else {
+	                console.log("False case - Hiding element for key:", keys);
 	                $("." + keys).css("display", "none !important");
 	            }
 	        }
 	    }
 
+
+
 	
 	    if (keys.startsWith("ST2-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 38 && numberPart <= 51) {
+	        if (numberPart >= 51 && numberPart <= 148) {
 	            if (value === true) {
 	                $("." + keys).css("display", "block !important");
 	            } else {
@@ -731,7 +770,7 @@ function overviewListView(){
 	    
 	    if (keys.startsWith("ST3-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 60 && numberPart <= 62) {
+	        if (numberPart >= 59 && numberPart <= 63) {
 	            if (value === true) {
 	                $("." + keys).css("display", "block !important");
 	            } else {
@@ -851,50 +890,58 @@ function overviewListView(){
 	}
 
 
-function value(keys, value) {
-    var truncatedValue = Math.floor(value * 10) / 10;
+	function value(keys, value) {
+	    var truncatedValue = Math.floor(value * 10) / 10;
 
+	    var finalValue = keys.includes("-rover") ? value : truncatedValue;
 
-    var finalValue = keys.includes("-rover") ? value : truncatedValue;
+	    // D11101과 D11102에 대해서는 백분율로 변환
+	    if (keys === "D11101" || keys === "D11102") {
+	        finalValue = (value / 100).toFixed(2) + " mm";  // 소숫점 2자리로 나누고 mm 단위 추가
+	    } else {
+	        finalValue = (keys === "D11101" || keys === "D11102") ? (value / 100).toFixed(2) : value;
+	    }
+	    // D-7800 처리
+	    if (keys === "D-7800") {
+	        var d7802Value = parseFloat($(".D-7802").text()) || 0;
+	        var eValue = "E"; 
+	        var torrValue = "Torr"; 
+	        var newValue = truncatedValue + " " + eValue + " " + d7802Value + " " + torrValue;        
+	        $("." + keys).text(newValue);
+	    }
+	    // D-7810 처리
+	    else if (keys === "D-7810") {
+	        var d7812Value = parseFloat($(".D-7812").text()) || 0;
+	        var eValue = "E"; 
+	        var torrValue = "Torr"; 
+	        var newValue = truncatedValue + " " + eValue + " " + d7812Value + " " + torrValue;        
+	        $("." + keys).text(newValue);
+	    }
+	    // 값이 99이면 "-"로 표시
+	    else if (value === 99) {
+	        $("." + keys).text("-");
+	    }
+	    // D-7950을 시:분 형식으로 변환
+	    else if (keys === "D-7950") {
+	        var hours = Math.floor(value / 60);  // 시간 계산
+	        var minutes = value % 60;  // 분 계산
+	        var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes); 
+	        $("." + keys).text(timeString);
+	    }
+	    else if (keys === "D11105" || keys === "D11013") {
+	        $("." + keys).text(truncatedValue + " kN");
+	    }
+	    else if (keys === "overTb1" || keys === "overTb2") {
+	        $("." + keys).text(truncatedValue + " °C");
+	    }
 
+	    else {
+	        $("." + keys).text(finalValue);
+	    }
 
-    var finalValue = (keys === "D11101" || keys === "D11102") ? (value / 100).toFixed(2) : value;
-    // D-7800 처리
-    if (keys === "D-7800") {
-        var d7802Value = parseFloat($(".D-7802").text()) || 0;
-        var eValue = "E"; 
-        var torrValue = "Torr"; 
-        var newValue = truncatedValue + " " + eValue + " " + d7802Value + " " + torrValue;        
-        $("." + keys).text(newValue);
-    }
-    // D-7810 처리
-    else if (keys === "D-7810") {
-        var d7812Value = parseFloat($(".D-7812").text()) || 0;
-        var eValue = "E"; 
-        var torrValue = "Torr"; 
-        var newValue = truncatedValue + " " + eValue + " " + d7812Value + " " + torrValue;        
-        $("." + keys).text(newValue);
-    }
-    // 값이 99이면 "-"로 표시
-    else if (value === 99) {
-        $("." + keys).text("-");
-    }
-    // D-7950을 시:분 형식으로 변환
-    else if (keys === "D-7950") {
-        var hours = Math.floor(value / 60);  // 시간 계산
-        var minutes = value % 60;  // 분 계산
-        var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes);  // "H:MM" 형식 유지
-        $("." + keys).text(timeString);
-    }
-    else {
-        $("." + keys).text(finalValue);
-    }
-    
-    $("." + keys).css("text-align", "center");
-    $("." + keys).css("font-size", "14pt");
-}
-
-
+	    $("." + keys).css("text-align", "center");
+	    $("." + keys).css("font-size", "14pt");
+	}
 
 
 

@@ -30,14 +30,27 @@
     transition: background-color 0.3s;
 }
 
-.back:hover {
-    background-color: #555;
+.save-to-plc {
+    background-color: #888;
+    color: white;
+    padding: 12px 71px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    bottom: 190px;
+    left: 1320px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-
-.back:hover {
+.back:hover, .save-to-plc:hover {
     background-color: #555;
+    transform: scale(1.05); /* 버튼을 약간 확대하는 효과 */
 }
+
 
 
 </style>
@@ -156,73 +169,73 @@
     <div class="value-text"></div>
     <div class="value">Value</div>
     <div class="value-1"></div>
-	 <div class="input-value-1">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-1 input-text"name="DONGHWA.PLC.GLOBAL.input-value-1">
+
 	<div class="value-2"></div>
-	<div class="input-value-2">
-	    <input type="text">
-	</div>
+
+	    <input type="text"  class="input-value-2 input-text"name="DONGHWA.PLC.GLOBAL.input-value-2">
+
 	<div class="value-3"></div>
-	<div class="input-value-3">
-	    <input type="text">
-	</div>
+	
+	    <input type="text"class="input-value-3 input-text"name="DONGHWA.PLC.GLOBAL.input-value-3">
+
 	<div class="value-4"></div>
-	<div class="input-value-4">
-	    <input type="text">
-	</div>
+
+	    <input type="text" class="input-value-4 input-text"name="DONGHWA.PLC.GLOBAL.input-value-4">
+
 	<div class="value-5"></div>
-	<div class="input-value-5">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-5 input-text"name="DONGHWA.PLC.GLOBAL.input-value-5">
+
 	<div class="value-6"></div>
-	<div class="input-value-6">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-6 input-text"name="DONGHWA.PLC.GLOBAL.input-value-6">
+
 	<div class="value-7"></div>
-	<div class="input-value-7">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-7 input-text"name="DONGHWA.PLC.GLOBAL.input-value-7">
+
 	<div class="value-8"></div>
-	<div class="input-value-8">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-8 input-text"name="DONGHWA.PLC.GLOBAL.input-value-8">
+
 	<div class="value-9"></div>
-	<div class="input-value-9">
-	    <input type="text">
-	</div>
+
+	    <input type="text" class="input-value-9 input-text"name="DONGHWA.PLC.GLOBAL.input-value-9">
+
 	<div class="value-10"></div>
-	<div class="input-value-10">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-10 input-text"name="DONGHWA.PLC.GLOBAL.input-value-10">
+
 	<div class="value-11"></div>
-	<div class="input-value-11">
-	    <input type="text">
-	</div>
+
+	    <input type="text" class="input-value-11 input-text"name="DONGHWA.PLC.GLOBAL.input-value-11">
+
 	<div class="value-12"></div>
-	<div class="input-value-12">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-12 input-text"name="DONGHWA.PLC.GLOBAL.input-value-12">
+
 	<div class="value-13"></div>
-	<div class="input-value-13">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-13 input-text"name="DONGHWA.PLC.GLOBAL.input-value-13">
+
 	<div class="value-14"></div>
-	<div class="input-value-14">
-	    <input type="text">
-	</div>
+
+	    <input type="text" class="input-value-14 input-text"name="DONGHWA.PLC.GLOBAL.input-value-14">
+
 	<div class="value-15"></div>
-	<div class="input-value-15">
-	    <input type="text">
-	</div>
+	
+	    <input type="text"class="input-value-15 input-text"name="DONGHWA.PLC.GLOBAL.input-value-15">
+
 	<div class="value-16"></div>
-	<div class="input-value-16">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-16 input-text"name="DONGHWA.PLC.GLOBAL.input-value-16">
+
 	<div class="value-17"></div>
-	<div class="input-value-17">
-	    <input type="text">
-	</div>
+
+	    <input type="text"class="input-value-17 input-text"name="DONGHWA.PLC.GLOBAL.input-value-17">
+
 
     <div class="unit-text"></div>
     <div class="unit">Unit</div>
@@ -256,122 +269,120 @@
   <!--  <div class="save"></div>
     <div class="save2">Save</div>-->
     <div class="back">Back</div>
+    <div class="save-to-plc">save</div>
 
   </div>
-    <script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.back').addEventListener('click', function() {
         window.history.back();
     });
-        
 
-    var overviewInterval;
+    overviewListView();
+});
 
-    //로드
-    $(function(){
-    	overviewListView();
-    	overviewInterval = setInterval("overviewListView()", 1500);
+// OPC값 알람 조회
+function overviewListView() {
+    $.ajax({
+        url: "/donghwa/furnace/global/view",
+        type: "post",
+        dataType: "json",
+        success: function(result) {
+            var data = result.multiValues;
+
+            for (let key in data) {
+                for (let keys in data[key]) {
+                    var d = data[key];
+
+                    if (d[keys].action == "v") {
+                        v(keys, d[keys].value);
+                    } else if (d[keys].action == "c") {
+                        c(keys, d[keys].value);
+                    } else if (d[keys].action == "b") {
+                        b(keys, d[keys].value);
+                    } else if (d[keys].action == "value") {
+                        value(keys, d[keys].value);
+                    }
+                }
+            }
+        }
+    });
+}
+
+function v(keys, value) {
+    if (value == true) {
+        $("." + keys).css({
+            "background-color": "green",
+            "color": "white"
+        });
+    } else {
+        $("." + keys).css({
+            "background-color": "#A9A9A9",
+            "color": "black"
+        });
+    }
+
+    $("." + keys).attr("onclick", "digitalSet('DONGHWA.PLC.GLOBAL','" + keys + "')");
+    $("." + keys).css("cursor", "pointer");
+}
+
+function value(keys, value) {
+
+    if (keys === "input-value-4") {
+        value = (parseFloat(value) * 0.01).toFixed(2); 
+    }
+
+    $("." + keys).val(value);
+    $("." + keys).css({
+        "background-color": "white",
+        "text-align": "center",
+        "font-size": "19pt",
+        "cursor": "pointer"
+    });
+}
+
+
+$(document).on("click", ".save-to-plc", function () {
+    console.log("Save to PLC 버튼 클릭됨");
+
+    let data = [];
+
+    $('.input-text').each(function() {
+        const inputField = $(this);
+        let value = inputField.val();
+        const nodeId = inputField.attr('name');
+
+        // "input-value-4"만 100을 곱해서 변환
+        if (nodeId === "DONGHWA.PLC.GLOBAL.input-value-4") {
+            value = (parseFloat(value) * 100).toFixed(0); // 정수형 변환
+        }
+
+        data.push({
+            nodeId: nodeId,
+            value: value
+        });
     });
 
-    
-    function setLimitRange() {
-        const limit1 = document.querySelector('.limit1');
+    console.log("📌 [DEBUG] 전송 데이터:", JSON.stringify(data));
 
-        
- 
-        let start = 0.9;
-        let end = 9.9;
-        
-     
-        limit1.textContent = start.toFixed(1);  
-        limit1.textContent = end.toFixed(1);  
-      }
-    
-  //OPC값 알람 조회
-    function overviewListView(){
-    	$.ajax({
-    		url:"/donghwa/furnace/global/view",
-    		type:"post",
-    		dataType:"json",
-    		success:function(result){				
-    			var data = result.multiValues;
-    			
-            for(let key in data){
-            	for(let keys in data[key]){
-            		var d = data[key];
+    // AJAX 요청 (서버로 데이터 전송)
+    $.ajax({
+        url: "/donghwa/furnace/recipe/plcWrite",
+        type: "POST",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function(response) {
+            console.log("데이터 저장 성공:", response);
+            alert("데이터가 성공적으로 저장되었습니다");
+            overviewListView();
+        },
+        error: function(xhr, status, error) {
+            console.error("데이터 저장 실패:", error);
+            alert("저장 중 오류 발생: " + error);
+        }
+    });
+});
 
-    					if(d[keys].action == "v"){
-    						v(keys, d[keys].value);
-    					}else if(d[keys].action == "c"){
-    						c(keys, d[keys].value);
-    					}else if(d[keys].action == "b"){
-    						b(keys, d[keys].value);
-    					}else if(d[keys].action == "value"){
-    						value(keys, d[keys].value);
-    					}
-
-            	}                    	
-            }
-    		}
-    	});
-    }
-
-    function v(keys, value){
-//    	console.log(keys);
-//    	console.log(value);
-    	if(value == true){
-    		$("."+keys).css("background-color","green");
-    		$("."+keys).css("color","white");
-    	}else{
-    		$("."+keys).css("background-color","#A9A9A9");
-    		$("."+keys).css("color","black");
-    	}
-
-    	$("."+keys).attr("onclick","digitalSet('DONGHWA.PLC.GLOBAL','"+keys+"')");
-    	$("."+keys).css("cursor","pointer");
-    }
-    /*
-    function c(keys, value){
-//    	$("."+keys).text(value);
-    	
-    	if(value == true){
-    		$("."+keys).css("background-color","red");
-    		$("."+keys).css("color","white");
-    	}else{
-    		$("."+keys).css("background-color","green");
-    		$("."+keys).css("color","black");
-    	}
-    	
-    }
-    */
-
-    function value(keys, value){
-
-        
-    	if(!$("div").hasClass("anlog-popup-div-color")){
-    		$("."+keys).text(value);	
-    	}
-    	 $("."+keys).css("background-color", "white");
-    	$("."+keys).css("display","");
-    	$("."+keys).css("text-align","center");
-    //	$("."+keys).css("font-weight","700");
-    	$("."+keys).css("font-size","19pt");
-
-    
-    	$("."+keys).css("cursor","pointer");
-    	$("."+keys).attr("align-items","center");
-
-
-    }
-
-  var popup;
-  
-  function modalClick(location){
-      const modal = document.querySelector('.'+location);
-      modal.style.display="";
-  }
-  
-    
-
-  </script>
+</script>
 </body>
 </html>

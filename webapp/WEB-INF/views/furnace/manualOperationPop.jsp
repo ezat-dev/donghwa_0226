@@ -93,7 +93,21 @@
 	    left: 365px;
 	    top: 440px;
 	}	
+	
+		.off-open-M8089{
+    position: absolute;
+    left: 365px;
+    top: 669px;
+	}
+	
+	
+	.off-close-M8090{
+						
+	position: absolute;
+    left: 365px;
+    top: 712px;
 
+	}	
 	   
   </style>
 </head>
@@ -182,12 +196,12 @@
   
   <div class="open-lid asd-open-lid"></div>
   <div class="plc-open-lid asd-open-lid"></div>
-  <div class="open-lid-clamps asd-open-lid">Open Lid Clamps</div>
+  <div class="open-lid-clamps asd-open-lid">Front Calmp</div>
   
   
   <div class="close-lid asd-close-lid"></div>
   <div class="plc-close-lid asd-close-lid"></div>
-  <div class="close-lid-clamps asd-close-lid">Close Lid Clamps</div>
+  <div class="close-lid-clamps asd-close-lid">Rear Clamp</div>
 
 
 	<div class="off-pumping offbt"></div>
@@ -210,6 +224,11 @@
 	<div class="off-ar offbt"></div>
 	
 	<div class="off-venting offbt"></div>
+	
+		<div class="off-open-M8089 offbt"></div>
+		
+	<div class="off-close-M8090 offbt"></div>
+		
 		
 <script>
 

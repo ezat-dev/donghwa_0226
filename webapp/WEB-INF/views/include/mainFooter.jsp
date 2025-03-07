@@ -173,16 +173,18 @@
 	position: absolute;
     top: 5px;
     left: 2150px;
-    display: none;
-	}
 
+	}
+	.ST1-M8040, .ST1-M8041, .ST1-M8042, .ST1-M8043, .ST1-M8044, .ST1-M8045 {
+	    display: none !important;
+	}
 
 	.st2 {
 	 width: 250px;
 	position: absolute;
     top: 44px;
     left: 2150px;
-    display: none;
+   
 	}
 	
 	.st3 {
@@ -190,7 +192,7 @@
 	position: absolute;
     top: 85px;
     left: 2150px;
-    display: none;
+
 	}
 
 

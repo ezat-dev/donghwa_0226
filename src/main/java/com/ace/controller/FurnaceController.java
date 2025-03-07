@@ -158,9 +158,11 @@ public class FurnaceController {
 			rowMap.put("holding-one-"+i,recipeDataList.get(i).getHolding_time1());
 			rowMap.put("holding-two-"+i,recipeDataList.get(i).getHolding_time2());
 			rowMap.put("number-loops-"+i,recipeDataList.get(i).getNumber_of_loops());
+			
 			rowMap.put("speed-plunger-"+i,recipeDataList.get(i).getSpeed_of_plunger());
-			rowMap.put("gradient-force-"+i,recipeDataList.get(i).getGradient_of_force());
-			rowMap.put("fastcooling-"+i,recipeDataList.get(i).getFastcooling());
+			
+			rowMap.put("gradient-force-"+i,recipeDataList.get(i).getGradient_of_force());		
+			rowMap.put("fastcooling-"+i,recipeDataList.get(i).getFastcooling());	
 			rowMap.put("gas-n-"+i,recipeDataList.get(i).getGas_n2());
 			rowMap.put("gas-a-"+i,recipeDataList.get(i).getGas_ar());
 			rowMap.put("spare-"+i,recipeDataList.get(i).getSpare());
@@ -362,7 +364,11 @@ public class FurnaceController {
 			recipe.setHolding_time1(Short.parseShort(nowMap.get("holding_one").toString()));	    
 			recipe.setHolding_time2(Short.parseShort(nowMap.get("holding_two").toString()));	    
 			recipe.setNumber_of_loops(Short.parseShort(nowMap.get("number_loops").toString()));	    
-			recipe.setSpeed_of_plunger(Short.parseShort(nowMap.get("speed_plunger").toString()));	    
+			
+			short speedPlungerValue = (short) (Float.parseFloat(nowMap.get("speed_plunger").toString()) * 100); 
+			recipe.setSpeed_of_plunger(speedPlungerValue); // short 타입으로 설정
+
+			
 			recipe.setGradient_of_force(Short.parseShort(nowMap.get("gradient_force").toString()));	    
 			recipe.setFastcooling(Short.parseShort(nowMap.get("fastcooling").toString()));	    
 			recipe.setGas_n2(Short.parseShort(nowMap.get("gas_n").toString()));	    
@@ -810,6 +816,11 @@ public class FurnaceController {
 	@RequestMapping(value = "/furnace/operationPressPop", method = RequestMethod.GET)
 	public String operationPressPop(Model model) {
 	    return "/furnace/operationPressPop.jsp";
+	}
+	
+	@RequestMapping(value = "/furnace/heaterOnOff", method = RequestMethod.GET)
+	public String heaterOnOff(Model model) {
+	    return "/furnace/heaterOnOff.jsp";
 	}
 	
 	//Manual Operation

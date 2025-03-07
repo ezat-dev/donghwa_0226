@@ -1359,19 +1359,30 @@ $(function(){
 	        const value = inputField.val(); // 입력된 값
 	        const nodeId = inputField.attr('name'); // name 속성 값
 
+
+			var sendValue = 0;
+
+			if(nodeId.indexOf("SPEED_PLUNGER_") != -1){
+				sendValue = (value * 100)+"";
+			}else{
+				sendValue = value;
+			}
+	        
 	        data.push({
 	            nodeId: nodeId,
-	            value: value
+	            value: sendValue
 	        });
 	    });
 
 
+
+        
 	    // 모든 체크박스를 순회하며 데이터 배열에 추가
 	    $('.input-checkbox').each(function() {
 	        const inputField = $(this);
 	        const value = inputField.is(':checked') ? 1 : 0; // 체크 상태 확인
 	        const nodeId = inputField.attr('name'); // name 속성 값
-
+	        
 	        data.push({
 	            nodeId: nodeId,
 	            value: value
@@ -1460,7 +1471,7 @@ $(function(){
 //process_step 값입력 이벤트
 function validateNumberInput(event) {
     const input = event.target;
-    input.value = input.value.replace(/[^0-9]/g, '');
+    input.value = input.value.replace(/[^0-9.]/g, '');
 
     const inputId = input.id;
     const inputValue = input.value;
@@ -1592,7 +1603,14 @@ function getRecipeDataList(){
             for(let key in data){
             	for(let keys in data[key]){
             		var d = data[key];
-            		$("."+keys+"> input").val(d[keys]);
+
+					var value = d[keys];
+            		
+            		 if (keys.startsWith("speed-plunger-")) {
+                         value = (parseFloat(value) * 0.01).toFixed(2); 
+                     }
+            		
+            		$("."+keys+"> input").val(value);
             		$("."+keys+"> input").prop('checked',d[keys]);
             		
             	}                    	

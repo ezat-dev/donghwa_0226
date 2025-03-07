@@ -111,6 +111,27 @@ function sendPlc(data, callback) {
 }
 
 
+function sendPlcString(data, callback) {
+    $.ajax({
+        url: "/donghwa/furnace/recipe/plcWriteString",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        success: function(response) {
+            console.log('plcWrite 서버 응답:', response);
+            callback(true); 
+            // sendPlc 성공 시 OK 버튼을 표시
+            $("#ok_close_btn").show(); 
+        },
+        error: function(xhr, status, error) {
+            console.error('plcWrite AJAX 에러:', status, error);
+            callback(false);  
+            // 실패 시 OK 버튼을 숨김
+            $("#ok_close_btn").hide(); 
+        }
+    });
+}
 document.getElementById("retry_btn").addEventListener("click", function() {
     let loadingBar = document.getElementById("loadingBar");
     let width = 0;

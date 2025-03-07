@@ -342,7 +342,7 @@
 	  width: 72px;
 	  height: 72px;
 	  position: absolute;
-	  left: 1512px;
+	  left: 318px;
 	  top: 684px;
 		
 	}
@@ -454,7 +454,7 @@
     <img class="component-3 Ldclose" src="/donghwa/css/furnace/img/component-30.svg" />
     <img class="component-4 Ldopen" src="/donghwa/css/furnace/img/component-40.svg" />
     <div class="value-1 tx">Rear Clamp</div>
-    <div class="value-1-1 tx">Front CLAMP</div>
+    <div class="value-1-1 tx">Front Clamp</div>
     <div class="value-2 tx">12.2</div>
     <div class="value-3 tx">High Valve</div>
     <div class="value-4 tx">Roughing Valve</div>
@@ -557,6 +557,8 @@
   <script>
 
 var overviewInterval;
+var st1Array = new Array();
+var st1Idx = 0;
 
 //로드
 $(function(){
@@ -572,7 +574,8 @@ function overviewListView(){
 		dataType:"json",
 		success:function(result){				
 			var data = result.multiValues;
-			
+			st1Array = new Array();
+			st1Idx = 0;
         for(let key in data){
         	for(let keys in data[key]){
         		var d = data[key];
@@ -678,34 +681,66 @@ function overviewListView(){
 
 
 
+/*
+    if (value === true) {
+        console.log("True case - Showing element for key:", keys);
+        $("." + keys).css({
+            "visibility": "visible",
+            "color": "white !important", 
+            "font-size": "20px"          
+        });
+    } else {
+        console.log("False case - Hiding element for key:", keys);
+        $("." + keys).css("visibility", "hidden");
+    }
+*/	
 
+	function asd(){
+		for(var i=0; i<st1Idx; i++){
+//			console.log(st1Array[i]);
 
+			if(st1Array[i].v == true){
+//				$("."+st1Array[i].keys)	
+		        $("." + st1Array[i].keys).css({
+		            "visibility": "visible",
+		            "color": "white !important", 
+		            "font-size": "20px"          
+		        });
+			}else if(st1Array[i].v == false){
+				$("." + st1Array[i].keys).css("visibility", "hidden");
+			}
+		}
+	}
+	
 	
 	function v(keys, value) {
 		//console.log("Key:", keys, "Value:", value);
-	    if (keys === "ball-on-60") {
-	        //console.log("Triggering styles for .ball-on-60");
-	        if (value === true) {
-	            $(".ball-on-60").css({
-	                "background-color": "green",
-	                "animation": "blinkGreen 1s infinite",
-	                "z-index": "9999",
-	                "position": "relative",
-	            });
-	        } else {
-	            $(".ball-on-60").css({
-	                "background-color": "",
-	                "animation": "",
-	                "z-index": "-1",
-	                "position": "",
-	            });
-	        }
+	if (keys === "ball-on-60") {
+	    //console.log("Triggering styles for .ball-on-60");
+	    if (value === true) {
+	        $(".ball-on-60").css({
+	            "background-color": "green",
+	            "animation": "blinkGreen 1s infinite",
+	            "z-index": "9999",  // 화면 맨 앞에 보이도록 설정
+	            "position": "relative",
+	            "display": "block",  // 요소를 화면에 보이도록 설정
+	        });
+	    } else {
+	        $(".ball-on-60").css({
+	            "background-color": "",
+	            "animation": "",
+	            "z-index": "-1",     // 요소를 화면 뒤로 보이게 설정
+	            "position": "",
+	            "display": "none",   // 요소를 화면에서 숨기도록 설정
+	        });
 	    }
+	}
+
 
 	    if (keys === "manual-ck") {
 	        if (value === true) {
 	            $(document).on("click", ".onClickStatus", handleClickStatus);
-	            console.log("Click status enabled for .onClickStatus");
+//	            console.log("Click status enabled for .onClickStatus");
 	            
 	            $(".onClickStatus").css({
 	                "pointer-events": "auto",
@@ -718,7 +753,7 @@ function overviewListView(){
 	            });
 	        } else {
 	            $(document).off("click", ".onClickStatus", handleClickStatus);
-	            console.log("Click status disabled for .onClickStatus");
+//	            console.log("Click status disabled for .onClickStatus");
 
 	            $(document).off("click", ".onClickStatus");
 	            $(document).on("click", ".onClickStatus", function() {
@@ -737,20 +772,46 @@ function overviewListView(){
 	        }
 	    }
 
+	    
 	    if (keys.startsWith("ST1-M80")) {
-	        let numberPart = parseInt(keys.substring(5));
+	        let numberPart = parseInt(keys.substring(8));
+//	        console.log(numberPart+"// "+keys+"// "+value+"// "+st1Array.length);
+//	        console.log(st1Idx);
+
+	        var obj = {
+	    	        "numberPart":numberPart,
+	    	        "v":value,
+	    	        "keys":keys
+	    	       }
+
+	        st1Array[st1Idx] = obj;
+	        st1Idx++;
+
+			if(st1Idx == 6){
+				asd();
+			}
+	        
+//			console.log("as : "+as);
+	        
+/*
 	        if (numberPart >= 8040 && numberPart <= 8045) {
 	            console.log("Key:", keys, "Value:", value);
 
-	            // 값이 true일 때는 보이고, false일 때는 숨기기
+//	            st1Array.add()
 	            if (value === true) {
 	                console.log("True case - Showing element for key:", keys);
-	                $("." + keys).css("display", "block !important");
+	                $("." + keys).css({
+	                    "visibility": "visible",
+	                    "color": "white !important", 
+	                    "font-size": "20px"          
+	                });
 	            } else {
 	                console.log("False case - Hiding element for key:", keys);
-	                $("." + keys).css("display", "none !important");
+	                $("." + keys).css("visibility", "hidden");
 	            }
 	        }
+*/
+	        
 	    }
 
 
@@ -758,29 +819,62 @@ function overviewListView(){
 	
 	    if (keys.startsWith("ST2-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 51 && numberPart <= 148) {
+	        if (numberPart >= 8050 && numberPart <= 8055) {
+//	            console.log("Key:", keys, "Value:", value);
+
+	           
 	            if (value === true) {
-	                $("." + keys).css("display", "block !important");
+//	                console.log("True case - Showing element for key:", keys);
+	                $("." + keys).css({
+	                    "visibility": "visible",
+	                    "color": "white !important", 
+	                    "font-size": "18px"          
+	                });
 	            } else {
-	                $("." + keys).css("display", "none !important");
+//	                console.log("False case - Hiding element for key:", keys);
+	                $("." + keys).css("visibility", "hidden");
 	            }
 	        }
 	    }
+
 
 	    
 	    if (keys.startsWith("ST3-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 59 && numberPart <= 63) {
+	        if (numberPart >= 8060 && numberPart <= 8062) {
+//	            console.log("Key:", keys, "Value:", value);
+
+	           
 	            if (value === true) {
-	                $("." + keys).css("display", "block !important");
+//	                console.log("True case - Showing element for key:", keys);
+	                $("." + keys).css({
+	                    "visibility": "visible",
+	                    "color": "white !important", 
+	                    "font-size": "18px"          
+	                });
 	            } else {
-	                $("." + keys).css("display", "none !important");
+//	                console.log("False case - Hiding element for key:", keys);
+	                $("." + keys).css("visibility", "hidden");
 	            }
 	        }
 	    }
 
+	    if (keys === "ST2-M8138") {
+	        if (value === true) {
+	            $("." + keys).css({
+	                "visibility": "visible",
+	                "color": "white", 
+	                "font-size": "18px"
+	            });
+	        } else {
+	            $("." + keys).css("visibility", "hidden");
+	        }
+	    }
+	    	    
+
+
 	    if (value === true) {
-	        $("." + keys).css("color", "black");
+	        
 	    }
 
 	    if (keys === "M8034") {

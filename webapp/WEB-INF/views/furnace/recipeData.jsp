@@ -1487,6 +1487,7 @@ function validateNumberInput(event) {
             allInputs.forEach(field => {
                 const fieldId = field.id;
                 const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
+                console.log(`비활성화할 필드: ${fieldId} (현재 입력 ID: ${inputId})`);
                 if (fieldIdNumber > inputIdNumber+25) {
                     field.disabled = true;
                     field.value = "";  // 비활성화될 때 값도 초기화합니다.

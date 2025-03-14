@@ -190,12 +190,13 @@
 	    left: 2150px;
 	    font-weight: bold;
 	}
-	.ST1-M8040{
-	top:28px;
-	 position: absolute;
-	
+	.sts {
+	    position: absolute;
+	    top: 28px;
+	    left: 2070px;
+	    font-weight: bold;
+	    font-size:12px;
 	}
-
 
 
     </style>
@@ -228,8 +229,8 @@
 
 	<div class="status-ab">
 	    <p><strong>Status 1:</strong> <span class="status1"></span></p>
-	    <div class="ST1-M8040 st1">AUTO </div>
-	    <div class="ST1-M8041 st1">Manual </div>        
+	    <div class="ST1-M8040 sts">AUTO </div>
+	    <div class="ST1-M8041 sts">Manual </div>        
 	    <div class="ST1-M8042 st1">Heating vacuum </div> 
 	    <div class="ST1-M8043 st1">Heating gas stationary </div>
 	    <div class="ST1-M8044 st1">Cooling vacuum</div>

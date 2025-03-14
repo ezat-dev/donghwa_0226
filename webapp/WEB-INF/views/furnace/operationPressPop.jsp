@@ -132,7 +132,7 @@ function v(keys, value){
 		$("."+keys).css("color","black");
 	}
     $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.OPERATION_PRESS', '"+keys+"')")
-    .css("cursor", "pointer");  
+   
 }
 
 /*

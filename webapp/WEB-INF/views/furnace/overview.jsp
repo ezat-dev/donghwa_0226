@@ -348,10 +348,97 @@
 	}
 	
 	.hover-effect:hover {
-    transform: scale(1.2);  
-    transition: transform 0.2s ease;  
-}
+	    transform: scale(1.2);
+	    transition: transform 0.2s ease;
+	}
 	
+	
+	.remove1{
+	    width: 75px;
+	    height: 30px;
+	    background-color: #E2E2E2;
+	   
+	    position: absolute;
+	    top: 756px;
+	    right: 854px;
+	    z-index: 9999;
+	
+	}
+	
+	.remove2{
+    width: 25px;
+    height: 78px;
+    background-color: #E2E2E2;
+    /* border: 2px solid black; */
+    position: absolute;
+    top: 595px;
+    right: 924px;
+    z-index: 9999;
+	
+	}
+	.square1 {
+	    width: 28px;
+	    height: 28px;
+	    background-color: #E2E2E2;
+	    border: 2px solid black;
+	    position: absolute;
+	    top: 154px;
+	    right: 369px;
+	    z-index: 9999;
+	}
+	.square1::after {
+	    content: '';
+	    width: 4px;
+	    height: 12px;
+	    background-color: black;
+	    position: absolute;
+	    bottom: -13px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	}
+	
+	.square2 {
+	    width: 30px;
+	    height: 30px;
+	    background-color: #E2E2E2;
+	    border: 2px solid black;
+	    position: absolute;
+	    top: 506px;
+	    right: 369px;
+	    z-index: 9999;
+	}
+	.square2::after {
+	    content: '';
+	    width: 4px;
+	    height: 12px;
+	    background-color: black;
+	    position: absolute;
+	    bottom: -13px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	}
+	
+	.value-11 {
+	    color: #000000;
+	    text-align: left;
+	    font-family: "Inter-Bold", sans-serif;
+	    font-size: 18px;
+	    font-weight: 700;
+	    position: absolute;
+	    left: 1962px;
+	    top: 473px;
+	}
+	
+	.value-11-air {
+	    color: #000000;
+	    text-align: left;
+	    font-family: "Inter-Bold", sans-serif;
+	    font-size: 18px;
+	    font-weight: 700;
+	    position: absolute;
+	    left: 1946px;
+	    top: 123px;
+	}
   </style>
 
   <title>Document</title>
@@ -464,7 +551,8 @@
     <div class="value-8 tx">Rotary Pump</div>
     <div class="value-9 tx">Ar Gas Valve</div>
     <div class="value-10 tx">Vent Valve</div>
-    <div class="value-11 tx">.. </div>
+    <div class="value-11 tx">PS 13.202 Ar </div>
+    <div class="value-11-air tx">PS 10.2 Comp. air </div>
     <div class="value-12 tx">Air</div>
     <div class="value-13 tx">Ar</div>
     <img class="component-5 Rdclose" src="/donghwa/css/furnace/img/component-50.svg" />
@@ -550,10 +638,15 @@
     <img class="arrow-3" src="/donghwa/css/furnace/img/arrow-30.svg" />
     <div class="box-off-1"></div>
     <div class="box-on-1"></div>
-   <div class="GreenPen GreenY140 3 		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
-   <div class="RedPen  RedX0CC    3	   		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
+    <div class="GreenPen GreenY140 3 		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
+    <div class="RedPen  RedX0CC    3	   		COOLING_FAN pop-on-cf-M29 pop-off-cf-M30 onClickStatus"></div>
     <img class="arrow-1" src="/donghwa/css/furnace/img/arrow-10.svg" />
 
+	  <div class="square1 Air-lamp"></div>
+	  <div class="square2 Ar-lamp"></div>
+	  
+	  <div class="remove1"></div>
+	   <div class="remove2"></div>
   <script>
 
 var overviewInterval;
@@ -715,6 +808,7 @@ function overviewListView(){
 	
 	function v(keys, value) {
 		//console.log("Key:", keys, "Value:", value);
+	
 	if (keys === "ball-on-60") {
 	    //console.log("Triggering styles for .ball-on-60");
 	    if (value === true) {
@@ -729,13 +823,27 @@ function overviewListView(){
 	        $(".ball-on-60").css({
 	            "background-color": "",
 	            "animation": "",
-	            "z-index": "-1",     // 요소를 화면 뒤로 보이게 설정
+	            "z-index": "-1",   
 	            "position": "",
-	            "display": "none",   // 요소를 화면에서 숨기도록 설정
+	            "display": "none",   
 	        });
 	    }
 	}
 
+	if (keys === "Air-lamp" || keys === "Ar-lamp") {
+        if (value === true) {
+            $("." + keys).css({
+                "background-color": "green", 
+                "z-index": "9999",             
+          
+            });
+        } else {
+            $("." + keys).css({
+                "background-color": "",     
+                                    
+            });
+        }
+    }
 
 	    if (keys === "manual-ck") {
 	        if (value === true) {
@@ -791,26 +899,7 @@ function overviewListView(){
 				asd();
 			}
 	        
-//			console.log("as : "+as);
-	        
-/*
-	        if (numberPart >= 8040 && numberPart <= 8045) {
-	            console.log("Key:", keys, "Value:", value);
 
-//	            st1Array.add()
-	            if (value === true) {
-	                console.log("True case - Showing element for key:", keys);
-	                $("." + keys).css({
-	                    "visibility": "visible",
-	                    "color": "white !important", 
-	                    "font-size": "20px"          
-	                });
-	            } else {
-	                console.log("False case - Hiding element for key:", keys);
-	                $("." + keys).css("visibility", "hidden");
-	            }
-	        }
-*/
 	        
 	    }
 

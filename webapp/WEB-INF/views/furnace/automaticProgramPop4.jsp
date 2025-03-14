@@ -142,13 +142,29 @@
 	        // 추가적인 처리 가능
 	    }
 
-	    if (keys !== "Start_bt_M8001") {  
-	       
-	        $("." + keys)
-	            .attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
-	            .css("cursor", "pointer");
+
+
+
+	        if (keys !== "Start_bt_M8001") {  
+	            let element = $("." + keys);
+
+	            if (value === true) {
+	                element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	                       .css("cursor", "pointer")
+	                       .off("click") // 기존 클릭 이벤트 제거
+	                       .on("click", function() {  
+	                           digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
+	                       });
+	            } else {
+	                element.removeAttr("onclick")  // onclick 속성 제거
+	                       .css("cursor", "default")
+	                       .off("click");  // 모든 click 이벤트 제거
+	            }
+	        }
+	                    
 	    }
-	}
+	    
+	
 
 
 

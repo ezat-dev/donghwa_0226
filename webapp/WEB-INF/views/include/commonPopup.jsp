@@ -178,7 +178,7 @@
     <button class="close-btn" onclick="closePopup()">✖</button>
     <div class="tage-name"></div>
     <button class="bt_on" type="button">ON</button>
-    <button class="bt_off" type="button">OFF</button>
+   <!-- <button class="bt_off" type="button">OFF</button> -->
     
     <button class="bt_send" type="button" onclick="valueDigitalSend();">전송</button>
 </div>

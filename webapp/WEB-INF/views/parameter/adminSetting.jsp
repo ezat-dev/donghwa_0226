@@ -127,9 +127,9 @@
     }
 
     
-    .R1000, .R1002, .R1005, .R1007, 
-	.R1010, .R1012, .R1050, .R1052, 
-	.R1055, .R1057, .R1100, .R1105 {
+    .R1000V, .R1002, .R1005V, .R1007, 
+	.R1010V, .R1012, .R1050V, .R1052, 
+	.R1055V, .R1057, .R1100, .R1105 {
 	    position: absolute;
 	}
 	
@@ -154,20 +154,20 @@
 	
 	
 
-	.R1000 { bottom: 775px; right: 1600px; }
+	.R1000V { bottom: 775px; right: 1600px; }
 	.R1002 { bottom: 775px; right: 1533px; }
 	
-	.R1005 { bottom: 730px; right: 1600px; }
+	.R1005V { bottom: 730px; right: 1600px; }
 	.R1007 { bottom: 730px; right: 1533px; }
 	
-	.R1010 { bottom: 685px; right: 1600px; }
+	.R1010V { bottom: 685px; right: 1600px; }
 	.R1012 { bottom: 685px; right: 1533px; }
 	
-	.R1050 { bottom: 275px; right: 1600px; }
-	.R1052 { bottom: 275px; right: 1533px; }
+	.R1050V { bottom: 320px; right: 1600px; }
+	.R1052 { bottom: 320px; right: 1533px; }
 	
-	.R1055 { bottom: 320px; right: 1600px; }
-	.R1057 { bottom: 320px; right: 1533px; }
+	.R1055V { bottom: 275px; right: 1600px; }
+	.R1057 { bottom: 275px; right: 1533px; }
 	
 	.R1100 { bottom: 830px; right: 340px; }
 	.R1105 { bottom: 785px; right: 340px; }
@@ -185,9 +185,9 @@
             <div class="panel-content">
                 <div class="sub-title">Diffusion Pump Vacuum</div>
                 <table class="table">
-                    <tr><td>Booster Set</td><td class="R10000"></td></tr>
-                    <tr><td>Diffusion Set</td><td class="R10050"></td></tr>
-                    <tr><td>Complete Set</td><td class="R10100"></td></tr>
+                    <tr><td>Booster Set</td><td class="R1000V0"></td></tr>
+                    <tr><td>Diffusion Set</td><td class="R1005V0"></td></tr>
+                    <tr><td>Complete Set</td><td class="R1010V0"></td></tr>
                 </table>
             </div>
         </div>
@@ -250,21 +250,21 @@
 			<div class="E4">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
 			<div class="E5">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
 	
-		    <div class="R1000"></div>
+		    <div class="R1000V"></div>
 		    <div class="R1002"></div>
 		   
-		    <div class="R1005"></div>
+		    <div class="R1005V"></div>
 		    <div class="R1007"></div>
 		    
-		    <div class="R1010"></div>
+		    <div class="R1010V"></div>
 		    <div class="R1012"></div>
 		   
 		   
 		   
-		    <div class="R1050"></div>
+		    <div class="R1050V"></div>
 		    <div class="R1052"></div>
 		    
-		    <div class="R1055"></div>
+		    <div class="R1055V"></div>
 		    <div class="R1057"></div>
 		    
 		    
@@ -342,7 +342,7 @@
 	        }
 	        // 특정 키면 뒤에 "°C" 추가
 	        if (["R1100", "R1105"].includes(keys)) {
-	            value = value + "°C";
+	            value = value + "%";
 	        }
 
 	        $("." + keys).text(value);

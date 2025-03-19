@@ -127,11 +127,11 @@ public class MainController {
 
         OpcDataMap opcDataMap = new OpcDataMap();
         // 값 확인
-/*
+
         System.out.println("플롯 sendTagDir : " + sendTagDir + 
                            " // sendTagName : " + sendTagName + 
                            " // sendTagValue : " + sendTagValue);
-*/
+
         
         opcDataMap.setOpcData(sendTagDir + "." + sendTagName, sendTagValue);
 

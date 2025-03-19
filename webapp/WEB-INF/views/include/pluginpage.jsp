@@ -114,51 +114,43 @@ function popupOpenAna(keys, value){
 	$("#sendGroup").val(value);
 	$("#sendTag").val(keys);
 	
-	   console.log("📌 s123123endGroup:", sendGroup);
-	    console.log("📌 se123123ndTag:", sendTag);
+	
 //	modalOpen();
 }
 
+let alertShown = false; // 알럿 중복 방지 변수
 
-$("*").on("keydown",function(e){
-//	console.log(e);
-	
-	//엔터키가 눌렸을 때
-	if(e.keyCode == 13){
-		var className = e.target.className;
-		
-		if(className.indexOf("anlog-popup-div-color") != -1){
-//			console.log("선택 엔터키");
-//			console.log(e);
-//			console.log(e.target.className);
-//			$("."+splitClassName[0]).focusOut();
-			
-//			console.log(e.target.innerHTML);
+$(document).on("keydown", ".anlog-popup-div-color", function (e) {
+    if (e.keyCode == 13) { // 엔터키가 눌렸을 때
+        e.preventDefault(); // 기본 이벤트 방지
+        e.stopPropagation(); // 이벤트 전파 방지
 
-			var splitClassName = e.target.className.split(" ");
-//			console.log(splitClassName[0]);
-			
-			$("#sendVal").val($("."+splitClassName[0]).text());				
-			
-			$("."+splitClassName[0]).removeClass("anlog-popup-div-color");
-			$("."+splitClassName[0]).blur();			
-			
-		
-			analogDataSave();
-		}
-	}else if(e.keyCode == 27){
-		//ESC
-		var className = e.target.className;
-		
-		if(className.indexOf("anlog-popup-div-color") != -1){
-			var splitClassName = e.target.className.split(" ");
-//			console.log("ESC");
-//			console.log(splitClassName[0]);
-			$("."+splitClassName[0]).removeClass("anlog-popup-div-color");
-			$("."+splitClassName[0]).blur();
-		}
-	}
+        var inputValue = $(this).text().trim();
+
+        // 값이 숫자인지 확인하고, 3자리 초과인지 검사
+        if (!/^\d+$/.test(inputValue) || inputValue.length > 3) {
+            if (!alertShown) { // 알럿이 아직 안 떴다면
+                alert("올바른 값을 입력해주세요 (최대 3자리 숫자)");
+                alertShown = true; // 알럿이 떴음을 기록
+                setTimeout(() => alertShown = false, 200); // 1초 후 다시 알럿 가능
+            }
+            return; // 조건에 맞지 않으면 이후 코드 실행 안 함
+        }
+
+        $("#sendVal").val(inputValue);
+        $(this).removeClass("anlog-popup-div-color").blur();
+        
+        analogDataSave();
+    } else if (e.keyCode == 27) { // ESC 키 처리
+        e.preventDefault();
+        e.stopPropagation();
+
+        $(this).removeClass("anlog-popup-div-color").blur();
+    }
 });
+
+
+
 
 function analogDataSave() {
     var sendGroup = $("#sendGroup").val();
@@ -166,10 +158,10 @@ function analogDataSave() {
     var sendVal = $("#sendVal").val();
 
 
-    console.log("🔹 입력된 값 확인");
-    console.log("📌 sendGroup:", sendGroup);
-    console.log("📌 sendTag:", sendTag);
-    console.log("📌 sendVal:", sendVal);
+    console.log(" 입력된 값 확인");
+    console.log(" sendGroup:", sendGroup);
+    console.log(" sendTag:", sendTag);
+    console.log(" sendVal:", sendVal);
 
     
     if (sendVal.length <= 0) {
@@ -194,9 +186,9 @@ function analogDataSave() {
         ? "/donghwa/common/valueFloatSet"  // 소수점이 있으면 float 처리
         : "/donghwa/common/valueAnalogSet"; // 정수이면 analog 처리
 
-        console.log("📢 API 호출:", apiUrl);
-        console.log("🔍 데이터 타입:", isFloat ? "실수 (Float)" : "정수 (Integer)");
-        console.log("💾 전송값:", sendVal, "(Type:", typeof convertedValue, ")");
+        console.log(":", apiUrl);
+        console.log("데이터 타입:", isFloat ? "실수 (Float)" : "정수 (Integer)");
+        console.log("값:", sendVal, "(Type:", typeof convertedValue, ")");
 	console.log(typeof sendVal);
     // 숫자로 변환 (float 또는 short)
     var convertedValue = isFloat ? sendVal : parseInt(sendVal);

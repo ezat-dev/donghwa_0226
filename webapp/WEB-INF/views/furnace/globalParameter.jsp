@@ -146,7 +146,7 @@
     <div class="comment-5"></div>
     <div class="_0-6300">0 ... 6300</div>
     <div class="comment-6"></div>
-    <div class="_0-320">0 ... 320</div>
+    <div class="_0-320">0 ... 360</div>
     <div class="comment-7"></div>
     <div class="_15-50">15 ... 50</div>
     <div class="comment-8"></div>

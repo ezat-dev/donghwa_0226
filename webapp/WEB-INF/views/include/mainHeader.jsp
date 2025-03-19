@@ -175,7 +175,12 @@
         <li onclick="popupClick('/donghwa/parameter/limitSwitchesPop', 749, 282, 550, 200);">Limit switches</li>
         <li onclick="popupClick('/donghwa/parameter/fastcoolingPop', 539, 340, 600, 180);">Fastcooling</li>
         <li onclick="popupClick('/donghwa/parameter/timerPop', 734, 367, 600, 180);">Timer</li>
+   	    <li onclick="menuClick('/donghwa/parameter/adminSetting');">Admin Setting</li>
+       
+       
         <li onclick="popupClick('/', 505, 505, 584, 180);">Calibrate TC measuring syst</li>
+     
+     
       </ul>
     </li>
     <li>
@@ -202,6 +207,14 @@
   function modalClick(location) {
       document.querySelector('.' + location).style.display = "";
   }
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+	    const menu = document.getElementById('hamburgerMenu');
+	    menu.classList.add('active'); // 화면 로드 시 메뉴를 열어둠
+	});
+  
 
   const hamburgerIcon = document.querySelector('.hamburger-icon');
   const menu = document.getElementById('hamburgerMenu');

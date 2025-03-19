@@ -8,7 +8,7 @@
     <title>작업실적</title>
     <%@ include file="../include/mainHeader.jsp" %>
     <jsp:include page="../include/pluginpage.jsp"/>
-    <%@ include file="../include/tbFooter.jsp" %>
+   
     <style>
 
         hr {

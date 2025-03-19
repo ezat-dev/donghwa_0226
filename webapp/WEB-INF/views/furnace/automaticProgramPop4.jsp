@@ -229,6 +229,7 @@
     }
 
     function asd(keys, value) {
+    	console.log("asd() 호출: keys =", keys, ", value =", value); 
         if (value == true) {
             $("." + keys).css({
                 "color": "#000000",

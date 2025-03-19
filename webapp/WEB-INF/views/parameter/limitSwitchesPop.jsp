@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="kor">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +53,17 @@
 	.limit1, .txE, .limit2 {
 	  margin: 0 6px;
 	}
+	.mbar4 {
+    color: #000000;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 829px;
+    top: 235px;
+    width: 51px;
+    height: 33px;
+}
 	
 	   .hysBox {
 	  background: #ffffff;
@@ -140,7 +152,7 @@
     <div class="mbar">Torr</div>
     <div class="mbar2">mbar</div>
     <div class="mbar3">mbar</div>
-    <div class="div">mbar</div>
+   <div class="mbar4">mbar</div>
     
     <div class="limitBox">
     <div class="limit1">0.0</div>

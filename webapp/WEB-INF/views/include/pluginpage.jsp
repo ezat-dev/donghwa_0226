@@ -114,7 +114,8 @@ function popupOpenAna(keys, value){
 	$("#sendGroup").val(value);
 	$("#sendTag").val(keys);
 	
-	
+	   console.log("📌 s123123endGroup:", sendGroup);
+	    console.log("📌 se123123ndTag:", sendTag);
 //	modalOpen();
 }
 
@@ -164,6 +165,13 @@ function analogDataSave() {
     var sendTag = $("#sendTag").val();
     var sendVal = $("#sendVal").val();
 
+
+    console.log("🔹 입력된 값 확인");
+    console.log("📌 sendGroup:", sendGroup);
+    console.log("📌 sendTag:", sendTag);
+    console.log("📌 sendVal:", sendVal);
+
+    
     if (sendVal.length <= 0) {
         alert("값을 입력하십시오!");
         modalClose();
@@ -186,22 +194,14 @@ function analogDataSave() {
         ? "/donghwa/common/valueFloatSet"  // 소수점이 있으면 float 처리
         : "/donghwa/common/valueAnalogSet"; // 정수이면 analog 처리
 
-
+        console.log("📢 API 호출:", apiUrl);
+        console.log("🔍 데이터 타입:", isFloat ? "실수 (Float)" : "정수 (Integer)");
+        console.log("💾 전송값:", sendVal, "(Type:", typeof convertedValue, ")");
 	console.log(typeof sendVal);
     // 숫자로 변환 (float 또는 short)
     var convertedValue = isFloat ? sendVal : parseInt(sendVal);
 
-//    console.log(typeof convertedValue);
- //   console.log(typeof parseFloat(convertedValue));
 
-//	apiUrl = "/donghwa/common/valueFloatSet";
-//	convertedValue = sendVal;
-
-//	console.log(sendVal);
-//	console.log(convertedValue);
-
-//	console.log(typeof sendVal);
-//	console.log(typeof convertedValue);
 	
     $.ajax({
         url: apiUrl,

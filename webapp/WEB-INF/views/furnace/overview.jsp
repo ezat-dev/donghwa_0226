@@ -1084,22 +1084,29 @@ function overviewListView(){
 	    } else {
 	        finalValue = (keys === "D11101" || keys === "D11102") ? (value / 100).toFixed(2) : value;
 	    }
-	    // D-7800 처리
+	 // D-7800 처리
 	    if (keys === "D-7800") {
 	        var d7802Value = parseFloat($(".D-7802").text()) || 0;
 	        var eValue = "E"; 
 	        var torrValue = "Torr"; 
-	        var newValue = truncatedValue + " " + eValue + " " + d7802Value + " " + torrValue;        
+	        // 0 포함 양수일 경우 + 기호 추가
+	        var formattedD7802 = d7802Value >= 0 ? "+" + d7802Value : d7802Value;
+	        var newValue = truncatedValue + " " + eValue + " " + formattedD7802 + " " + torrValue;        
 	        $("." + keys).text(newValue);
 	    }
+
 	    // D-7810 처리
 	    else if (keys === "D-7810") {
 	        var d7812Value = parseFloat($(".D-7812").text()) || 0;
 	        var eValue = "E"; 
 	        var torrValue = "Torr"; 
-	        var newValue = truncatedValue + " " + eValue + " " + d7812Value + " " + torrValue;        
+	        // 0 포함 양수일 경우 + 기호 추가
+	        var formattedD7812 = d7812Value >= 0 ? "+" + d7812Value : d7812Value;
+	        var newValue = truncatedValue + " " + eValue + " " + formattedD7812 + " " + torrValue;        
 	        $("." + keys).text(newValue);
 	    }
+
+
 	    // 값이 99이면 "-"로 표시
 	    else if (value === 99) {
 	        $("." + keys).text("-");

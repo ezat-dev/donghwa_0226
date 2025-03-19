@@ -204,6 +204,15 @@
 var seriesArray = [];
 var seriesData = [];
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
+
+    setTimeout(() => {
+        menu.click();
+    }, 1000); // 1초(1000ms) 후에 클릭
+});
+
 //SP값 포함
 /*
 var seriesNames = [
@@ -217,7 +226,10 @@ var seriesNames = [
     "c9", "c11", "c13"
 ];
 
-
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
+    menu.classList.add('active'); // 화면 로드 시 메뉴를 열어둠
+});
 
 function formatDate(date) {
     var d = new Date(date);

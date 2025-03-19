@@ -32,13 +32,13 @@
 	    box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
 	}
 	
-	.off-pumping{
+	.offbt-pumping{
 		position: absolute;
 	    left: 365px;
 	    top: 94px;
 	}
 
-	.off-high-vavuum{
+	.offbt-high-vavuum{
 		position: absolute;
 	    left: 365px;
 	    top: 138px;
@@ -46,55 +46,55 @@
 	
 
 	
-	.off-evacuate-fine{
+	.offbt-evacuate-fine{
 		position: absolute;
 	    left: 365px;
 	    top: 181px;
 	}		
 	
-	.off-evacuate-high{
+	.offbt-evacuate-high{
 		position: absolute;
 	    left: 365px;
 	    top: 224px;
 	}
 	
 	
-	.off-fastcooling{
+	.offbt-fastcooling{
 		position: absolute;
 	    left: 365px;
 	    top: 569px;
 	}
 	
 	
-	.off-manual-leaktest{
+	.offbt-manual-leaktest{
 						
 		position: absolute;
 	    left: 365px;
 	    top: 612px;
 	}	
 	
-		.off-fur-hit{
+		.offbt-fur-hit{
 						
 		position: absolute;
 	    left: 365px;
 	    top: 312px;
 	}	
 	
-		.off-ar{
+		.offbt-ar{
 						
 		position: absolute;
 	    left: 365px;
 	    top: 399px;
 	}	
 	
-		.off-venting{
+		.offbt-venting{
 						
 		position: absolute;
 	    left: 365px;
 	    top: 440px;
 	}	
 	
-		.off-open-M8089{
+		.offbt-open-M8089{
     position: absolute;
     left: 365px;
     top: 669px;
@@ -204,30 +204,30 @@
   <div class="close-lid-clamps asd-close-lid">Rear Clamp</div>
 
 
-	<div class="off-pumping offbt"></div>
+	<div class="offbt-pumping offbt"></div>
 	
-	<div class="off-high-vavuum offbt"></div>
+	<div class="offbt-high-vavuum offbt"></div>
 	
-	<div class="off-evacuate-fine offbt"></div>
+	<div class="offbt-evacuate-fine offbt"></div>
 	
-	<div class="off-evacuate-high offbt"></div>
+	<div class="offbt-evacuate-high offbt"></div>
 
-	<div class="off-manual-leaktest offbt"></div>
+	<div class="offbt-manual-leaktest offbt"></div>
 	
-	<div class="off-fastcooling offbt"></div>
-	
-	
+	<div class="offbt-fastcooling offbt"></div>
 	
 	
-	<div class="off-fur-hit offbt"></div>
 	
-	<div class="off-ar offbt"></div>
 	
-	<div class="off-venting offbt"></div>
+	<div class="offbt-fur-hit offbt"></div>
 	
-		<div class="off-open-M8089 offbt"></div>
+	<div class="offbt-ar offbt"></div>
+	
+	<div class="offbt-venting offbt"></div>
+	
+		<div class="offbt-open-M8089 offbt"></div>
 		
-	<div class="off-close-M8090 offbt"></div>
+	<div class="offbt-close-M8090 offbt"></div>
 		
 		
 <script>
@@ -302,6 +302,7 @@ function value(keys, value){
 
 
 function off(keys, value){
+/* 	console.log("asd() 호출: keys =", keys, ", value =", value); */
 	 if (value == true) {
 	        $("." + keys).css("background-color", "green"); 
 	    } else {
@@ -312,32 +313,45 @@ function off(keys, value){
 
 
 function asd(keys, value) {
-	/*	console.log("asd() 호출: keys =", keys, ", value =", value);*/
+    /*	console.log("asd() 호출: keys =", keys, ", value =", value);*/
 
-
-	
     if (value == true) {
+        var valuesArray = keys.split("-");
+        var rtnValue = "";
+        var i = 0;
+        for (i = 0; i < valuesArray.length; i++) {
+            if (i != 0) {
+                if (valuesArray.length > 2 && i < valuesArray.length - 1) {
+                    rtnValue += valuesArray[i] + "-";
+                } else {
+                    rtnValue += valuesArray[i];
+                }
+            }
+        }
 
-		var valuesArray = keys.split("-");
-		var rtnValue = "";
-		var i=0;
-		for(i<0;i<valuesArray.length; i++){
-			if(i!=0){
-				if(valuesArray.length > 2 && i < valuesArray.length-1){
-					rtnValue += valuesArray[i]+"-";
-				}else{
-					rtnValue += valuesArray[i];
-				}
-			}
-		}
-//		rtnValue = rtnValue.substring(0,rtnValue.length-1);
 
-//		console.log(rtnValue);
+        if (keys === "asd-open-lid") {
+            $("." + keys).css("color", "#000000");
+            $("." + keys).removeAttr("disabled");
+            $("." + keys).attr("onclick", "digitalSetOnOff('DONGHWA.FURNACE.MANUAL_OPERATION','open-lid')");
+            $("." + keys).css("cursor", "pointer");
+        } else if (keys === "asd-close-lid") {
+            $("." + keys).css("color", "#000000");
+            $("." + keys).removeAttr("disabled");
+            $("." + keys).attr("onclick", "digitalSetOnOff2('')");
+            $("." + keys).css("cursor", "pointer");
+        } else {
 
-		$("." + keys).css("color", "#000000");
-        $("." + keys).removeAttr("disabled"); 
-        $("."+keys).attr("onclick","digitalSet('DONGHWA.FURNACE.MANUAL_OPERATION','"+rtnValue+"')");
-        $("." + keys).css("cursor", "pointer");
+            $("." + keys).css("color", "#000000");
+            $("." + keys).removeAttr("disabled");
+            $("." + keys).attr("onclick", function() {
+                return function() {
+                    digitalSetOnOff(); 
+                };
+            });
+            $("." + keys).css("cursor", "pointer");
+        }
+
     } else {
         $("." + keys).css("color", "#D3D3D3");
         $("." + keys).attr("disabled", true);
@@ -345,6 +359,7 @@ function asd(keys, value) {
         $("." + keys).css("cursor", "");
     }
 }
+
 
 
 function plc(keys, value) {

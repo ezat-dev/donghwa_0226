@@ -34,6 +34,11 @@ public class ParameterController {
         return "/parameter/timerPop.jsp";
     }
     
+    @RequestMapping(value = "/parameter/adminSetting", method = RequestMethod.GET)
+    public String adminSetting(Model model) {
+        return "/parameter/adminSetting.jsp";
+    }
+    
 
     //limitSwitchesPop
     @RequestMapping(value= "/parameter/limitSwitchesPop/view", method = RequestMethod.POST)
@@ -58,6 +63,20 @@ public class ParameterController {
     	OpcDataMap opcDataMap = new OpcDataMap();
     	
     	returnMap = opcDataMap.getOpcDataListMap("DONGHWA.PARAMETER.TIMER");
+    	
+    	return returnMap;    	
+    }	
+    
+    
+    //admin
+    @RequestMapping(value= "/parameter/admin/view", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> admin() throws UaException, InterruptedException, ExecutionException {
+    	Map<String, Object> returnMap = new HashMap<String, Object>();
+
+    	OpcDataMap opcDataMap = new OpcDataMap();
+    	
+    	returnMap = opcDataMap.getOpcDataListMap("DONGHWA.PARAMETER.ADMIN");
     	
     	return returnMap;    	
     }	

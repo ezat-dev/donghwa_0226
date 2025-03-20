@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page session="true" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/donghwa/css/furnace/operationPressPop.css">
-   <jsp:include page="../include/OnOffPop.jsp"/>
+  <jsp:include page="../include/commonPopupPress.jsp"/>
    <jsp:include page="../include/pluginpage.jsp"/>
 
   

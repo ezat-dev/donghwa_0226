@@ -178,7 +178,7 @@
    	    <li onclick="menuClick('/donghwa/parameter/adminSetting');">Admin Setting</li>
        
        
-        <li onclick="popupClick('/', 505, 505, 584, 180);">Calibrate TC measuring syst</li>
+     
      
      
       </ul>

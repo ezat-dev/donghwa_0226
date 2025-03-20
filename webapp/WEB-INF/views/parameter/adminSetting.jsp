@@ -374,12 +374,6 @@
 
      
 
-    function menuClick(url) {
-    	popup.close();
-      location.href = url;
-    }
-
-
 
 
 

@@ -57,10 +57,16 @@ public class AnalysisDaoImpl implements AnalysisDao{
     	return sessionSQLite.selectList("alarm.alarmlistOverview");
     }
 	@Override
+	public void penGroupPenDelete(Temper temper) {
+		sqlSession.delete("temper.penGroupPenDelete", temper);
+	}
+
+	@Override
 	public void penGroupPenAdd(Temper temper) {
 		sqlSession.insert("temper.penGroupPenAdd", temper);
 	}
-
+	
+	
 	@Override
 	public int getPenGroupPenCount(Temper temper) {
 		return sqlSession.selectOne("temper.getPenGroupPenCount",temper);

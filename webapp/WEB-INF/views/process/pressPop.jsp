@@ -847,7 +847,7 @@
   position: absolute;
   left: 414px;
   top: 300px;
-  width: 49px;
+  width: 249px;
   height: 21px;
 }
 .ref-point-val-1 {
@@ -875,7 +875,7 @@
   position: absolute;
   left: 414px;
   top: 332px;
-  width: 62px;
+  width: 362px;
   height: 22px;
 }
 .ref-point-val-2 {
@@ -1336,6 +1336,58 @@
 }
    
    
+   .position2-1 {
+  background: #23e471;
+  width: 357px;
+  height: 32px;
+  position: absolute;
+  left: 408px;
+  top: 368px;
+}
+.position3-1 {
+  color: #000000;
+  text-align: left;
+  
+  font-size: 19px;
+  font-weight: 400;
+  position: absolute;
+  left: 414px;
+  top: 370px;
+  width: 378px;
+  height: 19px;
+}
+.position-box-3-1 {
+  background: #ffffff;
+  width: 169px;
+  height: 31px;
+  position: absolute;
+  left: 408px;
+  top: 401px;
+}
+.gic-22-1-60-20-1 {
+  color: #000000;
+  text-align: left;
+  
+  font-size: 19px;
+  font-weight: 400;
+  position: absolute;
+  left: 414px;
+  top: 406px;
+  width: 240px;
+  height: 21px;
+}
+.position-val-3-1 {
+  background: #ffffff;
+  width: 185px;
+  height: 31px;
+  position: absolute;
+  left: 580px;
+  top: 401px;
+}
+   
+   
+   
+   
    </style>
   <title>Document</title>
 </head>
@@ -1351,52 +1403,52 @@
     <div class="press-capacity">Press capacity</div>
     <div class="press-cap-box-1"></div>
     <div class="auto">Auto</div>
-    <div class="wic-22-4-2-x">Current Protect</div>
+    <div class="wic-22-4-2-x">Current Load</div>
     <div class="press-cap-val-1 D11105"></div>
     <div class="press-cap-box-2"></div>
-    <div class="wsp-22-4-2-x">Set Protect</div>
+    <div class="wsp-22-4-2-x">Set Load</div>
     <div class="press-cap-val-2 D11013	"></div>
     <div class="force-sensor"></div>
     <div class="force-sensor2">Force sensor</div>
     <div class="force-sensor-box-1"></div>
-    <div class="wic-22-4-2-1 ">Protect censor1</div>
+    <div class="wic-22-4-2-1 ">Load Sensor1</div>
     <div class="force-sensor-val-1 D7981"></div>
     <div class="force-sensor-box-2"></div>
-    <div class="wic-22-4-2-2">Protect censor2</div>
+    <div class="wic-22-4-2-2">Load Sensor2</div>
     <div class="force-sensor-val-2 D7982"></div>
     <div class="force-sensor-box-3"></div>
-    <div class="wic-22-4-2-3">Protect censor3</div>
+    <div class="wic-22-4-2-3">Load Sensor3</div>
     <div class="force-sensor-val-3 D7983"></div>
     <div class="force-sensor-box-4"></div>
-    <div class="wic-22-4-2-4">Protect censor4</div>
+    <div class="wic-22-4-2-4">Load Sensor4</div>
     <div class="force-sensor-val-4 D7984"></div>
     <div class="force-sensor-box-5"></div>
-    <div class="wic-22-4-2-5">Protect censor5</div>
+    <div class="wic-22-4-2-5">Load Sensor5</div>
     <div class="force-sensor-val-5 D7985"></div>
     <div class="force-sensor-box-6"></div>
-    <div class="wic-22-4-2-6">Protect censor6</div>
+    <div class="wic-22-4-2-6">Load Sensor6</div>
     <div class="force-sensor-val-6 D7986"></div>
     <div class="force-sensor-box-7 "></div>
-    <div class="wic-22-4-2-7">Protect censor7</div>
+    <div class="wic-22-4-2-7">Load Sensor7</div>
     <div class="force-sensor-val-7 D7987"></div>
     <div class="force-sensor-box-8"></div>
-    <div class="wic-22-4-2-8 ">Protect censor8</div>
+    <div class="wic-22-4-2-8 ">Load Sensor8</div>
     <div class="force-sensor-val-8 D7988"></div>
 
     <div class="tara-box-1"></div>
-      <div class="wic-22-4-2-9 ">Protect censor9</div>
+      <div class="wic-22-4-2-9 ">Load Sensor9</div>
     <div class="tara-val-1 D7989"></div>
     
         <div class="tara-box-2"></div>
-          <div class="wic-22-4-2-10 ">Protect censor10</div>
+          <div class="wic-22-4-2-10 ">Load Sensor10</div>
     <div class="tara-val-2 D7990"></div>
     
         <div class="tara-box-3"></div>
-          <div class="wic-22-4-2-11 ">Protect censor11</div>
+          <div class="wic-22-4-2-11 ">Load Sensor11</div>
     <div class="tara-val-3 D7991"></div>
     
         <div class="tara-box-4"></div>
-          <div class="wic-22-4-2-12 ">Protect censor12</div>
+          <div class="wic-22-4-2-12 ">Load Sensor12</div>
     <div class="tara-val-4 D7992"></div>
 
 
@@ -1404,26 +1456,26 @@
     <div class="auto2">Auto</div>
     <div class="position">Position</div>
     <div class="position-box-1"></div>
-    <div class="gic-22-2-60-10">GIC 22.2.60.10</div>
+    <div class="gic-22-2-60-10">Front Press</div>
     <div class="position-val-1 D11101"></div>
     <div class="position-box-2"></div>
-    <div class="gsp-22-2-60-10">GSP 22.2.60.10</div>
+    <div class="gsp-22-2-60-10">Rear Press</div>
     <div class="position-val-2 D11102"></div>
     <div class="position2"></div>
     <div class="position3">Position</div>
     <div class="position-box-3"></div>
-    <div class="gic-22-1-60-20">GIC 22.1.60.20</div>
+    <div class="gic-22-1-60-20">Seg. Start</div>
     <div class="position-val-3"></div>
     <div class="ref-point"></div>
     <div class="ref-point2">Reference Point</div>
     <div class="ref-point-box-1"></div>
-    <div class="start">Start</div>
+    <div class="start">Initial Position</div>
     <div class="ref-point-val-1"></div>
     <div class="ref-point-box-2"></div>
-    <div class="actual">Actual</div>
+    <div class="actual">Initial Height</div>
     <div class="ref-point-val-2"></div>
     <div class="mid-box-1"></div>
-    <div class="_1"></div>
+    <div class="_1 M8165"></div>
     <div class="extrusion-die-in-upper-position">
       Extrusion die in upper Position
     </div>
@@ -1481,6 +1533,16 @@
     <div class="hydraulic-oil-fill-level">Hydraulic Oil Fill Level</div>
     <div class="level-val-1"></div>
     <div class="wis-22-1-5-1">WIS 22.1.5.1</div>
+
+
+
+
+    <div class="position2-1"></div>
+    <div class="position3-1">Force Sensor 1 ~ 12 </div>
+    <div class="position-box-3-1"></div>
+    <div class="gic-22-1-60-20-1">Force Sensor Sum</div>
+    <div class="position-val-3-1 D7995">?</div>
+
 
 <script>
 
@@ -1547,11 +1609,23 @@ function c(keys, value){
 }
 */
 function value(keys, value) {
-    var finalValue = (keys === "D11101" || keys === "D11102") ? ((value / 100).toFixed(2) + " mm") : (value + " kN");
+    var finalValue;
+    
+    if (keys === "D11101" || keys === "D11102") {
+        finalValue = ((value / 100).toFixed(2) + " mm");
+    } else if (keys === "D11105") {
+        finalValue = ((value * 0.1).toFixed(2) + " kN");
+    } else {
+        finalValue = (value + " kN");
+    }
+
     $("." + keys).text(finalValue);
-    $("." + keys).css("text-align", "center");
-    $("." + keys).css("font-size", "16pt");
+    $("." + keys).css({
+        "text-align": "center",
+        "font-size": "16pt"
+    });
 }
+
 
 
 </script>  

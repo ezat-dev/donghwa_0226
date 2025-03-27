@@ -28,7 +28,8 @@
 		SELECT *
 		FROM (
 			SELECT tdate AS tdate2, UNIX_TIMESTAMP(tdate) AS tdate,
-					c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,cs1
+				c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, 
+    			cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8, cs9, cs10, cs11, cs12, cs13, cs14, cs15, cs16, pr1, pr2
 			FROM tb_temp
 		) AS aa
 		WHERE 1=1
@@ -48,6 +49,16 @@
 	<insert id="penGroupPenAdd" parameterType="temper">
 		CALL sp_insert_pendata(#{pen_group_name},#{pen_name},#{pen_color})
 	</insert>
+	
+	
+	<!-- Pen 삭제 쿼리 -->
+	<delete id="penGroupPenDelete" parameterType="temper">
+	    DELETE FROM tb_temp_pen
+	    WHERE pen_group_name = #{pen_group_name}
+	    AND pen_name = #{pen_name}
+	</delete>
+	
+	
 	
 	<select id="getPenGroupPenCount" parameterType="temper" resultType="int">
 		SELECT COUNT(*) AS ccc

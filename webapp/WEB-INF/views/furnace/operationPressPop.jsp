@@ -127,12 +127,13 @@ function v(keys, value){
 	if(value == true){
 		$("."+keys).css("color","green");
 		$("."+keys).css("color","white");
+		
 	}else{
 		$("."+keys).css("color","#E3E3E3");
 		$("."+keys).css("color","black");
 	}
     $("." + keys).attr("onclick", "digitalSet('DONGHWA.FURNACE.OPERATION_PRESS', '"+keys+"')")
-   
+   $("."+keys).css("cursor", "pointer");
 }
 
 /*

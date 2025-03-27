@@ -23,6 +23,8 @@ public interface AnalysisService {
 	List<Alarm> alarmData();
 
 	void penGroupPenAdd(Temper temper);
+	
+	void penGroupPenDelete(Temper temper);
 
 	int getPenGroupPenCount(Temper temper);	
 }

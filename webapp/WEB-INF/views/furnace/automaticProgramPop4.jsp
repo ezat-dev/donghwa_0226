@@ -233,7 +233,7 @@
         if (value == true) {
             $("." + keys).css({
                 "color": "#000000",
-                "background-color": "green",
+                "background-color": "",
                 "cursor": "pointer"
             });
             $("." + keys).removeAttr("disabled");

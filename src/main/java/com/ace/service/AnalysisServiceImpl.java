@@ -56,6 +56,19 @@ public class AnalysisServiceImpl implements AnalysisService{
 	public void penGroupPenAdd(Temper temper) {
 		analysisDao.penGroupPenAdd(temper);
 	}
+	
+	
+	
+	
+	@Override
+	public void penGroupPenDelete(Temper temper) {
+		analysisDao.penGroupPenDelete(temper);
+	}
+	
+	
+	
+	
+	
 
 	@Override
 	public int getPenGroupPenCount(Temper temper) {

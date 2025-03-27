@@ -17,8 +17,37 @@ public class Temper {
 	private String c11;
 	private String c12;
 	private String c13;
+	private String c14;
+	private String c15;
+	private String c16;
+	private String c17;
+	private String c18;
+	private String c19;
+	private String c20;
+	private String c21;
+	private String c22;
+
+	private String cs1;
+	private String cs2;
+	private String cs3;
+	private String cs4;
+	private String cs5;
+	private String cs6;
+	private String cs7;
+	private String cs8;
+	private String cs9;
+	private String cs10;
+	private String cs11;
+	private String cs12;
+	private String cs13;
+	private String cs14;
+	private String cs15;
+	private String cs16;
 	
+	private String pr1;
 	
+	private String pr2;
+
 	private String sdateTime;
 	private String edateTime;
 	
@@ -35,6 +64,285 @@ public class Temper {
 	private String pen_info_name;
 	private String pen_info_yn; // CASE문으로 사용
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getPr1() {
+		return pr1;
+	}
+
+
+	public void setPr1(String pr1) {
+		this.pr1 = pr1;
+	}
+
+
+	public String getPr2() {
+		return pr2;
+	}
+
+
+	public void setPr2(String pr2) {
+		this.pr2 = pr2;
+	}
+
+
+	public String getC14() {
+		return c14;
+	}
+
+
+	public void setC14(String c14) {
+		this.c14 = c14;
+	}
+
+
+	public String getC15() {
+		return c15;
+	}
+
+
+	public void setC15(String c15) {
+		this.c15 = c15;
+	}
+
+
+	public String getC16() {
+		return c16;
+	}
+
+
+	public void setC16(String c16) {
+		this.c16 = c16;
+	}
+
+
+	public String getC17() {
+		return c17;
+	}
+
+
+	public void setC17(String c17) {
+		this.c17 = c17;
+	}
+
+
+	public String getC18() {
+		return c18;
+	}
+
+
+	public void setC18(String c18) {
+		this.c18 = c18;
+	}
+
+
+	public String getC19() {
+		return c19;
+	}
+
+
+	public void setC19(String c19) {
+		this.c19 = c19;
+	}
+
+
+	public String getC20() {
+		return c20;
+	}
+
+
+	public void setC20(String c20) {
+		this.c20 = c20;
+	}
+
+
+	public String getC21() {
+		return c21;
+	}
+
+
+	public void setC21(String c21) {
+		this.c21 = c21;
+	}
+
+
+	public String getC22() {
+		return c22;
+	}
+
+
+	public void setC22(String c22) {
+		this.c22 = c22;
+	}
+
+
+	public String getCs1() {
+		return cs1;
+	}
+
+
+	public void setCs1(String cs1) {
+		this.cs1 = cs1;
+	}
+
+
+	public String getCs2() {
+		return cs2;
+	}
+
+
+	public void setCs2(String cs2) {
+		this.cs2 = cs2;
+	}
+
+
+	public String getCs3() {
+		return cs3;
+	}
+
+
+	public void setCs3(String cs3) {
+		this.cs3 = cs3;
+	}
+
+
+	public String getCs4() {
+		return cs4;
+	}
+
+
+	public void setCs4(String cs4) {
+		this.cs4 = cs4;
+	}
+
+
+	public String getCs5() {
+		return cs5;
+	}
+
+
+	public void setCs5(String cs5) {
+		this.cs5 = cs5;
+	}
+
+
+	public String getCs6() {
+		return cs6;
+	}
+
+
+	public void setCs6(String cs6) {
+		this.cs6 = cs6;
+	}
+
+
+	public String getCs7() {
+		return cs7;
+	}
+
+
+	public void setCs7(String cs7) {
+		this.cs7 = cs7;
+	}
+
+
+	public String getCs8() {
+		return cs8;
+	}
+
+
+	public void setCs8(String cs8) {
+		this.cs8 = cs8;
+	}
+
+
+	public String getCs9() {
+		return cs9;
+	}
+
+
+	public void setCs9(String cs9) {
+		this.cs9 = cs9;
+	}
+
+
+	public String getCs10() {
+		return cs10;
+	}
+
+
+	public void setCs10(String cs10) {
+		this.cs10 = cs10;
+	}
+
+
+	public String getCs11() {
+		return cs11;
+	}
+
+
+	public void setCs11(String cs11) {
+		this.cs11 = cs11;
+	}
+
+
+	public String getCs12() {
+		return cs12;
+	}
+
+
+	public void setCs12(String cs12) {
+		this.cs12 = cs12;
+	}
+
+
+	public String getCs13() {
+		return cs13;
+	}
+
+
+	public void setCs13(String cs13) {
+		this.cs13 = cs13;
+	}
+
+
+	public String getCs14() {
+		return cs14;
+	}
+
+
+	public void setCs14(String cs14) {
+		this.cs14 = cs14;
+	}
+
+
+	public String getCs15() {
+		return cs15;
+	}
+
+
+	public void setCs15(String cs15) {
+		this.cs15 = cs15;
+	}
+
+
+	public String getCs16() {
+		return cs16;
+	}
+
+
+	public void setCs16(String cs16) {
+		this.cs16 = cs16;
+	}
+
+
 	public String getTdate() {
 		return tdate;
 	}

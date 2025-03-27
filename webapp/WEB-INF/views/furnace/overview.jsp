@@ -551,8 +551,8 @@
     <div class="value-8 tx">Rotary Pump</div>
     <div class="value-9 tx">Ar Gas Valve</div>
     <div class="value-10 tx">Vent Valve</div>
-    <div class="value-11 tx">PS 13.202 Ar </div>
-    <div class="value-11-air tx">PS 10.2 Comp. air </div>
+    <div class="value-11 tx">Cooling Gas Pressure</div>
+    <div class="value-11-air tx">Air Pressure</div>
     <div class="value-12 tx">Air</div>
     <div class="value-13 tx">Ar</div>
     <img class="component-5 Rdclose" src="/donghwa/css/furnace/img/component-50.svg" />
@@ -596,13 +596,13 @@
     <img class="component-12 component-12-img 3			Fore_Line_Valve	pop-on-fv-M9 pop-off-fv-M10 onClickStatus" src="/donghwa/css/furnace/img/component-120.svg" />
    
     <img class="component-13 2 3 						Ar_Gas_Value pop-on-asv-M15 pop-off-asv-M16 onClickStatus" src="/donghwa/css/furnace/img/component-130.svg" />
-    <img class="component-14 component-14-img 3 	   Ar_Gas_Value pop-on-asv-M15 pop-off-asv-M16 onClickStatus" src="/donghwa/css/furnace/img/component-140.svg" />
+    <img class="component-14 component-14-img 3 	 	  Ar_Gas_Value pop-on-asv-M15 pop-off-asv-M16 onClickStatus" src="/donghwa/css/furnace/img/component-140.svg" />
   
-    <img class="component-15 2 3 						Vent_valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-150.svg" />
-    <img class="component-16 component-16-img  3 	    Vent_valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-160.svg" />
+    <img class="component-15 2 3 						Vent_Valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-150.svg" />
+    <img class="component-16 component-16-img  3 	    Vent_Valve pop-on-vv-M50 pop-off-vv-M51 onClickStatus" src="/donghwa/css/furnace/img/component-160.svg" />
    
-    <div class="ball-off-1 2 3 							Diff_pump(Now:OFF) pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
-    <div class="ball-on-60 2 3 							Diff_pump(Now:ON) pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
+    <div class="ball-off-1 2 3 							Diff_Pump pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
+    <div class="ball-on-60 2 3 							Diff_Pump pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
    
     <div class="ball-on-1 ball-on-1-img"></div>
    

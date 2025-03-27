@@ -11,6 +11,11 @@
    
     <style>
 
+		#tabulator-table{
+		font-size:19px;
+		    height: 770px;
+		
+		}
         hr {
             width: 95%;
             margin: 10px 2.5% 2% 2.5%;
@@ -101,8 +106,7 @@
         }
         #table_file {
             -ms-overflow-style: none;
-            height: 650px;
-        }
+          }
         #table_file::-webkit-scrollbar { display: none; }
         #cate_list {
             border-collapse: collapse;
@@ -183,7 +187,7 @@
     var tableData = []; 
 
     var table = new Tabulator("#tabulator-table", {
-        height: 650,
+        height: 770,
         data: tableData, 
         layout:"fitColumns",
         selectable:true,
@@ -193,7 +197,7 @@
         headerHozAlign:"center",
         columns: [
             { title: "TAGENAME", field: "tagName", width: 340, hozAlign:"center"},
-            { title: "ALARMDESC", field: "alarmDesc", width: 730, hozAlign:"center"},
+            { title: "ALARMDESC", field: "alarmDesc", width: 570, hozAlign:"center"},
             { title: "START TIME", field: "time", width: 360, hozAlign:"center"},
             { title: "END TIME", field: "lead_alarmtime", width: 360, hozAlign:"center"},
         ],

@@ -81,7 +81,7 @@
   <div class="_6"></div>
   <div class="hyd-position"></div>
   <div class="_7"></div>
-  <div class="fast-stop-not-actuated">Fast STOP not actuated</div>
+  <div class="fast-stop-not-actuated">Fast stop not actuated</div>
   <div class="furnace-closed">Furnace closed</div>
   <div class="all-controllers-in-automatic-mode">
     All controllers in automatic mode
@@ -89,9 +89,9 @@
   <div class="all-setpoints-in-automatic-mode">
     All setpoints in automatic mode
   </div>
-  <div class="automatic-on2">Automatic on</div>
+  <div class="automatic-on2">Menual leaktest</div>
   <div class="no-fault2">No fault</div>
-  <div class="hydraulic-in-position">Hydraulic in Position</div>
+  <div class="hydraulic-in-position">Hydraulic in position</div>
 
 
   <script>

@@ -127,12 +127,12 @@ $(document).on("keydown", ".anlog-popup-div-color", function (e) {
 
         var inputValue = $(this).text().trim();
 
-        // 값이 숫자인지 확인하고, 3자리 초과인지 검사
-        if (!/^\d+$/.test(inputValue) || inputValue.length > 3) {
+        // 값이 숫자이거나 음수이면서, 소수점은 1개까지 허용하고, 소수점 뒤는 최대 2자리까지 허용
+        if (!/^-?\d{1,3}(\.\d{1,2})?$/.test(inputValue)) {
             if (!alertShown) { // 알럿이 아직 안 떴다면
-                alert("올바른 값을 입력해주세요 (최대 3자리 숫자)");
+                alert("올바른 값을 입력해주세요 (최대 3자리 숫자, 소수점 뒤는 최대 2자리 -입력 가능, 정수 입력시 + 제외)");
                 alertShown = true; // 알럿이 떴음을 기록
-                setTimeout(() => alertShown = false, 200); // 1초 후 다시 알럿 가능
+                setTimeout(() => alertShown = false, 200); // 0.2초 후 다시 알럿 가능
             }
             return; // 조건에 맞지 않으면 이후 코드 실행 안 함
         }

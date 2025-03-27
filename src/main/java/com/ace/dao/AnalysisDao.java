@@ -24,6 +24,8 @@ public interface AnalysisDao {
 	
 
 	void penGroupPenAdd(Temper temper);
+	
+	void penGroupPenDelete(Temper temper);
 
 	int getPenGroupPenCount(Temper temper);	
 }

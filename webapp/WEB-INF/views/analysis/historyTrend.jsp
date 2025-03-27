@@ -7,7 +7,7 @@
     <title>History Trend</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <%@ include file="../include/mainHeader.jsp" %>
-	<%@ include file="../include/mainFooter.jsp" %>    
+   
     <jsp:include page="../include/pluginpage.jsp"/>
     <style>
         html, body {
@@ -22,7 +22,9 @@
             justify-content: center;
             align-items: center;
             height: 100%;
+          	width:100%; 
             padding: 20px;
+            margin-top:60px;
             background-color: #f8f9fa;
         }
 
@@ -66,7 +68,7 @@
 
         #container {
         	margin-top: 100px;
-            width: 100%;
+            width: 80%;
             height: 840px;
         }
         
@@ -216,8 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //SP값 포함
 /*
 var seriesNames = [
-    "c1", "c2", "c3", "c4", "c5", "c6", "c7",
-    "c8", "c9", "c10", "c11", "c12", "c13"
+	 "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8",
+	    "c9", "c10", "c11", "c12", "c13", "c14", "c15", "c16",
+	    "c17", "c18", "c19", "c20", "c21", "c22",
+	    "cs1", "cs2", "cs3", "cs4", "cs5", "cs6", "cs7", "cs8",
+	    "cs9", "cs10", "cs11", "cs12", "cs13", "cs14", "cs15", "cs16"
 ];
 */
 //SP값 미포함
@@ -334,21 +339,84 @@ $(function(){
 		
 		var onoverTime = $("#onoverTime").text();
 		var onoverC1 = $("#onoverC1").text();
+		var onoverC2 = $("#onoverC2").text();
 		var onoverC3 = $("#onoverC3").text();
+		var onoverC4 = $("#onoverC4").text();
 		var onoverC5 = $("#onoverC5").text();
+		var onoverC6 = $("#onoverC6").text();
 		var onoverC7 = $("#onoverC7").text();
+		var onoverC8 = $("#onoverC8").text();
 		var onoverC9 = $("#onoverC9").text();
+		var onoverC10 = $("#onoverC10").text();
 		var onoverC11 = $("#onoverC11").text();
+		var onoverC12 = $("#onoverC12").text();
 		var onoverC13 = $("#onoverC13").text();
+		var onoverC14 = $("#onoverC14").text();
+		var onoverC15 = $("#onoverC15").text();
+		var onoverC16 = $("#onoverC16").text();
+		var onoverC17 = $("#onoverC17").text();
+		var onoverC18 = $("#onoverC18").text();
+		var onoverC19 = $("#onoverC19").text();
+		var onoverC20 = $("#onoverC20").text();
+		var onoverC21 = $("#onoverC21").text();
+		var onoverC22 = $("#onoverC22").text();
+		var onoverCS1 = $("#onoverCS1").text();
+		var onoverCS2 = $("#onoverCS2").text();
+		var onoverCS3 = $("#onoverCS3").text();
+		var onoverCS4 = $("#onoverCS4").text();
+		var onoverCS5 = $("#onoverCS5").text();
+		var onoverCS6 = $("#onoverCS6").text();
+		var onoverCS7 = $("#onoverCS7").text();
+		var onoverCS8 = $("#onoverCS8").text();
+		var onoverCS9 = $("#onoverCS9").text();
+		var onoverCS10 = $("#onoverCS10").text();
+		var onoverCS11 = $("#onoverCS11").text();
+		var onoverCS12 = $("#onoverCS12").text();
+		var onoverCS13 = $("#onoverCS13").text();
+		var onoverCS14 = $("#onoverCS14").text();
+		var onoverCS15 = $("#onoverCS15").text();
+		var onoverCS16 = $("#onoverCS16").text();
 
 		$("#cursor1_timeData").text(onoverTime);
 		$("#cursor1_C1Data").text(onoverC1);
+		$("#cursor1_C2Data").text(onoverC2);
 		$("#cursor1_C3Data").text(onoverC3);
+		$("#cursor1_C4Data").text(onoverC4);
 		$("#cursor1_C5Data").text(onoverC5);
+		$("#cursor1_C6Data").text(onoverC6);
 		$("#cursor1_C7Data").text(onoverC7);
+		$("#cursor1_C8Data").text(onoverC8);
 		$("#cursor1_C9Data").text(onoverC9);
+		$("#cursor1_C10Data").text(onoverC10);
 		$("#cursor1_C11Data").text(onoverC11);
+		$("#cursor1_C12Data").text(onoverC12);
 		$("#cursor1_C13Data").text(onoverC13);
+		$("#cursor1_C14Data").text(onoverC14);
+		$("#cursor1_C15Data").text(onoverC15);
+		$("#cursor1_C16Data").text(onoverC16);
+		$("#cursor1_C17Data").text(onoverC17);
+		$("#cursor1_C18Data").text(onoverC18);
+		$("#cursor1_C19Data").text(onoverC19);
+		$("#cursor1_C20Data").text(onoverC20);
+		$("#cursor1_C21Data").text(onoverC21);
+		$("#cursor1_C22Data").text(onoverC22);
+		$("#cursor1_CS1Data").text(onoverCS1);
+		$("#cursor1_CS2Data").text(onoverCS2);
+		$("#cursor1_CS3Data").text(onoverCS3);
+		$("#cursor1_CS4Data").text(onoverCS4);
+		$("#cursor1_CS5Data").text(onoverCS5);
+		$("#cursor1_CS6Data").text(onoverCS6);
+		$("#cursor1_CS7Data").text(onoverCS7);
+		$("#cursor1_CS8Data").text(onoverCS8);
+		$("#cursor1_CS9Data").text(onoverCS9);
+		$("#cursor1_CS10Data").text(onoverCS10);
+		$("#cursor1_CS11Data").text(onoverCS11);
+		$("#cursor1_CS12Data").text(onoverCS12);
+		$("#cursor1_CS13Data").text(onoverCS13);
+		$("#cursor1_CS14Data").text(onoverCS14);
+		$("#cursor1_CS15Data").text(onoverCS15);
+		$("#cursor1_CS16Data").text(onoverCS16);
+
 	});
 	
 	$("#cursor2").on("click", function(){
@@ -444,20 +512,89 @@ function getPenGroupChartData() {
                 	//펜 이름변경시 수정
                 	
                 	if(data[name].name == "c1"){
-                		changeName = "TIC 4.1.1";
+                	    changeName = "Zone 1.1";
+                	}else if(data[name].name == "c2"){
+                	    changeName = "Zone 1.2";
                 	}else if(data[name].name == "c3"){
-                		changeName = "TIC 4.1.2";
+                	    changeName = "Zone 2.1";
+                	}else if(data[name].name == "c4"){
+                	    changeName = "Zone 2.2";
                 	}else if(data[name].name == "c5"){
-                		changeName = "TIC 4.3.1";
+                	    changeName = "Zone 3.1";
+                	}else if(data[name].name == "c6"){
+                	    changeName = "Zone 3.2";
                 	}else if(data[name].name == "c7"){
-                		changeName = "TIC 4.3.2";
+                	    changeName = "Protect 1";
+                	}else if(data[name].name == "c8"){
+                	    changeName = "Temp-load-1";
                 	}else if(data[name].name == "c9"){
-                		changeName = "TIC 4.5.1";
+                	    changeName = "Temp-load-2";
+                	}else if(data[name].name == "c10"){
+                	    changeName = "Temp-load-3";
                 	}else if(data[name].name == "c11"){
-                		changeName = "TIC 4.5.2";
+                	    changeName = "Temp-load-4";
+                	}else if(data[name].name == "c12"){
+                	    changeName = "Temp-load-5";
                 	}else if(data[name].name == "c13"){
-                		changeName = "TI 4.6.1";
-                	}
+                	    changeName = "Temp-load-6";
+                	}else if(data[name].name == "c14"){
+                	    changeName = "Temp-load-7";
+                	}else if(data[name].name == "c15"){
+                	    changeName = "Temp-load-8";
+                	}else if(data[name].name == "c16"){
+                	    changeName = "Temp-load-9";
+                	}else if(data[name].name == "c17"){
+                	    changeName = "Temp-load-10";
+                	}else if(data[name].name == "c18"){
+                	    changeName = "Temp-load-11";
+                	}else if(data[name].name == "c19"){
+                	    changeName = "Temp-load-12";
+                	}else if(data[name].name == "c20"){
+                	    changeName = "Temp-Load-13";
+                	}else if(data[name].name == "c21"){
+                	    changeName = "Temp-Load-14";
+                	}else if(data[name].name == "c22"){
+                	    changeName = "Temp-Load-15";
+                	}else if(data[name].name == "cs1"){
+                	    changeName = "Current Load";
+                	}else if(data[name].name == "cs2"){
+                	    changeName = "Set Load";
+                	}else if(data[name].name == "cs3"){
+                	    changeName = "Front Press";
+                	}else if(data[name].name == "cs4"){
+                	    changeName = "Rear Press";
+                	}else if(data[name].name == "cs5"){
+                	    changeName = "force-sensor-1";
+                	}else if(data[name].name == "cs6"){
+                	    changeName = "force-sensor-2";
+                	}else if(data[name].name == "cs7"){
+                	    changeName = "force-sensor-3";
+                	}else if(data[name].name == "cs8"){
+                	    changeName = "force-sensor-4";
+                	}else if(data[name].name == "cs9"){
+                	    changeName = "force-sensor-5";
+                	}else if(data[name].name == "cs10"){
+                	    changeName = "force-sensor-6";
+                	}else if(data[name].name == "cs11"){
+                	    changeName = "force-sensor-7";
+                	}else if(data[name].name == "cs12"){
+                	    changeName = "force-sensor-8";
+                	}else if(data[name].name == "cs13"){
+                	    changeName = "force-sensor-9";
+                	}else if(data[name].name == "cs14"){
+                	    changeName = "force-sensor-10";
+                	}else if(data[name].name == "cs15"){
+                	    changeName = "force-sensor-11";
+                	}else if(data[name].name == "cs16"){
+                	    changeName = "force-sensor-12";
+                	
+
+            	}else if(data[name].name == "pr1"){
+            	    changeName = "furnace-vacuum";
+            	}
+	        	}else if(data[name].name == "pr2"){
+	        	    changeName = "diffusion-pump";
+        		}
                 	var endSetDate;
                     var series = {
                         name: changeName,

@@ -196,7 +196,7 @@
   
   <div class="open-lid asd-open-lid"></div>
   <div class="plc-open-lid asd-open-lid"></div>
-  <div class="open-lid-clamps asd-open-lid">Front Calmp</div>
+  <div class="open-lid-clamps asd-open-lid">Front Clamp</div>
   
   
   <div class="close-lid asd-close-lid"></div>

@@ -183,7 +183,7 @@
         <div class="panel">
             <div class="panel-title">High Vacuum Pressure Set</div>
             <div class="panel-content">
-                <div class="sub-title">Diffusion Pump Vacuum</div>
+                <div class="sub-title">Furnace Vacuum</div>
                 <table class="table">
                     <tr><td>Booster Set</td><td class="R1000V0"></td></tr>
                     <tr><td>Diffusion Set</td><td class="R1005V0"></td></tr>
@@ -341,9 +341,10 @@
 	            value = "+" + value;
 	        }
 	        // 특정 키면 뒤에 "°C" 추가
-	        if (["R1100", "R1105"].includes(keys)) {
-	            value = value + "%";
-	        }
+	     if (["R1100", "R1105"].includes(keys)) {
+		    value = (value / 10).toFixed(1) + "%";
+		}
+
 
 	        $("." + keys).text(value);
 	    }

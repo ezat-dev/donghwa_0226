@@ -96,9 +96,9 @@
       <div class="q-total">Q total</div>
       <div class="rea-power-val-4"></div>
       <div class="batch"></div>
-      <div class="power-consumption-batch">Power Consumption Batch</div>
+      <div class="power-consumption-batch">Watt Hour Meter</div>
       <div class="batch-box-1"></div>
-      <div class="w">W</div>
+      <div class="w">kwh</div>
       <div class="batch-val-1"></div>
       <div class="app-power"></div>
       <div class="apparent-power">Apparent Power</div>
@@ -186,12 +186,22 @@
 	}
 	*/
 	
-	function value(keys, value){
-		$("."+keys).text(value);
-		$("."+keys).css("text-align","center");
-		$("."+keys).css("font-size","20px");
-	
+	function value(keys, value) {
+	    // vol-val-1, vol-val-2, vol-val-3 만 처리
+	    if (keys === "vol-val-1" || keys === "vol-val-2" || keys === "vol-val-3") {
+	  
+	        if ($.isNumeric(value)) {
+	       
+	            value = (value / 10).toFixed(1);
+	        }
+	    }
+
+	  
+	    $("."+keys).text(value);
+	    $("."+keys).css("text-align", "center");
+	    $("."+keys).css("font-size", "20px");
 	}
+
 
 </script>
 </body>

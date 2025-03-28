@@ -1614,7 +1614,7 @@ function value(keys, value) {
     if (keys === "D11101" || keys === "D11102") {
         finalValue = ((value / 100).toFixed(2) + " mm");
     } else if (keys === "D11105") {
-        finalValue = ((value * 0.1).toFixed(2) + " kN");
+    	finalValue = ((value * 0.1).toFixed(1) + " kN");
     } else {
         finalValue = (value + " kN");
     }

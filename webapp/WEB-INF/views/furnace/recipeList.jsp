@@ -76,6 +76,16 @@ var selectNumber = 0;
 var selectName = "";
 var selectComment = "";
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
+
+
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
 //로드
 $(function(){
 	getRecipeList();

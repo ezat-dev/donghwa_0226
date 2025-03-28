@@ -382,7 +382,15 @@ $(document).on("click", ".save-to-plc", function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
 
+
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
 </script>
 </body>
 </html>

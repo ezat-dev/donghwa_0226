@@ -62,7 +62,7 @@
     <div class="pis-6-x-13-5">Furnace Vacuum</div>
     <div class="fur-pressure-val-1 D-7800"></div>
     <div class="fur-pressure-box-2"></div>
-    <div class="psp-6">Diffusion Pump</div>
+    <div class="psp-6">Diffusion Vacuum</div>
     <div class="fur-pressure-val-2 D-7810"></div>
     <div class="rel"></div>
     <div class="rel-box-1"></div>
@@ -77,7 +77,7 @@
     <div class="fine-vacuum"></div>
     <div class="fine-vacuum-box-1"></div>
     <div class="fine-vacuum2">Fine vacuum</div>
-    <div class="fine-vacuum-val-1"></div>
+    <div class="fine-vacuum-val-1"></div>s
     <div class="pis-6-27">PIS 6.27</div>
     <div class="fore-vacuum"></div>
     <div class="fore-vacuum-box-1"></div>

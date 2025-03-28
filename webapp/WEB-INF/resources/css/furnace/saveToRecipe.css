@@ -38,19 +38,7 @@
   left: 0px;
   top: 79px;
 }
-.save-to-plc {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-Bold", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  position: absolute;
-  left: 6px;
-  top: 78px;
-  width: 267px;
-  height: 29px;
-  -webkit-text-stroke: 1px #000000;
-}
+
 .select-furnace {
   color: #000000;
   text-align: left;
@@ -138,27 +126,27 @@
 
 
 
-/* save_popup 영역 */
+/* save_popup �쁺�뿭 */
 .save_popup {
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 440px;
-  height: 750px; /* 높이 수정 */
+  height: 750px; /* �넂�씠 �닔�젙 */
   background-color: #fff;
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 깊은 그림자 효과 */
-  border-radius: 10px; /* 둥근 모서리 */
-  z-index: 1000; /* 다른 요소 위에 놓이도록 설정 */
-  animation: fadeIn 0.3s ease-out; /* 팝업이 나타날 때 애니메이션 */
-  overflow-x: hidden; /* 가로 스크롤 없애기 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 源딆� 洹몃┝�옄 �슚怨� */
+  border-radius: 10px; /* �뫁洹� 紐⑥꽌由� */
+  z-index: 1000; /* �떎瑜� �슂�냼 �쐞�뿉 �넃�씠�룄濡� �꽕�젙 */
+  animation: fadeIn 0.3s ease-out; /* �뙘�뾽�씠 �굹���궇 �븣 �븷�땲硫붿씠�뀡 */
+  overflow-x: hidden; /* 媛�濡� �뒪�겕濡� �뾾�븷湲� */
 }
 
-/* 팝업 나타날 때 애니메이션 */
+/* �뙘�뾽 �굹���궇 �븣 �븷�땲硫붿씠�뀡 */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -170,7 +158,7 @@
   }
 }
 
-/* X 버튼 스타일 */
+/* X 踰꾪듉 �뒪���씪 */
 .close_btn {
   position: absolute;
   top: 10px;
@@ -190,22 +178,22 @@
   transition: background-color 0.3s ease;
 }
 
-/* X 버튼 호버 효과 */
+/* X 踰꾪듉 �샇踰� �슚怨� */
 .close_btn:hover {
   background-color: #555;
 }
 
-/* content 영역 */
+/* content �쁺�뿭 */
 .content {
   padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 버튼과 input을 아래로 배치 */
-  overflow-y: auto; /* 긴 내용이 있을 경우 스크롤이 생기도록 설정 */
+  justify-content: space-between; /* 踰꾪듉怨� input�쓣 �븘�옒濡� 諛곗튂 */
+  overflow-y: auto; /* 湲� �궡�슜�씠 �엳�쓣 寃쎌슦 �뒪�겕濡ㅼ씠 �깮湲곕룄濡� �꽕�젙 */
 }
 
-/* Sent recipe 타이틀 */
+/* Sent recipe ���씠�� */
 .content h2 {
   text-align: center;
   font-size: 24px;
@@ -214,7 +202,7 @@
   font-weight: 600;
 }
 
-/* 수직 인풋창 */
+/* �닔吏� �씤�뭼李� */
 .input_field {
   width: 97%;
   padding: 12px;
@@ -227,14 +215,14 @@
   transition: border-color 0.3s ease;
 }
 
-/* 인풋창 포커스 스타일 */
+/* �씤�뭼李� �룷而ㅼ뒪 �뒪���씪 */
 .input_field:focus {
   border-color: #4CAF50;
   outline: none;
   background-color: #fff;
 }
 
-/* 큰 인풋창 */
+/* �겙 �씤�뭼李� */
 .large_input {
   width: 93%;
   height: 120px;
@@ -243,19 +231,19 @@
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  resize: none; /* 크기 조정 불가 */
+  resize: none; /* �겕湲� 議곗젙 遺덇� */
   background-color: #f9f9f9;
   transition: border-color 0.3s ease;
 }
 
-/* 인풋창 포커스 스타일 */
+/* �씤�뭼李� �룷而ㅼ뒪 �뒪���씪 */
 .large_input:focus {
   border-color: #4CAF50;
   outline: none;
   background-color: #fff;
 }
 
-/* 로딩바 영역 */
+/* 濡쒕뵫諛� �쁺�뿭 */
 .loading_bar {
   width: 95%;
   height: 5px;
@@ -267,19 +255,19 @@
 
 .loading_bar .progress {
   height: 100%;
-  width: 0%; /* 로딩 진행률 0%로 초기화 */
+  width: 0%; /* 濡쒕뵫 吏꾪뻾瑜� 0%濡� 珥덇린�솕 */
   background-color: #4CAF50;
   border-radius: 3px;
-  transition: width 0.5s ease-out; /* 부드러운 애니메이션 */
+  transition: width 0.5s ease-out; /* 遺��뱶�윭�슫 �븷�땲硫붿씠�뀡 */
 }
 
-/* 버튼 컨테이너 */
+/* 踰꾪듉 而⑦뀒�씠�꼫 */
 .button-container {
   display: flex;
   justify-content: space-between;
 }
 
-/* OK 버튼 */
+/* OK 踰꾪듉 */
 .ok_btn, .retry_btn {
   width: 47%;
   padding: 12px;
@@ -288,11 +276,11 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #f0f0f0; /* 연한 회색 */
+  background-color: #f0f0f0; /* �뿰�븳 �쉶�깋 */
   transition: background-color 0.3s ease;
 }
 
-/* OK 버튼 */
+/* OK 踰꾪듉 */
 .ok_btn, .retry_btn {
   width: 47%;
   padding: 12px;
@@ -301,25 +289,25 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #F0F0F0; /* 연한 회색 */
+  background-color: #F0F0F0; /* �뿰�븳 �쉶�깋 */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* OK 버튼 호버 */
+/* OK 踰꾪듉 �샇踰� */
 .ok_btn:hover {
-  background-color: #e0e0e0; /* 호버 시 연한 회색 */
+  background-color: #e0e0e0; /* �샇踰� �떆 �뿰�븳 �쉶�깋 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Retry 버튼 호버 */
+/* Retry 踰꾪듉 �샇踰� */
 .retry_btn:hover {
-  background-color: #e0e0e0; /* 호버 시 연한 회색 */
+  background-color: #e0e0e0; /* �샇踰� �떆 �뿰�븳 �쉶�깋 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* 버튼 클릭 효과 */
+/* 踰꾪듉 �겢由� �슚怨� */
 .ok_btn:active, .retry_btn:active {
-  transform: scale(0.98); /* 클릭 시 살짝 눌리는 효과 */
+  transform: scale(0.98); /* �겢由� �떆 �궡吏� �닃由щ뒗 �슚怨� */
 }
 
 
@@ -327,17 +315,17 @@
 
 
 
-/* 로딩바 컨테이너 */
+/* 濡쒕뵫諛� 而⑦뀒�씠�꼫 */
 .loading-container {
     width: 400px;
     height: 30px;
     background-color: #e0e0e0;
     border-radius: 5px;
-    margin-top: 5px;  /* 텍스트 에어리어와 버튼들 사이에 공간을 확보 */
+    margin-top: 5px;  /* �뀓�뒪�듃 �뿉�뼱由ъ뼱�� 踰꾪듉�뱾 �궗�씠�뿉 怨듦컙�쓣 �솗蹂� */
     position: relative;
 }
 
-/* 로딩바 */
+/* 濡쒕뵫諛� */
 .loading-bar {
     width: 0;
     height: 100%;

@@ -192,169 +192,169 @@ public class AnalysisController {
 		List<Object> pr2List = new ArrayList<Object>();
 
 		for(int i = 0; i < penList.size(); i++) {
-		    tdateList.add(Integer.parseInt(penList.get(i).getTdate()));
+		    tdateList.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 
 		    List<Object> c1 = new ArrayList<Object>();
-		    c1.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c1.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c1.add(Integer.parseInt(penList.get(i).getC1()));
 		    
 		    List<Object> c2 = new ArrayList<Object>();
-		    c2.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c2.add(Integer.parseInt(penList.get(i).getC2()));
 		    
 		    List<Object> c3 = new ArrayList<Object>();
-		    c3.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c3.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c3.add(Integer.parseInt(penList.get(i).getC3()));
 		    
 		    List<Object> c4 = new ArrayList<Object>();
-		    c4.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c4.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c4.add(Integer.parseInt(penList.get(i).getC4()));
 		    
 		    List<Object> c5 = new ArrayList<Object>();
-		    c5.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c5.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c5.add(Integer.parseInt(penList.get(i).getC5()));
 		    
 		    List<Object> c6 = new ArrayList<Object>();
-		    c6.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c6.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c6.add(Integer.parseInt(penList.get(i).getC6()));
 		    
 		    List<Object> c7 = new ArrayList<Object>();
-		    c7.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c7.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c7.add(Integer.parseInt(penList.get(i).getC7()));
 		    
 		    List<Object> c8 = new ArrayList<Object>();
-		    c8.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c8.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c8.add(Integer.parseInt(penList.get(i).getC8()));
 		    
 		    List<Object> c9 = new ArrayList<Object>();
-		    c9.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c9.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c9.add(Integer.parseInt(penList.get(i).getC9()));
 		    
 		    List<Object> c10 = new ArrayList<Object>();
-		    c10.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c10.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c10.add(Integer.parseInt(penList.get(i).getC10()));
 		    
 		    List<Object> c11 = new ArrayList<Object>();
-		    c11.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c11.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c11.add(Integer.parseInt(penList.get(i).getC11()));
 		    
 		    List<Object> c12 = new ArrayList<Object>();
-		    c12.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c12.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c12.add(Integer.parseInt(penList.get(i).getC12()));
 		    
 		    List<Object> c13 = new ArrayList<Object>();
-		    c13.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c13.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c13.add(Integer.parseInt(penList.get(i).getC13()));
 		    
 		    List<Object> c14 = new ArrayList<Object>();
-		    c14.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c14.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c14.add(Integer.parseInt(penList.get(i).getC14()));
 		    
 		    List<Object> c15 = new ArrayList<Object>();
-		    c15.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c15.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c15.add(Integer.parseInt(penList.get(i).getC15()));
 		    
 		    List<Object> c16 = new ArrayList<Object>();
-		    c16.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c16.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c16.add(Integer.parseInt(penList.get(i).getC16()));
 		    
 		    List<Object> c17 = new ArrayList<Object>();
-		    c17.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c17.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c17.add(Integer.parseInt(penList.get(i).getC17()));
 		    
 		    List<Object> c18 = new ArrayList<Object>();
-		    c18.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c18.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c18.add(Integer.parseInt(penList.get(i).getC18()));
 		    
 		    List<Object> c19 = new ArrayList<Object>();
-		    c19.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c19.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c19.add(Integer.parseInt(penList.get(i).getC19()));
 		    
 		    List<Object> c20 = new ArrayList<Object>();
-		    c20.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c20.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c20.add(Integer.parseInt(penList.get(i).getC20()));
 		    
 		    List<Object> c21 = new ArrayList<Object>();
-		    c21.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c21.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c21.add(Integer.parseInt(penList.get(i).getC21()));
 		    
 		    List<Object> c22 = new ArrayList<Object>();
-		    c22.add(Integer.parseInt(penList.get(i).getTdate()));
+		    c22.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c22.add(Integer.parseInt(penList.get(i).getC22()));
 		    
 		    List<Object> cs1 = new ArrayList<Object>();
-		    cs1.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs1.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs1.add(Integer.parseInt(penList.get(i).getCs1()));
 		    
 		    List<Object> cs2 = new ArrayList<Object>();
-		    cs2.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs2.add(Integer.parseInt(penList.get(i).getCs2()));
 		    
 		    List<Object> cs3 = new ArrayList<Object>();
-		    cs3.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs3.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs3.add(Integer.parseInt(penList.get(i).getCs3()));
 		    
 		    List<Object> cs4 = new ArrayList<Object>();
-		    cs4.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs4.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs4.add(Integer.parseInt(penList.get(i).getCs4()));
 		    
 		    List<Object> cs5 = new ArrayList<Object>();
-		    cs5.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs5.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs5.add(Integer.parseInt(penList.get(i).getCs5()));
 		    
 		    List<Object> cs6 = new ArrayList<Object>();
-		    cs6.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs6.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs6.add(Integer.parseInt(penList.get(i).getCs6()));
 		    
 		    List<Object> cs7 = new ArrayList<Object>();
-		    cs7.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs7.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs7.add(Integer.parseInt(penList.get(i).getCs7()));
 		    
 		    List<Object> cs8 = new ArrayList<Object>();
-		    cs8.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs8.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs8.add(Integer.parseInt(penList.get(i).getCs8()));
 		    
 		    List<Object> cs9 = new ArrayList<Object>();
-		    cs9.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs9.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs9.add(Integer.parseInt(penList.get(i).getCs9()));
 		    
 		    List<Object> cs10 = new ArrayList<Object>();
-		    cs10.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs10.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs10.add(Integer.parseInt(penList.get(i).getCs10()));
 		    
 		    List<Object> cs11 = new ArrayList<Object>();
-		    cs11.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs11.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs11.add(Integer.parseInt(penList.get(i).getCs11()));
 		    
 		    List<Object> cs12 = new ArrayList<Object>();
-		    cs12.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs12.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs12.add(Integer.parseInt(penList.get(i).getCs12()));
 		    
 		    List<Object> cs13 = new ArrayList<Object>();
-		    cs13.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs13.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs13.add(Integer.parseInt(penList.get(i).getCs13()));
 		    
 		    List<Object> cs14 = new ArrayList<Object>();
-		    cs14.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs14.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs14.add(Integer.parseInt(penList.get(i).getCs14()));
 		    
 		    List<Object> cs15 = new ArrayList<Object>();
-		    cs15.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs15.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs15.add(Integer.parseInt(penList.get(i).getCs15()));
 		    
 		    List<Object> cs16 = new ArrayList<Object>();
-		    cs16.add(Integer.parseInt(penList.get(i).getTdate()));
+		    cs16.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs16.add(Integer.parseInt(penList.get(i).getCs16()));
 		    
 		    
 		    List<Object> pr1 = new ArrayList<Object>();
-		    pr1.add(Integer.parseInt(penList.get(i).getTdate()));
+		    pr1.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    pr1.add(Integer.parseInt(penList.get(i).getPr1()));
 		    
 		    
 		    
 		    List<Object> pr2 = new ArrayList<Object>();
-		    pr2.add(Integer.parseInt(penList.get(i).getTdate()));
+		    pr2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    pr2.add(Integer.parseInt(penList.get(i).getPr2()));
 		    
 		    
@@ -449,10 +449,12 @@ public class AnalysisController {
 		
 		c1Map.put("name", "Zone 1.1");
 		c1Map.put("color", "#FF0000");
+		c1Map.put("yAxis", 0);
 		c1Map.put("data", c1List);
 
 		c2Map.put("name", "Zone 1.2");
 		c2Map.put("color", "yellow");
+		c1Map.put("yAxis", 1);
 		c2Map.put("data", c2List);
 
 		c3Map.put("name", "Zone 2.1");

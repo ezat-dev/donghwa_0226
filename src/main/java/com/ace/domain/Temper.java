@@ -4,6 +4,7 @@ public class Temper {
 
 	//tb_temp 테이블
 	private String tdate;
+	private String tdateUnix;
 	private String c1;
 	private String c2;
 	private String c3;
@@ -62,6 +63,7 @@ public class Temper {
 	
 	//tb_temp_pen_info
 	private String pen_info_name;
+	private String pen_info_name_view;	//화면 조회용도
 	private String pen_info_yn; // CASE문으로 사용
 	
 	
@@ -511,4 +513,25 @@ public class Temper {
 	public void setPen_info_yn(String pen_info_yn) {
 		this.pen_info_yn = pen_info_yn;
 	}
+
+
+	public String getPen_info_name_view() {
+		return pen_info_name_view;
+	}
+
+
+	public void setPen_info_name_view(String pen_info_name_view) {
+		this.pen_info_name_view = pen_info_name_view;
+	}
+
+
+	public String getTdateUnix() {
+		return tdateUnix;
+	}
+
+
+	public void setTdateUnix(String tdateUnix) {
+		this.tdateUnix = tdateUnix;
+	}
+	
 }

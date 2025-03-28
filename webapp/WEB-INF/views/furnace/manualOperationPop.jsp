@@ -344,11 +344,10 @@ function asd(keys, value) {
 
             $("." + keys).css("color", "#000000");
             $("." + keys).removeAttr("disabled");
-            $("." + keys).attr("onclick", function() {
-                return function() {
-                    digitalSetOnOff(); 
-                };
+            $("." + keys).on("click", function() {
+                digitalSetOnOff();
             });
+
             $("." + keys).css("cursor", "pointer");
         }
 
@@ -359,7 +358,6 @@ function asd(keys, value) {
         $("." + keys).css("cursor", "");
     }
 }
-
 
 
 function plc(keys, value) {

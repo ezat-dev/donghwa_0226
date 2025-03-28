@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,28 @@
   <link rel="stylesheet" href="/donghwa/css/furnace/saveToRecipe.css">
   <title>Insert title here</title>
 </head>
+
+
+
+
+<style>
+.save-to-plc {
+  color: #ffffff;
+  text-align: left;
+
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 6px;
+  top: 78px;
+  width: 267px;
+  height: 29px;
+
+}
+
+   </style>
+   
+
 <body style="background-color: #CCCCCC;">
 
 
@@ -57,6 +80,19 @@
 
 <script>
 let sessionData;
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
+
+
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
 
 function fetchSessionData() {
     $.ajax({

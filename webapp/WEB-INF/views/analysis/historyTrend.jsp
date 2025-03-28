@@ -49,6 +49,19 @@
             text-align:center;
         }
 
+
+		#pen-group{
+			 margin-right: 10px;
+            font-size: 17pt;
+            padding: 10px;
+            border-radius: 4px;
+            width: 200px;
+            background-color: #fff;
+            border: 3px solid #ccc;
+    
+            height:54px;
+            text-align:center;
+		}
         #load-pen-group, #stop-button, #start-button, #cursor1, #cursor2 {
             margin-left: 10px;
             padding: 10px 20px;
@@ -120,7 +133,27 @@
 		left:400px;
 		font-size:14pt;
 	}
+.back-btn {
+    background-color: #4CAF50; /* 초록색 배경 */
+    color: white; /* 글자 색은 흰색 */
+    font-size: 16px; /* 글자 크기 */
+    padding: 10px 20px; /* 버튼 안쪽 여백 */
+    border: none; /* 버튼 테두리 없애기 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 마우스를 올리면 손 모양 커서 */
+    transition: background-color 0.3s, transform 0.2s; /* 배경색 변화와 버튼 크기 변화 부드럽게 */
+}
 
+/* 버튼에 마우스를 올렸을 때 */
+.back-btn:hover {
+    background-color: #45a049; /* 배경색 조금 어두운 초록으로 변경 */
+    transform: scale(1.05); /* 버튼 크기 살짝 키우기 */
+}
+
+/* 버튼 클릭했을 때 */
+.back-btn:active {
+    transform: scale(0.95); /* 클릭 시 버튼이 살짝 눌린 듯한 효과 */
+}
     </style>
 </head>
 <body>
@@ -128,12 +161,21 @@
     <div class="button-container">
         <input type="text" id="startDate" class="datetimeSet ">
         <input type="text" id="endDate" class="datetimeSet">
+                    <div class="pen-group-settings">
+ 
+               <select id="pen-group"></select>
+                 
+         
+            </div>
         <button id="load-pen-group"><i class="fas fa-refresh"></i> UPDATE</button>
         <button id="stop-button"><i class="fas fa-stop"></i> STOP</button>
         <button id="start-button"><i class="fas fa-play"></i> START</button>
         <button id="cursor1"><i class="fas fa-caret-left"></i> Cursor1</button>
         <button id="cursor2"><i class="fas fa-caret-right"></i> Cursor2</button>
         <button id="pen-group-button"><i class="fas fa-users"></i> 펜 그룹</button>
+        
+        
+        
         
     </div>
     <div id="container"></div>
@@ -207,14 +249,17 @@ var seriesArray = [];
 var seriesData = [];
 
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById('hamburgerMenu');
 
-    setTimeout(() => {
-        menu.click();
-    }, 1000); // 1초(1000ms) 후에 클릭
-});
 
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
 //SP값 포함
 /*
 var seriesNames = [
@@ -226,15 +271,8 @@ var seriesNames = [
 ];
 */
 //SP값 미포함
-var seriesNames = [
-    "c1", "c3", "c5", "c7",
-    "c9", "c11", "c13"
-];
 
-document.addEventListener("DOMContentLoaded", () => {
-    const menu = document.getElementById('hamburgerMenu');
-    menu.classList.add('active'); // 화면 로드 시 메뉴를 열어둠
-});
+
 
 function formatDate(date) {
     var d = new Date(date);
@@ -244,39 +282,55 @@ function formatDate(date) {
     return year + '-' + month + '-' + day;
 }
 
-$(function(){
+$(function() {
     var today = new Date();
-    
-    //검색 시작일자
+
+    // 검색 시작일자
     var bYear = today.getFullYear();
     var bMonth = paddingZero(today.getMonth()+1);
     var bDate = paddingZero(today.getDate());
     var bHours = "00";
     var bMinutes = "00";
+
+   
     
-    //검색 종료일자
+
+    // 검색 종료일자
     var aYear = today.getFullYear();
     var aMonth = paddingZero(today.getMonth()+1);
     var aDate = paddingZero(today.getDate());
     var aHours = paddingZero(today.getHours());
     var aMinutes = paddingZero(today.getMinutes());
-    
-    
+    var selectedGroup = $("#pen-group").val();
     $("#startDate").val(bYear+"-"+bMonth+"-"+bDate+" "+bHours+":"+bMinutes);
     $("#endDate").val(aYear+"-"+aMonth+"-"+aDate+" "+aHours+":"+aMinutes);
 
-    //첫 로드시 disabled(STOP 클릭시 활성화)
-    buttonDisabled();
+    // 첫 로드시 disabled(STOP 클릭시 활성화)
+   
 
-    
-    var selectedGroup = 'asdasd';
-    getPenGroupChartData();
-    
-    setTimeout(function(){
-    	getPenGroupChart();
-    },500);
 
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
+   
+
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
+
+// 로드 시
+$(document).ready(function() {
+    getPenGroupSelect();
+
+    setTimeout(function () {
+        $("#load-pen-group").click(); // 버튼 클릭 이벤트 트리거
+    }, 500); // 0.5초 후 실행
+});
+
 
 //이벤트
     $("#pen-group-button").click(function() {
@@ -285,7 +339,7 @@ $(function(){
 
 	$("#load-pen-group").on("click", function(){
 	    getPenGroupChartData();
-	    
+	
 	    setTimeout(function(){
 	    	getPenGroupChart();
 	    },500);
@@ -326,8 +380,8 @@ $(function(){
 	    buttonDisabled();
 
 	    
-	    var selectedGroup = 'asdasd';
-	    getPenGroupChartData();
+	    var selectedGroup = $("#pen-group").val();
+	
 	    
 	    setTimeout(function(){
 	    	getPenGroupChart();
@@ -422,23 +476,86 @@ $(function(){
 	$("#cursor2").on("click", function(){
 		$("#cursor2Tooltip").show();
 		
+		
 		var onoverTime = $("#onoverTime").text();
 		var onoverC1 = $("#onoverC1").text();
+		var onoverC2 = $("#onoverC2").text();
 		var onoverC3 = $("#onoverC3").text();
+		var onoverC4 = $("#onoverC4").text();
 		var onoverC5 = $("#onoverC5").text();
+		var onoverC6 = $("#onoverC6").text();
 		var onoverC7 = $("#onoverC7").text();
+		var onoverC8 = $("#onoverC8").text();
 		var onoverC9 = $("#onoverC9").text();
+		var onoverC10 = $("#onoverC10").text();
 		var onoverC11 = $("#onoverC11").text();
+		var onoverC12 = $("#onoverC12").text();
 		var onoverC13 = $("#onoverC13").text();
+		var onoverC14 = $("#onoverC14").text();
+		var onoverC15 = $("#onoverC15").text();
+		var onoverC16 = $("#onoverC16").text();
+		var onoverC17 = $("#onoverC17").text();
+		var onoverC18 = $("#onoverC18").text();
+		var onoverC19 = $("#onoverC19").text();
+		var onoverC20 = $("#onoverC20").text();
+		var onoverC21 = $("#onoverC21").text();
+		var onoverC22 = $("#onoverC22").text();
+		var onoverCS1 = $("#onoverCS1").text();
+		var onoverCS2 = $("#onoverCS2").text();
+		var onoverCS3 = $("#onoverCS3").text();
+		var onoverCS4 = $("#onoverCS4").text();
+		var onoverCS5 = $("#onoverCS5").text();
+		var onoverCS6 = $("#onoverCS6").text();
+		var onoverCS7 = $("#onoverCS7").text();
+		var onoverCS8 = $("#onoverCS8").text();
+		var onoverCS9 = $("#onoverCS9").text();
+		var onoverCS10 = $("#onoverCS10").text();
+		var onoverCS11 = $("#onoverCS11").text();
+		var onoverCS12 = $("#onoverCS12").text();
+		var onoverCS13 = $("#onoverCS13").text();
+		var onoverCS14 = $("#onoverCS14").text();
+		var onoverCS15 = $("#onoverCS15").text();
+		var onoverCS16 = $("#onoverCS16").text();
 
-		$("#cursor2_timeData").text(onoverTime);
-		$("#cursor2_C1Data").text(onoverC1);
-		$("#cursor2_C3Data").text(onoverC3);
-		$("#cursor2_C5Data").text(onoverC5);
-		$("#cursor2_C7Data").text(onoverC7);
-		$("#cursor2_C9Data").text(onoverC9);
-		$("#cursor2_C11Data").text(onoverC11);
-		$("#cursor2_C13Data").text(onoverC13);
+		$("#cursor1_timeData").text(onoverTime);
+		$("#cursor1_C1Data").text(onoverC1);
+		$("#cursor1_C2Data").text(onoverC2);
+		$("#cursor1_C3Data").text(onoverC3);
+		$("#cursor1_C4Data").text(onoverC4);
+		$("#cursor1_C5Data").text(onoverC5);
+		$("#cursor1_C6Data").text(onoverC6);
+		$("#cursor1_C7Data").text(onoverC7);
+		$("#cursor1_C8Data").text(onoverC8);
+		$("#cursor1_C9Data").text(onoverC9);
+		$("#cursor1_C10Data").text(onoverC10);
+		$("#cursor1_C11Data").text(onoverC11);
+		$("#cursor1_C12Data").text(onoverC12);
+		$("#cursor1_C13Data").text(onoverC13);
+		$("#cursor1_C14Data").text(onoverC14);
+		$("#cursor1_C15Data").text(onoverC15);
+		$("#cursor1_C16Data").text(onoverC16);
+		$("#cursor1_C17Data").text(onoverC17);
+		$("#cursor1_C18Data").text(onoverC18);
+		$("#cursor1_C19Data").text(onoverC19);
+		$("#cursor1_C20Data").text(onoverC20);
+		$("#cursor1_C21Data").text(onoverC21);
+		$("#cursor1_C22Data").text(onoverC22);
+		$("#cursor1_CS1Data").text(onoverCS1);
+		$("#cursor1_CS2Data").text(onoverCS2);
+		$("#cursor1_CS3Data").text(onoverCS3);
+		$("#cursor1_CS4Data").text(onoverCS4);
+		$("#cursor1_CS5Data").text(onoverCS5);
+		$("#cursor1_CS6Data").text(onoverCS6);
+		$("#cursor1_CS7Data").text(onoverCS7);
+		$("#cursor1_CS8Data").text(onoverCS8);
+		$("#cursor1_CS9Data").text(onoverCS9);
+		$("#cursor1_CS10Data").text(onoverCS10);
+		$("#cursor1_CS11Data").text(onoverCS11);
+		$("#cursor1_CS12Data").text(onoverCS12);
+		$("#cursor1_CS13Data").text(onoverCS13);
+		$("#cursor1_CS14Data").text(onoverCS14);
+		$("#cursor1_CS15Data").text(onoverCS15);
+		$("#cursor1_CS16Data").text(onoverCS16);
 	});
 	
 //함수
@@ -456,6 +573,10 @@ function buttonDisabled(){
 	//START버튼
 	$("#start-button").attr("disabled","true");
 	$("#start-button").css("background-color","#b0b0b0");
+
+	
+	
+
 	
 	//STOP버튼
 	$("#stop-button").removeAttr("disabled");
@@ -477,210 +598,213 @@ function buttonAbled(){
 	//START버튼
 	$("#start-button").removeAttr("disabled");
 	$("#start-button").css("background-color","#3d3c3c");
+
+	//그룹버튼
+	$("#pen-group").removeAttr("disabled");
+
+	
 	
 	//STOP버튼
 	$("#stop-button").attr("disabled","true");
 	$("#stop-button").css("background-color","#b0b0b0");	
 }
 
-function getPenGroupChartData() {
-    var sdate = $("#startDate").val()+":00";
-    var edate = $("#endDate").val()+":59";
-    //동일한 쿼리를 사용하지만 asdasd가 아닐때만으로
-    var selectedGroup = 'asdasd';
 
-	
+
+
+function getPenGroupSelect(){
+    $.ajax({
+        url: "/donghwa/analysis/historyTrendPenGroupSelect",
+        method: "POST",
+        data: {},
+        dataType: "json",
+        success: function(data) {
+        	var result = data.result;
+        	
+        	var option = "";
+        
+        	var penName = "";
+        	
+        	for(var i=0; i<result.length; i++){
+        		option = "<option value='"+result[i]+"'>"+result[i]+"</option>";
+        		$("#pen-group").append(option);
+        	}
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+function getPenGroupChartData() {
+    var sdate = $("#startDate").val() + ":00";
+    var edate = $("#endDate").val() + ":59";
+    var selectedGroup = $("#pen-group").val();
+
+    // selectedGroup이 null인 경우 '그룹1'로 설정
+    if (!selectedGroup) {
+        selectedGroup = 'Group1';
+    }
+
+    console.log("보내는 데이터:", {
+        "selectedGroup": selectedGroup,
+        "sdateTime": sdate,
+        "edateTime": edate
+    });
+
     $.ajax({
         url: "/donghwa/analysis/historyTrendPenGroupChart",
         type: "post",
         dataType: "json",
         data: {
-            "pen_group_name": selectedGroup,
             "sdateTime": sdate,
-            "edateTime": edate
+            "edateTime": edate,
+            "pen_group_name": selectedGroup
         },
-        success: function(result) {
+        success: function (result) {
             var data = result.data;
-            // seriesNames 배열을 사용하여 각각의 데이터를 시리즈로 변환
-            
-            seriesData = [];
-            
-            seriesNames.forEach(function(name) {
-                if (data[name]) {
-                	
-                	var changeName = "";
-                	//펜 이름변경시 수정
-                	
-                	if(data[name].name == "c1"){
-                	    changeName = "Zone 1.1";
-                	}else if(data[name].name == "c2"){
-                	    changeName = "Zone 1.2";
-                	}else if(data[name].name == "c3"){
-                	    changeName = "Zone 2.1";
-                	}else if(data[name].name == "c4"){
-                	    changeName = "Zone 2.2";
-                	}else if(data[name].name == "c5"){
-                	    changeName = "Zone 3.1";
-                	}else if(data[name].name == "c6"){
-                	    changeName = "Zone 3.2";
-                	}else if(data[name].name == "c7"){
-                	    changeName = "Protect 1";
-                	}else if(data[name].name == "c8"){
-                	    changeName = "Temp-load-1";
-                	}else if(data[name].name == "c9"){
-                	    changeName = "Temp-load-2";
-                	}else if(data[name].name == "c10"){
-                	    changeName = "Temp-load-3";
-                	}else if(data[name].name == "c11"){
-                	    changeName = "Temp-load-4";
-                	}else if(data[name].name == "c12"){
-                	    changeName = "Temp-load-5";
-                	}else if(data[name].name == "c13"){
-                	    changeName = "Temp-load-6";
-                	}else if(data[name].name == "c14"){
-                	    changeName = "Temp-load-7";
-                	}else if(data[name].name == "c15"){
-                	    changeName = "Temp-load-8";
-                	}else if(data[name].name == "c16"){
-                	    changeName = "Temp-load-9";
-                	}else if(data[name].name == "c17"){
-                	    changeName = "Temp-load-10";
-                	}else if(data[name].name == "c18"){
-                	    changeName = "Temp-load-11";
-                	}else if(data[name].name == "c19"){
-                	    changeName = "Temp-load-12";
-                	}else if(data[name].name == "c20"){
-                	    changeName = "Temp-Load-13";
-                	}else if(data[name].name == "c21"){
-                	    changeName = "Temp-Load-14";
-                	}else if(data[name].name == "c22"){
-                	    changeName = "Temp-Load-15";
-                	}else if(data[name].name == "cs1"){
-                	    changeName = "Current Load";
-                	}else if(data[name].name == "cs2"){
-                	    changeName = "Set Load";
-                	}else if(data[name].name == "cs3"){
-                	    changeName = "Front Press";
-                	}else if(data[name].name == "cs4"){
-                	    changeName = "Rear Press";
-                	}else if(data[name].name == "cs5"){
-                	    changeName = "force-sensor-1";
-                	}else if(data[name].name == "cs6"){
-                	    changeName = "force-sensor-2";
-                	}else if(data[name].name == "cs7"){
-                	    changeName = "force-sensor-3";
-                	}else if(data[name].name == "cs8"){
-                	    changeName = "force-sensor-4";
-                	}else if(data[name].name == "cs9"){
-                	    changeName = "force-sensor-5";
-                	}else if(data[name].name == "cs10"){
-                	    changeName = "force-sensor-6";
-                	}else if(data[name].name == "cs11"){
-                	    changeName = "force-sensor-7";
-                	}else if(data[name].name == "cs12"){
-                	    changeName = "force-sensor-8";
-                	}else if(data[name].name == "cs13"){
-                	    changeName = "force-sensor-9";
-                	}else if(data[name].name == "cs14"){
-                	    changeName = "force-sensor-10";
-                	}else if(data[name].name == "cs15"){
-                	    changeName = "force-sensor-11";
-                	}else if(data[name].name == "cs16"){
-                	    changeName = "force-sensor-12";
-                	
 
-            	}else if(data[name].name == "pr1"){
-            	    changeName = "furnace-vacuum";
-            	}
-	        	}else if(data[name].name == "pr2"){
-	        	    changeName = "diffusion-pump";
-        		}
-                	var endSetDate;
-                    var series = {
-                        name: changeName,
-                        color: data[name].color,
-//                        yAxis: data[name].yAxis,
-                        data: data[name].data.map(function(item, index) {
-                            var date = new Date(data.tdate[index]);
-//                            var offset = 9 * 60 * 60 * 1000; // 타임존 보정 (UTC+9)
-                            var localDate = new Date(date.getTime());
-                            endSetDate = data.tdate[index];
-                            return [localDate.getTime(), item[1]]; // [timestamp, value]
-                        })
-                    };
-                    
-                    $("#onoverTime").text(cursorSetDateTime(endSetDate));
-                    
-                    if(series.name == "TIC 4.1.1"){
-                    	$("#onoverC1").css("color",series.color);
-                    	$("#onoverC1").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.1.2"){            	
-                    	$("#onoverC3").css("color",series.color);
-                    	$("#onoverC3").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.3.1"){            	
-                    	$("#onoverC5").css("color",series.color);
-                    	$("#onoverC5").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.3.2"){            	
-                    	$("#onoverC7").css("color",series.color);
-                    	$("#onoverC7").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.5.1"){            	
-                    	$("#onoverC9").css("color",series.color);
-                    	$("#onoverC9").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.5.2"){            	
-                    	$("#onoverC11").css("color",series.color);
-                    	$("#onoverC11").text(series.data[series.data.length-1][1]);
-                    }else if(series.name == "TIC 4.6.1"){            	
-                    	$("#onoverC13").css("color",series.color);
-                    	$("#onoverC13").text(series.data[series.data.length-1][1]);
-                    }
-                    
-                    seriesData.push(series);
-                }
-            });
+            console.log(data);
             
-			var chart = $("#container").highcharts();
-			
-			if(typeof chart != "undefined"){	
-				chart.redraw();
-			}              
+            
+            var groupConcatSplit = data.groupConcat.split(",");
+
+            var dataKeys = Object.keys(data);
+            var dataValues = Object.values(data);
+
+            var idx = 0;
+            var idx2 = 0;
+
+            for (var i = 0; i < dataKeys.length; i++) {
+                for (var j = 0; j < groupConcatSplit.length; j++) {
+                    if (dataKeys[i] == groupConcatSplit[j]) {
+                        seriesArray[idx] = dataValues[i];
+                        idx++;
+                    }
+                }
+            }
+
+            var chart = $("#container").highcharts();
+
+            if (typeof chart != "undefined") {
+                for (var i = 0; i < dataKeys.length; i++) {
+                    for (var j = 0; j < groupConcatSplit.length; j++) {
+                        if (dataKeys[i] == groupConcatSplit[j]) {
+                            seriesArray[idx2] = dataValues[i];
+                            idx2++;
+                        }
+                    }
+                }
+                chart.redraw();
+            }
         }
     });
 }
 
-function getPenGroupChart() {
-   const chart = Highcharts.chart('container', {
-	   title:{
-		   text:"Batch",
-		   align:"center"
-	   },
+const categories = [
+    '1e+8', '1e+6', '10000', '100', '1', '0.01', '0.001', '1e-8', '1e-10'
+];
+const formattedCategories = categories.map(item => parseFloat(item));
+
+function getPenGroupChart(){
+    const chart = Highcharts.chart('container', {
         chart: {
             type: "spline",
             panning: true,
             panKey: "shift",
             zoomType: "x",
-            styleMode: true
+            styleMode: true,
+            height:720,  // 차트 높이 설정
+            width: 1890   // 차트 너비 설정
         },
         time: {
             timezone: "Asia/Seoul",
             useUTC: false
         },
-        yAxis: [{
-            crosshair: {
-                width: 3,
-                color: '#5D5D5D',
-                zIndex: 5
-            },
-            title: {
-                text: 'Temper(℃)'
-            },
-            labels: {
-                style: {
-                    fontSize: "14pt"
+        yAxis: [
+            {
+                min:0,
+                max:1800,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Temper(℃)'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
                 }
             },
-            min:0,
-            max:1800
-        }],
+            {
+            	min: -100,
+            	max: 1000
+,
+            	tickInterval: 1e7,  // 적절한 간격을 설정하세요.
+                crosshair: {
+                    width: 1,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Pressure[Torr]'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            },
+            {
+                min:0,
+                max:9,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Force[kN]'
+                },
+                labels: {
+                	format: '{value} K' ,
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            },
+            {
+                min:0,
+                max:450,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Position[mm]'
+                },
+                labels: {
+         /*        	format: '{value} mm', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            }
+            
+            ],
         xAxis: {
             crosshair: {
                 width: 3,
@@ -705,70 +829,23 @@ function getPenGroupChart() {
         plotOptions: {
             series: {
                 selected: true,
-                allowPointSelect: true,
                 marker: {
                     radius: 1
-                },
-                events:{
-                	click: function(event){
-                		var pointIndex = event.point.index;
-/*                		
-                		console.log(event);
-                		console.log(pointIndex);
-                		console.log(seriesData[0].data[pointIndex][1]);
-*/               		
-                		var time = seriesData[0].data[pointIndex][0];
-                		var c1 = seriesData[0].data[pointIndex][1];
-                		var c3 = seriesData[1].data[pointIndex][1];
-                		var c5 = seriesData[2].data[pointIndex][1];
-                		var c7 = seriesData[3].data[pointIndex][1];
-                		var c9 = seriesData[4].data[pointIndex][1];
-                		var c11 = seriesData[5].data[pointIndex][1];
-                		var c13 = seriesData[6].data[pointIndex][1];
-                		
-                		$("#onoverTime").text(cursorSetDateTime(time));
-                		$("#onoverC1").text(c1);
-                		$("#onoverC3").text(c3);
-                		$("#onoverC5").text(c5);
-                		$("#onoverC7").text(c7);
-                		$("#onoverC9").text(c9);
-                		$("#onoverC11").text(c11);
-                		$("#onoverC13").text(c13);
-                		
-                	}
                 }
             }
         },
         tooltip: {
-            useHTML: true,
-            shared: true, // 여러 시리즈의 데이터를 보여줌
-            positioner: function(labelWidth, labelHeight, point) {
-              return { x: point.plotX + this.chart.plotLeft + 15, y: point.plotY + this.chart.plotTop - labelHeight }; // 툴팁 위치 조정
-            },
-            formatter: function() {
-//          	  $("#value0_v").text(unix_timestamp(this.x));
-              var s = '<b>' + cursorSetDateTime(this.x) + '</b><br/>'; // 시간 표시
-              this.points.forEach(function(point) {
-              	var point_y = point.y;
-              	var point_name = point.series.name;
-              	if(point_name.indexOf("CP") != -1){
-              		point_y = (point.y).toFixed(3);
-              	}
-              	
-//              	$("#value"+(point.series.index+1)+"_h").css("color",point.series.color);
-//              	$("#value"+(point.series.index+1)+"_v").text(point_y);
-                s += '<span style="font-weight:bold; font-size:10pt;">' + point.series.name + ':</span> ' + point_y + '<br/>'; // 각 시리즈의 데이터 표시
-              });
-              return s;
-            },
-            borderColor: '#333333',
-            shadow: false
-          },
-        series: seriesData,
+            split: true,
+            shared: true,
+            style: {
+                fontSize: "14pt"
+            }
+        },
+        series: seriesArray,
         responsive: {
             rules: [{
                 condition: {
-/*                    maxWidth: 1200*/
+                    maxWidth: 1500
                 },
                 chartOptions: {
                     legend: {
@@ -782,22 +859,22 @@ function getPenGroupChart() {
         exporting: {
             menuItemDefinitions: {
                 label: {
-                    onclick: function() {
+                    onclick: function () {
                         this.renderer.label(
                             'You just clicked a custom menu item',
                             100,
                             100
                         )
-                            .attr({
-                                fill: '#a4edba',
-                                r: 5,
-                                padding: 10,
-                                zIndex: 10
-                            })
-                            .css({
-                                fontSize: '1.5em'
-                            })
-                            .add();
+                        .attr({
+                            fill: '#a4edba',
+                            r: 5,
+                            padding: 10,
+                            zIndex: 10
+                        })
+                        .css({
+                            fontSize: '1.5em'
+                        })
+                        .add();
                     },
                     text: 'Show label'
                 }

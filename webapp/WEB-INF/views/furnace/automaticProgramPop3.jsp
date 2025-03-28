@@ -89,7 +89,7 @@
   <div class="all-setpoints-in-automatic-mode">
     All setpoints in automatic mode
   </div>
-  <div class="automatic-on2">Menual leaktest</div>
+  <div class="automatic-on2">Manual leaktest</div>
   <div class="no-fault2">No fault</div>
   <div class="hydraulic-in-position">Hydraulic in position</div>
 

@@ -25,10 +25,19 @@ body {
   z-index: 0;
 }
 
+.imgg{
+    left: 1000px;
+    z-index: 99;
+    bottom: 83px;
+    position: absolute;
+    height: 101px;
+}
 </style>
 
 
 <body style="background-color: #CCCCCC;">
+      <img class="imgg" src="/donghwa/css/furnace/img/image-1.png" />
+
   <div class="group-1">
     <div class="recipe-main"></div>
     <div class="recipe-footer"></div>
@@ -1290,7 +1299,7 @@ body {
       <div class="delete-segment"></div>
       <button class="save-to-plc">Save to PLC</button>
       <div class="print"></div>
-      <div class="back-to-recipe-overview">&lt;&lt; Back to recipe-overview</div>
+
       <div class="save-to-csv-file">Save to csv-file</div>
       <div class="print2">print</div>
       <div class="graphical-process2" style="cursor:pointer;" onclick="getGraphicalProcess();">Graphical Process</div>
@@ -1298,12 +1307,12 @@ body {
       <div class="delete-segment2">Delete Segment</div>
       
     </div>
-    <div class="_0-program-end">0 - Program end</div>
+   <!--  <div class="_0-program-end">0 - Program end</div>
     <div class="_3-cooling-vacuum">3 - Cooling vacuum</div>
     <div class="_1-heating-vacuum">1 - Heating vacuum</div>
     <div class="_2-heating-gas-stationary">2 - Heating vacuum with about bonding</div>
     <div class="_4-cooling-gas-stationary">4 - Cooling gas stationary</div>
-    <div class="process-step2">Process step</div>
+    <div class="process-step2">Process step</div> -->
   </div>
   </div>
 <script>
@@ -1325,7 +1334,15 @@ window.onload = function() {
     });
 };
 */
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('hamburgerMenu');
 
+
+    // 0.3초 후에 메뉴를 닫기
+    setTimeout(() => {
+        menu.classList.remove('active');
+    }, 300); // 300ms (0.3초) 후에 메뉴 닫기
+});
 
 //로드
 $(function(){

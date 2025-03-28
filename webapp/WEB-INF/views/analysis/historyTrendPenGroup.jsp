@@ -179,6 +179,8 @@ cursor: "";
     <div class="left">
     <div class="line">
         <div class="pen-settings">
+ 
+
             <div class="pen-group-settings">
                 <label for="pen-group">Pen Group:</label>
                 <select id="pen-group"></select>
@@ -205,6 +207,7 @@ cursor: "";
 
             <button type="button" id="add-button">Add</button>
             <button type="button" id="del-button">Delete</button>
+             <button id="backButton">Back</button>
         </div>
     </div>
     </div>>
@@ -252,6 +255,10 @@ $("#load-pen-group").on("click", function(){
     setTimeout(function(){
         getPenGroupChart();
     }, 500);               
+});
+
+document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
 });
 
 $("#pen-list").on("change", function(e) {
@@ -314,7 +321,7 @@ $("#add-button").on("click", function() {
     var penGroup = $("#pen-group").val(); // 선택한 Pen 그룹
  /*    var penColor = $("#pen-color").val(); // Pen 색상 */
     var penName = selectedPenName
-
+/*
     if(penName == "Zone 1.1"){
         penName = "c1";
     }else if(penName == "Zone 1.2"){
@@ -396,7 +403,7 @@ $("#add-button").on("click", function() {
 	}else if(penName == "diffusion-pump"){
 	    penName = "pr2";
 	}
-
+*/
     // 필수 값 확인
     if (!penGroup || !penName) {
         alert("Pen 그룹과 이름을 모두 입력해주세요.");
@@ -465,6 +472,7 @@ $("#del-button").on("click", function() {
     console.log("삭제 Pen Group:", penGroup);
     console.log("삭제 Pen Name:", penName);
     
+/*
     if(penName == "Zone 1.1"){
         penName = "c1";
     }else if(penName == "Zone 1.2"){
@@ -548,7 +556,7 @@ $("#del-button").on("click", function() {
 	}else if(penName == "diffusion-pump"){
 	    penName = "pr2";
 	}
-
+*/
     // 필수 값 확인
     if (!penGroup || !penName) {
         alert("Pen 그룹과 이름을 모두 입력해주세요.");
@@ -666,12 +674,17 @@ function getPenGroupList(){
             var result = data.result;
             
             var option = "";
+            
             $("#pen-list").empty();
+            console.log(result);
+            
             
             for(var i=0; i<result.length; i++){
             	//2025-02-20 수정
                 var penInfoName = "";
-            	
+
+                penInfoName = result[i].pen_info_name_view;
+/*            	
                 if(result[i].pen_info_name == "c1"){
                     penInfoName = "Zone 1.1";
                 }else if(result[i].pen_info_name == "c2"){
@@ -753,6 +766,7 @@ function getPenGroupList(){
 	            }else if(result[i].pen_info_name == "pr2"){
 	                penInfoName = "diffusion-pump";
 	            }
+*/
 		      	if(result[i].pen_info_yn == 'Y'){
             		option = "<option value='"+result[i].pen_info_name+"' style='background-color:lightgray;'>"+penInfoName+"</option>";
             	}else if(result[i].pen_info_yn == 'N'){
@@ -853,21 +867,83 @@ function getPenGroupChart(){
             timezone: "Asia/Seoul",
             useUTC: false
         },
-        yAxis: [{
-            crosshair: {
-                width: 3,
-                color: '#5D5D5D',
-                zIndex: 5
+        yAxis: [
+            {
+                min:0,
+                max:1800,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Temper(℃)'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             },
-            title: {
-                text: 'Temper(℃)'
+            {
+            	min: 0.0000000001,
+            	max: 100000000
+,
+            	tickInterval: 1e7,  // 적절한 간격을 설정하세요.
+                crosshair: {
+                    width: 1,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Pressure[mbar]'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             },
-            labels: {
-                style: {
-                    fontSize: "14pt"
+            {
+                min:0,
+                max:9,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Force[kN]'
+                },
+                labels: {
+                	format: '{value} K' ,
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            },
+            {
+                min:0,
+                max:450,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Position[mm]'
+                },
+                labels: {
+         /*        	format: '{value} mm', */
+                    style: {
+                        fontSize: "14pt"
+                    }
                 }
             }
-        }],
+            
+            ],
         xAxis: {
             crosshair: {
                 width: 3,

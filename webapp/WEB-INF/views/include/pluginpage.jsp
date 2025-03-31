@@ -118,7 +118,7 @@ function popupOpenAna(keys, value){
 //	modalOpen();
 }
 
-let alertShown = false; // 알럿 중복 방지 변수
+var alertShown = false; // 알럿 중복 방지 변수
 
 $(document).on("keydown", ".anlog-popup-div-color", function (e) {
     if (e.keyCode == 13) { // 엔터키가 눌렸을 때

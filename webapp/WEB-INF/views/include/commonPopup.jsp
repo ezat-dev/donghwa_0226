@@ -429,7 +429,7 @@
         console.log("digitalSet실행");
         $(".tage-name").text(setTagName);
         $(".bt_off").css("display", "none"); // 또는 "block"
-        openPopup('a');
+        openPopup();
     }
 /* 
     function digitalSetOnOff(tagDir, tagName){
@@ -486,7 +486,7 @@
 
     function digitalSetOnOff() {
         console.log("digitalSetOnOff 함수 실행됨");
-        document.getElementById('pop').style.display = 'flex'; // 팝업을 보이게 함
+        document.getElementById('commonPopup').style.display = 'flex'; // 팝업을 보이게 함
     }
 
 
@@ -611,13 +611,13 @@
 
 
 
-
+/* 
     window.onclick = function(event) {
         if (event.target === document.getElementById('pop2')) {
             document.getElementById('pop2').style.display = 'none';
         }
     };
-
+ */
     document.getElementById('closeButton2').onclick = function() {
         document.getElementById('pop2').style.display = 'none';
     };

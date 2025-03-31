@@ -288,9 +288,6 @@ function v(keys, value) {
 }
 
 
-
-
-
 function value(keys, value){
 	
 	$("."+keys).text(value);
@@ -328,26 +325,25 @@ function asd(keys, value) {
                 }
             }
         }
-
-
+/*
+		console.log(keys);
+		console.log(rtnValue);
+*/		
         if (keys === "asd-open-lid") {
             $("." + keys).css("color", "#000000");
             $("." + keys).removeAttr("disabled");
-            $("." + keys).attr("onclick", "digitalSetOnOff('DONGHWA.FURNACE.MANUAL_OPERATION','open-lid')");
+            $("." + keys).attr("onclick", "digitalSetOnOff2('DONGHWA.FURNACE.MANUAL_OPERATION','open-lid')");
             $("." + keys).css("cursor", "pointer");
         } else if (keys === "asd-close-lid") {
             $("." + keys).css("color", "#000000");
             $("." + keys).removeAttr("disabled");
-            $("." + keys).attr("onclick", "digitalSetOnOff2('')");
+            $("." + keys).attr("onclick", "digitalSetOnOff2('DONGHWA.FURNACE.MANUAL_OPERATION','close-lid')");
             $("." + keys).css("cursor", "pointer");
         } else {
 
             $("." + keys).css("color", "#000000");
             $("." + keys).removeAttr("disabled");
-            $("." + keys).on("click", function() {
-                digitalSetOnOff();
-            });
-
+           	$("."+keys).attr("onclick","digitalSet('DONGHWA.FURNACE.MANUAL_OPERATION','"+rtnValue+"')");
             $("." + keys).css("cursor", "pointer");
         }
 

@@ -1439,35 +1439,35 @@ $(function(){
 			   var dataObj = new Object();
 			   
 			   dataObj.segment = i;
-			   dataObj.name = $("#recipeName").val();
-			   dataObj.comment = $("#recipeComment").val();
-			   dataObj.number = $("#recipeNumber").val();
-			   dataObj.process_step = $("#seg-"+i+"> .process-step-"+i+" > input ").val();
-			   dataObj.time = $("#seg-"+i+"> .time-"+i+" > input ").val();
-			   dataObj.temperature = $("#seg-"+i+"> .temperature-"+i+" > input ").val();
-			   dataObj.temperature_tc = $("#seg-"+i+"> .temperature-tc-"+i+" > input ").val();
-			   dataObj.temperature_th = $("#seg-"+i+"> .temperature-th-"+i+" > input ").val();
-			   dataObj.hbth = $("#seg-"+i+"> .hbth-"+i+" > input ").val();
-			   dataObj.pressure_sv = $("#seg-"+i+"> .pressure-sv-"+i+" > input ").val();
-			   dataObj.pressing_one = $("#seg-"+i+"> .pressing-one-"+i+" > input ").val();
-			   dataObj.pressing_two = $("#seg-"+i+"> .pressing-two-"+i+" > input ").val();
-			   dataObj.force_tol = $("#seg-"+i+"> .force-tol-"+i+" > input ").val();
-			   dataObj.position_ab = $("#seg-"+i+"> .position-ab-"+i+" > input ").val();
-			   dataObj.position_rel = $("#seg-"+i+"> .position-rel-"+i+" > input ").val();			   
-			   dataObj.distance = $("#seg-"+i+"> .distance-"+i+" > input ").val();
-			   dataObj.holding_one = $("#seg-"+i+"> .holding-one-"+i+" > input ").val();			   
-			   dataObj.holding_two = $("#seg-"+i+"> .holding-two-"+i+" > input ").val();
-			   dataObj.number_loops = $("#seg-"+i+"> .number-loops-"+i+" > input ").val();			   
-			   dataObj.speed_plunger = $("#seg-"+i+"> .speed-plunger-"+i+" > input ").val();
-			   dataObj.gradient_force = $("#seg-"+i+"> .gradient-force-"+i+" > input ").val();			   
-			   dataObj.fastcooling = $("#seg-"+i+"> .fastcooling-"+i+" > input ").val();
-			   dataObj.gas_n = $("#seg-"+i+"> .gas-n-"+i+" > input ").val();
-			   dataObj.gas_a = $("#seg-"+i+"> .gas-a-"+i+" > input ").val();
-			   dataObj.spare = $("#seg-"+i+"> .spare-"+i+" > input ").val();
-			   dataObj.hydrulic_off = $("#seg-"+i+"> .hydrulic-off-"+i+" > input ").val();
-			   dataObj.press_capacity = $("#seg-"+i+"> .press-capacity-"+i+" > input ").val();			   
-			   dataObj.press_position = $("#seg-"+i+"> .press-position-"+i+" > input ").val();			   
-			   dataObj.press_distance = $("#seg-"+i+"> .press-distance-"+i+" > input ").val();
+			   dataObj.name = zeroReturn($("#recipeName").val());
+			   dataObj.comment = zeroReturn($("#recipeComment").val());
+			   dataObj.number = zeroReturn($("#recipeNumber").val());
+			   dataObj.process_step = zeroReturn($("#seg-"+i+"> .process-step-"+i+" > input ").val());
+			   dataObj.time = zeroReturn($("#seg-"+i+"> .time-"+i+" > input ").val());
+			   dataObj.temperature = zeroReturn($("#seg-"+i+"> .temperature-"+i+" > input ").val());
+			   dataObj.temperature_tc = zeroReturn($("#seg-"+i+"> .temperature-tc-"+i+" > input ").val());
+			   dataObj.temperature_th = zeroReturn($("#seg-"+i+"> .temperature-th-"+i+" > input ").val());
+			   dataObj.hbth = zeroReturn($("#seg-"+i+"> .hbth-"+i+" > input ").val());
+			   dataObj.pressure_sv = zeroReturn($("#seg-"+i+"> .pressure-sv-"+i+" > input ").val());
+			   dataObj.pressing_one = zeroReturn($("#seg-"+i+"> .pressing-one-"+i+" > input ").val());
+			   dataObj.pressing_two = zeroReturn($("#seg-"+i+"> .pressing-two-"+i+" > input ").val());
+			   dataObj.force_tol = zeroReturn($("#seg-"+i+"> .force-tol-"+i+" > input ").val());
+			   dataObj.position_ab = zeroReturn($("#seg-"+i+"> .position-ab-"+i+" > input ").val());
+			   dataObj.position_rel = zeroReturn($("#seg-"+i+"> .position-rel-"+i+" > input ").val());			   
+			   dataObj.distance = zeroReturn($("#seg-"+i+"> .distance-"+i+" > input ").val());
+			   dataObj.holding_one = zeroReturn($("#seg-"+i+"> .holding-one-"+i+" > input ").val());			   
+			   dataObj.holding_two = zeroReturn($("#seg-"+i+"> .holding-two-"+i+" > input ").val());
+			   dataObj.number_loops = zeroReturn($("#seg-"+i+"> .number-loops-"+i+" > input ").val());			   
+			   dataObj.speed_plunger = zeroReturn($("#seg-"+i+"> .speed-plunger-"+i+" > input ").val());
+			   dataObj.gradient_force = zeroReturn($("#seg-"+i+"> .gradient-force-"+i+" > input ").val());			   
+			   dataObj.fastcooling = zeroReturn($("#seg-"+i+"> .fastcooling-"+i+" > input ").val());
+			   dataObj.gas_n = zeroReturn($("#seg-"+i+"> .gas-n-"+i+" > input ").val());
+			   dataObj.gas_a = zeroReturn($("#seg-"+i+"> .gas-a-"+i+" > input ").val());
+			   dataObj.spare = zeroReturn($("#seg-"+i+"> .spare-"+i+" > input ").val());
+			   dataObj.hydrulic_off = zeroReturn($("#seg-"+i+"> .hydrulic-off-"+i+" > input ").val());
+			   dataObj.press_capacity = zeroReturn($("#seg-"+i+"> .press-capacity-"+i+" > input ").val());			   
+			   dataObj.press_position = zeroReturn($("#seg-"+i+"> .press-position-"+i+" > input ").val());			   
+			   dataObj.press_distance = zeroReturn($("#seg-"+i+"> .press-distance-"+i+" > input ").val());
 
 			   console.log(dataObj);
 
@@ -1484,6 +1484,17 @@ $(function(){
 
 
 //함수
+function zeroReturn(value){
+
+	var rtnValue = 0;
+	
+	if(value != null && value != ""){
+		rtnValue = value;
+	}
+
+	return rtnValue;
+}
+
 
 //process_step 값입력 이벤트
 function validateNumberInput(event) {

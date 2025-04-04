@@ -41,8 +41,8 @@ body {
   <div class="group-1">
     <div class="recipe-main"></div>
     <div class="recipe-footer"></div>
-    <div class="number"><input type="text" id="recipeNumber" class="input-number"/></div>
-    <div class="numberData" style="display:none;"><input type="text" id="recipeNumberData" class="input-number"/></div>
+    <div class="number" style="display:none;"><input type="text" id="recipeNumber" class="input-number"/></div>
+    <div class="numberData"><input type="text" id="recipeNumberData" class="input-number"/></div>
     <div class="name"><input type="text" id="recipeName" class="input-name" /></div>
     <div class="comment"><input type="text" id="recipeComment" class="input-comment"/></div>
     <div class="segment">Segment</div>
@@ -1288,8 +1288,8 @@ body {
       <div class="display-actual-row"><input type="checkbox" class="check-display-actual-row"></div>
       <div class="display-actual-row2">display actual row</div>
       <div class="edit">Edit</div>
-      <div class="global-parameters" style="cursor:pointer;"></div>
-      <div class="global-parameters2"style="cursor:pointer;" >Global Parameters</div>
+      <div class="global-parameters" style="cursor:pointer;" onclick="getGlobalParameter();"></div>
+      <div class="global-parameters2"style="cursor:pointer;" onclick="getGlobalParameter();">Global Parameters</div>
       <div class="save">Save</div>
       <button class="save-to-db">Save to Database</button>
       <div class="protocol">Protocol</div>
@@ -1409,7 +1409,7 @@ $(function(){
         // 레시피 이름과 코멘트 수집
         dataString.push({ nodeId: "string_name", valueString: $("#recipeName").val() });
         dataString.push({ nodeId: "string_comment", valueString: $("#recipeComment").val() });
-        dataString.push({ nodeId: "string_recipeNumber", valueString: $("#recipeNumber").val() });
+        dataString.push({ nodeId: "string_recipeNumber", valueString: $("#recipeNumberData").val() });
         
         // AJAX 요청: 세션에 데이터 저장
         $.ajax({
@@ -1441,7 +1441,7 @@ $(function(){
 			   dataObj.segment = i;
 			   dataObj.name = zeroReturn($("#recipeName").val());
 			   dataObj.comment = zeroReturn($("#recipeComment").val());
-			   dataObj.number = zeroReturn($("#recipeNumber").val());
+			   dataObj.number = zeroReturn($("#recipeNumberData").val());
 			   dataObj.process_step = zeroReturn($("#seg-"+i+"> .process-step-"+i+" > input ").val());
 			   dataObj.time = zeroReturn($("#seg-"+i+"> .time-"+i+" > input ").val());
 			   dataObj.temperature = zeroReturn($("#seg-"+i+"> .temperature-"+i+" > input ").val());
@@ -1663,13 +1663,20 @@ function getGraphicalProcess(){
 	window.open(url,"test", "scrollbars=no,width=1600,height=900,top=200,left=100,menubar=false");
 }
 
-//다이얼로그
+//글로벌 파라미터 조회
+function getGlobalParameter(){
+	var recipeNumber = $("#recipeNumber").val();
+	var recipeNumberData = $("#recipeNumberData").val();
 
-$(document).ready(function () {
-    $(".global-parameters2").on("click", function () {
-        window.location.href = "/donghwa/furnace/recipe/globalParameter";
-    });
-});
+	sessionStorage.setItem("recipeNumber", recipeNumber);
+	sessionStorage.setItem("recipeNumberData", recipeNumberData);
+
+	
+	window.location.href = "/donghwa/furnace/recipe/globalParameter";	
+}
+
+
+//다이얼로그
 
 
 </script>  

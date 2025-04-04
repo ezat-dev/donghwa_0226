@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ace.dao.FurnaceDao;
+import com.ace.domain.GlobalParameter;
 import com.ace.domain.Recipe;
 
 @Service
@@ -52,6 +53,16 @@ public class FurnaceServiceImpl implements FurnaceService{
 	@Override
 	public List<Recipe> graphicalProcessTrend(Recipe recipe) {
 		return furnaceDao.graphicalProcessTrend(recipe);
+	}
+
+	@Override
+	public void globalDbSave(GlobalParameter globalParameter) {
+		furnaceDao.globalDbSave(globalParameter);
+	}
+
+	@Override
+	public List<GlobalParameter> globalDbList(GlobalParameter globalParameter) {
+		return furnaceDao.globalDbList(globalParameter);
 	}
 
 	

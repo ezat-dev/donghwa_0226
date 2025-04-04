@@ -10,13 +10,13 @@ import org.eclipse.milo.opcua.stack.core.UaException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ace.domain.Alarm;
+import com.ace.domain.BatchReport;
 import com.ace.domain.Temper;
 import com.ace.service.AnalysisService;
 import com.ace.util.OpcDataMap;
@@ -454,163 +454,201 @@ public class AnalysisController {
 
 		c2Map.put("name", "Zone 1.2");
 		c2Map.put("color", "yellow");
-		c1Map.put("yAxis", 1);
+		c2Map.put("yAxis", 0);
 		c2Map.put("data", c2List);
 
 		c3Map.put("name", "Zone 2.1");
 		c3Map.put("color", "#ABF200");
+		c3Map.put("yAxis", 0);
 		c3Map.put("data", c3List);
 
 		c4Map.put("name", "Zone 2.2");
 		c4Map.put("color", "#FFB2D9");
+		c4Map.put("yAxis", 0);
 		c4Map.put("data", c4List);
 
 		c5Map.put("name", "Zone 3.1");
 		c5Map.put("color", "#FFC19E");
+		c5Map.put("yAxis", 0);
 		c5Map.put("data", c5List);
 
 		c6Map.put("name", "Zone 3.2");
 		c6Map.put("color", "#F15F5F");
+		c6Map.put("yAxis", 0);
 		c6Map.put("data", c6List);
 
 		c7Map.put("name", "Protect 1");
 		c7Map.put("color", "#5F00FF");
+		c7Map.put("yAxis", 0);
 		c7Map.put("data", c7List);
 
 		c8Map.put("name", "Temp-load-1");
 		c8Map.put("color", "#5CD1E5");
+		c8Map.put("yAxis", 0);
 		c8Map.put("data", c8List);
 
 		c9Map.put("name", "Temp-load-2");
 		c9Map.put("color", "#2F9D27");
+		c9Map.put("yAxis", 0);
 		c9Map.put("data", c9List);
 
 		c10Map.put("name", "Temp-load-3");
 		c10Map.put("color", "#3DB7CC");
+		c10Map.put("yAxis", 0);
 		c10Map.put("data", c10List);
 
 		c11Map.put("name", "Temp-load-4");
 		c11Map.put("color", "#4374D9");
+		c11Map.put("yAxis", 0);
 		c11Map.put("data", c11List);
 
 		c12Map.put("name", "Temp-load-5");
 		c12Map.put("color", "#9FC93C");
+		c12Map.put("yAxis", 0);
 		c12Map.put("data", c12List);
 
 		c13Map.put("name", "Temp-load-6");
 		c13Map.put("color", "#FF007F");
+		c13Map.put("yAxis", 0);
 		c13Map.put("data", c13List);
 
 		c14Map.put("name", "Temp-load-7");
 		c14Map.put("color", "#8C8C8C");
+		c14Map.put("yAxis", 0);
 		c14Map.put("data", c14List);
 
 		c15Map.put("name", "Temp-load-8");
 		c15Map.put("color", "#800000");
+		c15Map.put("yAxis", 0);
 		c15Map.put("data", c15List);
 
 		c16Map.put("name", "Temp-load-9");
 		c16Map.put("color", "#008080");
+		c16Map.put("yAxis", 0);
 		c16Map.put("data", c16List);
 
 		c17Map.put("name", "Temp-load-10");
 		c17Map.put("color", "#FFD700");
+		c17Map.put("yAxis", 0);
 		c17Map.put("data", c17List);
 
 		c18Map.put("name", "Temp-load-11");
 		c18Map.put("color", "#00CED1");
+		c18Map.put("yAxis", 0);
 		c18Map.put("data", c18List);
 
 		c19Map.put("name", "Temp-load-12");
 		c19Map.put("color", "#DC143C");
+		c19Map.put("yAxis", 0);
 		c19Map.put("data", c19List);
 
 		c20Map.put("name", "Temp-load-13");
 		c20Map.put("color", "#4B0082");
+		c20Map.put("yAxis", 0);
 		c20Map.put("data", c20List);
 
 		c21Map.put("name", "Temp-load-14");
 		c21Map.put("color", "#D2691E");
+		c21Map.put("yAxis", 0);
 		c21Map.put("data", c21List);
 
 		c22Map.put("name", "Temp-load-15");
 		c22Map.put("color", "#FF8C00");
+		c22Map.put("yAxis", 0);
 		c22Map.put("data", c22List);
 
 		// cs1~cs16까지 색상 설정
 		cs1Map.put("name", "Current Load");
 		cs1Map.put("color", "#0000FF");
+		cs1Map.put("yAxis", 1);
 		cs1Map.put("data", cs1List);
 
 		cs2Map.put("name", "Set Load");
 		cs2Map.put("color", "#008000");
+		cs2Map.put("yAxis", 1);
 		cs2Map.put("data", cs2List);
 
 		cs3Map.put("name", "Front Press");
 		cs3Map.put("color", "#9400D3");
+		cs3Map.put("yAxis", 2);
 		cs3Map.put("data", cs3List);
 
 		cs4Map.put("name", "Rear Press");
 		cs4Map.put("color", "#A52A2A");
+		cs4Map.put("yAxis", 2);
 		cs4Map.put("data", cs4List);
 
 		cs5Map.put("name", "force-sensor-1");
 		cs5Map.put("color", "#228B22");
+		cs5Map.put("yAxis", 1);
 		cs5Map.put("data", cs5List);
 
 		cs6Map.put("name", "force-sensor-2");
 		cs6Map.put("color", "#B8860B");
+		cs6Map.put("yAxis", 1);
 		cs6Map.put("data", cs6List);
 
 		cs7Map.put("name", "force-sensor-3");
 		cs7Map.put("color", "#4169E1");
+		cs7Map.put("yAxis", 1);
 		cs7Map.put("data", cs7List);
 
 		cs8Map.put("name", "force-sensor-4");
 		cs8Map.put("color", "#C71585");
+		cs8Map.put("yAxis", 1);
 		cs8Map.put("data", cs8List);
 
 		cs9Map.put("name", "force-sensor-5");
 		cs9Map.put("color", "#DA70D6");
+		cs9Map.put("yAxis", 1);
 		cs9Map.put("data", cs9List);
 
 		cs10Map.put("name", "force-sensor-6");
 		cs10Map.put("color", "#4682B4");
+		cs10Map.put("yAxis", 1);
 		cs10Map.put("data", cs10List);
 
 		cs11Map.put("name", "force-sensor-7");
 		cs11Map.put("color", "#00FA9A");
+		cs11Map.put("yAxis", 1);
 		cs11Map.put("data", cs11List);
 
 		cs12Map.put("name", "force-sensor-8");
 		cs12Map.put("color", "#B22222");
+		cs12Map.put("yAxis", 1);
 		cs12Map.put("data", cs12List);
 
 		cs13Map.put("name", "force-sensor-9");
 		cs13Map.put("color", "#FF69B4");
+		cs13Map.put("yAxis", 1);
 		cs13Map.put("data", cs13List);
 
 		cs14Map.put("name", "force-sensor-10");
 		cs14Map.put("color", "#FFDAB9");
+		cs14Map.put("yAxis", 1);
 		cs14Map.put("data", cs14List);
 
 		cs15Map.put("name", "force-sensor-11");
 		cs15Map.put("color", "#7FFF00");
+		cs15Map.put("yAxis", 1);
 		cs15Map.put("data", cs15List);
 
 		cs16Map.put("name", "force-sensor-12");
 		cs16Map.put("color", "#BA55D3");
+		cs16Map.put("yAxis", 1);
 		cs16Map.put("data", cs16List);
 		
 
 		pr1Map.put("name", "furnace-vacuum");
 		pr1Map.put("color", "#BA55D3");
+		pr1Map.put("yAxis", 3);
 		pr1Map.put("data", pr1List);
 
 		
 
 		pr2Map.put("name", "diffusion-pump");
 		pr2Map.put("color", "#BA55D3");
+		pr2Map.put("yAxis", 3);
 		pr2Map.put("data", pr2List);
 
 
@@ -721,22 +759,6 @@ public class AnalysisController {
 		return rtnMap;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@RequestMapping(value = "/analysis/penGroupPenDelete", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> penGroupPenDelete(
@@ -775,13 +797,6 @@ public class AnalysisController {
 	    return rtnMap;
 	}
 
-
-	
-	
-	
-	
-	
-	
     //heaterPop
     @RequestMapping(value= "/furnace/operationPressPop/view", method = RequestMethod.POST)
     @ResponseBody
@@ -795,5 +810,51 @@ public class AnalysisController {
     	return returnMap;    	
     }
     
+    //2025-04-03 추가
+	@RequestMapping(value = "/analysis/batchReport/list", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String, Object> batchReportList(
+			@RequestParam String sdate, @RequestParam String edate) {
+	    Map<String, Object> rtnMap = new HashMap<String, Object>();
+	    List<Object> rtnList = new ArrayList<Object>();
+		
+	    String startDateTime = sdate + " 00:00:00";
+	    String endDateTime = edate + " 23:59:59";
+	    
+	    BatchReport batchReport = new BatchReport();
+	    batchReport.setRecipe_stime(startDateTime);
+	    batchReport.setRecipe_etime(endDateTime);
+
+	    List<BatchReport> batchList = analysisService.batchReportList(batchReport);
+	    
+	    for(BatchReport batch : batchList) {
+	    	Map<String, Object> rowMap = new HashMap<String, Object>();
+	    	
+	    	rowMap.put("idx", batch.getIdx());
+	    	rowMap.put("recipe_number", batch.getRecipe_number());
+	    	rowMap.put("recipe_name", batch.getRecipe_name());
+	    	rowMap.put("recipe_comment", batch.getRecipe_comment());
+	    	rowMap.put("recipe_stime", batch.getRecipe_stime());
+	    	rowMap.put("recipe_etime", batch.getRecipe_etime());
+	    	
+	    	rtnList.add(rowMap);	    	
+	    }
+	    
+	    rtnMap.put("data", rtnList);
+	    rtnMap.put("last_page",1);
+	    
+	    
+	    return rtnMap;
+	}
+    //
+	//배치리포트 트렌드
+	@RequestMapping(value = "/analysis/batchReport/trend", method = RequestMethod.GET)
+	public String graphicalProcess(Model model) {
+		
+		String result = "/analysis/batchReportTrend.jsp";
+		
+		return result;
+	}
 	
+	///analysis/batchReport/trendData
 }

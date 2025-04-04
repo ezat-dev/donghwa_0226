@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="batch">
+	
+	<select id="batchReportList" parameterType="batchReport" resultType="batchReport">
+		SELECT idx, recipe_number, recipe_name, recipe_comment,
+		LEFT(recipe_stime,19) AS recipe_stime, LEFT(recipe_etime,19) AS recipe_etime,
+		recipe_worker
+		FROM tb_batch_report
+		WHERE 1=1
+		AND recipe_stime >= #{recipe_stime}
+		AND recipe_stime <![CDATA[<=]]> #{recipe_etime}
+		ORDER BY recipe_stime
+	</select>
+	
+</mapper>

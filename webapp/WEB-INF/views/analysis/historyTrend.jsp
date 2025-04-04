@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>History Trend</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <%@ include file="../include/mainHeader.jsp" %>
    
     <jsp:include page="../include/pluginpage.jsp"/>
@@ -23,7 +23,6 @@
             align-items: center;
             height: 100%;
           	width:100%; 
-            padding: 20px;
             margin-top:60px;
             background-color: #f8f9fa;
         }
@@ -247,7 +246,7 @@
 <script>
 var seriesArray = [];
 var seriesData = [];
-
+var trendInterval;
 
 
 
@@ -283,6 +282,9 @@ function formatDate(date) {
 }
 
 $(function() {
+	
+	trendDateSetting();
+/*	
     var today = new Date();
 
     // 검색 시작일자
@@ -292,26 +294,32 @@ $(function() {
     var bHours = "00";
     var bMinutes = "00";
 
-   
-    
-
     // 검색 종료일자
     var aYear = today.getFullYear();
     var aMonth = paddingZero(today.getMonth()+1);
     var aDate = paddingZero(today.getDate());
     var aHours = paddingZero(today.getHours());
     var aMinutes = paddingZero(today.getMinutes());
-    var selectedGroup = $("#pen-group").val();
+    
     $("#startDate").val(bYear+"-"+bMonth+"-"+bDate+" "+bHours+":"+bMinutes);
     $("#endDate").val(aYear+"-"+aMonth+"-"+aDate+" "+aHours+":"+aMinutes);
+*/
+
+//	var selectedGroup = $("#pen-group").val();
+    getPenGroupSelect();
+    
+    getPenGroupChartData();    
+    setTimeout(function () {
+//        $("#load-pen-group").click(); // 버튼 클릭 이벤트 트리거
+    	getPenGroupChart();
+    }, 500); // 0.5초 후 실행 
 
     // 첫 로드시 disabled(STOP 클릭시 활성화)
-   
-
-
+	buttonDisabled();
 });
 
 
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById('hamburgerMenu');
    
@@ -321,15 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.remove('active');
     }, 300); // 300ms (0.3초) 후에 메뉴 닫기
 });
-
-// 로드 시
-$(document).ready(function() {
-    getPenGroupSelect();
-
-    setTimeout(function () {
-        $("#load-pen-group").click(); // 버튼 클릭 이벤트 트리거
-    }, 500); // 0.5초 후 실행
-});
+*/
 
 
 //이벤트
@@ -350,31 +350,10 @@ $(document).ready(function() {
 	$("#stop-button").on("click",function(){
 		buttonAbled();
 	});
-
-	
 	
 	
 	//실시간모드(최종 적용시 인터벌 추가필요)
 	$("#start-button").on("click",function(){
-	    var today = new Date();
-	    
-	    //검색 시작일자
-	    var bYear = today.getFullYear();
-	    var bMonth = paddingZero(today.getMonth()+1);
-	    var bDate = paddingZero(today.getDate());
-	    var bHours = "00";
-	    var bMinutes = "00";
-	    
-	    //검색 종료일자
-	    var aYear = today.getFullYear();
-	    var aMonth = paddingZero(today.getMonth()+1);
-	    var aDate = paddingZero(today.getDate());
-	    var aHours = paddingZero(today.getHours());
-	    var aMinutes = paddingZero(today.getMinutes());
-	    
-	    
-	    $("#startDate").val(bYear+"-"+bMonth+"-"+bDate+" "+bHours+":"+bMinutes);
-	    $("#endDate").val(aYear+"-"+aMonth+"-"+aDate+" "+aHours+":"+aMinutes);
 
 	    //첫 로드시 disabled(STOP 클릭시 활성화)
 	    buttonDisabled();
@@ -559,6 +538,30 @@ $(document).ready(function() {
 	});
 	
 //함수
+//트렌드 날짜설정
+function trendDateSetting(){
+    var today = new Date();
+    
+    //검색 시작일자
+    var bYear = today.getFullYear();
+    var bMonth = paddingZero(today.getMonth()+1);
+    var bDate = paddingZero(today.getDate());
+    var bHours = "00";
+    var bMinutes = "00";
+    
+    //검색 종료일자
+    var aYear = today.getFullYear();
+    var aMonth = paddingZero(today.getMonth()+1);
+    var aDate = paddingZero(today.getDate());
+    var aHours = paddingZero(today.getHours());
+    var aMinutes = paddingZero(today.getMinutes());
+    
+    
+    $("#startDate").val(bYear+"-"+bMonth+"-"+bDate+" "+bHours+":"+bMinutes);
+    $("#endDate").val(aYear+"-"+aMonth+"-"+aDate+" "+aHours+":"+aMinutes);
+	
+}
+
 //첫 로드와 START버튼 눌렀을 때
 function buttonDisabled(){
 	//시작일	
@@ -575,12 +578,14 @@ function buttonDisabled(){
 	$("#start-button").css("background-color","#b0b0b0");
 
 	
-	
-
-	
 	//STOP버튼
 	$("#stop-button").removeAttr("disabled");
 	$("#stop-button").css("background-color","#3d3c3c");
+	
+    //트렌드 날짜설정
+	trendDateSetting();	
+	
+	trendInterval = setInterval("getPenGroupChartDataInterval()",1000);	
 	
 }
 
@@ -601,15 +606,13 @@ function buttonAbled(){
 
 	//그룹버튼
 	$("#pen-group").removeAttr("disabled");
-
-	
 	
 	//STOP버튼
 	$("#stop-button").attr("disabled","true");
-	$("#stop-button").css("background-color","#b0b0b0");	
+	$("#stop-button").css("background-color","#b0b0b0");
+	
+	clearInterval(trendInterval);
 }
-
-
 
 
 function getPenGroupSelect(){
@@ -633,15 +636,10 @@ function getPenGroupSelect(){
     });
 }
 
-
-
-
-
-
-
-
-
-
+function getPenGroupChartDataInterval(){
+	trendDateSetting();
+	getPenGroupChartData();
+}
 
 function getPenGroupChartData() {
     var sdate = $("#startDate").val() + ":00";
@@ -652,12 +650,6 @@ function getPenGroupChartData() {
     if (!selectedGroup) {
         selectedGroup = 'Group1';
     }
-
-    console.log("보내는 데이터:", {
-        "selectedGroup": selectedGroup,
-        "sdateTime": sdate,
-        "edateTime": edate
-    });
 
     $.ajax({
         url: "/donghwa/analysis/historyTrendPenGroupChart",
@@ -671,8 +663,6 @@ function getPenGroupChartData() {
         success: function (result) {
             var data = result.data;
 
-            console.log(data);
-            
             
             var groupConcatSplit = data.groupConcat.split(",");
 
@@ -731,7 +721,7 @@ function getPenGroupChart(){
         yAxis: [
             {
                 min:0,
-                max:1800,
+                max:600,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -748,35 +738,15 @@ function getPenGroupChart(){
                 }
             },
             {
-            	min: -100,
-            	max: 1000
-,
-            	tickInterval: 1e7,  // 적절한 간격을 설정하세요.
-                crosshair: {
-                    width: 1,
-                    color: '#5D5D5D',
-                    zIndex: 5
-                },
-                title: {
-                    text: 'Pressure[Torr]'
-                },
-                labels: {
-              /*   	format: '{value} (℃)', */
-                    style: {
-                        fontSize: "14pt"
-                    }
-                }
-            },
-            {
-                min:0,
-                max:9,
+                min:-100,
+                max:500,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
                     zIndex: 5
                 },
                 title: {
-                    text: 'Force[kN]'
+                    text: 'Press[kN]'
                 },
                 labels: {
                 	format: '{value} K' ,
@@ -786,8 +756,8 @@ function getPenGroupChart(){
                 }
             },
             {
-                min:0,
-                max:450,
+                min:-100,
+                max:25000,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -798,6 +768,24 @@ function getPenGroupChart(){
                 },
                 labels: {
          /*        	format: '{value} mm', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            },
+            {
+            	min: 0,
+            	max: 10,
+                crosshair: {
+                    width: 1,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Pressure[mbar]'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
                     style: {
                         fontSize: "14pt"
                     }
@@ -834,13 +822,6 @@ function getPenGroupChart(){
                 }
             }
         },
-        tooltip: {
-            split: true,
-            shared: true,
-            style: {
-                fontSize: "14pt"
-            }
-        },
         series: seriesArray,
         responsive: {
             rules: [{
@@ -856,6 +837,45 @@ function getPenGroupChart(){
                 }
             }]
         },
+        tooltip: {
+            useHTML: true,
+            shared: true, // 여러 시리즈의 데이터를 보여줌
+            positioner: function(labelWidth, labelHeight, point) {
+            		//maxWidth : 1500으로 설정되어 있음.
+            		var xValue = 0;
+        			var yValue = 0;
+            		if((1500-200) < (point.plotX + this.chart.plotLeft + 15)){
+            			xValue = (1500-200);
+            		}else{
+            			xValue = (point.plotX + this.chart.plotLeft + 15);
+            		}
+            		var obj = {"x":point.plotX, "plotX":this.chart.plotLeft, 
+            					"y":point.plotY, "plotY":this.chart.plotTop};
+            		console.log(obj);
+            		
+              return { x: 900, y: 60 }; // 툴팁 위치 조정
+            },
+            formatter: function() {
+          	  $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M',this.x));
+              var s = '<b style="font-size:14pt;">' + cursorSetDateTime(this.x) + '</b><br/>'; // 시간 표시
+              this.points.forEach(function(point) {
+              	var point_y = point.y;
+              	var point_name = point.series.name;
+              	if(point_name.indexOf("CP") != -1){
+              		point_y = (point.y).toFixed(3);
+              	}
+              	
+              	$("#value"+(point.series.index+1)+"_h").css("color",point.series.color);
+              	$("#value"+(point.series.index+1)+"_v").text(point_y);
+              	//color:' + point.series.color + '
+              	
+                s += '<span style="font-weight:bold; font-size:14pt; ">' + point.series.name + ':</span> <span style="font-size:14pt;">' + point_y + '</span><br/>'; // 각 시리즈의 데이터 표시
+              });
+              return s;
+            },
+            borderColor: '#333333',
+            shadow: false
+          },
         exporting: {
             menuItemDefinitions: {
                 label: {

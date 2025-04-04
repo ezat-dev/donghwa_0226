@@ -2,6 +2,7 @@ package com.ace.dao;
 
 import java.util.List;
 
+import com.ace.domain.GlobalParameter;
 import com.ace.domain.Recipe;
 
 public interface FurnaceDao {
@@ -21,5 +22,9 @@ public interface FurnaceDao {
 	int recipeCheck(Recipe recipe);
 
 	List<Recipe> graphicalProcessTrend(Recipe recipe);
+
+	void globalDbSave(GlobalParameter globalParameter);
+
+	List<GlobalParameter> globalDbList(GlobalParameter globalParameter);
 
 }

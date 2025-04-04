@@ -577,39 +577,15 @@
         });
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function digitalSetOnOff2() {
-        console.log("digitalSetOnOf2222222222222f 함수 실행됨");
-        document.getElementById('pop2').style.display = 'flex'; // 팝업을 보이게 함
+    function digitalSetOnOff2(tagUrl, tagName) {
+        
+        if(tagName == "open-lid"){
+        	document.getElementById('pop').style.display = 'flex'; // 팝업을 보이게 함	
+        }else if(tagName == "close-lid"){
+        	document.getElementById('pop2').style.display = 'flex'; // 팝업을 보이게 함
+        }
+        
     }
-
-
-
 
 /* 
     window.onclick = function(event) {

@@ -2,6 +2,7 @@ package com.ace.service;
 
 import java.util.List;
 
+import com.ace.domain.GlobalParameter;
 import com.ace.domain.Recipe;
 
 public interface FurnaceService {
@@ -21,6 +22,10 @@ public interface FurnaceService {
 	int recipeCheck(Recipe recipe);
 
 	List<Recipe> graphicalProcessTrend(Recipe recipe);
+
+	void globalDbSave(GlobalParameter globalParameter);
+
+	List<GlobalParameter> globalDbList(GlobalParameter globalParameter);
 
 
 }

@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ace.domain.GlobalParameter;
 import com.ace.domain.Recipe;
 import com.ace.service.FurnaceService;
 import com.ace.util.OpcDataMap;
@@ -186,7 +187,7 @@ public class FurnaceController {
 	public Map<String, String> recipePlcWrite(@RequestBody List<NodeValuePair> nodeValuePairs)
 	        throws UaException, InterruptedException, ExecutionException {
 
-	    System.out.println("==== PLC Write Start ====");
+//	    System.out.println("==== PLC Write Start ====");
 	    Map<String, String> response = new HashMap<String, String>();
 
 	    try {
@@ -276,7 +277,7 @@ public class FurnaceController {
 	                    stringNow = "";
 	                }
 	            }
-	            System.out.println("Node: " + nodeIdStr + ", Original String: " + valueString+"// size : "+stringValueList.size()+"// len : "+len);
+//	            System.out.println("Node: " + nodeIdStr + ", Original String: " + valueString+"// size : "+stringValueList.size()+"// len : "+len);
 //	            System.out.println("Parsed String List: " + stringValueList);
 
 	            if ("string_name".equals(nodeIdStr)) {
@@ -294,7 +295,7 @@ public class FurnaceController {
 	            }
 	            else if ("string_recipeNumber".equals(nodeIdStr)) {
 	                for (int k = 0; k < stringValueList.size(); k++) {
-	                	System.out.println("DONGHWA.PLC.RECIPE.NUMBER.NUMBER" + k+"// "+stringValueList.get(k));
+//	                	System.out.println("DONGHWA.PLC.RECIPE.NUMBER.NUMBER" + k+"// "+stringValueList.get(k));
 	                    NodeId nodeId = new NodeId(namespaceIndex, "DONGHWA.PLC.RECIPE.NUMBER.NUMBER" + k);
 	                    DataValue dataValue = new DataValue(new Variant((short)Integer.parseInt(stringValueList.get(k))));
 	                    futures.add(MainController.client.writeValue(nodeId, dataValue));
@@ -515,7 +516,7 @@ public class FurnaceController {
 	//레시피 - 
 	@RequestMapping(value = "/furnace/manualOperation", method = RequestMethod.GET)
 	public String manualOperation(Model model) {
-		System.out.println("자동/수동 조작팝업 이동");
+//		System.out.println("자동/수동 조작팝업 이동");
 		
 		return "/furnace/manualOperation.jsp";
 	}	
@@ -903,7 +904,7 @@ public class FurnaceController {
     	return returnMap;    	
     }	
 
-    //글로벌
+    //글로벌파라미터 조회
     @RequestMapping(value= "/furnace/global/view", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> global() throws UaException, InterruptedException, ExecutionException {
@@ -914,5 +915,34 @@ public class FurnaceController {
     	returnMap = opcDataMap.getOpcDataListMap("DONGHWA.PLC.GLOBAL");
     	
     	return returnMap;    	
-    }	
+    }
+    
+    //글로벌파라미터 데이터 DB저장
+    @RequestMapping(value= "/furnace/global/list", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> globalDbList(
+    		@RequestBody GlobalParameter globalParameter) {
+    	Map<String, Object> returnMap = new HashMap<String, Object>();
+
+    	List<GlobalParameter> globalList = furnaceService.globalDbList(globalParameter);
+    	
+    	returnMap.put("data", globalList);
+    	
+    	return returnMap;    	
+    }
+    
+    //글로벌파라미터 데이터 DB저장
+    @RequestMapping(value= "/furnace/global/save", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> globalDbSave(
+    		@RequestBody GlobalParameter globalParameter) {
+    	Map<String, Object> returnMap = new HashMap<String, Object>();
+    	
+    	furnaceService.globalDbSave(globalParameter);
+    	
+    	returnMap.put("data", globalParameter);
+    	
+    	return returnMap;    	
+    }
+    
 }

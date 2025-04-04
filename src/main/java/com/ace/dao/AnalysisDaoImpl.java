@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ace.domain.Alarm;
+import com.ace.domain.BatchReport;
 import com.ace.domain.Temper;
 
 @Repository
@@ -70,6 +71,11 @@ public class AnalysisDaoImpl implements AnalysisDao{
 	@Override
 	public int getPenGroupPenCount(Temper temper) {
 		return sqlSession.selectOne("temper.getPenGroupPenCount",temper);
+	}
+
+	@Override
+	public List<BatchReport> batchReportList(BatchReport batchReport) {
+		return sqlSession.selectList("batch.batchReportList", batchReport);
 	}
     
 

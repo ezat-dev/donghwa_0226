@@ -64,7 +64,7 @@ menu, ol, ul {
   top: 1157px;
 }
 
-.number {
+.numberData {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -82,6 +82,7 @@ menu, ol, ul {
   top: 68px;
   padding: 0;
 }
+
 .input-number {
   width: 100%;
   height: 100%;

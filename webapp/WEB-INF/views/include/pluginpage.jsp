@@ -26,6 +26,7 @@
 
 <script type="text/javascript" src="/donghwa/js/select2/select2.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
 	
 
@@ -69,6 +70,25 @@ $(function(){
 		    var sMinutes = paddingZero(selectDate.getMinutes());
 		    
 		    $("#"+selectId).val(sYear+"-"+sMonth+"-"+sDate+" "+sHours+":"+sMinutes);
+		}	
+	});
+	
+	$(".dateSet").datepicker({
+	    language: 'ko',
+	    autoClose: true,
+	    timepicker: true,         // 시간 선택 활성화
+	    dateFormat: 'yyyy-MM-dd', // 날짜 형식
+	    step: 1,                  // 분 단위 조정(예: 5분 단위)
+		onSelect: function (formattedDate, date, picker) {
+
+			var selectId = picker.$el[0].id;
+			var selectDate = new Date(date);
+			
+		    var sYear = selectDate.getFullYear();
+		    var sMonth = paddingZero(selectDate.getMonth()+1);
+		    var sDate = paddingZero(selectDate.getDate());
+		    
+		    $("#"+selectId).val(sYear+"-"+sMonth+"-"+sDate);
 		}	
 	});
 	

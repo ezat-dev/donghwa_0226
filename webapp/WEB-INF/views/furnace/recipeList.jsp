@@ -118,13 +118,13 @@ $(function(){
 					hozAlign:"center", visible:false},
 				{title:"Group", field:"r_group", sorter:"string", width:150,
 					hozAlign:"center"},
-				{title:"Name", field:"r_name", sorter:"string", width:150,
+				{title:"Name", field:"r_name", sorter:"string", width:300,
 					hozAlign:"center"},
-				{title:"Comment", field:"r_comment", sorter:"string", width:150,
+				{title:"Comment", field:"r_comment", sorter:"string", width:400,
 					hozAlign:"center"},
-				{title:"Date created", field:"r_createtime", sorter:"string", width:180,
+				{title:"Date created", field:"r_createtime", sorter:"string", width:250,
 					hozAlign:"center"},
-				{title:"Last modified", field:"r_updatetime", sorter:"string", width:180,
+				{title:"Last modified", field:"r_updatetime", sorter:"string", width:250,
 					hozAlign:"center"},
 				{title:"r_idx", field:"r_idx", sorter:"int", width:150,
 					hozAlign:"center", visible:false},
@@ -133,6 +133,8 @@ $(function(){
 			],
 		    rowFormatter:function(row){
 		    	row.getElement().style.backgroundColor = "#FFFFFF";
+		    	row.getElement().style.fontSize = "14pt";
+		    	row.getElement().style.fontWeight = "700";		    	
 			},
 			rowClick:function(e, row){
 	

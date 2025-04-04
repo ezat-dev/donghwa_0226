@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ace.dao.AnalysisDao;
 import com.ace.domain.Alarm;
+import com.ace.domain.BatchReport;
 import com.ace.domain.Temper;
 
 @Service
@@ -56,22 +57,19 @@ public class AnalysisServiceImpl implements AnalysisService{
 	public void penGroupPenAdd(Temper temper) {
 		analysisDao.penGroupPenAdd(temper);
 	}
-	
-	
-	
-	
+		
 	@Override
 	public void penGroupPenDelete(Temper temper) {
 		analysisDao.penGroupPenDelete(temper);
 	}
 	
-	
-	
-	
-	
-
 	@Override
 	public int getPenGroupPenCount(Temper temper) {
 		return analysisDao.getPenGroupPenCount(temper);
+	}
+
+	@Override
+	public List<BatchReport> batchReportList(BatchReport batchReport) {
+		return analysisDao.batchReportList(batchReport);
 	}    
 }

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ace.domain.GlobalParameter;
 import com.ace.domain.Recipe;
 
 @Repository
@@ -54,6 +55,16 @@ public class FurnaceDaoImpl implements FurnaceDao{
 	@Override
 	public List<Recipe> graphicalProcessTrend(Recipe recipe) {
 		return sqlSession.selectList("recipe.graphicalProcessTrend", recipe);
+	}
+
+	@Override
+	public void globalDbSave(GlobalParameter globalParameter) {
+		sqlSession.insert("recipe.globalDbSave",globalParameter);
+	}
+
+	@Override
+	public List<GlobalParameter> globalDbList(GlobalParameter globalParameter) {
+		return sqlSession.selectList("recipe.globalDbList", globalParameter);
 	}
 	
 

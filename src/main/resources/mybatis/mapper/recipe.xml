@@ -65,4 +65,24 @@
 		AND process_step != 0
 	</select>	
 	
+	<insert id="globalDbSave" parameterType="globalParameter">
+		{CALL sp_recipe_global_set(#{r_f_idx}, #{r_f_data_idx}, 
+			#{input_value_1}, #{input_value_2}, #{input_value_3}, #{input_value_4},
+			#{input_value_5}, #{input_value_6}, #{input_value_7}, #{input_value_8}, 
+			#{input_value_9}, #{input_value_10}, #{input_value_11}, #{input_value_12},
+			#{input_value_13}, #{input_value_14}, #{input_value_15}, #{input_value_16},
+			#{input_value_17}   
+		)}
+	</insert>
+	
+	<select id="globalDbList" resultType="globalParameter" parameterType="globalParameter">
+		SELECT *
+		FROM tb_recipe_data_global
+		WHERE 1=1
+		AND r_f_idx = #{r_f_idx}
+		AND r_f_data_idx = #{r_f_data_idx}
+	</select>
+	
+	
+	
 </mapper>

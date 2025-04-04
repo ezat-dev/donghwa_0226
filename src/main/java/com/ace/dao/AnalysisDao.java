@@ -3,6 +3,7 @@ package com.ace.dao;
 import java.util.List;
 
 import com.ace.domain.Alarm;
+import com.ace.domain.BatchReport;
 import com.ace.domain.Temper;
 
 public interface AnalysisDao {
@@ -27,5 +28,7 @@ public interface AnalysisDao {
 	
 	void penGroupPenDelete(Temper temper);
 
-	int getPenGroupPenCount(Temper temper);	
+	int getPenGroupPenCount(Temper temper);
+
+	List<BatchReport> batchReportList(BatchReport batchReport);	
 }

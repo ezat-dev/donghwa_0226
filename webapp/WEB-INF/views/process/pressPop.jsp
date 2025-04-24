@@ -1283,7 +1283,7 @@
   position: absolute;
   left: 801px;
   top: 492px;
-  width: 107px;
+  width: 157px;
   height: 19px;
 }
 .level {
@@ -1526,8 +1526,8 @@
     <div class="tem"></div>
     <div class="tem-box-1"></div>
     <div class="hydraulic-oil-temperature">Hydraulic Oil Temperature</div>
-    <div class="tem-val-1"></div>
-    <div class="tis-22-1-5-1">TIS 22.1.5.1</div>
+    <div class="tem-val-1 D11107"></div>
+    <div class="tis-22-1-5-1">Oil Pump Temp</div>
     <div class="level"></div>
     <div class="level-box-1"></div>
     <div class="hydraulic-oil-fill-level">Hydraulic Oil Fill Level</div>
@@ -1614,7 +1614,9 @@ function value(keys, value) {
     if (keys === "D11101" || keys === "D11102") {
         finalValue = ((value / 100).toFixed(2) + " mm");
     } else if (keys === "D11105") {
-    	finalValue = ((value * 0.1).toFixed(1) + " kN");
+        finalValue = ((value * 0.1).toFixed(1) + " kN");
+    } else if (keys === "D11107") {
+        finalValue = (value + " ℃");
     } else {
         finalValue = (value + " kN");
     }
@@ -1625,6 +1627,7 @@ function value(keys, value) {
         "font-size": "16pt"
     });
 }
+
 
 
 

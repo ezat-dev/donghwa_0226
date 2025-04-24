@@ -343,6 +343,7 @@ public class FurnaceController {
 	    	
 	    	Recipe recipe = new Recipe();
 	    	v_r_idx = Integer.parseInt(nowMap.get("number").toString());
+	    	v_r_data_idx = Integer.parseInt(nowMap.get("numberData").toString());
 			recipe.setR_f_idx(v_r_idx);
 			recipe.setR_f_data_idx(v_r_data_idx);
 			recipe.setR_name(nowMap.get("name").toString());

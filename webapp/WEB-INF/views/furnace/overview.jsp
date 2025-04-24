@@ -590,7 +590,7 @@
     
     <img class="component-9 2 3  			Pumping_valve pop-on-rv-M6 pop-off-rv-M7 onClickStatus" src="/donghwa/css/furnace/img/component-90.svg" />
    
-    <img class="component-10 component-10-img" src="/donghwa/css/furnace/img/component-100.svg" />
+    <img class="component-10 2 3 Pumping_valve pop-on-rv-M6 pop-off-rv-M7 onClickStatus component-10-img" src="/donghwa/css/furnace/img/component-100.svg" />
    
     <img class="component-11 2 3						Fore_Line_Valve	pop-on-fv-M9 pop-off-fv-M10 onClickStatus" src="/donghwa/css/furnace/img/component-110.svg" />
     <img class="component-12 component-12-img 3			Fore_Line_Valve	pop-on-fv-M9 pop-off-fv-M10 onClickStatus" src="/donghwa/css/furnace/img/component-120.svg" />
@@ -604,11 +604,11 @@
     <div class="ball-off-1 2 3 							Diff_Pump pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
     <div class="ball-on-60 2 3 							Diff_Pump pop-on-df-M26 pop-off-df-M27 onClickStatus"></div>
    
-    <div class="ball-on-1 ball-on-1-img"></div>
+    <div class="ball-on-1 2 3 Diff_Pump pop-on-df-M26 pop-off-df-M27 onClickStatus     ball-on-1-img"></div>
    
    
-    <div class="ball-off-2 2 3 Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus"></div>
-    <div class="ball-on-2 ball-on-2-img Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus"></div>
+    <div class="ball-off-2 2 3 							Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus"></div>
+    <div class="ball-on-2 2 3 							Booster_pump pop-on-bp-M0 pop-off-bp-M1 onClickStatus  ball-on-2-img"></div>
     
     
     <div class="ball-off-3 2 3 							Rotary_Pump pop-on-rp-M3  pop-off-rp-M4 onClickStatus"></div>
@@ -1118,8 +1118,11 @@ function overviewListView(){
 	        var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes); 
 	        $("." + keys).text(timeString);
 	    }
-	    else if (keys === "D11105" || keys === "D11013") {
-	        $("." + keys).text(truncatedValue + " kN");
+	    else if (keys === "D11013") {
+	        $(".D11013").text(truncatedValue + " kN");
+	    }
+	    else if (keys === "D11105") {
+	        $(".D11105").text((parseFloat(truncatedValue) / 10).toFixed(3).replace(/\.?0+$/, "") + " kN");
 	    }
 	    else if (keys === "overTb1" || keys === "overTb2") {
 	        $("." + keys).text(truncatedValue + " °C");

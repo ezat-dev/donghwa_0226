@@ -426,7 +426,7 @@
         console.log(tagName);
         setTagDir = tagDir;
         setTagName = tagName;
-        console.log("digitalSet실행");
+        console.log("digitalSet커먼팝업");
         $(".tage-name").text(setTagName);
         $(".bt_off").css("display", "none"); // 또는 "block"
         openPopup();

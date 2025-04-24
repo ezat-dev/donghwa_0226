@@ -1441,7 +1441,8 @@ $(function(){
 			   dataObj.segment = i;
 			   dataObj.name = zeroReturn($("#recipeName").val());
 			   dataObj.comment = zeroReturn($("#recipeComment").val());
-			   dataObj.number = zeroReturn($("#recipeNumberData").val());
+			   dataObj.number = zeroReturn($("#recipeNumber").val());
+			   dataObj.numberData = zeroReturn($("#recipeNumberData").val());
 			   dataObj.process_step = zeroReturn($("#seg-"+i+"> .process-step-"+i+" > input ").val());
 			   dataObj.time = zeroReturn($("#seg-"+i+"> .time-"+i+" > input ").val());
 			   dataObj.temperature = zeroReturn($("#seg-"+i+"> .temperature-"+i+" > input ").val());

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/donghwa/css/furnace/operationPressPop.css">
-  <jsp:include page="../include/commonPopupPress.jsp"/>
+  <jsp:include page="../include/commonPopup.jsp"/>
    <jsp:include page="../include/pluginpage.jsp"/>
 
   
@@ -48,18 +48,22 @@
     <div class="operation-press-main"></div>
 
     <div class="operation-press">Operation Press</div>
-    <div class="hydraulic M8180"></div>
+    <div class="hydraulic Hydrauilc"></div>
     <div class="_1 lamp-M8180"></div>
-    <div class="hydraulic2">Hydraulic</div>
-    <div class="press-move-up M8181"></div>
+    <div class="hydraulic2 Hydrauilc">Hydraulic</div>
+    <div class="press-move-up Move-up"></div>
     <div class="_2 lamp-M8181"></div>
-    <div class="press-move-up2 ">Press Move Up</div>
-    <div class="force-f-1 M8182"></div>
+    <div class="press-move-up2 Move-up ">Press Move Up</div>
+    
+    
+    <div class="force-f-1 Move_down"></div>
     <div class="_3 lamp-M8182"></div>
-    <div class="pressing-with-force-f-1">Press Move Down</div>
-    <div class="force-f-2"></div>
-    <div class="_4"></div>
-    <div class="pressing-with-force-f-2">Pressing with Force F1</div>
+    <div class="pressing-with-force-f-1 Move_down">Press Move Down</div>
+    
+    
+    <div class="force-f-2 Zero-scale"></div>
+    <div class="_4 lamp-M8183"></div>
+    <div class="pressing-with-force-f-2 Zero-scale">Load Cell Zero Scale</div>
     <div class="position-dc"></div>
     <div class="_5"></div>
     <div class="position-distance-control">Position-/ Distance Control</div>

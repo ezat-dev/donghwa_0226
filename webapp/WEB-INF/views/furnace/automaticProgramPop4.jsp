@@ -44,7 +44,27 @@
 	    color: white;
 	    transform: scale(1.05);
 	}
+   .setSeconds{
    
+   	font-size: 16pt;
+    position: absolute;
+	left: 526px;
+    top: 324px;
+   }
+   
+   .realTime{
+   
+   	font-size: 16pt;
+    position: absolute;
+	left: 466px;
+    top: 324px;
+   }
+   .mins{
+    font-size: 16pt;
+    position: absolute;
+	left: 346px;
+    top: 329px;
+   }
    
    </style>
   <title>Document</title>
@@ -83,7 +103,12 @@
     <div class="reset"></div>
     <div class="reset-text">Reset</div>
     <div class="_1 delayTime"></div>
-    <div class="_2 realTime"></div>
+    
+    <div class="_2"></div>
+     <div class="realTime"></div>
+    <div class="setSeconds"></div>
+    <div class="mins">분</div>
+    
     <div class="_12 "></div>
     <div class="_22"></div>
     <div class="_3"></div>
@@ -130,64 +155,66 @@
     });
 }
 
-
    function v(keys, value) {
-	    if (value == true) {
-	        $("." + keys).css("color", "white");
-	    } else {
-	        $("." + keys).css("color", "black");
-	    }
+	    if (keys !== "Start_bt_M8001") {
+	        let element = $("." + keys);
 
-	    if (keys.indexOf("start") != -1 || keys.indexOf("reset") != -1) {
-	        // 추가적인 처리 가능
-	    }
-
-
-
-
-	        if (keys !== "Start_bt_M8001") {  
-	            let element = $("." + keys);
-
-	            if (value === true) {
-	                element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
-	                       .css("cursor", "pointer")
-	                       .off("click") // 기존 클릭 이벤트 제거
-	                       .on("click", function() {  
-	                           digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
-	                       });
-	            } else {
-	                element.removeAttr("onclick")  // onclick 속성 제거
-	                       .css("cursor", "default")
-	                       .off("click");  // 모든 click 이벤트 제거
-	            }
+	        if (value === true) {
+	            element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	                   .css("cursor", "pointer")
+	                   .off("click") // 기존 클릭 이벤트 제거
+	                   .on("click", function () {
+	                       digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
+	                   });
+	        } else if (value === false) { // 원하는 조건에 맞게 변경
+	            element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	                   .css("cursor", "pointer")
+	                   .off("click")
+	                   .on("click", function () {
+	                       digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
+	                   });
+	        } else {
+	            element.removeAttr("onclick")
+	                   .css("cursor", "default")
+	                   .off("click");
 	        }
-	                    
 	    }
-	    
+	}
+
 	
 
 
 
 
-    function value(keys, value){
-        if(!$("div").hasClass("anlog-popup-div-color")){
-            $("."+keys).text(value);	
-        }
-        
-        $("."+keys).css("display", "");
-        $("."+keys).css("text-align", "center");
-        $("."+keys).css("font-size", "16pt");
-        $("."+keys).css("padding-top", "5px");
+   function value(keys, value) {
+	    // 값 표시 (단위 붙이기)
+	    if (!$("div").hasClass("anlog-popup-div-color")) {
+	        if (keys === "realTime") {
+	            $("." + keys).text(value + "분");
+	        } else if (keys === "setSeconds") {
+	            $("." + keys).text(value + "초");
+	        } else {
+	            $("." + keys).text(value);
+	        }
+	    }
 
-        $("."+keys).attr("align-items", "center");
-     
+	
+	    $("." + keys).css({
+	        display: "",
+	        "text-align": "center",
+	        "font-size": "16pt",
+	        "padding-top": "5px",
+	        "align-items": "center"
+	    });
 
-        // keys가 "delayTime"일 때만 ondblclick 속성 추가
-        if(keys === "delayTime"){
-            $("."+keys).attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')");
-            $("."+keys).css("cursor", "pointer");
-            }
-    }
+	    // delayTime만 더블클릭 팝업
+	    if (keys === "delayTime") {
+	        $("." + keys)
+	            .attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')")
+	            .css("cursor", "pointer");
+	    }
+	}
+
 
   var popup;
   

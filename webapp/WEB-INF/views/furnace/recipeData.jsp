@@ -180,7 +180,7 @@ body {
     <div class="gradient-force-2"><input type="text" class="input-text" id="id69" name="DONGHWA.PLC.RECIPE.SEGMENT_2.GRADIENT_FORCE_2" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-2"><input type="checkbox" id="id70" name="DONGHWA.PLC.RECIPE.SEGMENT_2.FASTCOOLING_2" class="input-checkbox" value="0" disabled></div>
     <div class="gas-n-2"><input type="checkbox" id="id71" name="DONGHWA.PLC.RECIPE.SEGMENT_2.GAS_N_2" class="input-checkbox" value="0" disabled></div> <!-- Updated from id63 -->
-    <div class="gas-a-2"><input type="checkbox" id="id46" name="DONGHWA.PLC.RECIPE.SEGMENT_1.GAS_A_1" class="input-checkbox" value="0" disabled></div>
+    <div class="gas-a-2"><input type="checkbox" id="id72" name="DONGHWA.PLC.RECIPE.SEGMENT_1.GAS_A_2" class="input-checkbox" value="0" disabled></div>
     <div class="spare-2"><input type="checkbox" id="id73" name="DONGHWA.PLC.RECIPE.SEGMENT_2.SPARE_2" class="input-checkbox" value="0"></div>
     <div class="hydrulic-off-2"><input type="checkbox" id="id74" name="DONGHWA.PLC.RECIPE.SEGMENT_2.HYDRULIC_OFF_2" class="input-checkbox" value="0"></div> <!-- Updated from id66 -->
     <div class="press-capacity-2"><input type="checkbox" id="id75" name="DONGHWA.PLC.RECIPE.SEGMENT_2.PRESS_CAPACITY_2" class="input-checkbox" value="0"></div>
@@ -1506,47 +1506,49 @@ function validateNumberInput(event) {
     const inputValue = input.value;
     const inputIdNumber = parseInt(inputId.replace('id', ''), 10);
 
-    //id가 id로 시작하는 전체태그 배열
+    // id가 "id"로 시작하는 전체 input 태그 배열
     const allInputs = document.querySelectorAll('input[id^="id"]');
 
-    if (inputIdNumber % 26 == 0) {
-        
-        //process_step에서 입력된 값이 0
-    	if (inputValue == "0") {
+    // 26단위마다 처리
+    if (inputIdNumber % 26 === 0) {
+
+        // process_step에서 입력된 값이 0
+        if (inputValue === "0") {
             allInputs.forEach(field => {
                 const fieldId = field.id;
                 const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
                 console.log(`비활성화할 필드: ${fieldId} (현재 입력 ID: ${inputId})`);
-                if (fieldIdNumber > inputIdNumber+25) {
+                if (fieldIdNumber > inputIdNumber + 25) {
                     field.disabled = true;
-                    field.value = "";  // 비활성화될 때 값도 초기화합니다.
+                    field.value = "";  // 비활성화될 때 값도 초기화
                 }
-            });        	
-    	}else if(inputValue == "4"){
-            
-            allInputs.forEach(field => {
-                const fieldId = field.id;
-                const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
-                
-            	if (fieldIdNumber >= (inputIdNumber+18) && fieldIdNumber <= (inputIdNumber+26)) {
-                    if (fieldId) {
-                    	field.disabled = false;
-                    }                	
-				}
             });
-        }else if(inputValue == "1" || inputValue == "2" || inputValue == "3"){
-            //1,2,3일때
+
+        // process_step에서 입력된 값이 4
+        } else if (inputValue === "4") {
             allInputs.forEach(field => {
                 const fieldId = field.id;
                 const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
-                
-            	if (fieldIdNumber >= (inputIdNumber)) {
-                	field.disabled = false;
-				}
+                // +18, +20 위치 체크박스만 checked = true
+                if ((fieldIdNumber === inputIdNumber + 18 || fieldIdNumber === inputIdNumber + 20)
+                    && field.type === "checkbox") {
+                    field.checked = true;
+                }
+            });
+
+        // process_step에서 입력된 값이 1,2,3
+        } else if (inputValue === "1" || inputValue === "2" || inputValue === "3") {
+            allInputs.forEach(field => {
+                const fieldId = field.id;
+                const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
+                if (fieldIdNumber >= inputIdNumber) {
+                    field.disabled = false;
+                }
             });
         }
     }
 }
+
 
 //레시피값 PLC 전송
 function sendPlc(data) {

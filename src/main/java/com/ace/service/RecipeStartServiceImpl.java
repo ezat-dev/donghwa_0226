@@ -72,7 +72,7 @@ public class RecipeStartServiceImpl implements RecipeStartService {
                     seconds = 59;
                 }
 
-                // OPC에 업데이트
+  
                 opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.setMinutes", minutes);
                 opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.setSeconds", seconds);
                 opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.realTime", minutes);
@@ -84,7 +84,7 @@ public class RecipeStartServiceImpl implements RecipeStartService {
             }
 
         } else if ("true".equals(resetVal)) {
-            // Reset 상태 시 타이머 초기화
+          
             opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.setMinutes", (short) 0);
             opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.setSeconds", (short) 0);
             opcData.setOpcData("DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC.realTime", (short) 0);

@@ -718,7 +718,7 @@ body {
     <div class="press-position-20"><input type="checkbox" id="id544" name="DONGHWA.PLC.RECIPE.SEGMENT_20.PRESS_POSITION_20" class="input-checkbox" value="0"></div>
     <div class="press-distance-20"><input type="checkbox" id="id545" name="DONGHWA.PLC.RECIPE.SEGMENT_20.PRESS_DISTANCE_20" class="input-checkbox" value="0"></div>
 </div>
-<div id="seg-21">
+<!-- <div id="seg-21">
     <div class="segment-21"><input type="text" class="input-segment" id="segment_21" value="21" disabled/></div>
     <div class="process-step-21"><input type="text" class="input-text" id="id546" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PROCESS_STEP_21" oninput="validateNumberInput(event)"/></div>
     <div class="time-21"><input type="text" class="input-text" id="id547" name="DONGHWA.PLC.RECIPE.SEGMENT_21.TIME_21" oninput="validateNumberInput(event)"/></div>
@@ -730,19 +730,19 @@ body {
     <div class="pressing-one-21"><input type="text" class="input-text" id="id469" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PRESSING_ONE_21" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-21"><input type="text" class="input-text" id="id554" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PRESSING_TWO_21" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-21"><input type="text" class="input-text" id="id555" name="DONGHWA.PLC.RECIPE.SEGMENT_21.FORCE_TOL_21" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-21"><input type="text" class="input-text" id="id556" name="DONGHWA.PLC.RECIPE.SEGMENT_21.POSITION_AB_21" oninput="validateNumberInput(event)"/></div> <!-- Updated from id472 -->
+    <div class="position-ab-21"><input type="text" class="input-text" id="id556" name="DONGHWA.PLC.RECIPE.SEGMENT_21.POSITION_AB_21" oninput="validateNumberInput(event)"/></div> Updated from id472
     <div class="position-rel-21"><input type="text" class="input-text" id="id557" name="DONGHWA.PLC.RECIPE.SEGMENT_21.POSITION_REL_21" oninput="validateNumberInput(event)"/></div>
     <div class="distance-21"><input type="text" class="input-text" id="id558" name="DONGHWA.PLC.RECIPE.SEGMENT_21.DISTANCE_21" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-21"><input type="text" class="input-text" id="id559" name="DONGHWA.PLC.RECIPE.SEGMENT_21.HOLDING_ONE_21" oninput="validateNumberInput(event)"/></div> <!-- Updated from id475 -->
+    <div class="holding-one-21"><input type="text" class="input-text" id="id559" name="DONGHWA.PLC.RECIPE.SEGMENT_21.HOLDING_ONE_21" oninput="validateNumberInput(event)"/></div> Updated from id475
     <div class="holding-two-21"><input type="text" class="input-text" id="id560" name="DONGHWA.PLC.RECIPE.SEGMENT_21.HOLDING_TWO_21" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-21"><input type="text" class="input-text" id="id561" name="DONGHWA.PLC.RECIPE.SEGMENT_21.NUMBER_LOOPS_21" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-21"><input type="text" class="input-text" id="id562" name="DONGHWA.PLC.RECIPE.SEGMENT_21.SPEED_PLUNGER_21" oninput="validateNumberInput(event)"/></div> <!-- Updated from id478 -->
+    <div class="speed-plunger-21"><input type="text" class="input-text" id="id562" name="DONGHWA.PLC.RECIPE.SEGMENT_21.SPEED_PLUNGER_21" oninput="validateNumberInput(event)"/></div> Updated from id478
     <div class="gradient-force-21"><input type="text" class="input-text" id="id563" name="DONGHWA.PLC.RECIPE.SEGMENT_21.GRADIENT_FORCE_21" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-21"><input type="checkbox" id="id564" name="DONGHWA.PLC.RECIPE.SEGMENT_21.FASTCOOLING_21" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-21"><input type="checkbox" id="id565" name="DONGHWA.PLC.RECIPE.SEGMENT_21.GAS_N_21" class="input-checkbox" value="0" disabled></div> <!-- Updated from id481 -->
+    <div class="gas-n-21"><input type="checkbox" id="id565" name="DONGHWA.PLC.RECIPE.SEGMENT_21.GAS_N_21" class="input-checkbox" value="0" disabled></div> Updated from id481
     <div class="gas-a-21"><input type="checkbox" id="id566" name="DONGHWA.PLC.RECIPE.SEGMENT_21.GAS_A_21" class="input-checkbox" value="0" disabled></div>
     <div class="spare-21"><input type="checkbox" id="id567" name="DONGHWA.PLC.RECIPE.SEGMENT_21.SPARE_21" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-21"><input type="checkbox" id="id568" name="DONGHWA.PLC.RECIPE.SEGMENT_21.HYDRULIC_OFF_21" class="input-checkbox" value="0"></div> <!-- Updated from id484 -->
+    <div class="hydrulic-off-21"><input type="checkbox" id="id568" name="DONGHWA.PLC.RECIPE.SEGMENT_21.HYDRULIC_OFF_21" class="input-checkbox" value="0"></div> Updated from id484
     <div class="press-capacity-21"><input type="checkbox" id="id569" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PRESS_CAPACITY_21" class="input-checkbox" value="0"></div>
     <div class="press-position-21"><input type="checkbox" id="id570" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PRESS_POSITION_21" class="input-checkbox" value="0"></div>
     <div class="press-distance-21"><input type="checkbox" id="id571" name="DONGHWA.PLC.RECIPE.SEGMENT_21.PRESS_DISTANCE_21" class="input-checkbox" value="0"></div>
@@ -756,22 +756,22 @@ body {
     <div class="temperature-th-22"><input type="text" class="input-text" id="id576" name="DONGHWA.PLC.RECIPE.SEGMENT_22.TEMPERATURE_TH_22" oninput="validateNumberInput(event)"/></div>
     <div class="hbth-22"><input type="text" class="input-text" id="id577" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HBTH_577" oninput="validateNumberInput(event)"/></div>
     <div class="pressure-sv-22"><input type="text" class="input-text" id="id578" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESSURE_SV_578" oninput="validateNumberInput(event)"/></div>
-    <div class="pressing-one-22"><input type="text" class="input-text" id="id493" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESSING_ONE_22" oninput="validateNumberInput(event)"/></div> <!-- Updated from id491 -->
+    <div class="pressing-one-22"><input type="text" class="input-text" id="id493" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESSING_ONE_22" oninput="validateNumberInput(event)"/></div> Updated from id491
     <div class="pressing-two-22"><input type="text" class="input-text" id="id580" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESSING_TWO_22" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-22"><input type="text" class="input-text" id="id581" name="DONGHWA.PLC.RECIPE.SEGMENT_22.FORCE_TOL_22" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-22"><input type="text" class="input-text" id="id582" name="DONGHWA.PLC.RECIPE.SEGMENT_22.POSITION_AB_22" oninput="validateNumberInput(event)"/></div> <!-- Updated from id494 -->
+    <div class="position-ab-22"><input type="text" class="input-text" id="id582" name="DONGHWA.PLC.RECIPE.SEGMENT_22.POSITION_AB_22" oninput="validateNumberInput(event)"/></div> Updated from id494
     <div class="position-rel-22"><input type="text" class="input-text" id="id583" name="DONGHWA.PLC.RECIPE.SEGMENT_22.POSITION_REL_22" oninput="validateNumberInput(event)"/></div>
     <div class="distance-22"><input type="text" class="input-text" id="id584" name="DONGHWA.PLC.RECIPE.SEGMENT_22.DISTANCE_22" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-22"><input type="text" class="input-text" id="id585" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HOLDING_ONE_22" oninput="validateNumberInput(event)"/></div> <!-- Updated from id497 -->
+    <div class="holding-one-22"><input type="text" class="input-text" id="id585" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HOLDING_ONE_22" oninput="validateNumberInput(event)"/></div> Updated from id497
     <div class="holding-two-22"><input type="text" class="input-text" id="id586" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HOLDING_TWO_22" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-22"><input type="text" class="input-text" id="id587" name="DONGHWA.PLC.RECIPE.SEGMENT_22.NUMBER_LOOPS_22" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-22"><input type="text" class="input-text" id="id588" name="DONGHWA.PLC.RECIPE.SEGMENT_22.SPEED_PLUNGER_22" oninput="validateNumberInput(event)"/></div> <!-- Updated from id500 -->
+    <div class="speed-plunger-22"><input type="text" class="input-text" id="id588" name="DONGHWA.PLC.RECIPE.SEGMENT_22.SPEED_PLUNGER_22" oninput="validateNumberInput(event)"/></div> Updated from id500
     <div class="gradient-force-22"><input type="text" class="input-text" id="id589" name="DONGHWA.PLC.RECIPE.SEGMENT_22.GRADIENT_FORCE_22" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-22"><input type="checkbox" id="id590" name="DONGHWA.PLC.RECIPE.SEGMENT_22.FASTCOOLING_22" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-22"><input type="checkbox" id="id591" name="DONGHWA.PLC.RECIPE.SEGMENT_22.GAS_N_22" class="input-checkbox" value="0" disabled></div> <!-- Updated from id503 -->
+    <div class="gas-n-22"><input type="checkbox" id="id591" name="DONGHWA.PLC.RECIPE.SEGMENT_22.GAS_N_22" class="input-checkbox" value="0" disabled></div> Updated from id503
     <div class="gas-a-22"><input type="checkbox" id="id592" name="DONGHWA.PLC.RECIPE.SEGMENT_22.GAS_A_22" class="input-checkbox" value="0" disabled></div>
     <div class="spare-22"><input type="checkbox" id="id593" name="DONGHWA.PLC.RECIPE.SEGMENT_22.SPARE_22" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-22"><input type="checkbox" id="id594" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HYDRULIC_OFF_22" class="input-checkbox" value="0"></div> <!-- Updated from id506 -->
+    <div class="hydrulic-off-22"><input type="checkbox" id="id594" name="DONGHWA.PLC.RECIPE.SEGMENT_22.HYDRULIC_OFF_22" class="input-checkbox" value="0"></div> Updated from id506
     <div class="press-capacity-22"><input type="checkbox" id="id595" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESS_CAPACITY_22" class="input-checkbox" value="0"></div>
     <div class="press-position-22"><input type="checkbox" id="id596" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESS_POSITION_22" class="input-checkbox" value="0"></div>
     <div class="press-distance-22"><input type="checkbox" id="id597" name="DONGHWA.PLC.RECIPE.SEGMENT_22.PRESS_DISTANCE_22" class="input-checkbox" value="0"></div>
@@ -785,22 +785,22 @@ body {
     <div class="temperature-th-23"><input type="text" class="input-text" id="id602" name="DONGHWA.PLC.RECIPE.SEGMENT_23.TEMPERATURE_TH_23" oninput="validateNumberInput(event)"/></div>
     <div class="hbth-23"><input type="text" class="input-text" id="id603" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HBTH_603" oninput="validateNumberInput(event)"/></div>
     <div class="pressure-sv-23"><input type="text" class="input-text" id="id604" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESSURE_SV_604" oninput="validateNumberInput(event)"/></div>
-    <div class="pressing-one-23"><input type="text" class="input-text" id="id515" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESSING_ONE_23" oninput="validateNumberInput(event)"/></div> <!-- Updated from id513 -->
+    <div class="pressing-one-23"><input type="text" class="input-text" id="id515" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESSING_ONE_23" oninput="validateNumberInput(event)"/></div> Updated from id513
     <div class="pressing-two-23"><input type="text" class="input-text" id="id606" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESSING_TWO_23" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-23"><input type="text" class="input-text" id="id607" name="DONGHWA.PLC.RECIPE.SEGMENT_23.FORCE_TOL_23" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-23"><input type="text" class="input-text" id="id608" name="DONGHWA.PLC.RECIPE.SEGMENT_23.POSITION_AB_23" oninput="validateNumberInput(event)"/></div> <!-- Updated from id516 -->
+    <div class="position-ab-23"><input type="text" class="input-text" id="id608" name="DONGHWA.PLC.RECIPE.SEGMENT_23.POSITION_AB_23" oninput="validateNumberInput(event)"/></div> Updated from id516
     <div class="position-rel-23"><input type="text" class="input-text" id="id609" name="DONGHWA.PLC.RECIPE.SEGMENT_23.POSITION_REL_23" oninput="validateNumberInput(event)"/></div>
     <div class="distance-23"><input type="text" class="input-text" id="id610" name="DONGHWA.PLC.RECIPE.SEGMENT_23.DISTANCE_23" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-23"><input type="text" class="input-text" id="id611" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HOLDING_ONE_23" oninput="validateNumberInput(event)"/></div> <!-- Updated from id519 -->
+    <div class="holding-one-23"><input type="text" class="input-text" id="id611" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HOLDING_ONE_23" oninput="validateNumberInput(event)"/></div> Updated from id519
     <div class="holding-two-23"><input type="text" class="input-text" id="id612" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HOLDING_TWO_23" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-23"><input type="text" class="input-text" id="id613" name="DONGHWA.PLC.RECIPE.SEGMENT_23.NUMBER_LOOPS_23" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-23"><input type="text" class="input-text" id="id614" name="DONGHWA.PLC.RECIPE.SEGMENT_23.SPEED_PLUNGER_23" oninput="validateNumberInput(event)"/></div> <!-- Updated from id522 -->
+    <div class="speed-plunger-23"><input type="text" class="input-text" id="id614" name="DONGHWA.PLC.RECIPE.SEGMENT_23.SPEED_PLUNGER_23" oninput="validateNumberInput(event)"/></div> Updated from id522
     <div class="gradient-force-23"><input type="text" class="input-text" id="id615" name="DONGHWA.PLC.RECIPE.SEGMENT_23.GRADIENT_FORCE_23" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-23"><input type="checkbox" id="id616" name="DONGHWA.PLC.RECIPE.SEGMENT_23.FASTCOOLING_23" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-23"><input type="checkbox" id="id617" name="DONGHWA.PLC.RECIPE.SEGMENT_23.GAS_N_23" class="input-checkbox" value="0" disabled></div> <!-- Updated from id525 -->
+    <div class="gas-n-23"><input type="checkbox" id="id617" name="DONGHWA.PLC.RECIPE.SEGMENT_23.GAS_N_23" class="input-checkbox" value="0" disabled></div> Updated from id525
     <div class="gas-a-23"><input type="checkbox" id="id618" name="DONGHWA.PLC.RECIPE.SEGMENT_23.GAS_A_23" class="input-checkbox" value="0" disabled></div>
     <div class="spare-23"><input type="checkbox" id="id619" name="DONGHWA.PLC.RECIPE.SEGMENT_23.SPARE_23" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-23"><input type="checkbox" id="id620" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HYDRULIC_OFF_23" class="input-checkbox" value="0"></div> <!-- Updated from id528 -->
+    <div class="hydrulic-off-23"><input type="checkbox" id="id620" name="DONGHWA.PLC.RECIPE.SEGMENT_23.HYDRULIC_OFF_23" class="input-checkbox" value="0"></div> Updated from id528
     <div class="press-capacity-23"><input type="checkbox" id="id621" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESS_CAPACITY_23" class="input-checkbox" value="0"></div>
     <div class="press-position-23"><input type="checkbox" id="id622" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESS_POSITION_23" class="input-checkbox" value="0"></div>
     <div class="press-distance-23"><input type="checkbox" id="id623" name="DONGHWA.PLC.RECIPE.SEGMENT_23.PRESS_DISTANCE_23" class="input-checkbox" value="0"></div>
@@ -814,22 +814,22 @@ body {
     <div class="temperature-th-24"><input type="text" class="input-text" id="id628" name="DONGHWA.PLC.RECIPE.SEGMENT_24.TEMPERATURE_TH_24" oninput="validateNumberInput(event)"/></div>
     <div class="hbth-24"><input type="text" class="input-text" id="id629" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HBTH_629" oninput="validateNumberInput(event)"/></div>
     <div class="pressure-sv-24"><input type="text" class="input-text" id="id630" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESSURE_SV_630" oninput="validateNumberInput(event)"/></div>
-    <div class="pressing-one-24"><input type="text" class="input-text" id="id537" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESSING_ONE_24" oninput="validateNumberInput(event)"/></div> <!-- Updated from id535 -->
+    <div class="pressing-one-24"><input type="text" class="input-text" id="id537" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESSING_ONE_24" oninput="validateNumberInput(event)"/></div> Updated from id535
     <div class="pressing-two-24"><input type="text" class="input-text" id="id632" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESSING_TWO_24" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-24"><input type="text" class="input-text" id="id633" name="DONGHWA.PLC.RECIPE.SEGMENT_24.FORCE_TOL_24" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-24"><input type="text" class="input-text" id="id634" name="DONGHWA.PLC.RECIPE.SEGMENT_24.POSITION_AB_24" oninput="validateNumberInput(event)"/></div> <!-- Updated from id538 -->
+    <div class="position-ab-24"><input type="text" class="input-text" id="id634" name="DONGHWA.PLC.RECIPE.SEGMENT_24.POSITION_AB_24" oninput="validateNumberInput(event)"/></div> Updated from id538
     <div class="position-rel-24"><input type="text" class="input-text" id="id635" name="DONGHWA.PLC.RECIPE.SEGMENT_24.POSITION_REL_24" oninput="validateNumberInput(event)"/></div>
     <div class="distance-24"><input type="text" class="input-text" id="id636" name="DONGHWA.PLC.RECIPE.SEGMENT_24.DISTANCE_24" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-24"><input type="text" class="input-text" id="id637" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HOLDING_ONE_24" oninput="validateNumberInput(event)"/></div> <!-- Updated from id541 -->
+    <div class="holding-one-24"><input type="text" class="input-text" id="id637" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HOLDING_ONE_24" oninput="validateNumberInput(event)"/></div> Updated from id541
     <div class="holding-two-24"><input type="text" class="input-text" id="id638" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HOLDING_TWO_24" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-24"><input type="text" class="input-text" id="id639" name="DONGHWA.PLC.RECIPE.SEGMENT_24.NUMBER_LOOPS_24" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-24"><input type="text" class="input-text" id="id640" name="DONGHWA.PLC.RECIPE.SEGMENT_24.SPEED_PLUNGER_24" oninput="validateNumberInput(event)"/></div> <!-- Updated from id544 -->
+    <div class="speed-plunger-24"><input type="text" class="input-text" id="id640" name="DONGHWA.PLC.RECIPE.SEGMENT_24.SPEED_PLUNGER_24" oninput="validateNumberInput(event)"/></div> Updated from id544
     <div class="gradient-force-24"><input type="text" class="input-text" id="id641" name="DONGHWA.PLC.RECIPE.SEGMENT_24.GRADIENT_FORCE_24" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-24"><input type="checkbox" id="id642" name="DONGHWA.PLC.RECIPE.SEGMENT_24.FASTCOOLING_24" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-24"><input type="checkbox" id="id643" name="DONGHWA.PLC.RECIPE.SEGMENT_24.GAS_N_24" class="input-checkbox" value="0" disabled></div> <!-- Updated from id547 -->
+    <div class="gas-n-24"><input type="checkbox" id="id643" name="DONGHWA.PLC.RECIPE.SEGMENT_24.GAS_N_24" class="input-checkbox" value="0" disabled></div> Updated from id547
     <div class="gas-a-24"><input type="checkbox" id="id644" name="DONGHWA.PLC.RECIPE.SEGMENT_24.GAS_A_24" class="input-checkbox" value="0" disabled></div>
     <div class="spare-24"><input type="checkbox" id="id645" name="DONGHWA.PLC.RECIPE.SEGMENT_24.SPARE_24" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-24"><input type="checkbox" id="id646" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HYDRULIC_OFF_24" class="input-checkbox" value="0"></div> <!-- Updated from id550 -->
+    <div class="hydrulic-off-24"><input type="checkbox" id="id646" name="DONGHWA.PLC.RECIPE.SEGMENT_24.HYDRULIC_OFF_24" class="input-checkbox" value="0"></div> Updated from id550
     <div class="press-capacity-24"><input type="checkbox" id="id647" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESS_CAPACITY_24" class="input-checkbox" value="0"></div>
     <div class="press-position-24"><input type="checkbox" id="id648" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESS_POSITION_24" class="input-checkbox" value="0"></div>
     <div class="press-distance-24"><input type="checkbox" id="id649" name="DONGHWA.PLC.RECIPE.SEGMENT_24.PRESS_DISTANCE_24" class="input-checkbox" value="0"></div>
@@ -843,22 +843,22 @@ body {
     <div class="temperature-th-25"><input type="text" class="input-text" id="id654" name="DONGHWA.PLC.RECIPE.SEGMENT_25.TEMPERATURE_TH_25" oninput="validateNumberInput(event)"/></div>
     <div class="hbth-25"><input type="text" class="input-text" id="id655" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HBTH_655" oninput="validateNumberInput(event)"/></div>
     <div class="pressure-sv-25"><input type="text" class="input-text" id="id656" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESSURE_SV_656" oninput="validateNumberInput(event)"/></div>
-    <div class="pressing-one-25"><input type="text" class="input-text" id="id559" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESSING_ONE_25" oninput="validateNumberInput(event)"/></div> <!-- Updated from id557 -->
+    <div class="pressing-one-25"><input type="text" class="input-text" id="id559" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESSING_ONE_25" oninput="validateNumberInput(event)"/></div> Updated from id557
     <div class="pressing-two-25"><input type="text" class="input-text" id="id658" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESSING_TWO_25" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-25"><input type="text" class="input-text" id="id659" name="DONGHWA.PLC.RECIPE.SEGMENT_25.FORCE_TOL_25" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-25"><input type="text" class="input-text" id="id660" name="DONGHWA.PLC.RECIPE.SEGMENT_25.POSITION_AB_25" oninput="validateNumberInput(event)"/></div> <!-- Updated from id560 -->
+    <div class="position-ab-25"><input type="text" class="input-text" id="id660" name="DONGHWA.PLC.RECIPE.SEGMENT_25.POSITION_AB_25" oninput="validateNumberInput(event)"/></div> Updated from id560
     <div class="position-rel-25"><input type="text" class="input-text" id="id661" name="DONGHWA.PLC.RECIPE.SEGMENT_25.POSITION_REL_25" oninput="validateNumberInput(event)"/></div>
     <div class="distance-25"><input type="text" class="input-text" id="id662" name="DONGHWA.PLC.RECIPE.SEGMENT_25.DISTANCE_25" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-25"><input type="text" class="input-text" id="id663" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HOLDING_ONE_25" oninput="validateNumberInput(event)"/></div> <!-- Updated from id563 -->
+    <div class="holding-one-25"><input type="text" class="input-text" id="id663" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HOLDING_ONE_25" oninput="validateNumberInput(event)"/></div> Updated from id563
     <div class="holding-two-25"><input type="text" class="input-text" id="id664" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HOLDING_TWO_25" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-25"><input type="text" class="input-text" id="id665" name="DONGHWA.PLC.RECIPE.SEGMENT_25.NUMBER_LOOPS_25" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-25"><input type="text" class="input-text" id="id666" name="DONGHWA.PLC.RECIPE.SEGMENT_25.SPEED_PLUNGER_25" oninput="validateNumberInput(event)"/></div> <!-- Updated from id566 -->
+    <div class="speed-plunger-25"><input type="text" class="input-text" id="id666" name="DONGHWA.PLC.RECIPE.SEGMENT_25.SPEED_PLUNGER_25" oninput="validateNumberInput(event)"/></div> Updated from id566
     <div class="gradient-force-25"><input type="text" class="input-text" id="id667" name="DONGHWA.PLC.RECIPE.SEGMENT_25.GRADIENT_FORCE_25" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-25"><input type="checkbox" id="id668" name="DONGHWA.PLC.RECIPE.SEGMENT_25.FASTCOOLING_25" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-25"><input type="checkbox" id="id669" name="DONGHWA.PLC.RECIPE.SEGMENT_25.GAS_N_25" class="input-checkbox" value="0" disabled></div> <!-- Updated from id569 -->
+    <div class="gas-n-25"><input type="checkbox" id="id669" name="DONGHWA.PLC.RECIPE.SEGMENT_25.GAS_N_25" class="input-checkbox" value="0" disabled></div> Updated from id569
     <div class="gas-a-25"><input type="checkbox" id="id670" name="DONGHWA.PLC.RECIPE.SEGMENT_25.GAS_A_25" class="input-checkbox" value="0" disabled></div>
     <div class="spare-25"><input type="checkbox" id="id671" name="DONGHWA.PLC.RECIPE.SEGMENT_25.SPARE_25" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-25"><input type="checkbox" id="id672" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HYDRULIC_OFF_25" class="input-checkbox" value="0"></div> <!-- Updated from id572 -->
+    <div class="hydrulic-off-25"><input type="checkbox" id="id672" name="DONGHWA.PLC.RECIPE.SEGMENT_25.HYDRULIC_OFF_25" class="input-checkbox" value="0"></div> Updated from id572
     <div class="press-capacity-25"><input type="checkbox" id="id673" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESS_CAPACITY_25" class="input-checkbox" value="0"></div>
     <div class="press-position-25"><input type="checkbox" id="id674" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESS_POSITION_25" class="input-checkbox" value="0"></div>
     <div class="press-distance-25"><input type="checkbox" id="id675" name="DONGHWA.PLC.RECIPE.SEGMENT_25.PRESS_DISTANCE_25" class="input-checkbox" value="0"></div>
@@ -872,22 +872,22 @@ body {
     <div class="temperature-th-26"><input type="text" class="input-text" id="id680" name="DONGHWA.PLC.RECIPE.SEGMENT_26.TEMPERATURE_TH_26" oninput="validateNumberInput(event)"/></div>
     <div class="hbth-26"><input type="text" class="input-text" id="id681" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HBTH_681" oninput="validateNumberInput(event)"/></div>
     <div class="pressure-sv-26"><input type="text" class="input-text" id="id682" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESSURE_SV_682" oninput="validateNumberInput(event)"/></div>
-    <div class="pressing-one-26"><input type="text" class="input-text" id="id581" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESSING_ONE_26" oninput="validateNumberInput(event)"/></div> <!-- Updated from id579 -->
+    <div class="pressing-one-26"><input type="text" class="input-text" id="id581" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESSING_ONE_26" oninput="validateNumberInput(event)"/></div> Updated from id579
     <div class="pressing-two-26"><input type="text" class="input-text" id="id684" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESSING_TWO_26" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-26"><input type="text" class="input-text" id="id685" name="DONGHWA.PLC.RECIPE.SEGMENT_26.FORCE_TOL_26" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-26"><input type="text" class="input-text" id="id686" name="DONGHWA.PLC.RECIPE.SEGMENT_26.POSITION_AB_26" oninput="validateNumberInput(event)"/></div> <!-- Updated from id582 -->
+    <div class="position-ab-26"><input type="text" class="input-text" id="id686" name="DONGHWA.PLC.RECIPE.SEGMENT_26.POSITION_AB_26" oninput="validateNumberInput(event)"/></div> Updated from id582
     <div class="position-rel-26"><input type="text" class="input-text" id="id687" name="DONGHWA.PLC.RECIPE.SEGMENT_26.POSITION_REL_26" oninput="validateNumberInput(event)"/></div>
     <div class="distance-26"><input type="text" class="input-text" id="id688" name="DONGHWA.PLC.RECIPE.SEGMENT_26.DISTANCE_26" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-26"><input type="text" class="input-text" id="id689" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HOLDING_ONE_26" oninput="validateNumberInput(event)"/></div> <!-- Updated from id585 -->
+    <div class="holding-one-26"><input type="text" class="input-text" id="id689" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HOLDING_ONE_26" oninput="validateNumberInput(event)"/></div> Updated from id585
     <div class="holding-two-26"><input type="text" class="input-text" id="id690" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HOLDING_TWO_26" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-26"><input type="text" class="input-text" id="id691" name="DONGHWA.PLC.RECIPE.SEGMENT_26.NUMBER_LOOPS_26" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-26"><input type="text" class="input-text" id="id692" name="DONGHWA.PLC.RECIPE.SEGMENT_26.SPEED_PLUNGER_26" oninput="validateNumberInput(event)"/></div> <!-- Updated from id588 -->
+    <div class="speed-plunger-26"><input type="text" class="input-text" id="id692" name="DONGHWA.PLC.RECIPE.SEGMENT_26.SPEED_PLUNGER_26" oninput="validateNumberInput(event)"/></div> Updated from id588
     <div class="gradient-force-26"><input type="text" class="input-text" id="id693" name="DONGHWA.PLC.RECIPE.SEGMENT_26.GRADIENT_FORCE_26" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-26"><input type="checkbox" id="id694" name="DONGHWA.PLC.RECIPE.SEGMENT_26.FASTCOOLING_26" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-26"><input type="checkbox" id="id695" name="DONGHWA.PLC.RECIPE.SEGMENT_26.GAS_N_26" class="input-checkbox" value="0" disabled></div> <!-- Updated from id591 -->
+    <div class="gas-n-26"><input type="checkbox" id="id695" name="DONGHWA.PLC.RECIPE.SEGMENT_26.GAS_N_26" class="input-checkbox" value="0" disabled></div> Updated from id591
     <div class="gas-a-26"><input type="checkbox" id="id696" name="DONGHWA.PLC.RECIPE.SEGMENT_26.GAS_A_26" class="input-checkbox" value="0" disabled></div>
     <div class="spare-26"><input type="checkbox" id="id697" name="DONGHWA.PLC.RECIPE.SEGMENT_26.SPARE_26" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-26"><input type="checkbox" id="id698" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HYDRULIC_OFF_26" class="input-checkbox" value="0"></div> <!-- Updated from id594 -->
+    <div class="hydrulic-off-26"><input type="checkbox" id="id698" name="DONGHWA.PLC.RECIPE.SEGMENT_26.HYDRULIC_OFF_26" class="input-checkbox" value="0"></div> Updated from id594
     <div class="press-capacity-26"><input type="checkbox" id="id699" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESS_CAPACITY_26" class="input-checkbox" value="0"></div>
     <div class="press-position-26"><input type="checkbox" id="id700" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESS_POSITION_26" class="input-checkbox" value="0"></div>
     <div class="press-distance-26"><input type="checkbox" id="id701" name="DONGHWA.PLC.RECIPE.SEGMENT_26.PRESS_DISTANCE_26" class="input-checkbox" value="0"></div>
@@ -904,19 +904,19 @@ body {
     <div class="pressing-one-27"><input type="text" class="input-text" id="id601" name="DONGHWA.PLC.RECIPE.SEGMENT_27.PRESSING_ONE_27" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-27"><input type="text" class="input-text" id="id710" name="DONGHWA.PLC.RECIPE.SEGMENT_27.PRESSING_TWO_27" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-27"><input type="text" class="input-text" id="id711" name="DONGHWA.PLC.RECIPE.SEGMENT_27.FORCE_TOL_27" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-27"><input type="text" class="input-text" id="id712" name="DONGHWA.PLC.RECIPE.SEGMENT_27.POSITION_AB_27" oninput="validateNumberInput(event)"/></div> <!-- Updated from id604 -->
+    <div class="position-ab-27"><input type="text" class="input-text" id="id712" name="DONGHWA.PLC.RECIPE.SEGMENT_27.POSITION_AB_27" oninput="validateNumberInput(event)"/></div> Updated from id604
     <div class="position-rel-27"><input type="text" class="input-text" id="id713" name="DONGHWA.PLC.RECIPE.SEGMENT_27.POSITION_REL_27" oninput="validateNumberInput(event)"/></div>
     <div class="distance-27"><input type="text" class="input-text" id="id714" name="DONGHWA.PLC.RECIPE.SEGMENT_27.DISTANCE_27" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-27"><input type="text" class="input-text" id="id715" name="DONGHWA.PLC.RECIPE.SEGMENT_27.HOLDING_ONE_27" oninput="validateNumberInput(event)"/></div> <!-- Updated from id607 -->
+    <div class="holding-one-27"><input type="text" class="input-text" id="id715" name="DONGHWA.PLC.RECIPE.SEGMENT_27.HOLDING_ONE_27" oninput="validateNumberInput(event)"/></div> Updated from id607
     <div class="holding-two-27"><input type="text" class="input-text" id="id716" name="DONGHWA.PLC.RECIPE.SEGMENT_27.HOLDING_TWO_27" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-27"><input type="text" class="input-text" id="id717" name="DONGHWA.PLC.RECIPE.SEGMENT_27.NUMBER_LOOPS_27" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-27"><input type="text" class="input-text" id="id718" name="DONGHWA.PLC.RECIPE.SEGMENT_27.SPEED_PLUNGER_27" oninput="validateNumberInput(event)"/></div> <!-- Updated from id610 -->
+    <div class="speed-plunger-27"><input type="text" class="input-text" id="id718" name="DONGHWA.PLC.RECIPE.SEGMENT_27.SPEED_PLUNGER_27" oninput="validateNumberInput(event)"/></div> Updated from id610
     <div class="gradient-force-27"><input type="text" class="input-text" id="id719" name="DONGHWA.PLC.RECIPE.SEGMENT_27.GRADIENT_FORCE_27" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-27"><input type="checkbox" id="id720" name="DONGHWA.PLC.RECIPE.SEGMENT_27.FASTCOOLING_27" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-27"><input type="checkbox" id="id721" name="DONGHWA.PLC.RECIPE.SEGMENT_27.GAS_N_27" class="input-checkbox" value="0" disabled></div> <!-- Updated from id613 -->
+    <div class="gas-n-27"><input type="checkbox" id="id721" name="DONGHWA.PLC.RECIPE.SEGMENT_27.GAS_N_27" class="input-checkbox" value="0" disabled></div> Updated from id613
     <div class="gas-a-27"><input type="checkbox" id="id722" name="DONGHWA.PLC.RECIPE.SEGMENT_27.GAS_A_27" class="input-checkbox" value="0" disabled></div>
     <div class="spare-27"><input type="checkbox" id="id723" name="DONGHWA.PLC.RECIPE.SEGMENT_27.SPARE_27" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-27"><input type="checkbox" id="id724" name="DONGHWA.PLC.RECIPE.SEGMENT_27.HYDRULIC_OFF_27" class="input-checkbox" value="0"></div> <!-- Updated from id616 -->
+    <div class="hydrulic-off-27"><input type="checkbox" id="id724" name="DONGHWA.PLC.RECIPE.SEGMENT_27.HYDRULIC_OFF_27" class="input-checkbox" value="0"></div> Updated from id616
     <div class="press-capacity-27"><input type="checkbox" id="id725" name="DONGHWA.PLC.RECIPE.SEGMENT_27.PRESS_CAPACITY_27" class="input-checkbox" value="0"></div>
     <div class="press-position-27"><input type="checkbox" id="id726" name="DONGHWA.PLC.RECIPE.SEGMENT_27.PRESS_POSITION_27" class="input-checkbox" value="0"></div>
     <div class="press-distance-27"><input type="checkbox" id="id727" name="DONGHWA.PLC.RECIPE.SEGMENT_27.PRESS_DISTANCE_27" class="input-checkbox" value="0"></div>
@@ -934,19 +934,19 @@ body {
     <div class="pressing-one-28"><input type="text" class="input-text" id="id623" name="DONGHWA.PLC.RECIPE.SEGMENT_28.PRESSING_ONE_28" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-28"><input type="text" class="input-text" id="id736" name="DONGHWA.PLC.RECIPE.SEGMENT_28.PRESSING_TWO_28" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-28"><input type="text" class="input-text" id="id737" name="DONGHWA.PLC.RECIPE.SEGMENT_28.FORCE_TOL_28" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-28"><input type="text" class="input-text" id="id738" name="DONGHWA.PLC.RECIPE.SEGMENT_28.POSITION_AB_28" oninput="validateNumberInput(event)"/></div> <!-- Updated from id626 -->
+    <div class="position-ab-28"><input type="text" class="input-text" id="id738" name="DONGHWA.PLC.RECIPE.SEGMENT_28.POSITION_AB_28" oninput="validateNumberInput(event)"/></div> Updated from id626
     <div class="position-rel-28"><input type="text" class="input-text" id="id739" name="DONGHWA.PLC.RECIPE.SEGMENT_28.POSITION_REL_28" oninput="validateNumberInput(event)"/></div>
     <div class="distance-28"><input type="text" class="input-text" id="id740" name="DONGHWA.PLC.RECIPE.SEGMENT_28.DISTANCE_28" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-28"><input type="text" class="input-text" id="id741" name="DONGHWA.PLC.RECIPE.SEGMENT_28.HOLDING_ONE_28" oninput="validateNumberInput(event)"/></div> <!-- Updated from id629 -->
+    <div class="holding-one-28"><input type="text" class="input-text" id="id741" name="DONGHWA.PLC.RECIPE.SEGMENT_28.HOLDING_ONE_28" oninput="validateNumberInput(event)"/></div> Updated from id629
     <div class="holding-two-28"><input type="text" class="input-text" id="id742" name="DONGHWA.PLC.RECIPE.SEGMENT_28.HOLDING_TWO_28" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-28"><input type="text" class="input-text" id="id743" name="DONGHWA.PLC.RECIPE.SEGMENT_28.NUMBER_LOOPS_28" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-28"><input type="text" class="input-text" id="id744" name="DONGHWA.PLC.RECIPE.SEGMENT_28.SPEED_PLUNGER_28" oninput="validateNumberInput(event)"/></div> <!-- Updated from id632 -->
+    <div class="speed-plunger-28"><input type="text" class="input-text" id="id744" name="DONGHWA.PLC.RECIPE.SEGMENT_28.SPEED_PLUNGER_28" oninput="validateNumberInput(event)"/></div> Updated from id632
     <div class="gradient-force-28"><input type="text" class="input-text" id="id745" name="DONGHWA.PLC.RECIPE.SEGMENT_28.GRADIENT_FORCE_28" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-28"><input type="checkbox" id="id746" name="DONGHWA.PLC.RECIPE.SEGMENT_28.FASTCOOLING_28" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-28"><input type="checkbox" id="id747" name="DONGHWA.PLC.RECIPE.SEGMENT_28.GAS_N_28" class="input-checkbox" value="0" disabled></div> <!-- Updated from id635 -->
+    <div class="gas-n-28"><input type="checkbox" id="id747" name="DONGHWA.PLC.RECIPE.SEGMENT_28.GAS_N_28" class="input-checkbox" value="0" disabled></div> Updated from id635
     <div class="gas-a-28"><input type="checkbox" id="id748" name="DONGHWA.PLC.RECIPE.SEGMENT_28.GAS_A_28" class="input-checkbox" value="0" disabled></div>
     <div class="spare-28"><input type="checkbox" id="id749" name="DONGHWA.PLC.RECIPE.SEGMENT_28.SPARE_28" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-28"><input type="checkbox" id="id750" name="DONGHWA.PLC.RECIPE.SEGMENT_28.HYDRULIC_OFF_28" class="input-checkbox" value="0"></div> <!-- Updated from id638 -->
+    <div class="hydrulic-off-28"><input type="checkbox" id="id750" name="DONGHWA.PLC.RECIPE.SEGMENT_28.HYDRULIC_OFF_28" class="input-checkbox" value="0"></div> Updated from id638
     <div class="press-capacity-28"><input type="checkbox" id="id751" name="DONGHWA.PLC.RECIPE.SEGMENT_28.PRESS_CAPACITY_28" class="input-checkbox" value="0"></div>
     <div class="press-position-28"><input type="checkbox" id="id752" name="DONGHWA.PLC.RECIPE.SEGMENT_28.PRESS_POSITION_28" class="input-checkbox" value="0"></div>
     <div class="press-distance-28"><input type="checkbox" id="id753" name="DONGHWA.PLC.RECIPE.SEGMENT_28.PRESS_DISTANCE_28" class="input-checkbox" value="0"></div>
@@ -963,19 +963,19 @@ body {
     <div class="pressing-one-29"><input type="text" class="input-text" id="id645" name="DONGHWA.PLC.RECIPE.SEGMENT_29.PRESSING_ONE_29" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-29"><input type="text" class="input-text" id="id762" name="DONGHWA.PLC.RECIPE.SEGMENT_29.PRESSING_TWO_29" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-29"><input type="text" class="input-text" id="id763" name="DONGHWA.PLC.RECIPE.SEGMENT_29.FORCE_TOL_29" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-29"><input type="text" class="input-text" id="id764" name="DONGHWA.PLC.RECIPE.SEGMENT_29.POSITION_AB_29" oninput="validateNumberInput(event)"/></div> <!-- Updated from id648 -->
+    <div class="position-ab-29"><input type="text" class="input-text" id="id764" name="DONGHWA.PLC.RECIPE.SEGMENT_29.POSITION_AB_29" oninput="validateNumberInput(event)"/></div> Updated from id648
     <div class="position-rel-29"><input type="text" class="input-text" id="id765" name="DONGHWA.PLC.RECIPE.SEGMENT_29.POSITION_REL_29" oninput="validateNumberInput(event)"/></div>
     <div class="distance-29"><input type="text" class="input-text" id="id766" name="DONGHWA.PLC.RECIPE.SEGMENT_29.DISTANCE_29" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-29"><input type="text" class="input-text" id="id767" name="DONGHWA.PLC.RECIPE.SEGMENT_29.HOLDING_ONE_29" oninput="validateNumberInput(event)"/></div> <!-- Updated from id651 -->
+    <div class="holding-one-29"><input type="text" class="input-text" id="id767" name="DONGHWA.PLC.RECIPE.SEGMENT_29.HOLDING_ONE_29" oninput="validateNumberInput(event)"/></div> Updated from id651
     <div class="holding-two-29"><input type="text" class="input-text" id="id768" name="DONGHWA.PLC.RECIPE.SEGMENT_29.HOLDING_TWO_29" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-29"><input type="text" class="input-text" id="id769" name="DONGHWA.PLC.RECIPE.SEGMENT_29.NUMBER_LOOPS_29" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-29"><input type="text" class="input-text" id="id770" name="DONGHWA.PLC.RECIPE.SEGMENT_29.SPEED_PLUNGER_29" oninput="validateNumberInput(event)"/></div> <!-- Updated from id654 -->
+    <div class="speed-plunger-29"><input type="text" class="input-text" id="id770" name="DONGHWA.PLC.RECIPE.SEGMENT_29.SPEED_PLUNGER_29" oninput="validateNumberInput(event)"/></div> Updated from id654
     <div class="gradient-force-29"><input type="text" class="input-text" id="id771" name="DONGHWA.PLC.RECIPE.SEGMENT_29.GRADIENT_FORCE_29" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-29"><input type="checkbox" id="id772" name="DONGHWA.PLC.RECIPE.SEGMENT_29.FASTCOOLING_29" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-29"><input type="checkbox" id="id773" name="DONGHWA.PLC.RECIPE.SEGMENT_29.GAS_N_29" class="input-checkbox" value="0" disabled></div> <!-- Updated from id657 -->
+    <div class="gas-n-29"><input type="checkbox" id="id773" name="DONGHWA.PLC.RECIPE.SEGMENT_29.GAS_N_29" class="input-checkbox" value="0" disabled></div> Updated from id657
     <div class="gas-a-29"><input type="checkbox" id="id774" name="DONGHWA.PLC.RECIPE.SEGMENT_29.GAS_A_29" class="input-checkbox" value="0" disabled></div>
     <div class="spare-29"><input type="checkbox" id="id775" name="DONGHWA.PLC.RECIPE.SEGMENT_29.SPARE_29" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-29"><input type="checkbox" id="id776" name="DONGHWA.PLC.RECIPE.SEGMENT_29.HYDRULIC_OFF_29" class="input-checkbox" value="0"></div> <!-- Updated from id660 -->
+    <div class="hydrulic-off-29"><input type="checkbox" id="id776" name="DONGHWA.PLC.RECIPE.SEGMENT_29.HYDRULIC_OFF_29" class="input-checkbox" value="0"></div> Updated from id660
     <div class="press-capacity-29"><input type="checkbox" id="id777" name="DONGHWA.PLC.RECIPE.SEGMENT_29.PRESS_CAPACITY_29" class="input-checkbox" value="0"></div>
     <div class="press-position-29"><input type="checkbox" id="id778" name="DONGHWA.PLC.RECIPE.SEGMENT_29.PRESS_POSITION_29" class="input-checkbox" value="0"></div>
     <div class="press-distance-29"><input type="checkbox" id="id779" name="DONGHWA.PLC.RECIPE.SEGMENT_29.PRESS_DISTANCE_29" class="input-checkbox" value="0"></div>
@@ -992,19 +992,19 @@ body {
     <div class="pressing-one-30"><input type="text" class="input-text" id="id667" name="DONGHWA.PLC.RECIPE.SEGMENT_30.PRESSING_ONE_30" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-30"><input type="text" class="input-text" id="id788" name="DONGHWA.PLC.RECIPE.SEGMENT_30.PRESSING_TWO_30" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-30"><input type="text" class="input-text" id="id789" name="DONGHWA.PLC.RECIPE.SEGMENT_30.FORCE_TOL_30" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-30"><input type="text" class="input-text" id="id790" name="DONGHWA.PLC.RECIPE.SEGMENT_30.POSITION_AB_30" oninput="validateNumberInput(event)"/></div> <!-- Updated from id670 -->
+    <div class="position-ab-30"><input type="text" class="input-text" id="id790" name="DONGHWA.PLC.RECIPE.SEGMENT_30.POSITION_AB_30" oninput="validateNumberInput(event)"/></div> Updated from id670
     <div class="position-rel-30"><input type="text" class="input-text" id="id791" name="DONGHWA.PLC.RECIPE.SEGMENT_30.POSITION_REL_30" oninput="validateNumberInput(event)"/></div>
     <div class="distance-30"><input type="text" class="input-text" id="id792" name="DONGHWA.PLC.RECIPE.SEGMENT_30.DISTANCE_30" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-30"><input type="text" class="input-text" id="id793" name="DONGHWA.PLC.RECIPE.SEGMENT_30.HOLDING_ONE_30" oninput="validateNumberInput(event)"/></div> <!-- Updated from id673 -->
+    <div class="holding-one-30"><input type="text" class="input-text" id="id793" name="DONGHWA.PLC.RECIPE.SEGMENT_30.HOLDING_ONE_30" oninput="validateNumberInput(event)"/></div> Updated from id673
     <div class="holding-two-30"><input type="text" class="input-text" id="id794" name="DONGHWA.PLC.RECIPE.SEGMENT_30.HOLDING_TWO_30" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-30"><input type="text" class="input-text" id="id795" name="DONGHWA.PLC.RECIPE.SEGMENT_30.NUMBER_LOOPS_30" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-30"><input type="text" class="input-text" id="id796" name="DONGHWA.PLC.RECIPE.SEGMENT_30.SPEED_PLUNGER_30" oninput="validateNumberInput(event)"/></div> <!-- Updated from id676 -->
+    <div class="speed-plunger-30"><input type="text" class="input-text" id="id796" name="DONGHWA.PLC.RECIPE.SEGMENT_30.SPEED_PLUNGER_30" oninput="validateNumberInput(event)"/></div> Updated from id676
     <div class="gradient-force-30"><input type="text" class="input-text" id="id797" name="DONGHWA.PLC.RECIPE.SEGMENT_30.GRADIENT_FORCE_30" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-30"><input type="checkbox" id="id798" name="DONGHWA.PLC.RECIPE.SEGMENT_30.FASTCOOLING_30" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-30"><input type="checkbox" id="id799" name="DONGHWA.PLC.RECIPE.SEGMENT_30.GAS_N_30" class="input-checkbox" value="0" disabled></div> <!-- Updated from id679 -->
+    <div class="gas-n-30"><input type="checkbox" id="id799" name="DONGHWA.PLC.RECIPE.SEGMENT_30.GAS_N_30" class="input-checkbox" value="0" disabled></div> Updated from id679
     <div class="gas-a-30"><input type="checkbox" id="id800" name="DONGHWA.PLC.RECIPE.SEGMENT_30.GAS_A_30" class="input-checkbox" value="0" disabled></div>
     <div class="spare-30"><input type="checkbox" id="id801" name="DONGHWA.PLC.RECIPE.SEGMENT_30.SPARE_30" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-30"><input type="checkbox" id="id802" name="DONGHWA.PLC.RECIPE.SEGMENT_30.HYDRULIC_OFF_30" class="input-checkbox" value="0"></div> <!-- Updated from id682 -->
+    <div class="hydrulic-off-30"><input type="checkbox" id="id802" name="DONGHWA.PLC.RECIPE.SEGMENT_30.HYDRULIC_OFF_30" class="input-checkbox" value="0"></div> Updated from id682
     <div class="press-capacity-30"><input type="checkbox" id="id803" name="DONGHWA.PLC.RECIPE.SEGMENT_30.PRESS_CAPACITY_30" class="input-checkbox" value="0"></div>
     <div class="press-position-30"><input type="checkbox" id="id804" name="DONGHWA.PLC.RECIPE.SEGMENT_30.PRESS_POSITION_30" class="input-checkbox" value="0"></div>
     <div class="press-distance-30"><input type="checkbox" id="id805" name="DONGHWA.PLC.RECIPE.SEGMENT_30.PRESS_DISTANCE_30" class="input-checkbox" value="0"></div>
@@ -1021,18 +1021,18 @@ body {
     <div class="pressing-one-31"><input type="text" class="input-text" id="id689" name="DONGHWA.PLC.RECIPE.SEGMENT_31.PRESSING_ONE_31" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-31"><input type="text" class="input-text" id="id814" name="DONGHWA.PLC.RECIPE.SEGMENT_31.PRESSING_TWO_31" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-31"><input type="text" class="input-text" id="id815" name="DONGHWA.PLC.RECIPE.SEGMENT_31.FORCE_TOL_31" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-31"><input type="text" class="input-text" id="id816" name="DONGHWA.PLC.RECIPE.SEGMENT_31.POSITION_AB_31" oninput="validateNumberInput(event)"/></div> <!-- Updated from id692 -->
+    <div class="position-ab-31"><input type="text" class="input-text" id="id816" name="DONGHWA.PLC.RECIPE.SEGMENT_31.POSITION_AB_31" oninput="validateNumberInput(event)"/></div> Updated from id692
     <div class="position-rel-31"><input type="text" class="input-text" id="id817" name="DONGHWA.PLC.RECIPE.SEGMENT_31.POSITION_REL_31" oninput="validateNumberInput(event)"/></div>
     <div class="distance-31"><input type="text" class="input-text" id="id818" name="DONGHWA.PLC.RECIPE.SEGMENT_31.DISTANCE_31" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-31"><input type="text" class="input-text" id="id819" name="DONGHWA.PLC.RECIPE.SEGMENT_31.HOLDING_ONE_31" oninput="validateNumberInput(event)"/></div> <!-- Updated from id695 -->
+    <div class="holding-one-31"><input type="text" class="input-text" id="id819" name="DONGHWA.PLC.RECIPE.SEGMENT_31.HOLDING_ONE_31" oninput="validateNumberInput(event)"/></div> Updated from id695
     <div class="holding-two-31"><input type="text" class="input-text" id="id820" name="DONGHWA.PLC.RECIPE.SEGMENT_31.HOLDING_TWO_31" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-31"><input type="text" class="input-text" id="id821" name="DONGHWA.PLC.RECIPE.SEGMENT_31.NUMBER_LOOPS_31" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-31"><input type="text" class="input-text" id="id822" name="DONGHWA.PLC.RECIPE.SEGMENT_31.SPEED_PLUNGER_31" oninput="validateNumberInput(event)"/></div> <!-- Updated from id698 -->
+    <div class="speed-plunger-31"><input type="text" class="input-text" id="id822" name="DONGHWA.PLC.RECIPE.SEGMENT_31.SPEED_PLUNGER_31" oninput="validateNumberInput(event)"/></div> Updated from id698
     <div class="gradient-force-31"><input type="text" class="input-text" id="id823" name="DONGHWA.PLC.RECIPE.SEGMENT_31.GRADIENT_FORCE_31" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-31"><input type="checkbox" id="id824" name="DONGHWA.PLC.RECIPE.SEGMENT_31.FASTCOOLING_31" class="input-checkbox" value="0" disabled></div>
     <div class="gas-a-31"><input type="checkbox" id="id826" name="DONGHWA.PLC.RECIPE.SEGMENT_31.GAS_A_31" class="input-checkbox" value="0" disabled></div>
     <div class="spare-31"><input type="checkbox" id="id827" name="DONGHWA.PLC.RECIPE.SEGMENT_31.SPARE_31" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-31"><input type="checkbox" id="id828" name="DONGHWA.PLC.RECIPE.SEGMENT_31.HYDRULIC_OFF_31" class="input-checkbox" value="0"></div> <!-- Updated from id704 -->
+    <div class="hydrulic-off-31"><input type="checkbox" id="id828" name="DONGHWA.PLC.RECIPE.SEGMENT_31.HYDRULIC_OFF_31" class="input-checkbox" value="0"></div> Updated from id704
     <div class="press-capacity-31"><input type="checkbox" id="id829" name="DONGHWA.PLC.RECIPE.SEGMENT_31.PRESS_CAPACITY_31" class="input-checkbox" value="0"></div>
     <div class="press-position-31"><input type="checkbox" id="id830" name="DONGHWA.PLC.RECIPE.SEGMENT_31.PRESS_POSITION_31" class="input-checkbox" value="0"></div>
     <div class="press-distance-31"><input type="checkbox" id="id831" name="DONGHWA.PLC.RECIPE.SEGMENT_31.PRESS_DISTANCE_31" class="input-checkbox" value="0"></div>
@@ -1049,19 +1049,19 @@ body {
     <div class="pressing-one-32"><input type="text" class="input-text" id="id711" name="DONGHWA.PLC.RECIPE.SEGMENT_32.PRESSING_ONE_32" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-32"><input type="text" class="input-text" id="id840" name="DONGHWA.PLC.RECIPE.SEGMENT_32.PRESSING_TWO_32" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-32"><input type="text" class="input-text" id="id841" name="DONGHWA.PLC.RECIPE.SEGMENT_32.FORCE_TOL_32" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-32"><input type="text" class="input-text" id="id842" name="DONGHWA.PLC.RECIPE.SEGMENT_32.POSITION_AB_32" oninput="validateNumberInput(event)"/></div> <!-- Updated from id714 -->
+    <div class="position-ab-32"><input type="text" class="input-text" id="id842" name="DONGHWA.PLC.RECIPE.SEGMENT_32.POSITION_AB_32" oninput="validateNumberInput(event)"/></div> Updated from id714
     <div class="position-rel-32"><input type="text" class="input-text" id="id843" name="DONGHWA.PLC.RECIPE.SEGMENT_32.POSITION_REL_32" oninput="validateNumberInput(event)"/></div>
     <div class="distance-32"><input type="text" class="input-text" id="id844" name="DONGHWA.PLC.RECIPE.SEGMENT_32.DISTANCE_32" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-32"><input type="text" class="input-text" id="id845" name="DONGHWA.PLC.RECIPE.SEGMENT_32.HOLDING_ONE_32" oninput="validateNumberInput(event)"/></div> <!-- Updated from id717 -->
+    <div class="holding-one-32"><input type="text" class="input-text" id="id845" name="DONGHWA.PLC.RECIPE.SEGMENT_32.HOLDING_ONE_32" oninput="validateNumberInput(event)"/></div> Updated from id717
     <div class="holding-two-32"><input type="text" class="input-text" id="id846" name="DONGHWA.PLC.RECIPE.SEGMENT_32.HOLDING_TWO_32" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-32"><input type="text" class="input-text" id="id847" name="DONGHWA.PLC.RECIPE.SEGMENT_32.NUMBER_LOOPS_32" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-32"><input type="text" class="input-text" id="id848" name="DONGHWA.PLC.RECIPE.SEGMENT_32.SPEED_PLUNGER_32" oninput="validateNumberInput(event)"/></div> <!-- Updated from id720 -->
+    <div class="speed-plunger-32"><input type="text" class="input-text" id="id848" name="DONGHWA.PLC.RECIPE.SEGMENT_32.SPEED_PLUNGER_32" oninput="validateNumberInput(event)"/></div> Updated from id720
     <div class="gradient-force-32"><input type="text" class="input-text" id="id849" name="DONGHWA.PLC.RECIPE.SEGMENT_32.GRADIENT_FORCE_32" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-32"><input type="checkbox" id="id850" name="DONGHWA.PLC.RECIPE.SEGMENT_32.FASTCOOLING_32" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-32"><input type="checkbox" id="id851" name="DONGHWA.PLC.RECIPE.SEGMENT_32.GAS_N_32" class="input-checkbox" value="0" disabled></div> <!-- Updated from id723 -->
+    <div class="gas-n-32"><input type="checkbox" id="id851" name="DONGHWA.PLC.RECIPE.SEGMENT_32.GAS_N_32" class="input-checkbox" value="0" disabled></div> Updated from id723
     <div class="gas-a-32"><input type="checkbox" id="id852" name="DONGHWA.PLC.RECIPE.SEGMENT_32.GAS_A_32" class="input-checkbox" value="0" disabled></div>
     <div class="spare-32"><input type="checkbox" id="id853" name="DONGHWA.PLC.RECIPE.SEGMENT_32.SPARE_32" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-32"><input type="checkbox" id="id854" name="DONGHWA.PLC.RECIPE.SEGMENT_32.HYDRULIC_OFF_32" class="input-checkbox" value="0"></div> <!-- Updated from id726 -->
+    <div class="hydrulic-off-32"><input type="checkbox" id="id854" name="DONGHWA.PLC.RECIPE.SEGMENT_32.HYDRULIC_OFF_32" class="input-checkbox" value="0"></div> Updated from id726
     <div class="press-capacity-32"><input type="checkbox" id="id855" name="DONGHWA.PLC.RECIPE.SEGMENT_32.PRESS_CAPACITY_32" class="input-checkbox" value="0"></div>
     <div class="press-position-32"><input type="checkbox" id="id856" name="DONGHWA.PLC.RECIPE.SEGMENT_32.PRESS_POSITION_32" class="input-checkbox" value="0"></div>
     <div class="press-distance-32"><input type="checkbox" id="id857" name="DONGHWA.PLC.RECIPE.SEGMENT_32.PRESS_DISTANCE_32" class="input-checkbox" value="0"></div>
@@ -1080,19 +1080,19 @@ body {
     <div class="pressing-one-33"><input type="text" class="input-text" id="id733" name="DONGHWA.PLC.RECIPE.SEGMENT_33.PRESSING_ONE_33" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-33"><input type="text" class="input-text" id="id866" name="DONGHWA.PLC.RECIPE.SEGMENT_33.PRESSING_TWO_33" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-33"><input type="text" class="input-text" id="id867" name="DONGHWA.PLC.RECIPE.SEGMENT_33.FORCE_TOL_33" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-33"><input type="text" class="input-text" id="id868" name="DONGHWA.PLC.RECIPE.SEGMENT_33.POSITION_AB_33" oninput="validateNumberInput(event)"/></div> <!-- Updated from id736 -->
+    <div class="position-ab-33"><input type="text" class="input-text" id="id868" name="DONGHWA.PLC.RECIPE.SEGMENT_33.POSITION_AB_33" oninput="validateNumberInput(event)"/></div> Updated from id736
     <div class="position-rel-33"><input type="text" class="input-text" id="id869" name="DONGHWA.PLC.RECIPE.SEGMENT_33.POSITION_REL_33" oninput="validateNumberInput(event)"/></div>
     <div class="distance-33"><input type="text" class="input-text" id="id870" name="DONGHWA.PLC.RECIPE.SEGMENT_33.DISTANCE_33" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-33"><input type="text" class="input-text" id="id871" name="DONGHWA.PLC.RECIPE.SEGMENT_33.HOLDING_ONE_33" oninput="validateNumberInput(event)"/></div> <!-- Updated from id739 -->
+    <div class="holding-one-33"><input type="text" class="input-text" id="id871" name="DONGHWA.PLC.RECIPE.SEGMENT_33.HOLDING_ONE_33" oninput="validateNumberInput(event)"/></div> Updated from id739
     <div class="holding-two-33"><input type="text" class="input-text" id="id872" name="DONGHWA.PLC.RECIPE.SEGMENT_33.HOLDING_TWO_33" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-33"><input type="text" class="input-text" id="id873" name="DONGHWA.PLC.RECIPE.SEGMENT_33.NUMBER_LOOPS_33" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-33"><input type="text" class="input-text" id="id874" name="DONGHWA.PLC.RECIPE.SEGMENT_33.SPEED_PLUNGER_33" oninput="validateNumberInput(event)"/></div> <!-- Updated from id742 -->
+    <div class="speed-plunger-33"><input type="text" class="input-text" id="id874" name="DONGHWA.PLC.RECIPE.SEGMENT_33.SPEED_PLUNGER_33" oninput="validateNumberInput(event)"/></div> Updated from id742
     <div class="gradient-force-33"><input type="text" class="input-text" id="id875" name="DONGHWA.PLC.RECIPE.SEGMENT_33.GRADIENT_FORCE_33" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-33"><input type="checkbox" id="id876" name="DONGHWA.PLC.RECIPE.SEGMENT_33.FASTCOOLING_33" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-33"><input type="checkbox" id="id877" name="DONGHWA.PLC.RECIPE.SEGMENT_33.GAS_N_33" class="input-checkbox" value="0" disabled></div> <!-- Updated from id745 -->
+    <div class="gas-n-33"><input type="checkbox" id="id877" name="DONGHWA.PLC.RECIPE.SEGMENT_33.GAS_N_33" class="input-checkbox" value="0" disabled></div> Updated from id745
     <div class="gas-a-33"><input type="checkbox" id="id878" name="DONGHWA.PLC.RECIPE.SEGMENT_33.GAS_A_33" class="input-checkbox" value="0" disabled></div>
     <div class="spare-33"><input type="checkbox" id="id879" name="DONGHWA.PLC.RECIPE.SEGMENT_33.SPARE_33" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-33"><input type="checkbox" id="id880" name="DONGHWA.PLC.RECIPE.SEGMENT_33.HYDRULIC_OFF_33" class="input-checkbox" value="0"></div> <!-- Updated from id748 -->
+    <div class="hydrulic-off-33"><input type="checkbox" id="id880" name="DONGHWA.PLC.RECIPE.SEGMENT_33.HYDRULIC_OFF_33" class="input-checkbox" value="0"></div> Updated from id748
     <div class="press-capacity-33"><input type="checkbox" id="id881" name="DONGHWA.PLC.RECIPE.SEGMENT_33.PRESS_CAPACITY_33" class="input-checkbox" value="0"></div>
     <div class="press-position-33"><input type="checkbox" id="id882" name="DONGHWA.PLC.RECIPE.SEGMENT_33.PRESS_POSITION_33" class="input-checkbox" value="0"></div>
     <div class="press-distance-33"><input type="checkbox" id="id883" name="DONGHWA.PLC.RECIPE.SEGMENT_33.PRESS_DISTANCE_33" class="input-checkbox" value="0"></div>
@@ -1110,19 +1110,19 @@ body {
     <div class="pressing-one-34"><input type="text" class="input-text" id="id755" name="DONGHWA.PLC.RECIPE.SEGMENT_34.PRESSING_ONE_34" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-34"><input type="text" class="input-text" id="id892" name="DONGHWA.PLC.RECIPE.SEGMENT_34.PRESSING_TWO_34" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-34"><input type="text" class="input-text" id="id893" name="DONGHWA.PLC.RECIPE.SEGMENT_34.FORCE_TOL_34" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-34"><input type="text" class="input-text" id="id894" name="DONGHWA.PLC.RECIPE.SEGMENT_34.POSITION_AB_34" oninput="validateNumberInput(event)"/></div> <!-- Updated from id758 -->
+    <div class="position-ab-34"><input type="text" class="input-text" id="id894" name="DONGHWA.PLC.RECIPE.SEGMENT_34.POSITION_AB_34" oninput="validateNumberInput(event)"/></div> Updated from id758
     <div class="position-rel-34"><input type="text" class="input-text" id="id895" name="DONGHWA.PLC.RECIPE.SEGMENT_34.POSITION_REL_34" oninput="validateNumberInput(event)"/></div>
     <div class="distance-34"><input type="text" class="input-text" id="id896" name="DONGHWA.PLC.RECIPE.SEGMENT_34.DISTANCE_34" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-34"><input type="text" class="input-text" id="id897" name="DONGHWA.PLC.RECIPE.SEGMENT_34.HOLDING_ONE_34" oninput="validateNumberInput(event)"/></div> <!-- Updated from id761 -->
+    <div class="holding-one-34"><input type="text" class="input-text" id="id897" name="DONGHWA.PLC.RECIPE.SEGMENT_34.HOLDING_ONE_34" oninput="validateNumberInput(event)"/></div> Updated from id761
     <div class="holding-two-34"><input type="text" class="input-text" id="id898" name="DONGHWA.PLC.RECIPE.SEGMENT_34.HOLDING_TWO_34" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-34"><input type="text" class="input-text" id="id899" name="DONGHWA.PLC.RECIPE.SEGMENT_34.NUMBER_LOOPS_34" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-34"><input type="text" class="input-text" id="id900" name="DONGHWA.PLC.RECIPE.SEGMENT_34.SPEED_PLUNGER_34" oninput="validateNumberInput(event)"/></div> <!-- Updated from id764 -->
+    <div class="speed-plunger-34"><input type="text" class="input-text" id="id900" name="DONGHWA.PLC.RECIPE.SEGMENT_34.SPEED_PLUNGER_34" oninput="validateNumberInput(event)"/></div> Updated from id764
     <div class="gradient-force-34"><input type="text" class="input-text" id="id901" name="DONGHWA.PLC.RECIPE.SEGMENT_34.GRADIENT_FORCE_34" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-34"><input type="checkbox" id="id902" name="DONGHWA.PLC.RECIPE.SEGMENT_34.FASTCOOLING_34" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-34"><input type="checkbox" id="id903" name="DONGHWA.PLC.RECIPE.SEGMENT_34.GAS_N_34" class="input-checkbox" value="0" disabled></div> <!-- Updated from id767 -->
+    <div class="gas-n-34"><input type="checkbox" id="id903" name="DONGHWA.PLC.RECIPE.SEGMENT_34.GAS_N_34" class="input-checkbox" value="0" disabled></div> Updated from id767
     <div class="gas-a-34"><input type="checkbox" id="id904" name="DONGHWA.PLC.RECIPE.SEGMENT_34.GAS_A_34" class="input-checkbox" value="0" disabled></div>
     <div class="spare-34"><input type="checkbox" id="id905" name="DONGHWA.PLC.RECIPE.SEGMENT_34.SPARE_34" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-34"><input type="checkbox" id="id906" name="DONGHWA.PLC.RECIPE.SEGMENT_34.HYDRULIC_OFF_34" class="input-checkbox" value="0"></div> <!-- Updated from id770 -->
+    <div class="hydrulic-off-34"><input type="checkbox" id="id906" name="DONGHWA.PLC.RECIPE.SEGMENT_34.HYDRULIC_OFF_34" class="input-checkbox" value="0"></div> Updated from id770
     <div class="press-capacity-34"><input type="checkbox" id="id907" name="DONGHWA.PLC.RECIPE.SEGMENT_34.PRESS_CAPACITY_34" class="input-checkbox" value="0"></div>
     <div class="press-position-34"><input type="checkbox" id="id908" name="DONGHWA.PLC.RECIPE.SEGMENT_34.PRESS_POSITION_34" class="input-checkbox" value="0"></div>
     <div class="press-distance-34"><input type="checkbox" id="id909" name="DONGHWA.PLC.RECIPE.SEGMENT_34.PRESS_DISTANCE_34" class="input-checkbox" value="0"></div>
@@ -1139,19 +1139,19 @@ body {
     <div class="pressing-one-35"><input type="text" class="input-text" id="id777" name="DONGHWA.PLC.RECIPE.SEGMENT_35.PRESSING_ONE_35" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-35"><input type="text" class="input-text" id="id918" name="DONGHWA.PLC.RECIPE.SEGMENT_35.PRESSING_TWO_35" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-35"><input type="text" class="input-text" id="id919" name="DONGHWA.PLC.RECIPE.SEGMENT_35.FORCE_TOL_35" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-35"><input type="text" class="input-text" id="id920" name="DONGHWA.PLC.RECIPE.SEGMENT_35.POSITION_AB_35" oninput="validateNumberInput(event)"/></div> <!-- Updated from id780 -->
+    <div class="position-ab-35"><input type="text" class="input-text" id="id920" name="DONGHWA.PLC.RECIPE.SEGMENT_35.POSITION_AB_35" oninput="validateNumberInput(event)"/></div> Updated from id780
     <div class="position-rel-35"><input type="text" class="input-text" id="id921" name="DONGHWA.PLC.RECIPE.SEGMENT_35.POSITION_REL_35" oninput="validateNumberInput(event)"/></div>
     <div class="distance-35"><input type="text" class="input-text" id="id922" name="DONGHWA.PLC.RECIPE.SEGMENT_35.DISTANCE_35" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-35"><input type="text" class="input-text" id="id923" name="DONGHWA.PLC.RECIPE.SEGMENT_35.HOLDING_ONE_35" oninput="validateNumberInput(event)"/></div> <!-- Updated from id783 -->
+    <div class="holding-one-35"><input type="text" class="input-text" id="id923" name="DONGHWA.PLC.RECIPE.SEGMENT_35.HOLDING_ONE_35" oninput="validateNumberInput(event)"/></div> Updated from id783
     <div class="holding-two-35"><input type="text" class="input-text" id="id924" name="DONGHWA.PLC.RECIPE.SEGMENT_35.HOLDING_TWO_35" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-35"><input type="text" class="input-text" id="id925" name="DONGHWA.PLC.RECIPE.SEGMENT_35.NUMBER_LOOPS_35" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-35"><input type="text" class="input-text" id="id926" name="DONGHWA.PLC.RECIPE.SEGMENT_35.SPEED_PLUNGER_35" oninput="validateNumberInput(event)"/></div> <!-- Updated from id786 -->
+    <div class="speed-plunger-35"><input type="text" class="input-text" id="id926" name="DONGHWA.PLC.RECIPE.SEGMENT_35.SPEED_PLUNGER_35" oninput="validateNumberInput(event)"/></div> Updated from id786
     <div class="gradient-force-35"><input type="text" class="input-text" id="id927" name="DONGHWA.PLC.RECIPE.SEGMENT_35.GRADIENT_FORCE_35" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-35"><input type="checkbox" id="id928" name="DONGHWA.PLC.RECIPE.SEGMENT_35.FASTCOOLING_35" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-35"><input type="checkbox" id="id929" name="DONGHWA.PLC.RECIPE.SEGMENT_35.GAS_N_35" class="input-checkbox" value="0" disabled></div> <!-- Updated from id789 -->
+    <div class="gas-n-35"><input type="checkbox" id="id929" name="DONGHWA.PLC.RECIPE.SEGMENT_35.GAS_N_35" class="input-checkbox" value="0" disabled></div> Updated from id789
     <div class="gas-a-35"><input type="checkbox" id="id930" name="DONGHWA.PLC.RECIPE.SEGMENT_35.GAS_A_35" class="input-checkbox" value="0" disabled></div>
     <div class="spare-35"><input type="checkbox" id="id931" name="DONGHWA.PLC.RECIPE.SEGMENT_35.SPARE_35" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-35"><input type="checkbox" id="id932" name="DONGHWA.PLC.RECIPE.SEGMENT_35.HYDRULIC_OFF_35" class="input-checkbox" value="0"></div> <!-- Updated from id792 -->
+    <div class="hydrulic-off-35"><input type="checkbox" id="id932" name="DONGHWA.PLC.RECIPE.SEGMENT_35.HYDRULIC_OFF_35" class="input-checkbox" value="0"></div> Updated from id792
     <div class="press-capacity-35"><input type="checkbox" id="id933" name="DONGHWA.PLC.RECIPE.SEGMENT_35.PRESS_CAPACITY_35" class="input-checkbox" value="0"></div>
     <div class="press-position-35"><input type="checkbox" id="id934" name="DONGHWA.PLC.RECIPE.SEGMENT_35.PRESS_POSITION_35" class="input-checkbox" value="0"></div>
     <div class="press-distance-35"><input type="checkbox" id="id935" name="DONGHWA.PLC.RECIPE.SEGMENT_35.PRESS_DISTANCE_35" class="input-checkbox" value="0"></div>
@@ -1169,19 +1169,19 @@ body {
     <div class="pressing-one-36"><input type="text" class="input-text" id="id799" name="DONGHWA.PLC.RECIPE.SEGMENT_36.PRESSING_ONE_36" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-36"><input type="text" class="input-text" id="id944" name="DONGHWA.PLC.RECIPE.SEGMENT_36.PRESSING_TWO_36" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-36"><input type="text" class="input-text" id="id945" name="DONGHWA.PLC.RECIPE.SEGMENT_36.FORCE_TOL_36" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-36"><input type="text" class="input-text" id="id946" name="DONGHWA.PLC.RECIPE.SEGMENT_36.POSITION_AB_36" oninput="validateNumberInput(event)"/></div> <!-- Updated from id802 -->
+    <div class="position-ab-36"><input type="text" class="input-text" id="id946" name="DONGHWA.PLC.RECIPE.SEGMENT_36.POSITION_AB_36" oninput="validateNumberInput(event)"/></div> Updated from id802
     <div class="position-rel-36"><input type="text" class="input-text" id="id947" name="DONGHWA.PLC.RECIPE.SEGMENT_36.POSITION_REL_36" oninput="validateNumberInput(event)"/></div>
     <div class="distance-36"><input type="text" class="input-text" id="id948" name="DONGHWA.PLC.RECIPE.SEGMENT_36.DISTANCE_36" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-36"><input type="text" class="input-text" id="id949" name="DONGHWA.PLC.RECIPE.SEGMENT_36.HOLDING_ONE_36" oninput="validateNumberInput(event)"/></div> <!-- Updated from id805 -->
+    <div class="holding-one-36"><input type="text" class="input-text" id="id949" name="DONGHWA.PLC.RECIPE.SEGMENT_36.HOLDING_ONE_36" oninput="validateNumberInput(event)"/></div> Updated from id805
     <div class="holding-two-36"><input type="text" class="input-text" id="id950" name="DONGHWA.PLC.RECIPE.SEGMENT_36.HOLDING_TWO_36" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-36"><input type="text" class="input-text" id="id951" name="DONGHWA.PLC.RECIPE.SEGMENT_36.NUMBER_LOOPS_36" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-36"><input type="text" class="input-text" id="id952" name="DONGHWA.PLC.RECIPE.SEGMENT_36.SPEED_PLUNGER_36" oninput="validateNumberInput(event)"/></div> <!-- Updated from id808 -->
+    <div class="speed-plunger-36"><input type="text" class="input-text" id="id952" name="DONGHWA.PLC.RECIPE.SEGMENT_36.SPEED_PLUNGER_36" oninput="validateNumberInput(event)"/></div> Updated from id808
     <div class="gradient-force-36"><input type="text" class="input-text" id="id953" name="DONGHWA.PLC.RECIPE.SEGMENT_36.GRADIENT_FORCE_36" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-36"><input type="checkbox" id="id954" name="DONGHWA.PLC.RECIPE.SEGMENT_36.FASTCOOLING_36" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-36"><input type="checkbox" id="id955" name="DONGHWA.PLC.RECIPE.SEGMENT_36.GAS_N_36" class="input-checkbox" value="0" disabled></div> <!-- Updated from id811 -->
+    <div class="gas-n-36"><input type="checkbox" id="id955" name="DONGHWA.PLC.RECIPE.SEGMENT_36.GAS_N_36" class="input-checkbox" value="0" disabled></div> Updated from id811
     <div class="gas-a-36"><input type="checkbox" id="id956" name="DONGHWA.PLC.RECIPE.SEGMENT_36.GAS_A_36" class="input-checkbox" value="0" disabled></div>
     <div class="spare-36"><input type="checkbox" id="id957" name="DONGHWA.PLC.RECIPE.SEGMENT_36.SPARE_36" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-36"><input type="checkbox" id="id958" name="DONGHWA.PLC.RECIPE.SEGMENT_36.HYDRULIC_OFF_36" class="input-checkbox" value="0"></div> <!-- Updated from id814 -->
+    <div class="hydrulic-off-36"><input type="checkbox" id="id958" name="DONGHWA.PLC.RECIPE.SEGMENT_36.HYDRULIC_OFF_36" class="input-checkbox" value="0"></div> Updated from id814
     <div class="press-capacity-36"><input type="checkbox" id="id959" name="DONGHWA.PLC.RECIPE.SEGMENT_36.PRESS_CAPACITY_36" class="input-checkbox" value="0"></div>
     <div class="press-position-36"><input type="checkbox" id="id960" name="DONGHWA.PLC.RECIPE.SEGMENT_36.PRESS_POSITION_36" class="input-checkbox" value="0"></div>
     <div class="press-distance-36"><input type="checkbox" id="id961" name="DONGHWA.PLC.RECIPE.SEGMENT_36.PRESS_DISTANCE_36" class="input-checkbox" value="0"></div>
@@ -1198,19 +1198,19 @@ body {
     <div class="pressing-one-37"><input type="text" class="input-text" id="id821" name="DONGHWA.PLC.RECIPE.SEGMENT_37.PRESSING_ONE_37" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-37"><input type="text" class="input-text" id="id970" name="DONGHWA.PLC.RECIPE.SEGMENT_37.PRESSING_TWO_37" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-37"><input type="text" class="input-text" id="id971" name="DONGHWA.PLC.RECIPE.SEGMENT_37.FORCE_TOL_37" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-37"><input type="text" class="input-text" id="id972" name="DONGHWA.PLC.RECIPE.SEGMENT_37.POSITION_AB_37" oninput="validateNumberInput(event)"/></div> <!-- Updated from id824 -->
+    <div class="position-ab-37"><input type="text" class="input-text" id="id972" name="DONGHWA.PLC.RECIPE.SEGMENT_37.POSITION_AB_37" oninput="validateNumberInput(event)"/></div> Updated from id824
     <div class="position-rel-37"><input type="text" class="input-text" id="id973" name="DONGHWA.PLC.RECIPE.SEGMENT_37.POSITION_REL_37" oninput="validateNumberInput(event)"/></div>
     <div class="distance-37"><input type="text" class="input-text" id="id974" name="DONGHWA.PLC.RECIPE.SEGMENT_37.DISTANCE_37" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-37"><input type="text" class="input-text" id="id975" name="DONGHWA.PLC.RECIPE.SEGMENT_37.HOLDING_ONE_37" oninput="validateNumberInput(event)"/></div> <!-- Updated from id827 -->
+    <div class="holding-one-37"><input type="text" class="input-text" id="id975" name="DONGHWA.PLC.RECIPE.SEGMENT_37.HOLDING_ONE_37" oninput="validateNumberInput(event)"/></div> Updated from id827
     <div class="holding-two-37"><input type="text" class="input-text" id="id976" name="DONGHWA.PLC.RECIPE.SEGMENT_37.HOLDING_TWO_37" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-37"><input type="text" class="input-text" id="id977" name="DONGHWA.PLC.RECIPE.SEGMENT_37.NUMBER_LOOPS_37" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-37"><input type="text" class="input-text" id="id978" name="DONGHWA.PLC.RECIPE.SEGMENT_37.SPEED_PLUNGER_37" oninput="validateNumberInput(event)"/></div> <!-- Updated from id830 -->
+    <div class="speed-plunger-37"><input type="text" class="input-text" id="id978" name="DONGHWA.PLC.RECIPE.SEGMENT_37.SPEED_PLUNGER_37" oninput="validateNumberInput(event)"/></div> Updated from id830
     <div class="gradient-force-37"><input type="text" class="input-text" id="id979" name="DONGHWA.PLC.RECIPE.SEGMENT_37.GRADIENT_FORCE_37" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-37"><input type="checkbox" id="id980" name="DONGHWA.PLC.RECIPE.SEGMENT_37.FASTCOOLING_37" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-37"><input type="checkbox" id="id981" name="DONGHWA.PLC.RECIPE.SEGMENT_37.GAS_N_37" class="input-checkbox" value="0" disabled></div> <!-- Updated from id833 -->
+    <div class="gas-n-37"><input type="checkbox" id="id981" name="DONGHWA.PLC.RECIPE.SEGMENT_37.GAS_N_37" class="input-checkbox" value="0" disabled></div> Updated from id833
     <div class="gas-a-37"><input type="checkbox" id="id982" name="DONGHWA.PLC.RECIPE.SEGMENT_37.GAS_A_37" class="input-checkbox" value="0" disabled></div>
     <div class="spare-37"><input type="checkbox" id="id983" name="DONGHWA.PLC.RECIPE.SEGMENT_37.SPARE_37" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-37"><input type="checkbox" id="id984" name="DONGHWA.PLC.RECIPE.SEGMENT_37.HYDRULIC_OFF_37" class="input-checkbox" value="0"></div> <!-- Updated from id836 -->
+    <div class="hydrulic-off-37"><input type="checkbox" id="id984" name="DONGHWA.PLC.RECIPE.SEGMENT_37.HYDRULIC_OFF_37" class="input-checkbox" value="0"></div> Updated from id836
     <div class="press-capacity-37"><input type="checkbox" id="id985" name="DONGHWA.PLC.RECIPE.SEGMENT_37.PRESS_CAPACITY_37" class="input-checkbox" value="0"></div>
     <div class="press-position-37"><input type="checkbox" id="id986" name="DONGHWA.PLC.RECIPE.SEGMENT_37.PRESS_POSITION_37" class="input-checkbox" value="0"></div>
     <div class="press-distance-37"><input type="checkbox" id="id987" name="DONGHWA.PLC.RECIPE.SEGMENT_37.PRESS_DISTANCE_37" class="input-checkbox" value="0"></div>
@@ -1227,19 +1227,19 @@ body {
     <div class="pressing-one-38"><input type="text" class="input-text" id="id843" name="DONGHWA.PLC.RECIPE.SEGMENT_38.PRESSING_ONE_38" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-38"><input type="text" class="input-text" id="id996" name="DONGHWA.PLC.RECIPE.SEGMENT_38.PRESSING_TWO_38" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-38"><input type="text" class="input-text" id="id997" name="DONGHWA.PLC.RECIPE.SEGMENT_38.FORCE_TOL_38" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-38"><input type="text" class="input-text" id="id998" name="DONGHWA.PLC.RECIPE.SEGMENT_38.POSITION_AB_38" oninput="validateNumberInput(event)"/></div> <!-- Updated from id846 -->
+    <div class="position-ab-38"><input type="text" class="input-text" id="id998" name="DONGHWA.PLC.RECIPE.SEGMENT_38.POSITION_AB_38" oninput="validateNumberInput(event)"/></div> Updated from id846
     <div class="position-rel-38"><input type="text" class="input-text" id="id999" name="DONGHWA.PLC.RECIPE.SEGMENT_38.POSITION_REL_38" oninput="validateNumberInput(event)"/></div>
     <div class="distance-38"><input type="text" class="input-text" id="id1000" name="DONGHWA.PLC.RECIPE.SEGMENT_38.DISTANCE_38" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-38"><input type="text" class="input-text" id="id1001" name="DONGHWA.PLC.RECIPE.SEGMENT_38.HOLDING_ONE_38" oninput="validateNumberInput(event)"/></div> <!-- Updated from id849 -->
+    <div class="holding-one-38"><input type="text" class="input-text" id="id1001" name="DONGHWA.PLC.RECIPE.SEGMENT_38.HOLDING_ONE_38" oninput="validateNumberInput(event)"/></div> Updated from id849
     <div class="holding-two-38"><input type="text" class="input-text" id="id1002" name="DONGHWA.PLC.RECIPE.SEGMENT_38.HOLDING_TWO_38" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-38"><input type="text" class="input-text" id="id1003" name="DONGHWA.PLC.RECIPE.SEGMENT_38.NUMBER_LOOPS_38" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-38"><input type="text" class="input-text" id="id1004" name="DONGHWA.PLC.RECIPE.SEGMENT_38.SPEED_PLUNGER_38" oninput="validateNumberInput(event)"/></div> <!-- Updated from id852 -->
+    <div class="speed-plunger-38"><input type="text" class="input-text" id="id1004" name="DONGHWA.PLC.RECIPE.SEGMENT_38.SPEED_PLUNGER_38" oninput="validateNumberInput(event)"/></div> Updated from id852
     <div class="gradient-force-38"><input type="text" class="input-text" id="id1005" name="DONGHWA.PLC.RECIPE.SEGMENT_38.GRADIENT_FORCE_38" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-38"><input type="checkbox" id="id1006" name="DONGHWA.PLC.RECIPE.SEGMENT_38.FASTCOOLING_38" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-38"><input type="checkbox" id="id1007" name="DONGHWA.PLC.RECIPE.SEGMENT_38.GAS_N_38" class="input-checkbox" value="0" disabled></div> <!-- Updated from id855 -->
+    <div class="gas-n-38"><input type="checkbox" id="id1007" name="DONGHWA.PLC.RECIPE.SEGMENT_38.GAS_N_38" class="input-checkbox" value="0" disabled></div> Updated from id855
     <div class="gas-a-38"><input type="checkbox" id="id1008" name="DONGHWA.PLC.RECIPE.SEGMENT_38.GAS_A_38" class="input-checkbox" value="0" disabled></div>
     <div class="spare-38"><input type="checkbox" id="id1009" name="DONGHWA.PLC.RECIPE.SEGMENT_38.SPARE_38" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-38"><input type="checkbox" id="id1010" name="DONGHWA.PLC.RECIPE.SEGMENT_38.HYDRULIC_OFF_38" class="input-checkbox" value="0"></div> <!-- Updated from id858 -->
+    <div class="hydrulic-off-38"><input type="checkbox" id="id1010" name="DONGHWA.PLC.RECIPE.SEGMENT_38.HYDRULIC_OFF_38" class="input-checkbox" value="0"></div> Updated from id858
     <div class="press-capacity-38"><input type="checkbox" id="id1011" name="DONGHWA.PLC.RECIPE.SEGMENT_38.PRESS_CAPACITY_38" class="input-checkbox" value="0"></div>
     <div class="press-position-38"><input type="checkbox" id="id1012" name="DONGHWA.PLC.RECIPE.SEGMENT_38.PRESS_POSITION_38" class="input-checkbox" value="0"></div>
     <div class="press-distance-38"><input type="checkbox" id="id1013" name="DONGHWA.PLC.RECIPE.SEGMENT_38.PRESS_DISTANCE_38" class="input-checkbox" value="0"></div>
@@ -1256,24 +1256,24 @@ body {
     <div class="pressing-one-39"><input type="text" class="input-text" id="id865" name="DONGHWA.PLC.RECIPE.SEGMENT_39.PRESSING_ONE_39" oninput="validateNumberInput(event)"/></div>
     <div class="pressing-two-39"><input type="text" class="input-text" id="id1022" name="DONGHWA.PLC.RECIPE.SEGMENT_39.PRESSING_TWO_39" oninput="validateNumberInput(event)"/></div>
     <div class="force-tol-39"><input type="text" class="input-text" id="id1023" name="DONGHWA.PLC.RECIPE.SEGMENT_39.FORCE_TOL_39" oninput="validateNumberInput(event)"/></div>
-    <div class="position-ab-39"><input type="text" class="input-text" id="id1024" name="DONGHWA.PLC.RECIPE.SEGMENT_39.POSITION_AB_39" oninput="validateNumberInput(event)"/></div> <!-- Updated from id868 -->
+    <div class="position-ab-39"><input type="text" class="input-text" id="id1024" name="DONGHWA.PLC.RECIPE.SEGMENT_39.POSITION_AB_39" oninput="validateNumberInput(event)"/></div> Updated from id868
     <div class="position-rel-39"><input type="text" class="input-text" id="id1025" name="DONGHWA.PLC.RECIPE.SEGMENT_39.POSITION_REL_39" oninput="validateNumberInput(event)"/></div>
     <div class="distance-39"><input type="text" class="input-text" id="id1026" name="DONGHWA.PLC.RECIPE.SEGMENT_39.DISTANCE_39" oninput="validateNumberInput(event)"/></div>
-    <div class="holding-one-39"><input type="text" class="input-text" id="id1027" name="DONGHWA.PLC.RECIPE.SEGMENT_39.HOLDING_ONE_39" oninput="validateNumberInput(event)"/></div> <!-- Updated from id871 -->
+    <div class="holding-one-39"><input type="text" class="input-text" id="id1027" name="DONGHWA.PLC.RECIPE.SEGMENT_39.HOLDING_ONE_39" oninput="validateNumberInput(event)"/></div> Updated from id871
     <div class="holding-two-39"><input type="text" class="input-text" id="id1028" name="DONGHWA.PLC.RECIPE.SEGMENT_39.HOLDING_TWO_39" oninput="validateNumberInput(event)"/></div>
     <div class="number-loops-39"><input type="text" class="input-text" id="id1029" name="DONGHWA.PLC.RECIPE.SEGMENT_39.NUMBER_LOOPS_39" oninput="validateNumberInput(event)"/></div>
-    <div class="speed-plunger-39"><input type="text" class="input-text" id="id1030" name="DONGHWA.PLC.RECIPE.SEGMENT_39.SPEED_PLUNGER_39" oninput="validateNumberInput(event)"/></div> <!-- Updated from id874 -->
+    <div class="speed-plunger-39"><input type="text" class="input-text" id="id1030" name="DONGHWA.PLC.RECIPE.SEGMENT_39.SPEED_PLUNGER_39" oninput="validateNumberInput(event)"/></div> Updated from id874
     <div class="gradient-force-39"><input type="text" class="input-text" id="id1031" name="DONGHWA.PLC.RECIPE.SEGMENT_39.GRADIENT_FORCE_39" oninput="validateNumberInput(event)"/></div>
     <div class="fastcooling-39"><input type="checkbox" id="id1032" name="DONGHWA.PLC.RECIPE.SEGMENT_39.FASTCOOLING_39" class="input-checkbox" value="0" disabled></div>
-    <div class="gas-n-39"><input type="checkbox" id="id1033" name="DONGHWA.PLC.RECIPE.SEGMENT_39.GAS_N_39" class="input-checkbox" value="0" disabled></div> <!-- Updated from id877 -->
+    <div class="gas-n-39"><input type="checkbox" id="id1033" name="DONGHWA.PLC.RECIPE.SEGMENT_39.GAS_N_39" class="input-checkbox" value="0" disabled></div> Updated from id877
     <div class="gas-a-39"><input type="checkbox" id="id1034" name="DONGHWA.PLC.RECIPE.SEGMENT_39.GAS_A_39" class="input-checkbox" value="0" disabled></div>
     <div class="spare-39"><input type="checkbox" id="id1035" name="DONGHWA.PLC.RECIPE.SEGMENT_39.SPARE_39" class="input-checkbox" value="0"></div>
-    <div class="hydrulic-off-39"><input type="checkbox" id="id1036" name="DONGHWA.PLC.RECIPE.SEGMENT_39.HYDRULIC_OFF_39" class="input-checkbox" value="0"></div> <!-- Updated from id880 -->
+    <div class="hydrulic-off-39"><input type="checkbox" id="id1036" name="DONGHWA.PLC.RECIPE.SEGMENT_39.HYDRULIC_OFF_39" class="input-checkbox" value="0"></div> Updated from id880
     <div class="press-capacity-39"><input type="checkbox" id="id1037" name="DONGHWA.PLC.RECIPE.SEGMENT_39.PRESS_CAPACITY_39" class="input-checkbox" value="0"></div>
     <div class="press-position-39"><input type="checkbox" id="id1038" name="DONGHWA.PLC.RECIPE.SEGMENT_39.PRESS_POSITION_39" class="input-checkbox" value="0"></div>
     <div class="press-distance-39"><input type="checkbox" id="id1039" name="DONGHWA.PLC.RECIPE.SEGMENT_39.PRESS_DISTANCE_39" class="input-checkbox" value="0"></div>
 </div>
-
+ -->
     <div class="fastcooling">Fastcooling</div>
     <div class="gas-nTwo">Gas N2</div>
     <div class="gas-ar">Gas Ar</div>
@@ -1519,7 +1519,7 @@ function validateNumberInput(event) {
                 const fieldIdNumber = parseInt(fieldId.replace('id', ''), 10);
                 console.log(`비활성화할 필드: ${fieldId} (현재 입력 ID: ${inputId})`);
                 if (fieldIdNumber > inputIdNumber + 25) {
-                    field.disabled = true;
+                    /* field.disabled = true; */
                     field.value = "";  // 비활성화될 때 값도 초기화
                 }
             });

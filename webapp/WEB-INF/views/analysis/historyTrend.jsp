@@ -663,11 +663,19 @@ function getPenGroupChartData() {
         success: function (result) {
             var data = result.data;
 
+            var dataKeys = Object.keys(data);
+            var dataValues = Object.values(data);
+            
+            console.log("=== 전체 데이터 키 ===", dataKeys);
+            console.log("=== 전체 데이터 값 ===", dataValues);
+
             
             var groupConcatSplit = data.groupConcat.split(",");
 
             var dataKeys = Object.keys(data);
             var dataValues = Object.values(data);
+
+            
 
             var idx = 0;
             var idx2 = 0;
@@ -704,77 +712,130 @@ const categories = [
 const formattedCategories = categories.map(item => parseFloat(item));
 
 function getPenGroupChart(){
-    Highcharts.chart('container', {
+    const chart = Highcharts.chart('container', {
         chart: {
             type: "spline",
             panning: true,
             panKey: "shift",
             zoomType: "x",
             styleMode: true,
-            height: 720,
-            width: 1890
+            height:720,  // 차트 높이 설정
+            width: 1890   // 차트 너비 설정
         },
         time: {
             timezone: "Asia/Seoul",
             useUTC: false
         },
         yAxis: [
-            {   // 0번 Y축: 온도 (0~1500℃)
-                min: 0,
-                max: 1500,
-                crosshair: { width: 3, color: '#5D5D5D', zIndex: 5 },
-                title: { text: 'Temper (℃)' },
-                labels: { style: { fontSize: "14pt" } }
+            {
+                min:0,
+                max:600,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Temper(℃)'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             },
-            {   // 1번 Y축: 압력 (0~12000 kN)
-                min: 0,
-                max: 12000,
-                crosshair: { width: 3, color: '#5D5D5D', zIndex: 5 },
-                title: { text: 'Press (kN)' },
-                labels: { style: { fontSize: "14pt" } }
+            {
+                min:-100,
+                max:500,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Press[kN]'
+                },
+                labels: {
+                	format: '{value} K' ,
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             },
-            {   // 2번 Y축: 위치 (-50~500 mm)
-                min: -50,
-                max: 500,
-                crosshair: { width: 3, color: '#5D5D5D', zIndex: 5 },
-                title: { text: 'Position (mm)' },
-                labels: { style: { fontSize: "14pt" } }
+            {
+                min:-100,
+                max:25000,
+                crosshair: {
+                    width: 3,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Position[mm]'
+                },
+                labels: {
+         /*        	format: '{value} mm', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             },
-            {   // 3번 Y축: 압력2 (1×10⁻¹⁰ ~ 8×10² mbar)
-                min: 1e-10,
-                max: 8e2,
-                crosshair: { width: 1, color: '#5D5D5D', zIndex: 5 },
-                title: { text: 'Pressure (mbar)' },
-                labels: { style: { fontSize: "14pt" } }
-                // 로그 스케일 사용 시:
-                // type: 'logarithmic',
+            {
+            	min: 0,
+            	max: 10,
+                crosshair: {
+                    width: 1,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Pressure[mbar]'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
             }
-        ],
+            
+            ],
         xAxis: {
-            crosshair: { width: 3, color: '#5D5D5D', zIndex: 5 },
+            crosshair: {
+                width: 3,
+                color: '#5D5D5D',
+                zIndex: 5
+            },
             labels: {
                 formatter: function() {
-                    // 렌더링 시마다 raw x값을 콘솔에 찍어봅니다.
-                    console.log('xAxis label raw value:', this.value);
                     return unix_timestamp(this.value);
                 },
-                style: { fontSize: "11pt" }
+                style: {
+                    fontSize: "11pt"
+                }
             },
             allowDecimals: false
         },
         legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom',
-            itemStyle: { fontSize: "11pt" }
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
         },
         plotOptions: {
-            series: { selected: true, marker: { radius: 1 } }
+            series: {
+                selected: true,
+                marker: {
+                    radius: 1
+                }
+            }
         },
         series: seriesArray,
         responsive: {
             rules: [{
-                condition: { maxWidth: 1500 },
+                condition: {
+                    maxWidth: 1500
+                },
                 chartOptions: {
                     legend: {
                         layout: 'horizontal',
@@ -788,40 +849,60 @@ function getPenGroupChart(){
             useHTML: true,
             shared: true,
             positioner: function(labelWidth, labelHeight, point) {
-                var x = point.plotX + this.chart.plotLeft + 15;
-                if (x + labelWidth > this.chart.chartWidth) {
-                    x = this.chart.chartWidth - labelWidth - 10;
-                }
-                return { x: x, y: 60 };
+                return { x: 900, y: 60 };
             },
             formatter: function() {
+                // 타임스탬프 세팅
                 $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M', this.x));
                 var s = '<b style="font-size:14pt;">' + cursorSetDateTime(this.x) + '</b><br/>';
-                this.points.forEach(function(pt) {
-                    var y = pt.y;
-                    if (pt.series.name.indexOf("CP") !== -1) {
-                        y = pt.y.toFixed(3);
+
+                this.points.forEach(function(point) {
+                    var point_y = point.y;
+                    var point_name = point.series.name;
+
+                    // Front Press, Rear Press 는 100으로 나누고 소수점 둘째자리까지
+                    if (point_name === 'Front Press' || point_name === 'Rear Press') {
+                        point_y = (point.y / 100).toFixed(2);
                     }
-                    $("#value"+(pt.series.index+1)+"_h").css("color", pt.series.color);
-                    $("#value"+(pt.series.index+1)+"_v").text(y);
-                    s += '<span style="font-weight:bold; font-size:14pt;">' + pt.series.name + ':</span> ' +
-                         '<span style="font-size:14pt;">' + y + '</span><br/>';
+                    // 기존 CP 계열은 소수점 셋째자리
+                    else if (point_name.indexOf("CP") !== -1) {
+                        point_y = point.y.toFixed(3);
+                    }
+
+                    // 툴팁 하단 DOM 업데이트 (기존 코드 유지)
+                    $("#value" + (point.series.index + 1) + "_h").css("color", point.series.color);
+                    $("#value" + (point.series.index + 1) + "_v").text(point_y);
+
+                    // 툴팁 문자열 생성
+                    s += '<span style="font-weight:bold; font-size:14pt;">'
+                       + point.series.name + ':</span> '
+                       + '<span style="font-size:14pt;">' + point_y + '</span><br/>';
                 });
+
                 return s;
             },
             borderColor: '#333333',
             shadow: false
         },
+
         exporting: {
             menuItemDefinitions: {
                 label: {
                     onclick: function () {
                         this.renderer.label(
                             'You just clicked a custom menu item',
-                            100, 100
+                            100,
+                            100
                         )
-                        .attr({ fill: '#a4edba', r: 5, padding: 10, zIndex: 10 })
-                        .css({ fontSize: '1.5em' })
+                        .attr({
+                            fill: '#a4edba',
+                            r: 5,
+                            padding: 10,
+                            zIndex: 10
+                        })
+                        .css({
+                            fontSize: '1.5em'
+                        })
                         .add();
                     },
                     text: 'Show label'
@@ -832,19 +913,14 @@ function getPenGroupChart(){
                     menuItems: ['downloadPNG', 'downloadPDF', 'downloadXLS', 'separator']
                 }
             }
+        },
+        legend: {
+            itemStyle: {
+                fontSize: "11pt"
+            }
         }
-    }, function(chart) {
-        // 차트 렌더링 완료 후 각 시리즈의 x값을 한 번에 확인
-        chart.series.forEach(function(series) {
-            var xs = series.options.data.map(function(pt){
-                // data 포맷이 [x, y] 또는 {x:, y:} 둘 다 처리
-                return Array.isArray(pt) ? pt[0] : pt.x;
-            });
-            console.log('Series "' + series.name + '" x-values:', xs);
-        });
     });
 }
-
 
 
 function unix_timestamp(t) {

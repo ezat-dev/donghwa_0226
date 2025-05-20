@@ -307,7 +307,10 @@ $("#pen-list").on("change", function(e) {
         "cs16": "force-sensor-12",
 
             "pr1": "furnace-vacuum",
-            "pr2": "diffusion-pump"
+            "pr2": "diffusion-pump",
+            "ts": "force-sensor-sum",
+            "ot": "oil-pump-temp",
+            "st": "set temp"
     };
 
     // 매핑된 값이 있으면 사용, 없으면 그대로 유지
@@ -789,7 +792,7 @@ function getPenGroupChartData() {
     // 오늘 날짜 구하기
     var today = new Date();
     var oneWeekAgo = new Date();
-    oneWeekAgo.setDate(today.getDate() - 7);
+    oneWeekAgo.setDate(today.getDate() - 1);
 
     // YYYY-MM-DD 형식으로 변환 (반대로 설정)
     var sdate = oneWeekAgo.toISOString().split("T")[0]; // 일주일 전 날짜 (시작)
@@ -853,6 +856,7 @@ function getPenGroupChartData() {
 }
 
 function getPenGroupChart(){
+	console.log(seriesArray);
     const chart = Highcharts.chart('container', {
         chart: {
             type: "spline",
@@ -860,7 +864,7 @@ function getPenGroupChart(){
             panKey: "shift",
             zoomType: "x",
             styleMode: true,
-            height: 880,  // 차트 높이 설정
+            height:720,  // 차트 높이 설정
             width: 1490   // 차트 너비 설정
         },
         time: {
@@ -870,7 +874,7 @@ function getPenGroupChart(){
         yAxis: [
             {
                 min:0,
-                max:1800,
+                max:1300,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -887,35 +891,15 @@ function getPenGroupChart(){
                 }
             },
             {
-            	min: 0.0000000001,
-            	max: 100000000
-,
-            	tickInterval: 1e7,  // 적절한 간격을 설정하세요.
-                crosshair: {
-                    width: 1,
-                    color: '#5D5D5D',
-                    zIndex: 5
-                },
-                title: {
-                    text: 'Pressure[mbar]'
-                },
-                labels: {
-              /*   	format: '{value} (℃)', */
-                    style: {
-                        fontSize: "14pt"
-                    }
-                }
-            },
-            {
                 min:0,
-                max:9,
+                max:12000,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
                     zIndex: 5
                 },
                 title: {
-                    text: 'Force[kN]'
+                    text: 'Press[kN]'
                 },
                 labels: {
                 	format: '{value} K' ,
@@ -925,8 +909,8 @@ function getPenGroupChart(){
                 }
             },
             {
-                min:0,
-                max:450,
+                min:-50,
+                max:500,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -937,6 +921,24 @@ function getPenGroupChart(){
                 },
                 labels: {
          /*        	format: '{value} mm', */
+                    style: {
+                        fontSize: "14pt"
+                    }
+                }
+            },
+            {
+            	min: -1000,
+            	max: 800,
+                crosshair: {
+                    width: 1,
+                    color: '#5D5D5D',
+                    zIndex: 5
+                },
+                title: {
+                    text: 'Pressure'
+                },
+                labels: {
+              /*   	format: '{value} (℃)', */
                     style: {
                         fontSize: "14pt"
                     }
@@ -973,13 +975,6 @@ function getPenGroupChart(){
                 }
             }
         },
-        tooltip: {
-            split: true,
-            shared: true,
-            style: {
-                fontSize: "14pt"
-            }
-        },
         series: seriesArray,
         responsive: {
             rules: [{
@@ -995,6 +990,60 @@ function getPenGroupChart(){
                 }
             }]
         },
+        tooltip: {
+            useHTML: true,
+            shared: true,
+            positioner: function(labelWidth, labelHeight, point) {
+                return { x: 900, y: 60 };
+            },
+            formatter: function() {
+                // 타임스탬프 세팅
+                $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M', this.x));
+                var s = '<b style="font-size:14pt;">' + cursorSetDateTime(this.x) + '</b><br/>';
+
+
+                const oneDecimalNames = [
+                    "Current Load",
+                    "force-sensor-1", "force-sensor-2", "force-sensor-3", "force-sensor-4",
+                    "force-sensor-5", "force-sensor-6", "force-sensor-7", "force-sensor-8",
+                    "force-sensor-9", "force-sensor-10", "force-sensor-11", "force-sensor-12",
+                    "force sensor sum"
+                ];
+
+                
+                this.points.forEach(function(point) {
+                    var point_y = point.y;
+                    var point_name = point.series.name;
+
+                    // Front Press, Rear Press 는 100으로 나누고 소수점 둘째자리까지
+                    if (point_name === 'Front Press' || point_name === 'Rear Press') {
+                        point_y = (point.y / 100).toFixed(2);
+                    }
+                    // CP 계열은 소수점 셋째자리
+                    else if (point_name.indexOf("CP") !== -1) {
+                        point_y = point.y.toFixed(3);
+                    }
+                    // 14개 force 센서 관련은 소수점 첫째자리
+                   else if (oneDecimalNames.includes(point_name)) {
+					    point_y = (point.y / 10).toFixed(1);
+					}
+
+                    // 툴팁 하단 DOM 업데이트 (기존 코드 유지)
+                    $("#value" + (point.series.index + 1) + "_h").css("color", point.series.color);
+                    $("#value" + (point.series.index + 1) + "_v").text(point_y);
+
+                    // 툴팁 문자열 생성
+                    s += '<span style="font-weight:bold; font-size:14pt;">'
+                       + point.series.name + ':</span> '
+                       + '<span style="font-size:14pt;">' + point_y + '</span><br/>';
+                });
+
+                return s;
+            },
+            borderColor: '#333333',
+            shadow: false
+        },
+
         exporting: {
             menuItemDefinitions: {
                 label: {
@@ -1031,7 +1080,6 @@ function getPenGroupChart(){
         }
     });
 }
-
 
 
 

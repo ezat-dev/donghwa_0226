@@ -190,6 +190,11 @@ public class AnalysisController {
 		
 		List<Object> pr1List = new ArrayList<Object>();
 		List<Object> pr2List = new ArrayList<Object>();
+		
+		
+		List<Object> tsList = new ArrayList<Object>();
+		List<Object> otList = new ArrayList<Object>();
+		
 
 		for(int i = 0; i < penList.size(); i++) {
 		    tdateList.add(Integer.parseInt(penList.get(i).getTdateUnix()));
@@ -349,13 +354,23 @@ public class AnalysisController {
 		    
 		    List<Object> pr1 = new ArrayList<Object>();
 		    pr1.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    pr1.add(Integer.parseInt(penList.get(i).getPr1()));
+		    pr1.add(Double.parseDouble(penList.get(i).getPr1()));
 		    
 		    
 		    
 		    List<Object> pr2 = new ArrayList<Object>();
 		    pr2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    pr2.add(Integer.parseInt(penList.get(i).getPr2()));
+		    pr2.add(Double.parseDouble(penList.get(i).getPr2()));
+		    
+		    
+		    
+		    List<Object> ts = new ArrayList<Object>();
+		    ts.add(Integer.parseInt(penList.get(i).getTdateUnix()));
+		    ts.add(Integer.parseInt(penList.get(i).getTs()));
+		    
+		    List<Object> ot = new ArrayList<Object>();
+		    ot.add(Integer.parseInt(penList.get(i).getTdateUnix()));
+		    ot.add(Integer.parseInt(penList.get(i).getOt()));
 		    
 		    
 		    // 리스트에 추가
@@ -400,6 +415,9 @@ public class AnalysisController {
 		    
 		    pr1List.add(pr1);
 		    pr2List.add(pr2);
+		    
+		    tsList.add(ts);
+		    otList.add(ot);
 		}
 
 		Map<String, Object> c1Map = new HashMap<String, Object>();
@@ -444,7 +462,8 @@ public class AnalysisController {
 		
 		Map<String, Object> pr1Map = new HashMap<String, Object>();
 		Map<String, Object> pr2Map = new HashMap<String, Object>();
-
+		Map<String, Object> tsMap = new HashMap<String, Object>();
+		Map<String, Object> otMap = new HashMap<String, Object>();
 
 		
 		c1Map.put("name", "Zone 1.1");
@@ -650,8 +669,24 @@ public class AnalysisController {
 		pr2Map.put("color", "#BA55D3");
 		pr2Map.put("yAxis", 3);
 		pr2Map.put("data", pr2List);
+		
+		
+		
 
+		tsMap.put("name", "force sensor sum");
+		tsMap.put("color", "darkviolet");
+		tsMap.put("yAxis", 0);
+		tsMap.put("data", tsList);
 
+		
+
+		otMap.put("name", "oil pump temp");
+		otMap.put("color", "mediumspringgreen");
+		otMap.put("yAxis", 0);
+		otMap.put("data", otList);
+		
+		
+		
 		
 		rtnMap.put("tdate", tdateList);
 		rtnMap.put("c1", c1Map);
@@ -696,6 +731,9 @@ public class AnalysisController {
 		
 		rtnMap.put("pr1", pr1Map);
 		rtnMap.put("pr2", pr2Map);
+		
+		rtnMap.put("ts", tsMap);
+		rtnMap.put("ot", otMap);
 
 		if(!"asdasd".equals(pen_group_name)) {
 			rtnMap.put("groupConcat", penGroupNameConcat);

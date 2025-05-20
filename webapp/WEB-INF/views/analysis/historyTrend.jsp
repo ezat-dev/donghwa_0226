@@ -218,6 +218,10 @@
     	<div id="cursor1_C9Data" class="cursor1ToolData" style="top:100px;"></div>
     	<div id="cursor1_C11Data" class="cursor1ToolData" style="top:120px;"></div>
     	<div id="cursor1_C13Data" class="cursor1ToolData" style="top:140px;"></div>
+    	
+    	<div id="cursor1_TSData" class="cursor1ToolData" style="top:160px;"></div>
+    	<div id="cursor1_OT3Data" class="cursor1ToolData" style="top:180px;"></div>
+
     </div>
     
     <!-- 커서2를 선택했을 때의 값 -->
@@ -239,6 +243,9 @@
     	<div id="cursor2_C9Data" class="cursor2ToolData" style="top:100px;"></div>
     	<div id="cursor2_C11Data" class="cursor2ToolData" style="top:120px;"></div>
     	<div id="cursor2_C13Data" class="cursor2ToolData" style="top:140px;"></div>
+    	
+    	    	<div id="cursor1_TSData" class="cursor1ToolData" style="top:160px;"></div>
+    	<div id="cursor1_OT3Data" class="cursor1ToolData" style="top:180px;"></div>
     </div>
 </div>
 
@@ -410,6 +417,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		var onoverCS15 = $("#onoverCS15").text();
 		var onoverCS16 = $("#onoverCS16").text();
 
+		var onoverPR1 = $("#onoverPR1").text();
+		var onoverPR2 = $("#onoverPR2").text();
+		var onoverTS = $("#onoverTS").text();
+		var onoverOT = $("#onoverOT").text();
+		
+
 		$("#cursor1_timeData").text(onoverTime);
 		$("#cursor1_C1Data").text(onoverC1);
 		$("#cursor1_C2Data").text(onoverC2);
@@ -449,6 +462,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		$("#cursor1_CS14Data").text(onoverCS14);
 		$("#cursor1_CS15Data").text(onoverCS15);
 		$("#cursor1_CS16Data").text(onoverCS16);
+
+		$("#cursor1_PR1Data").text(onoverPR1);
+		$("#cursor1_PR2Data").text(onoverPR2);
+		$("#cursor1_TSData").text(onoverTS);
+		$("#cursor1_OTData").text(onoverOT);
 
 	});
 	
@@ -496,6 +514,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		var onoverCS15 = $("#onoverCS15").text();
 		var onoverCS16 = $("#onoverCS16").text();
 
+
+		var onoverPR1 = $("#onoverPR1").text();
+		var onoverPR2 = $("#onoverPR2").text();
+		var onoverTS = $("#onoverTS").text();
+		var onoverOT = $("#onoverOT").text();
+
 		$("#cursor1_timeData").text(onoverTime);
 		$("#cursor1_C1Data").text(onoverC1);
 		$("#cursor1_C2Data").text(onoverC2);
@@ -535,6 +559,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		$("#cursor1_CS14Data").text(onoverCS14);
 		$("#cursor1_CS15Data").text(onoverCS15);
 		$("#cursor1_CS16Data").text(onoverCS16);
+
+		$("#cursor1_PR1Data").text(onoverPR1);
+		$("#cursor1_PR2Data").text(onoverPR2);
+		$("#cursor1_TSData").text(onoverTS);
+		$("#cursor1_OTData").text(onoverOT);
 	});
 	
 //함수
@@ -666,8 +695,8 @@ function getPenGroupChartData() {
             var dataKeys = Object.keys(data);
             var dataValues = Object.values(data);
             
-            console.log("=== 전체 데이터 키 ===", dataKeys);
-            console.log("=== 전체 데이터 값 ===", dataValues);
+         //   console.log("=== 전체 데이터 키 ===", dataKeys);
+         //   console.log("=== 전체 데이터 값 ===", dataValues);
 
             
             var groupConcatSplit = data.groupConcat.split(",");
@@ -712,6 +741,7 @@ const categories = [
 const formattedCategories = categories.map(item => parseFloat(item));
 
 function getPenGroupChart(){
+	console.log(seriesArray);
     const chart = Highcharts.chart('container', {
         chart: {
             type: "spline",
@@ -729,7 +759,7 @@ function getPenGroupChart(){
         yAxis: [
             {
                 min:0,
-                max:600,
+                max:1500,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -746,8 +776,8 @@ function getPenGroupChart(){
                 }
             },
             {
-                min:-100,
-                max:500,
+                min:0,
+                max:12000,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -764,8 +794,8 @@ function getPenGroupChart(){
                 }
             },
             {
-                min:-100,
-                max:25000,
+                min:-50,
+                max:500,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -782,15 +812,15 @@ function getPenGroupChart(){
                 }
             },
             {
-            	min: 0,
-            	max: 10,
+            	min: -1000,
+            	max: 800,
                 crosshair: {
                     width: 1,
                     color: '#5D5D5D',
                     zIndex: 5
                 },
                 title: {
-                    text: 'Pressure[mbar]'
+                    text: 'Pressure'
                 },
                 labels: {
               /*   	format: '{value} (℃)', */
@@ -853,9 +883,19 @@ function getPenGroupChart(){
             },
             formatter: function() {
                 // 타임스탬프 세팅
-                $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M', this.x));
+             $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M:%S', this.x));
                 var s = '<b style="font-size:14pt;">' + cursorSetDateTime(this.x) + '</b><br/>';
 
+
+                const oneDecimalNames = [
+                    "Current Load",
+                    "force-sensor-1", "force-sensor-2", "force-sensor-3", "force-sensor-4",
+                    "force-sensor-5", "force-sensor-6", "force-sensor-7", "force-sensor-8",
+                    "force-sensor-9", "force-sensor-10", "force-sensor-11", "force-sensor-12",
+                    "force sensor sum"
+                ];
+
+                
                 this.points.forEach(function(point) {
                     var point_y = point.y;
                     var point_name = point.series.name;
@@ -864,10 +904,14 @@ function getPenGroupChart(){
                     if (point_name === 'Front Press' || point_name === 'Rear Press') {
                         point_y = (point.y / 100).toFixed(2);
                     }
-                    // 기존 CP 계열은 소수점 셋째자리
+                    // CP 계열은 소수점 셋째자리
                     else if (point_name.indexOf("CP") !== -1) {
                         point_y = point.y.toFixed(3);
                     }
+                    // 14개 force 센서 관련은 소수점 첫째자리
+                   else if (oneDecimalNames.includes(point_name)) {
+					    point_y = (point.y / 10).toFixed(1);
+					}
 
                     // 툴팁 하단 DOM 업데이트 (기존 코드 유지)
                     $("#value" + (point.series.index + 1) + "_h").css("color", point.series.color);
@@ -938,18 +982,17 @@ function unix_timestamp(t) {
 }
 
 function cursorSetDateTime(t) {
-//	console.log(t);	
-
-    var date = new Date(t*1000);
+    var date = new Date(t * 1000);
     var year = date.getFullYear();
-
-    var month = paddingZero(date.getMonth()+1);
+    var month = paddingZero(date.getMonth() + 1);
     var day = paddingZero(date.getDate());
     var hour = paddingZero(date.getHours());
     var minute = paddingZero(date.getMinutes());
-    
-    return year+"-"+month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2);
+    var second = paddingZero(date.getSeconds()); // 👈 초 추가
+
+    return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
 }
+
 
 </script>
 </body>

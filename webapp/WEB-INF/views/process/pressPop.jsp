@@ -1610,8 +1610,10 @@ function c(keys, value){
 */
 function value(keys, value) {
     var finalValue;
-    
-    if (keys === "D11101" || keys === "D11102") {
+
+    if (/^D79\d{2}$/.test(keys) && parseInt(keys.slice(1)) >= 7981 && parseInt(keys.slice(1)) <= 7995) {
+        finalValue = (value / 10).toFixed(1) + " kN";  
+    } else if (keys === "D11101" || keys === "D11102") {
         finalValue = ((value / 100).toFixed(2) + " mm");
     } else if (keys === "D11105") {
         finalValue = ((value * 0.1).toFixed(1) + " kN");

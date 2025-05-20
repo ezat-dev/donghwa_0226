@@ -472,6 +472,7 @@
       <div class="table-cell D-7800"> mbar</div>
       <div class="Pressure_2">Diffusion Pump Vacuum</div>
       <div class="table-cell D-7810"> mabar</div>	
+
     </div>
 
     <div class="table table4" onclick="popupClick('/donghwa/process/pressPop', 940, 490, 450, 160);">

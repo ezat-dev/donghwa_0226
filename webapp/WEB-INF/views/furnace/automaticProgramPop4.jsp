@@ -138,13 +138,14 @@
                     var d = data[key];
 
                     if (d[keys].action == "v") {
+                    	console.log("ㅠ() 호출: keys =", keys, ", value =", d[keys].value);
                         v(keys, d[keys].value);
                     } else if (d[keys].action == "c") {
                         c(keys, d[keys].value);
                     } else if (d[keys].action == "b") {
                         b(keys, d[keys].value);
                     } else if (d[keys].action == "asd") {
-                        console.log("asd() 호출: keys =", keys, ", value =", d[keys].value);
+                       // console.log("asd() 호출: keys =", keys, ", value =", d[keys].value);
                         asd(keys, d[keys].value);
                     } else if (d[keys].action == "value") {
                         value(keys, d[keys].value);
@@ -156,37 +157,59 @@
 }
 
    function v(keys, value) {
-	    if (keys !== "Start_bt_M8001") {
+	    // ─── 0. reset 키 처리 ───
+	    if (keys === "reset") {
+	        const $resetBox = $("._3");
+	        if (value === true) {
+	            $resetBox.css("background-color", "#ccffcc");
+	        } else if (value === false) {
+	            $resetBox.css("background-color", "");
+	        }
+	    }
+
+	    // ─── 1. start_bt_M8001이 true일 때만 _12 클래스에 초록색 5초간 표시 ───
+	    if (keys === "start_bt_M8001" && value === true) {
+	        const $box = $("._12");
+	        $box.css("background-color", "#ccffcc");
+	        setTimeout(() => {
+	            $box.css("background-color", "");
+	        }, 5000);
+	    }
+
+	    // ─── 2. 기존 기능 ───
+	    if (keys !== "start_bt_M8001") {
 	        let element = $("." + keys);
 
 	        if (value === true) {
-	            element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
-	                   .css("cursor", "pointer")
-	                   .off("click") // 기존 클릭 이벤트 제거
-	                   .on("click", function () {
-	                       digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
-	                   });
-	        } else if (value === false) { // 원하는 조건에 맞게 변경
-	            element.attr("onclick", "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
-	                   .css("cursor", "pointer")
-	                   .off("click")
-	                   .on("click", function () {
-	                       digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
-	                   });
+	            element
+	                .attr("onclick",
+	                      "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	                .css("cursor", "pointer")
+	                .off("click")
+	                .on("click", function () {
+	                    digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
+	                });
+	        } else if (value === false) {
+	            element
+	                .attr("onclick",
+	                      "digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', '" + keys + "')")
+	                .css("cursor", "pointer")
+	                .off("click")
+	                .on("click", function () {
+	                    digitalSet('DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC', keys);
+	                });
 	        } else {
-	            element.removeAttr("onclick")
-	                   .css("cursor", "default")
-	                   .off("click");
+	            element
+	                .removeAttr("onclick")
+	                .css("cursor", "default")
+	                .off("click");
 	        }
 	    }
 	}
 
 	
 
-
-
-
-   function value(keys, value) {
+  /*  function value(keys, value) {
 	    // 값 표시 (단위 붙이기)
 	    if (!$("div").hasClass("anlog-popup-div-color")) {
 	        if (keys === "realTime") {
@@ -213,8 +236,33 @@
 	            .attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')")
 	            .css("cursor", "pointer");
 	    }
+	} */
+
+
+	function value(keys, value) {
+	    // 디버깅용: 들어오는 키와 값 확인
+	  
+	    // 공통 텍스트 처리(필요하면 유지)
+	    if (keys === "realTime") {
+	        $("." + keys).text(value + "분");
+	    } else if (keys === "setSeconds") {
+	        $("." + keys).text(value + "초");
+	    } else {
+	        $("." + keys).text(value);
+	    }
+	    $("." + keys).css({
+	        display: "",
+	        "text-align": "center",
+	        "font-size": "16pt",
+	        "padding-top": "5px",
+	        "align-items": "center"
+	    });
+
+	    // 오직 asd-start_on_M8005=true 일 때만 연두 배경
+
 	}
 
+	
 
   var popup;
   
@@ -256,7 +304,7 @@
     }
 
     function asd(keys, value) {
-    	console.log("asd() 호출: keys =", keys, ", value =", value); 
+    	//console.log("asd() 호출: keys =", keys, ", value =", value); 
         if (value == true) {
             $("." + keys).css({
                 "color": "#000000",

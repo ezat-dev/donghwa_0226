@@ -45,9 +45,11 @@ public class Temper {
 	private String cs15;
 	private String cs16;
 	
-	private String pr1;
-	
+	private String pr1;	
 	private String pr2;
+	private String ts;
+	private String ot;
+	private String st;
 
 	private String sdateTime;
 	private String edateTime;
@@ -75,6 +77,36 @@ public class Temper {
 	
 	
 	
+	public String getSt() {
+		return st;
+	}
+
+
+	public void setSt(String st) {
+		this.st = st;
+	}
+
+
+	public String getTs() {
+		return ts;
+	}
+
+
+	public void setTs(String ts) {
+		this.ts = ts;
+	}
+
+
+	public String getOt() {
+		return ot;
+	}
+
+
+	public void setOt(String ot) {
+		this.ot = ot;
+	}
+
+
 	public String getPr1() {
 		return pr1;
 	}

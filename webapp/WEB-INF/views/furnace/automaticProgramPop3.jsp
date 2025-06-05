@@ -60,13 +60,13 @@
   <div class="automatic-program">Automatic program</div>
   <img class="close2" src="close1.png" />
   <div class="automatic"></div>
-  <div class="automatic-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop4', 508, 392, 730, 235);">Automatic</div>
+  <div class="automatic-text"onclick="movePage('/donghwa/furnace/automaticProgramPop4')">Automatic</div>
   <div class="programmer"></div>
-  <div class="programmer-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop2', 508, 392, 730, 235);">Programmer</div>
+  <div class="programmer-text" onclick="movePage('/donghwa/furnace/automaticProgramPop2')">Programmer</div>
   <div class="start-conditions"></div>
-  <div class="startconditions-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop3', 508, 392, 730, 235);">Startconditions</div>
+  <div class="startconditions-text" onclick="movePage('/donghwa/furnace/automaticProgramPop3')">Startconditions</div>
   <div class="batch-data"></div>
-  <div class="batch-data-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop1', 508, 392, 730, 235);">Batch data</div>
+  <div class="batch-data-text" onclick="movePage('/donghwa/furnace/automaticProgramPop1')">Batch data</div>
   <div class="fast-stop"></div>
   <div class="_1"></div>
   <div class="fur-closed"></div>
@@ -199,7 +199,10 @@
 
 
 
- 
+    function movePage(url) {
+        window.location.href = url;
+        // 또는 window.location.assign(url);
+    }
 
 
 

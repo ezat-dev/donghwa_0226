@@ -61,9 +61,11 @@
     <div class="fur-pressure-box-1"></div>
     <div class="pis-6-x-13-5">Furnace Vacuum</div>
     <div class="fur-pressure-val-1 D-7800"></div>
+        <div class="fur-pressure-val-1 D-7802"style="display: none;"></div>
     <div class="fur-pressure-box-2"></div>
     <div class="psp-6">Diffusion Vacuum</div>
     <div class="fur-pressure-val-2 D-7810"></div>
+        <div class="fur-pressure-val-2 D-7812"style="display: none;"></div>
     <div class="rel"></div>
     <div class="rel-box-1"></div>
     <div class="furnace-pressure-rel">Furnace pressure rel.</div>

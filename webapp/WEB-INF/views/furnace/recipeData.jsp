@@ -25,18 +25,23 @@ body {
   z-index: 0;
 }
 
-.imgg{
-    left: 1000px;
-    z-index: 99;
-    bottom: 83px;
+.imgg {
     position: absolute;
-    height: 101px;
+    left: 1000px;
+    bottom: 103px;
+    z-index: 99;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.imgg .title {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 </style>
 
 
 <body style="background-color: #CCCCCC;">
-      <img class="imgg" src="/donghwa/css/furnace/img/image-1.png" />
+    <!--   <img class="imgg" src="/donghwa/css/furnace/img/image-1.png" /> -->
 
   <div class="group-1">
     <div class="recipe-main"></div>
@@ -1307,13 +1312,14 @@ body {
       <div class="delete-segment2">Delete Segment</div>
       
     </div>
-   <!--  <div class="_0-program-end">0 - Program end</div>
-    <div class="_3-cooling-vacuum">3 - Cooling vacuum</div>
-    <div class="_1-heating-vacuum">1 - Heating vacuum</div>
-    <div class="_2-heating-gas-stationary">2 - Heating vacuum with about bonding</div>
-    <div class="_4-cooling-gas-stationary">4 - Cooling gas stationary</div>
-    <div class="process-step2">Process step</div> -->
+    
+<div class="imgg">
+  <div class="title">Process Step</div>
+  <div>
+    (0) Program end(프로그램 종료), (1) Heating vacuum(진공가열),<br>
+    (2) Auto Bonding(자동접합),    (3) Cooling vacuum(진공 냉각), (4) Cooling gas stationary(가스냉각)
   </div>
+    </div>
   </div>
   
   
@@ -1528,6 +1534,7 @@ for (let setIndex = 0; setIndex < setCount; setIndex++) {
 			   break;
 		   }
 	   }
+	
 	   
 	   sendDatabase(dataArr);
    });
@@ -1602,7 +1609,7 @@ function validateNumberInput(event) {
 //레시피값 PLC 전송
 function sendPlc(data) {
 
-	console.log(data);
+	//console.log(data);
 	
     $.ajax({
         url: "/donghwa/furnace/recipe/plcWrite",

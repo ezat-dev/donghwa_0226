@@ -181,13 +181,14 @@
     <div class="container">
         <!-- 첫 번째 줄 (3개) -->
         <div class="panel">
-            <div class="panel-title">High Vacuum Pressure Set</div>
+            <div class="panel-title">Diffusion Pump Vacuum </div>
             <div class="panel-content">
                 <div class="sub-title">Furnace Vacuum</div>
                 <table class="table">
                     <tr><td>Booster Set</td><td class="R1000V0"></td></tr>
                     <tr><td>Diffusion Set</td><td class="R1005V0"></td></tr>
                     <tr><td>Complete Set</td><td class="R1010V0"></td></tr>
+                    <tr><td>Abnormal Set</td><td class="R1010V0"></td></tr>
                 </table>
             </div>
         </div>
@@ -217,10 +218,11 @@
         <div class="panel">
             <div class="panel-title">Evacuate High Pressure Set</div>
             <div class="panel-content">
-                <div class="sub-title">Diffusion Pump Vacuum</div>
+                <div class="sub-title">High Vacuum Pressure Set</div>
                 <table class="table">
                     <tr><td>Booster Set</td><td></td></tr>
                     <tr><td>High Set</td><td></td></tr>
+                    <tr><td>Abnormal Set</td><td></td></tr>
                 </table>
             </div>
         </div>
@@ -272,6 +274,17 @@
 		    
 		    <div class="R1100" ></div>
 		    <div class="R1105"></div>
+		    
+		    
+		    <div class="R1015V"></div>
+		    <div class="R1017"></div>
+		    
+		    
+		    <div class="R1060V"></div>
+		    <div class="R1062"></div>
+		    
+		    
+		    
 	
 
 

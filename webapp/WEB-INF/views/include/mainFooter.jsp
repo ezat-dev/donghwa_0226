@@ -190,13 +190,13 @@
 	    left: 2150px;
 	    font-weight: bold;
 	}
-	.sts {
-	    position: absolute;
-	    top: 28px;
-	    left: 2070px;
-	    font-weight: bold;
-	    font-size:12px;
-	}
+.sts {
+    position: absolute;
+    top: 9px;
+    left: 2160px;
+    font-weight: bold;
+    font-size: 12px;
+}
 
 
     </style>
@@ -211,11 +211,19 @@
     </div>
     <div class="section">
         <p><strong>Segment number:</strong> <span class="segmentNumber D-7948">NULL</span></p>
-        <p><strong>Seg.remaining time:</strong> <span class="segRemainingTime D-7950">NULL</span></p>
-        <p><strong>Prg.remaining time:</strong> <span class="prgRemainingTime">NULL</span></p>
+        <p><strong>Seg.rem time:</strong> <span class="segRemainingTime D-7950">NULL</span></p>
+        <p><strong>Prg.rem time:</strong> <span class="prgRemainingTime D-7952">NULL</span></p>
     </div>
     <div class="buttons">
-        <div class="button bt_pause"><img src="/donghwa/css/furnace/img/pause3.png" alt="Stop"></div>
+    <div class="button bt_pause M8013" style="background-color: green;"><img src="/donghwa/css/furnace/img/start3.png" alt="진행중"></div>
+	<div class="button bt_pause M8014" style="background-color: #5A6D8A;"><img src="/donghwa/css/furnace/img/pause3.png" alt="정지"></div>
+	<div class="button bt_pause M8015" style="background-color: #5A6D8A;"><img src="/donghwa/css/furnace/img/stop3.png" alt="일시정지"></div> 
+	<div class="button bt_pause M8016" style="background-color: orange;"><img src="/donghwa/css/furnace/img/repair.png" alt="복구중"></div> 
+	<div class="button bt_pause M8017" style="background-color: #6D4600;"><img src="/donghwa/css/furnace/img/repair.png" alt="복구 일시정지"></div> 
+
+        
+        
+        
         <div class="button bt_fire lamp-8030"><img src="/donghwa/css/furnace/img/fire3.png" alt="Warning"></div>
         <div class="button bt_man lamp-8031"><img src="/donghwa/css/furnace/img/danger3.png" alt="Alarm"></div>
         <div class="button bt_death lamp-8032"><img src="/donghwa/css/furnace/img/death3.png" alt="Info"></div>
@@ -238,17 +246,27 @@
 	
 	    <p><strong>Status 2:</strong> <span class="status2"></span></p>
 	
-	    <div class="ST2-M8051 st2">MANUAL LEAK TEST (REPEAT 1ST)</div>
-	    <div class="ST2-M8052 st2">MANUAL LEAK TEST (REPEAT 2ND) </div>       
-	    <div class="ST2-M8053 st2">LEAK TEST OK </div>       
-	    <div class="ST2-M8054 st2">LEAK TEST FAIL</div>     
-	    <div class="ST2-M8138 st2">MANUAL LEAKTEST LAMP </div>
 	
+	  <div class="ST2-M8049 st2">-</div>
+	  <div class="ST2-M8050 st2">Manual leak test</div>
+	    <div class="ST2-M8051 st2">Manual leak test (repeat 1st)</div>
+	    <div class="ST2-M8052 st2">Manual leak test (repeat 2nd) </div>       
+	    <div class="ST2-M8053 st2">Leak test OK </div>       
+	    <div class="ST2-M8054 st2">LEAK TEST FAIL</div>     
+	 
+	  <div class="ST2-M8055 st2">Hydraulic Unit OFF</div>
+	    <div class="ST2-M8056 st2">Press capacity control</div>
+	      <div class="ST2-M8057 st2">Press position control</div>
+	       <div class="ST2-M8058 st2">Auto Bonding control</div>
 	    <p><strong>Status 3:</strong> <span class="status3"></span></p>
 	
-	    <div class="ST3-M8060 st3">Ram in upper position </div>       
-	    <div class="ST3-M8061 st3">pressing loop </div>       
-	    <div class="ST3-M8062 st3">auto bonding</div>      
+	    <div class="ST3-M8060 st3">- </div>       
+	    <div class="ST3-M8061 st3">RAM in upper position </div>       
+	    <div class="ST3-M8062 st3">Hold</div>      
+	    
+	  	<div class="ST3-M8063 st3">SAV control </div>       
+	    <div class="ST3-M8064 st3">Pressing loop</div>    
+	    <div class="ST3-M8065 st3">Relieve -z control</div>   
 	</div>
 
 
@@ -272,7 +290,7 @@ function openPopup2() {
 
     function fetchAlarmData() {
         $.ajax({
-            url: "/donghwa/analysis/alarmHistory/alarmlistOverivew", 
+            url: "/donghwa/analysis/alarmData", 
             method: "POST",
             dataType: "json",
             success: function(data) {
@@ -285,10 +303,10 @@ function openPopup2() {
         });
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
         const pauseButton = document.querySelector('.bt_pause');
 
-        if (pauseButton) {
+/*         if (pauseButton) {
             pauseButton.addEventListener('click', function () {
                 window.open(
                     "/donghwa/furnace/automaticProgramPop2",  
@@ -298,14 +316,14 @@ function openPopup2() {
             });
         } else {
             console.error("bt_pause 요소를 찾을 수 없습니다.");
-        }
+        } */
 
         // 페이지 로드 시 한 번 실행
         fetchAlarmData();
 
         // 10초마다 데이터 갱신
         setInterval(fetchAlarmData, 10000);
-    });
+    }); 
 
     var tableData2 = []; 
 

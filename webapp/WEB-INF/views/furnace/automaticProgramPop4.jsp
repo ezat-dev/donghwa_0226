@@ -76,14 +76,20 @@
     <div class="auto-pro-main"></div>
     <div class="automatic-program">Automatic program</div>
 
-    <div class="automatic"></div>
-    <div class="automatic-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop4', 508, 392, 730, 235);">Automatic</div>
-    <div class="programmer"></div>
-    <div class="programmer-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop2', 508, 392, 730, 235);">Programmer</div>
-    <div class="start-conditions"></div>
-    <div class="startconditions-text"onclick="popupClick('/donghwa/furnace/automaticProgramPop3', 508, 392, 730, 235);">Startconditions</div>
-    <div class="batch-data"></div>
-    <div class="batch-data-text" onclick="popupClick('/donghwa/furnace/automaticProgramPop1', 508, 392, 730, 235);">Batch data</div>
+  <img class="close2" src="close1.png" />
+  <div class="automatic"></div>
+  <div class="automatic-text"onclick="movePage('/donghwa/furnace/automaticProgramPop4')">Automatic</div>
+  <div class="programmer"></div>
+  <div class="programmer-text" onclick="movePage('/donghwa/furnace/automaticProgramPop2')">Programmer</div>
+  <div class="start-conditions"></div>
+  <div class="startconditions-text" onclick="movePage('/donghwa/furnace/automaticProgramPop3')">Startconditions</div>
+  <div class="batch-data"></div>
+  <div class="batch-data-text" onclick="movePage('/donghwa/furnace/automaticProgramPop1')">Batch data</div>
+  
+    
+    
+    
+    
     <div class="program-number-box"></div>
     <div class="program-number-text">Program Number</div>
     <div class="program-name-box"></div>
@@ -138,7 +144,7 @@
                     var d = data[key];
 
                     if (d[keys].action == "v") {
-                    	console.log("ㅠ() 호출: keys =", keys, ", value =", d[keys].value);
+                    	//console.log("v() 호출: keys =", keys, ", value =", d[keys].value);
                         v(keys, d[keys].value);
                     } else if (d[keys].action == "c") {
                         c(keys, d[keys].value);
@@ -148,6 +154,7 @@
                        // console.log("asd() 호출: keys =", keys, ", value =", d[keys].value);
                         asd(keys, d[keys].value);
                     } else if (d[keys].action == "value") {
+                    	console.log("벨류() 호출: keys =", keys, ", value =", d[keys].value);
                         value(keys, d[keys].value);
                     }
                 }
@@ -204,12 +211,13 @@
 	                .css("cursor", "default")
 	                .off("click");
 	        }
+	        
 	    }
 	}
 
 	
 
-  /*  function value(keys, value) {
+   function value(keys, value) {
 	    // 값 표시 (단위 붙이기)
 	    if (!$("div").hasClass("anlog-popup-div-color")) {
 	        if (keys === "realTime") {
@@ -236,9 +244,8 @@
 	            .attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')")
 	            .css("cursor", "pointer");
 	    }
-	} */
-
-
+	} 
+/* 
 	function value(keys, value) {
 	    // 디버깅용: 들어오는 키와 값 확인
 	  
@@ -260,7 +267,7 @@
 
 	    // 오직 asd-start_on_M8005=true 일 때만 연두 배경
 
-	}
+	} */
 
 	
 
@@ -327,7 +334,10 @@
     }
 
 
-
+    function movePage(url) {
+        window.location.href = url;
+        // 또는 window.location.assign(url);
+    }
 
 
   </script>

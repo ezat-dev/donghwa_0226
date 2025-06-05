@@ -310,7 +310,7 @@ $("#pen-list").on("change", function(e) {
             "pr2": "diffusion-pump",
             "ts": "force-sensor-sum",
             "ot": "oil-pump-temp",
-            "st": "set temp"
+            "st": "set-temp"
     };
 
     // 매핑된 값이 있으면 사용, 없으면 그대로 유지
@@ -815,16 +815,29 @@ function getPenGroupChartData() {
         type: "post",
         dataType: "json",
         data: {
-            "sdateTime": sdateTime,
-            "edateTime": edateTime,
+            "sdateTime": sdate,
+            "edateTime": edate,
             "pen_group_name": selectedGroup
         },
         success: function (result) {
+            
+        
             var data = result.data;
-            var groupConcatSplit = data.groupConcat.split(",");
+        //    console.log(" result.data:", data);
 
             var dataKeys = Object.keys(data);
             var dataValues = Object.values(data);
+            
+         //   console.log("=== 전체 데이터 키 ===", dataKeys);
+         //   console.log("=== 전체 데이터 값 ===", dataValues);
+
+            
+            var groupConcatSplit = data.groupConcat.split(",");
+          //  console.log("groupConcatSplit:", groupConcatSplit);
+            var dataKeys = Object.keys(data);
+            var dataValues = Object.values(data);
+
+            
 
             var idx = 0;
             var idx2 = 0;
@@ -855,6 +868,11 @@ function getPenGroupChartData() {
     });
 }
 
+const categories = [
+    '1e+8', '1e+6', '10000', '100', '1', '0.01', '0.001', '1e-8', '1e-10'
+];
+const formattedCategories = categories.map(item => parseFloat(item));
+
 function getPenGroupChart(){
 	console.log(seriesArray);
     const chart = Highcharts.chart('container', {
@@ -867,6 +885,7 @@ function getPenGroupChart(){
             height:720,  // 차트 높이 설정
             width: 1490   // 차트 너비 설정
         },
+        
         time: {
             timezone: "Asia/Seoul",
             useUTC: false
@@ -874,7 +893,7 @@ function getPenGroupChart(){
         yAxis: [
             {
                 min:0,
-                max:1300,
+                max:1500,
                 crosshair: {
                     width: 3,
                     color: '#5D5D5D',
@@ -927,7 +946,7 @@ function getPenGroupChart(){
                 }
             },
             {
-            	min: -1000,
+            	min: 0,
             	max: 800,
                 crosshair: {
                     width: 1,
@@ -979,7 +998,7 @@ function getPenGroupChart(){
         responsive: {
             rules: [{
                 condition: {
-                    maxWidth: 1300
+                    maxWidth: 1500
                 },
                 chartOptions: {
                     legend: {
@@ -998,7 +1017,7 @@ function getPenGroupChart(){
             },
             formatter: function() {
                 // 타임스탬프 세팅
-                $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M', this.x));
+             $("#value0_v").text(Highcharts.dateFormat('%m-%d %H:%M:%S', this.x));
                 var s = '<b style="font-size:14pt;">' + cursorSetDateTime(this.x) + '</b><br/>';
 
 
@@ -1007,7 +1026,7 @@ function getPenGroupChart(){
                     "force-sensor-1", "force-sensor-2", "force-sensor-3", "force-sensor-4",
                     "force-sensor-5", "force-sensor-6", "force-sensor-7", "force-sensor-8",
                     "force-sensor-9", "force-sensor-10", "force-sensor-11", "force-sensor-12",
-                    "force sensor sum"
+                    "force sensor sum",  "set-temp",
                 ];
 
                 
@@ -1015,18 +1034,13 @@ function getPenGroupChart(){
                     var point_y = point.y;
                     var point_name = point.series.name;
 
-                    // Front Press, Rear Press 는 100으로 나누고 소수점 둘째자리까지
                     if (point_name === 'Front Press' || point_name === 'Rear Press') {
-                        point_y = (point.y / 100).toFixed(2);
-                    }
-                    // CP 계열은 소수점 셋째자리
-                    else if (point_name.indexOf("CP") !== -1) {
+                        point_y = point.y.toFixed(2);
+                    } else if (point_name.indexOf("CP") !== -1) {
                         point_y = point.y.toFixed(3);
+                    } else if (oneDecimalNames.includes(point_name)) {
+                        point_y = point.y.toFixed(1);
                     }
-                    // 14개 force 센서 관련은 소수점 첫째자리
-                   else if (oneDecimalNames.includes(point_name)) {
-					    point_y = (point.y / 10).toFixed(1);
-					}
 
                     // 툴팁 하단 DOM 업데이트 (기존 코드 유지)
                     $("#value" + (point.series.index + 1) + "_h").css("color", point.series.color);
@@ -1080,6 +1094,7 @@ function getPenGroupChart(){
         }
     });
 }
+
 
 
 

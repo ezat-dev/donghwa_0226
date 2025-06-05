@@ -191,7 +191,7 @@ public class AnalysisController {
 		List<Object> pr1List = new ArrayList<Object>();
 		List<Object> pr2List = new ArrayList<Object>();
 		
-		
+		List<Object> stList = new ArrayList<Object>();
 		List<Object> tsList = new ArrayList<Object>();
 		List<Object> otList = new ArrayList<Object>();
 		
@@ -289,67 +289,71 @@ public class AnalysisController {
 		    
 		    List<Object> cs1 = new ArrayList<Object>();
 		    cs1.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs1.add(Integer.parseInt(penList.get(i).getCs1()));
+		    cs1.add(Integer.parseInt(penList.get(i).getCs1()) * 0.1);
+
 		    
 		    List<Object> cs2 = new ArrayList<Object>();
 		    cs2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    cs2.add(Integer.parseInt(penList.get(i).getCs2()));
 		    
 		    List<Object> cs3 = new ArrayList<Object>();
-		    cs3.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs3.add(Integer.parseInt(penList.get(i).getCs3()));
+		    cs3.add(Integer.parseInt(penList.get(i).getTdateUnix()));	    
+		    double cs3Ch = Integer.parseInt(penList.get(i).getCs3()) * 0.01 ;
+		    cs3.add(cs3Ch);
 		    
 		    List<Object> cs4 = new ArrayList<Object>();
 		    cs4.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs4.add(Integer.parseInt(penList.get(i).getCs4()));
-		    
+		    double cs4Ch = Integer.parseInt(penList.get(i).getCs4()) * 0.01;
+		    cs4.add(cs4Ch);
+
 		    List<Object> cs5 = new ArrayList<Object>();
 		    cs5.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs5.add(Integer.parseInt(penList.get(i).getCs5()));
-		    
+		    cs5.add(Integer.parseInt(penList.get(i).getCs5()) * 0.1);
+
 		    List<Object> cs6 = new ArrayList<Object>();
 		    cs6.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs6.add(Integer.parseInt(penList.get(i).getCs6()));
-		    
+		    cs6.add(Integer.parseInt(penList.get(i).getCs6()) * 0.1);
+
 		    List<Object> cs7 = new ArrayList<Object>();
 		    cs7.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs7.add(Integer.parseInt(penList.get(i).getCs7()));
-		    
+		    cs7.add(Integer.parseInt(penList.get(i).getCs7()) * 0.1);
+
 		    List<Object> cs8 = new ArrayList<Object>();
 		    cs8.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs8.add(Integer.parseInt(penList.get(i).getCs8()));
-		    
+		    cs8.add(Integer.parseInt(penList.get(i).getCs8()) * 0.1);
+
 		    List<Object> cs9 = new ArrayList<Object>();
 		    cs9.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs9.add(Integer.parseInt(penList.get(i).getCs9()));
-		    
+		    cs9.add(Integer.parseInt(penList.get(i).getCs9()) * 0.1);
+
 		    List<Object> cs10 = new ArrayList<Object>();
 		    cs10.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs10.add(Integer.parseInt(penList.get(i).getCs10()));
-		    
+		    cs10.add(Integer.parseInt(penList.get(i).getCs10()) * 0.1);
+
 		    List<Object> cs11 = new ArrayList<Object>();
 		    cs11.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs11.add(Integer.parseInt(penList.get(i).getCs11()));
-		    
+		    cs11.add(Integer.parseInt(penList.get(i).getCs11()) * 0.1);
+
 		    List<Object> cs12 = new ArrayList<Object>();
 		    cs12.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs12.add(Integer.parseInt(penList.get(i).getCs12()));
-		    
+		    cs12.add(Integer.parseInt(penList.get(i).getCs12()) * 0.1);
+
 		    List<Object> cs13 = new ArrayList<Object>();
 		    cs13.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs13.add(Integer.parseInt(penList.get(i).getCs13()));
-		    
+		    cs13.add(Integer.parseInt(penList.get(i).getCs13()) * 0.1);
+
 		    List<Object> cs14 = new ArrayList<Object>();
 		    cs14.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs14.add(Integer.parseInt(penList.get(i).getCs14()));
-		    
+		    cs14.add(Integer.parseInt(penList.get(i).getCs14()) * 0.1);
+
 		    List<Object> cs15 = new ArrayList<Object>();
 		    cs15.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs15.add(Integer.parseInt(penList.get(i).getCs15()));
-		    
+		    cs15.add(Integer.parseInt(penList.get(i).getCs15()) * 0.1);
+
 		    List<Object> cs16 = new ArrayList<Object>();
 		    cs16.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    cs16.add(Integer.parseInt(penList.get(i).getCs16()));
+		    cs16.add(Integer.parseInt(penList.get(i).getCs16()) * 0.1);
+
 		    
 		    
 		    List<Object> pr1 = new ArrayList<Object>();
@@ -362,11 +366,14 @@ public class AnalysisController {
 		    pr2.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    pr2.add(Double.parseDouble(penList.get(i).getPr2()));
 		    
-		    
+		    List<Object> st = new ArrayList<Object>();
+		    st.add(Integer.parseInt(penList.get(i).getTdateUnix()));
+		    st.add(Integer.parseInt(penList.get(i).getSt()));
 		    
 		    List<Object> ts = new ArrayList<Object>();
 		    ts.add(Integer.parseInt(penList.get(i).getTdateUnix()));
-		    ts.add(Integer.parseInt(penList.get(i).getTs()));
+		    ts.add(Integer.parseInt(penList.get(i).getTs()) * 0.1);
+
 		    
 		    List<Object> ot = new ArrayList<Object>();
 		    ot.add(Integer.parseInt(penList.get(i).getTdateUnix()));
@@ -416,6 +423,9 @@ public class AnalysisController {
 		    pr1List.add(pr1);
 		    pr2List.add(pr2);
 		    
+		    
+		    stList.add(st);
+		    
 		    tsList.add(ts);
 		    otList.add(ot);
 		}
@@ -464,7 +474,7 @@ public class AnalysisController {
 		Map<String, Object> pr2Map = new HashMap<String, Object>();
 		Map<String, Object> tsMap = new HashMap<String, Object>();
 		Map<String, Object> otMap = new HashMap<String, Object>();
-
+		Map<String, Object> stMap = new HashMap<String, Object>();
 		
 		c1Map.put("name", "Zone 1.1");
 		c1Map.put("color", "#FF0000");
@@ -577,15 +587,7 @@ public class AnalysisController {
 		c22Map.put("data", c22List);
 
 		// cs1~cs16까지 색상 설정
-		cs1Map.put("name", "Current Load");
-		cs1Map.put("color", "#0000FF");
-		cs1Map.put("yAxis", 1);
-		cs1Map.put("data", cs1List);
 
-		cs2Map.put("name", "Set Load");
-		cs2Map.put("color", "#008000");
-		cs2Map.put("yAxis", 1);
-		cs2Map.put("data", cs2List);
 
 		cs3Map.put("name", "Front Press");
 		cs3Map.put("color", "#9400D3");
@@ -659,23 +661,41 @@ public class AnalysisController {
 		
 
 		pr1Map.put("name", "furnace-vacuum");
-		pr1Map.put("color", "#BA55D3");
-		pr1Map.put("yAxis", 3);
+		pr1Map.put("color", "green");
+		pr1Map.put("yAxis", 2);
 		pr1Map.put("data", pr1List);
 
 		
 
 		pr2Map.put("name", "diffusion-pump");
 		pr2Map.put("color", "#BA55D3");
-		pr2Map.put("yAxis", 3);
+		pr2Map.put("yAxis", 2);
 		pr2Map.put("data", pr2List);
 		
-		
+
+		stMap.put("name", "set-temp");
+		stMap.put("color", "pink");
+		stMap.put("yAxis", 0);
+		stMap.put("data", stList);
 		
 
+		
+		
+		
+		cs1Map.put("name", "Current Load");
+		cs1Map.put("color", "#0000FF");
+		cs1Map.put("yAxis", 1);
+		cs1Map.put("data", cs1List);
+
+		cs2Map.put("name", "Set Load");
+		cs2Map.put("color", "#008000");
+		cs2Map.put("yAxis", 1);
+		cs2Map.put("data", cs2List);
+		
+		
 		tsMap.put("name", "force sensor sum");
 		tsMap.put("color", "darkviolet");
-		tsMap.put("yAxis", 0);
+		tsMap.put("yAxis", 1);
 		tsMap.put("data", tsList);
 
 		
@@ -732,6 +752,8 @@ public class AnalysisController {
 		rtnMap.put("pr1", pr1Map);
 		rtnMap.put("pr2", pr2Map);
 		
+		
+		rtnMap.put("st", stMap);
 		rtnMap.put("ts", tsMap);
 		rtnMap.put("ot", otMap);
 

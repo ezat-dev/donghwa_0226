@@ -185,7 +185,10 @@
     }
 
 //0117 돌림
-
+function movePage(url) {
+    window.location.href = url;
+    // 또는 window.location.assign(url);
+}
 
 
   </script>

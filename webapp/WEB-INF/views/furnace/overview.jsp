@@ -532,11 +532,11 @@
     <div class="obj-line-3"></div>
     <div class="obj-line-4"></div>
     <div class="component-1">
-      <div class="pillar-rec-1"></div>
+      <div class="pillar-rec-1 M8029"></div>
       <img class="pillar-1" src="/donghwa/css/furnace/img/pillar-10.png" />
     </div>
     <div class="component-2">
-      <div class="pillar-rec-2"></div>
+      <div class="pillar-rec-2 M8029"></div>
       <img class="pillar-2" src="/donghwa/css/furnace/img/pillar-20.png" />
     </div>
     <img class="component-3 Ldclose" src="/donghwa/css/furnace/img/component-30.svg" />
@@ -734,7 +734,7 @@ function overviewListView(){
 	function handleClickStatus(event) {
 	    var classList = event.currentTarget.className.split(" ");
 
-	    console.log("클래스 목록:", classList); // 실제 클래스 목록 확인하기
+	 //   console.log("클래스 목록:", classList); // 실제 클래스 목록 확인하기
 
 	    if (classList.length < 6) {
 	        console.error("클래스 배열이 충분하지 않습니다.", classList);
@@ -808,7 +808,7 @@ function overviewListView(){
 	
 	
 	function v(keys, value) {
-		//console.log("Key:", keys, "Value:", value);
+	//	console.log("Key:", keys, "Value:", value);
 	
 	if (keys === "ball-on-60") {
 	    //console.log("Triggering styles for .ball-on-60");
@@ -845,6 +845,15 @@ function overviewListView(){
             });
         }
     }
+
+
+
+	if (keys === "M8029") {
+	    $("." + keys).css({
+	        "background-color": value === true ? "green" : "black"
+	    });
+	}
+	    
 
 	    if (keys === "manual-ck") {
 	        if (value === true) {
@@ -909,7 +918,7 @@ function overviewListView(){
 	
 	    if (keys.startsWith("ST2-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 8050 && numberPart <= 8055) {
+	        if (numberPart >= 8048 && numberPart <= 8059) {
 //	            console.log("Key:", keys, "Value:", value);
 
 	           
@@ -931,7 +940,7 @@ function overviewListView(){
 	    
 	    if (keys.startsWith("ST3-M80")) {
 	        let numberPart = parseInt(keys.substring(5));
-	        if (numberPart >= 8060 && numberPart <= 8062) {
+	        if (numberPart >= 8060 && numberPart <= 8066) {
 //	            console.log("Key:", keys, "Value:", value);
 
 	           
@@ -960,6 +969,23 @@ function overviewListView(){
 	            $("." + keys).css("visibility", "hidden");
 	        }
 	    }
+
+	  
+	 // M8013~M8017에 대한 표시/숨김 처리
+	    var targetKeys = ["M8013", "M8014", "M8015", "M8016", "M8017"];
+
+	    if (targetKeys.includes(keys)) {
+	        if (value === true) {
+	            $("." + keys).show();  // 보여줌
+	        } else {
+	            $("." + keys).hide();  // 숨김
+	        }
+	    }
+	    
+	    	
+	    
+	    	
+	    
 	    	    
 
 
@@ -1052,7 +1078,7 @@ function overviewListView(){
 	        }
 	    }
 
-	    const colorMapping = {
+	    var colorMapping = {
 	        "RedX0CC": "red",
 	        "GreenY140": "green"
 	    };
@@ -1073,6 +1099,28 @@ function overviewListView(){
 	    }
 	}
 
+
+    $(document).on('click', '.bt_pause', function () {
+        popupClick('/donghwa/furnace/automaticProgramPop2', 508, 392, 730, 235);
+    });
+
+    function popupClick(url, popupWidth, popupHeight, customLeft, customTop) {
+        const popup = window.open(
+            url,
+            "popupWindow",
+            "width=" + popupWidth +
+            ",height=" + popupHeight +
+            ",left=" + customLeft +
+            ",top=" + customTop +
+            ",menubar=no,toolbar=no,scrollbars=no,status=no,location=no,directories=no,resizable=no"
+        );
+
+        if (!popup || popup.closed || typeof popup.closed == "undefined") {
+            alert("팝업이 차단되었습니다. 팝업 차단 설정을 확인해주세요.");
+        }
+    }
+
+	
 
 	function value(keys, value) {
 	    var truncatedValue = Math.floor(value * 10) / 10;
@@ -1112,13 +1160,49 @@ function overviewListView(){
 	    else if (value === 99) {
 	        $("." + keys).text("-");
 	    }
-	    // D-7950을 시:분 형식으로 변환
+/* 	    // D-7950을 시:분 형식으로 변환
 	    else if (keys === "D-7950") {
 	        var hours = Math.floor(value / 60);  // 시간 계산
 	        var minutes = value % 60;  // 분 계산
 	        var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes); 
 	        $("." + keys).text(timeString);
+	    } */
+
+	 // D-7950을 한글 시:분:초 형식으로 변환
+	    else if (keys === "D-7950") {
+	        var totalSeconds = value;  // value가 초 단위라고 가정
+	        var hours   = Math.floor(totalSeconds / 3600);
+	        var minutes = Math.floor((totalSeconds % 3600) / 60);
+	        var seconds = totalSeconds % 60;
+
+	    
+	        var mm = minutes < 10 ? "0" + minutes : minutes;
+	        var ss = seconds < 10 ? "0" + seconds : seconds;
+
+	
+	        var timeString = hours + ": " + mm + ": " + ss + "";
+	        $("." + keys).text(timeString);
 	    }
+
+
+		 // D-7950을 한글 시:분:초 형식으로 변환
+		    else if (keys === "D-7952") {
+		        var totalSeconds = value;  // value가 초 단위라고 가정
+		        var hours   = Math.floor(totalSeconds / 3600);
+		        var minutes = Math.floor((totalSeconds % 3600) / 60);
+		        var seconds = totalSeconds % 60;
+
+		    
+		        var mm = minutes < 10 ? "0" + minutes : minutes;
+		        var ss = seconds < 10 ? "0" + seconds : seconds;
+
+		
+		        var timeString = hours + ": " + mm + ": " + ss + "";
+		        $("." + keys).text(timeString);
+		    }
+		    
+
+	    	    
 	    else if (keys === "D11013") {
 	        $(".D11013").text(truncatedValue + " kN");
 	    }

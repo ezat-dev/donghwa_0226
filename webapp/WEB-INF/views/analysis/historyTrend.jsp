@@ -809,7 +809,7 @@ function getPenGroupChart(){
                 max: 1e9,
                 minorTickInterval: 0.1,
                 title: {
-                    text: '단위 (log scale)'
+                    text: 'Torr'
                 },
                 labels: {
                     formatter: function () {

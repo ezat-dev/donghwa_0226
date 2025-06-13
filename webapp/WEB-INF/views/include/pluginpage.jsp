@@ -148,7 +148,7 @@ $(document).on("keydown", ".anlog-popup-div-color", function (e) {
         var inputValue = $(this).text().trim();
 
         // 값이 숫자이거나 음수이면서, 소수점은 1개까지 허용하고, 소수점 뒤는 최대 2자리까지 허용
-        if (!/^-?\d{1,3}(\.\d{1,2})?$/.test(inputValue)) {
+        if (!/^-?\d{1,5}(\.\d{1,2})?$/.test(inputValue)) {
             if (!alertShown) { // 알럿이 아직 안 떴다면
                 alert("올바른 값을 입력해주세요 (최대 3자리 숫자, 소수점 뒤는 최대 2자리 -입력 가능, 정수 입력시 + 제외)");
                 alertShown = true; // 알럿이 떴음을 기록

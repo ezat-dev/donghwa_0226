@@ -48,7 +48,7 @@
    
    	font-size: 16pt;
     position: absolute;
-	left: 526px;
+	left: 533px;
     top: 324px;
    }
    

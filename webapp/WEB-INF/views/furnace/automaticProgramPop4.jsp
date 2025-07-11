@@ -4,6 +4,14 @@
 <html>
    <jsp:include page="../include/commonPopup.jsp"/>
 <link rel="stylesheet" href="/donghwa/css/furnace/automaticProgramPop4.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!-- 한국어 로케일 -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+
     <jsp:include page="../include/pluginpage.jsp"/>
   
   <style>
@@ -52,20 +60,64 @@
     top: 324px;
    }
    
+   
+   
+   
+	#tx1 {
+	    font-size: 16pt;
+	    position: absolute;
+	    left: 246px;
+	    top: 288px;
+	    width: 380px;
+	    color: #ed0f0f;
+	}
+   
    .realTime{
    
    	font-size: 16pt;
     position: absolute;
-	left: 466px;
+	left: 449px;
     top: 324px;
    }
    .mins{
     font-size: 16pt;
     position: absolute;
-	left: 346px;
-    top: 329px;
+	left: 356px;
+    top: 330px;
    }
-   
+   /* 화면 하단 고정 컨테이너 */
+#minuteCalc-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 1000;
+}
+
+#minuteCalc {
+  font-size: 14pt;
+  width: 260px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+#minuteCalc:hover { border-color: #888; }
+#minuteCalc:focus {
+  outline: none;
+  border-color: #558bff;
+  box-shadow: 0 0 4px rgba(85,139,255,0.3);
+}
+
    </style>
   <title>Document</title>
 </head>
@@ -88,7 +140,7 @@
   
     
     
-    
+    <div id="tx1">*최대 32767분 입력 가능(22일 18시간)*</div>
     
     <div class="program-number-box"></div>
     <div class="program-number-text">Program Number</div>
@@ -114,10 +166,12 @@
      <div class="realTime"></div>
     <div class="setSeconds"></div>
     <div class="mins">분</div>
-    
+       <div class="setHour">시</div>
     <div class="_12 "></div>
     <div class="_22"></div>
     <div class="_3"></div>
+
+
 
    <script>
 
@@ -128,8 +182,37 @@
     $(function(){
     	overviewListView();
     	overviewInterval = setInterval("overviewListView()", 500);
-    });
 
+
+    	  $("#minuteCalc").datetimepicker({
+    		    dateFormat: "yy-mm-dd",
+    		    timeFormat: "HH:mm",
+    		    controlType: 'select',
+    		    oneLine: true,
+    		    onClose: calculateMinutesDiff,  // 선택 완료 시 호출
+    		  });
+    		});
+
+    		// 선택된 일시(dateText 예: "2025-06-13 14:30")로 분 차이를 계산
+    		function calculateMinutesDiff(dateText) {
+    		  if (!dateText) return;
+
+    		  // ISO8601 형식으로 바꿔서 파싱 (" " → "T")
+    		  const dt = new Date(dateText.replace(" ", "T"));
+    		  if (isNaN(dt)) {
+    		    $("#minuteCalc").val("잘못된 일시");
+    		    return;
+    		  }
+
+    		  const now = new Date();
+    		  const diffMs = now - dt;
+    		  const diffMin = Math.floor(diffMs / 60000);
+
+    		  $("#minuteCalc").val(diffMin < 0 ? 0 : diffMin);
+    		}
+
+
+    		
   //OPC값 알람 조회
    function overviewListView() {
     $.ajax({
@@ -154,7 +237,7 @@
                        // console.log("asd() 호출: keys =", keys, ", value =", d[keys].value);
                         asd(keys, d[keys].value);
                     } else if (d[keys].action == "value") {
-                    	console.log("벨류() 호출: keys =", keys, ", value =", d[keys].value);
+                    	//console.log("벨류() 호출: keys =", keys, ", value =", d[keys].value);
                         value(keys, d[keys].value);
                     }
                 }

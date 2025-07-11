@@ -11,14 +11,15 @@
        <jsp:include page="../include/commonPopup.jsp"/>
    
  <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0;
-        min-height: 100vh;
-        flex-direction: column;
-    }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
     .container {
         display: flex;
@@ -127,24 +128,25 @@
     }
 
     
-    .R1000V, .R1002, .R1005V, .R1007, 
+	.R1000V, .R1002, .R1005V, .R1007, 
 	.R1010V, .R1012, .R1050V, .R1052, 
-	.R1055V, .R1057, .R1100, .R1105 {
+	.R1055V, .R1057, .R1100, .R1105, .R1015, .R1017, .R1060, .R1062 {
 	    position: absolute;
 	}
+
 	
-	.E1, .E2, .E3, .E4, .E5 {
+	.E1, .E2, .E3, .E4, .E5,.E6,.E7 {
 	    position: absolute;
 	    font-size: 20px;
 	}
-	
-	.E3 { bottom: 733px; right: 1497px; }
 	.E1 { bottom: 778px; right: 1497px; }
+	.E3 { bottom: 733px; right: 1497px; }
 	.E5 { bottom: 688px; right: 1497px; }
-	
+	.E6 { bottom: 645px; right: 1497px; }
 	
 	.E2 { bottom: 322px; right: 1497px; }
-	.E4 { bottom: 277px; right: 1497px; }
+	.E4 { bottom: 277px; right: 1497px; }	
+	.E7 { bottom: 232px; right: 1497px; }
 	
 	
 
@@ -155,19 +157,25 @@
 	
 
 	.R1000V { bottom: 775px; right: 1600px; }
-	.R1002 { bottom: 775px; right: 1533px; }
+	.R1002  { bottom: 775px; right: 1533px; }
 	
 	.R1005V { bottom: 730px; right: 1600px; }
-	.R1007 { bottom: 730px; right: 1533px; }
+	.R1007  { bottom: 730px; right: 1533px; }
 	
 	.R1010V { bottom: 685px; right: 1600px; }
-	.R1012 { bottom: 685px; right: 1533px; }
+	.R1012  { bottom: 685px; right: 1533px; }
+	
+	.R1015V { bottom: 640px; right: 1600px; }
+	.R1017  { bottom: 640px; right: 1533px; }
 	
 	.R1050V { bottom: 320px; right: 1600px; }
-	.R1052 { bottom: 320px; right: 1533px; }
+	.R1052  { bottom: 320px; right: 1533px; }
 	
 	.R1055V { bottom: 275px; right: 1600px; }
-	.R1057 { bottom: 275px; right: 1533px; }
+	.R1057  { bottom: 275px; right: 1533px; }
+	
+	.R1060V { bottom: 230px; right: 1600px; }
+	.R1062  { bottom: 230px; right: 1533px; }
 	
 	.R1100 { bottom: 830px; right: 340px; }
 	.R1105 { bottom: 785px; right: 340px; }
@@ -251,6 +259,9 @@
 			<div class="E3">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
 			<div class="E4">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
 			<div class="E5">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
+			
+			<div class="E6">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
+			<div class="E7">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Torr</div>
 	
 		    <div class="R1000V"></div>
 		    <div class="R1002"></div>
@@ -261,7 +272,10 @@
 		    <div class="R1010V"></div>
 		    <div class="R1012"></div>
 		   
-		   
+		   		    
+		    <div class="R1015V" style="position: absolute;"></div>
+		    <div class="R1017" style="position: absolute;"></div>
+		    
 		   
 		    <div class="R1050V"></div>
 		    <div class="R1052"></div>
@@ -275,13 +289,11 @@
 		    <div class="R1100" ></div>
 		    <div class="R1105"></div>
 		    
+
 		    
-		    <div class="R1015V"></div>
-		    <div class="R1017"></div>
-		    
-		    
-		    <div class="R1060V"></div>
-		    <div class="R1062"></div>
+			<div class="R1060V" style="position: absolute;"></div>
+			<div class="R1062" style="position: absolute;"></div>
+
 		    
 		    
 		    

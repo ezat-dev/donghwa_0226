@@ -247,24 +247,28 @@
 }
 
    function v(keys, value) {
-	    // ─── 0. reset 키 처리 ───
-	    if (keys === "reset") {
-	        const $resetBox = $("._3");
-	        if (value === true) {
-	            $resetBox.css("background-color", "#ccffcc");
-	        } else if (value === false) {
-	            $resetBox.css("background-color", "");
-	        }
-	    }
+	   if (keys === "reset") {
+		    //console.log("[reset] key detected, value:", value);
+		    if (value === true || value === "true" || value === 1 || value === "1") {
+		     //   console.log("[reset] value is true (or 1), apply green background");
+		        $("._3").css("background-color", "green");
+
+		        setTimeout(function () {
+		            $("._3").css("background-color", "");
+		          //  console.log("[reset] background reset after timeout");
+		        }, 8000);
+		    }
+		}
+
 
 	    // ─── 1. start_bt_M8001이 true일 때만 _12 클래스에 초록색 5초간 표시 ───
-	    if (keys === "start_bt_M8001" && value === true) {
+/* 	    if (keys === "start_bt_M8001" && value === true) {
 	        const $box = $("._12");
 	        $box.css("background-color", "#ccffcc");
 	        setTimeout(() => {
 	            $box.css("background-color", "");
 	        }, 5000);
-	    }
+	    } */
 
 	    // ─── 2. 기존 기능 ───
 	    if (keys !== "start_bt_M8001") {
@@ -305,6 +309,14 @@
 	    if (!$("div").hasClass("anlog-popup-div-color")) {
 	        if (keys === "realTime") {
 	            $("." + keys).text(value + "분");
+
+	            // realTime이 1보다 크면 _22 클래스 배경 초록색
+	            if (parseFloat(value) > 1) {
+	                $("._22").css("background-color", "green");
+	            } else {
+	                $("._22").css("background-color", "");
+	            }
+
 	        } else if (keys === "setSeconds") {
 	            $("." + keys).text(value + "초");
 	        } else {
@@ -312,7 +324,18 @@
 	        }
 	    }
 
-	
+	    // runtime_bit이 1이면 _12 클래스 배경 초록색
+	    if (keys === "runtime_bit") {
+	        if (parseInt(value) === 1) {
+	            $("._12").css("background-color", "green");
+	        } else {
+	            $("._12").css("background-color", "");
+	        }
+	    }
+
+	    // reset이 1이면 _3 클래스 배경을 초록색으로 3초간 유지
+
+
 	    $("." + keys).css({
 	        display: "",
 	        "text-align": "center",
@@ -327,7 +350,8 @@
 	            .attr("ondblclick", "popupOpenAna('" + keys + "', 'DONGHWA.FURNACE.AUTOMATIC_PROGRAM.AUTOMATIC')")
 	            .css("cursor", "pointer");
 	    }
-	} 
+	}
+
 /* 
 	function value(keys, value) {
 	    // 디버깅용: 들어오는 키와 값 확인

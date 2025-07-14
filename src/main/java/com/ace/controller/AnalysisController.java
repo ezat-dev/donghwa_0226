@@ -156,6 +156,7 @@ public class AnalysisController {
 		List<Object> c5List = new ArrayList<Object>();
 		List<Object> c6List = new ArrayList<Object>();
 		List<Object> c7List = new ArrayList<Object>();
+		List<Object> c72List = new ArrayList<Object>();
 		List<Object> c8List = new ArrayList<Object>();
 		List<Object> c9List = new ArrayList<Object>();
 		List<Object> c10List = new ArrayList<Object>();
@@ -226,6 +227,10 @@ public class AnalysisController {
 		    List<Object> c7 = new ArrayList<Object>();
 		    c7.add(Integer.parseInt(penList.get(i).getTdateUnix()));
 		    c7.add(Integer.parseInt(penList.get(i).getC7()));
+		    
+		    List<Object> c72 = new ArrayList<Object>();
+		    c72.add(Integer.parseInt(penList.get(i).getTdateUnix()));
+		    c72.add(Integer.parseInt(penList.get(i).getC72()));
 		    
 		    List<Object> c8 = new ArrayList<Object>();
 		    c8.add(Integer.parseInt(penList.get(i).getTdateUnix()));
@@ -388,6 +393,7 @@ public class AnalysisController {
 		    c5List.add(c5);
 		    c6List.add(c6);
 		    c7List.add(c7);
+		    c72List.add(c72);
 		    c8List.add(c8);
 		    c9List.add(c9);
 		    c10List.add(c10);
@@ -437,6 +443,7 @@ public class AnalysisController {
 		Map<String, Object> c5Map = new HashMap<String, Object>();
 		Map<String, Object> c6Map = new HashMap<String, Object>();
 		Map<String, Object> c7Map = new HashMap<String, Object>();
+		Map<String, Object> c72Map = new HashMap<String, Object>();
 		Map<String, Object> c8Map = new HashMap<String, Object>();
 		Map<String, Object> c9Map = new HashMap<String, Object>();
 		Map<String, Object> c10Map = new HashMap<String, Object>();
@@ -510,6 +517,11 @@ public class AnalysisController {
 		c7Map.put("color", "#5F00FF");
 		c7Map.put("yAxis", 0);
 		c7Map.put("data", c7List);
+		
+		c72Map.put("name", "Protect 2");
+		c72Map.put("color", "#5F00FF");
+		c72Map.put("yAxis", 0);
+		c72Map.put("data", c72List);
 
 		c8Map.put("name", "Temp-load-1");
 		c8Map.put("color", "#5CD1E5");
@@ -716,6 +728,7 @@ public class AnalysisController {
 		rtnMap.put("c5", c5Map);
 		rtnMap.put("c6", c6Map);
 		rtnMap.put("c7", c7Map);
+		rtnMap.put("c72", c72Map);
 		rtnMap.put("c8", c8Map);
 		rtnMap.put("c9", c9Map);
 		rtnMap.put("c10", c10Map);

@@ -387,6 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		var onoverC5 = $("#onoverC5").text();
 		var onoverC6 = $("#onoverC6").text();
 		var onoverC7 = $("#onoverC7").text();
+		var onoverC7 = $("#onoverC72").text();
 		var onoverC8 = $("#onoverC8").text();
 		var onoverC9 = $("#onoverC9").text();
 		var onoverC10 = $("#onoverC10").text();
@@ -433,6 +434,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		$("#cursor1_C5Data").text(onoverC5);
 		$("#cursor1_C6Data").text(onoverC6);
 		$("#cursor1_C7Data").text(onoverC7);
+		$("#cursor1_C72Data").text(onoverC72);
 		$("#cursor1_C8Data").text(onoverC8);
 		$("#cursor1_C9Data").text(onoverC9);
 		$("#cursor1_C10Data").text(onoverC10);
@@ -484,6 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		var onoverC5 = $("#onoverC5").text();
 		var onoverC6 = $("#onoverC6").text();
 		var onoverC7 = $("#onoverC7").text();
+		var onoverC7 = $("#onoverC72").text();
 		var onoverC8 = $("#onoverC8").text();
 		var onoverC9 = $("#onoverC9").text();
 		var onoverC10 = $("#onoverC10").text();
@@ -532,6 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		$("#cursor1_C5Data").text(onoverC5);
 		$("#cursor1_C6Data").text(onoverC6);
 		$("#cursor1_C7Data").text(onoverC7);
+		$("#cursor1_C72Data").text(onoverC72);
 		$("#cursor1_C8Data").text(onoverC8);
 		$("#cursor1_C9Data").text(onoverC9);
 		$("#cursor1_C10Data").text(onoverC10);

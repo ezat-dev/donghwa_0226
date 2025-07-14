@@ -12,6 +12,7 @@ public class Temper {
 	private String c5;
 	private String c6;
 	private String c7;
+	private String c72;
 	private String c8;
 	private String c9;
 	private String c10;
@@ -77,6 +78,16 @@ public class Temper {
 	
 	
 	
+	public String getC72() {
+		return c72;
+	}
+
+
+	public void setC72(String c72) {
+		this.c72 = c72;
+	}
+
+
 	public String getSt() {
 		return st;
 	}

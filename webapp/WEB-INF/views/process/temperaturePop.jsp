@@ -36,6 +36,36 @@
        margin: 0;
        padding: 0;
    }
+   
+   
+	   .load-box-2 {
+	  background: #ffffff;
+	  width: 180px;
+	  height: 31px;
+	  position: absolute;
+	  left: 18px;
+	  top: 451px;
+	}
+	.ti-4-62 {
+	  color: #000000;
+	  text-align: left;
+	  font-family: "Inter-Regular", sans-serif;
+	  font-size: 21px;
+	  font-weight: 400;
+	  position: absolute;
+	  left: 26px;
+	  top: 455px;
+	  width: 109px;
+	  height: 21px;
+	}
+	.load-val-2 {
+	  background: #ffffff;
+	  width: 256px;
+	  height: 31px;
+	  position: absolute;
+	  left: 199px;
+	  top: 451px;
+	}
    </style>
   <title>Document</title>
 </head>
@@ -50,10 +80,10 @@
   <div class="cz-1"></div>
   <div class="heater-bottom-top-cz-1">Heater 1Zone Left/Right</div>
   <div class="cz-1-box-1"></div>
-  <div class="tic-4-1-1">Zone 1.1</div>
+  <div class="tic-4-1-1">Zone 1</div>
   <div class="cz-1-val-1"></div>
   <div class="cz-1-box-2"></div>
-  <div class="tic-4-1-2">Zone 1.2</div>
+  <div class="tic-4-1-2">Zone 2</div>
   <div class="cz-1-val-2"></div>
   <div class="cz-3"></div>
   <div class="heater-doors-cz-3">Heater 2Zone Front/Rear</div>
@@ -72,10 +102,16 @@
   <div class="tic-4-5-2">Zone 3.2</div>
   <div class="cz-5-val-2"></div>
   <div class="load"></div>
+  
   <div class="load2">Protect</div>
   <div class="load-box-1"></div>
-  <div class="ti-4-61">Protect 1</div>
+  <div class="ti-4-61">Protect 1.1</div>
   <div class="load-val-1"></div>
+  
+  <div class="load-box-2"></div>
+  <div class="ti-4-62">Protect 1.2</div>
+  <div class="load-val-2"></div>
+  
   <div class="charge"></div>
   <div class="charge-box-1"></div>
   <div class="charge-val-1"></div>

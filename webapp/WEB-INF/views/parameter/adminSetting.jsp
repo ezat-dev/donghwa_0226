@@ -165,8 +165,8 @@ body {
 	.R1010V { bottom: 685px; right: 1600px; }
 	.R1012  { bottom: 685px; right: 1533px; }
 	
-	.R1015V { bottom: 640px; right: 1600px; }
-	.R1017  { bottom: 640px; right: 1533px; }
+	.R1015V { bottom: 643px; right: 1600px; }
+	.R1017  { bottom: 643px; right: 1533px; }
 	
 	.R1050V { bottom: 320px; right: 1600px; }
 	.R1052  { bottom: 320px; right: 1533px; }

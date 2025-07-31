@@ -2,7 +2,7 @@ package com.ace.domain;
 
 import java.time.LocalDateTime;
 
-public class Login {
+public class Users {
     private int userId;
     private String username;
     private String password;

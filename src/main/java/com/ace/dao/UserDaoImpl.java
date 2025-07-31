@@ -6,10 +6,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ace.domain.Login;
+import com.ace.domain.Users;
 
 @Repository
-public class LoginDaoImpl implements LoginDao {
+public class UserDaoImpl implements UserDao {
 
 	@Resource(name="session")
     private SqlSession sqlSession;
@@ -17,7 +17,7 @@ public class LoginDaoImpl implements LoginDao {
   
 
     @Override
-    public Login loginCheck(Login login) {
+    public Users loginCheck(Users login) {
         return sqlSession.selectOne("login.loginCheck", login);
     }
 }

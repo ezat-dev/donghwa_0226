@@ -6,115 +6,133 @@
   <jsp:include page="../include/pluginpage.jsp"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/donghwa/css/login/basic_v7.css">
+     <link rel="stylesheet" href="/donghwa/css/login/login.css">
     <title>로그인</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-container {
-            width: 400px;
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .login-container h1 {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        .login-container label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 25px;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 14px;
-            font-size: 20px;
-            font-weight: bold;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+<style>
+    .login_box {
+        display: flex;
+        align-items: center;
+    }
+    
+    .notice{
+
+    }
+    
+    .login{
+ margin-left: auto !important;
+    }
+    
+    .tit{
+    font-size: 30px !important;
+    }
+    
+    
+
+</style>
+
 </head>
-<body>
-<div class="login-container">
-    <h1>로그인</h1>
+	
+	<body id="login_body" class="layout_ex " onload="">
     
-    <label for="username">아이디</label>
-    <input type="text" id="username" placeholder="아이디를 입력하세요" required>
-    
-    <label for="password">비밀번호</label>
-    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
-    
-    <button id="loginButton">로그인</button>
+<div id="wrap_login" class="login_gw7">
+	<div class="login_container">
+		<div class="header">
+			<div class="inner">
+			<h1 class="logo"><img id="login_img_logo" src="/donghwa/css/login/vt.png" alt=""></h1>
+			<div class="lang">
+			</div>
+			</div>
+		</div>
+		<hr class="hide">
+		<div class="content" id="login_layout_content">
+			<div id="login_imgbox" class="visual_box">
+				<img id="login_img_loginBanner" src="/donghwa/css/login/bk.png" alt="">
+			</div>
+			<div class="login_box">
+				<div class="notice">
+					<div class="tit_bar">
+						<h2 class="tit"></h2>
+					</div>
+					<ul id="login_noticeCont_ul" class="bu_lst">
+					</ul>
+				</div>
+				<div class="login">
+				    <form id="userForm" class="omb_loginForm" role="form" 
+    				action="login_ok.jsp" method="post" onsubmit="return false">
+						<div class="login_frm">
+							
+							<div id="login_loginBox">
+								<ul id="loginIdType1" class="ip_box">
+									<li class="info id">
+										<label class="input_txt">
+											<input id="userId" name="user_id" class="input_id" type="text" autocomplete="off" >
+											<i class="ico ico_login-id"></i>
+										</label>
+									</li>
+									<li class="info pw">
+										<label class="input_txt">
+											<input id="password" name="user_pw" type="password" autocomplete="new-password" class="input_pw">
+											<i class="ico ico_login-pw"></i>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="btn_login">
+								<button id="btnLogin" data-text="Login" onclick="login()">
+									<span>L</span><span>o</span><span>g</span><span>i</span><span>n</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+  <script>
 
-<script>
-$(document).ready(function() {
-    $("#loginButton").on("click", function() {
-        var username = $("#username").val();
-        var password = $("#password").val();
-
-        if (!username || !password) {
-            alert("아이디와 비밀번호를 입력하세요.");
-            return;
-        }
-
-        console.log("아이디:", username);
-        console.log("비밀번호:", password);
-
-        $.ajax({
-            url: "/donghwa/login/check", // AJAX 요청을 보낼 URL
-            type: "POST",
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify({
-                username: username,
-                password: password
-            }),
-            success: function(response) {
-                // 서버에서 반환된 메시지 확인
-                if (response.message === "로그인 성공") {
-                    alert("로그인 성공");
-                    window.location.href = "/donghwa"; // 로그인 성공 시 리다이렉트
-                } else {
-                    alert("로그인 실패: " + response.message);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("로그인 실패: 아이디 또는 비밀번호를 확인하세요.");
-            }
-        });
-    });
+//이벤트
+$("*").on("keydown",function(e){
+	//엔터키가 눌렸을 때
+	if(e.keyCode == 13){
+		login();
+	}
 });
 
-</script>
 
+function login() {
+    var userData = new FormData($("#userForm")[0]);
+    $.ajax({
+        url: "/donghwa/user/login/check",
+        type: "post",
+        contentType: false,
+        processData: false,
+        dataType: "json",
+        data: userData,
+        success: function(result) {
+            console.log(result); 
+
+            if (result.data && result.data.user_id) {
+
+                location.href = "/donghwa/login";  
+
+            } else {
+            	 console.log(userData); 
+                alert("로그인 실패! 사용자 정보가 잘못되었습니다.");
+            }
+        },
+        error: function(xhr, status, error) {
+            alert("서버 오류가 발생했습니다. 다시 시도해주세요.");
+            console.log(error); 
+        }
+    });
+}
+
+//모달
+
+//
+
+  </script>
 </body>
 </html>

@@ -3,19 +3,19 @@ package com.ace.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ace.dao.LoginDao;
-import com.ace.domain.Login;
+import com.ace.dao.UserDao;
+import com.ace.domain.Users;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private LoginDao loginDao;
+    private UserDao loginDao;
 
     @Override
-    public Login loginCheck(Login login) {
+    public Users loginCheck(Users login) {
        
-        Login result = loginDao.loginCheck(login);
+        Users result = loginDao.loginCheck(login);
 
         if (result != null) {
 

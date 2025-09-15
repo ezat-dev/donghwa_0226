@@ -56,10 +56,15 @@
 					</div>
 					<ul id="login_noticeCont_ul" class="bu_lst">
 					</ul>
+					    			<div style="font-size: 26px;">id=admin pw=1234</div>
 				</div>
 				<div class="login">
 				    <form id="userForm" class="omb_loginForm" role="form" 
     				action="login_ok.jsp" method="post" onsubmit="return false">
+    				
+
+
+    				
 						<div class="login_frm">
 							
 							<div id="login_loginBox">
@@ -115,7 +120,7 @@ function login() {
 
             if (result.data && result.data.user_id) {
 
-                location.href = "/donghwa/login";  
+                location.href = "/donghwa/overview";  
 
             } else {
             	 console.log(userData); 

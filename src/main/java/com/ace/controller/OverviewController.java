@@ -11,6 +11,12 @@ public class OverviewController {
 	
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String limitSwitchesPop(Model model) {
+        return "/include/login.jsp";
+       
+    }
+    
+    @RequestMapping(value = "/overview", method = RequestMethod.GET)
+    public String overview(Model model) {
         return "/furnace/overview.jsp";
        
     }

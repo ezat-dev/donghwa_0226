@@ -141,7 +141,7 @@
     <li>
       Furnace
       <ul class="submenu">
-        <li onclick="menuClick('/donghwa/');">Overview</li>
+        <li onclick="menuClick('/donghwa/overview');">Overview</li>
         <li onclick="popupClick('/donghwa/furnace/manualOperationPop', 329, 619, 730, 180);">Manual Operation</li> <!--가로 세로 오른쪽 시작 위쪽 시작 -->
 		<li onclick="popupClick('/donghwa/furnace/operationPressPop', 412, 484, 730, 210);">Operation Press</li><!--길면 180 짧으면 225이상 -->
 		<li onclick="popupClick('/donghwa/furnace/automaticProgramPop4', 508, 392, 730, 235);">Automatic program</li>

@@ -1,7 +1,27 @@
 package com.ace.dao;
 
+import java.util.List;
+
+import com.ace.domain.Permission;
 import com.ace.domain.Users;
 
 public interface UserDao {
-    Users loginCheck(Users login);
+
+	Users userLoginCheck(Users users);
+
+	Permission userLoginPermission(Users loginUser);
+	
+	List<Users> userInsertSelect(Users users);
+	
+	void userInsertDel(Users users);
+	
+	Users userDuplicateCheck(Users users);
+	
+	void userInsertInsert(Users users);
+
+	void userPermissionUpdate(Permission permission);
+
+	List<Users> userPermissionUserSelect();
+	
+	
 }

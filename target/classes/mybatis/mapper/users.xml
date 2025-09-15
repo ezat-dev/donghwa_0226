@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+	
+	<select id="userLoginCheck" parameterType="users" resultType="users">
+		SELECT *
+		FROM tb_user
+		WHERE user_id = #{user_id} AND user_pw = #{user_pw} AND user_yn = 'Y'
+	</select>
+	
+    <select id="userLoginPermission" parameterType="users" resultType="permission">
+		SELECT *
+		FROM tb_permission
+		WHERE user_code = #{user_code}
+	</select>
+	
+	
+	<select id="userInsertSelect" parameterType="users" resultType="users">
+	  SELECT *
+	  FROM tb_user
+	  <where>
+	    user_yn = 'Y'
+	    
+	    <if test="user_name != null and user_name != ''">
+	      AND user_name LIKE CONCAT('%', #{user_name}, '%')
+	    </if>
+	    
+	    <if test="startDate != null and startDate != ''">
+	      AND st_day LIKE CONCAT('%', #{startDate}, '%')
+	    </if>
+	  </where>
+	</select>
+
+	<update id="userInsertDel" parameterType="Users">
+	  UPDATE tb_user
+	  SET user_yn = 'N'
+	  WHERE user_code = #{user_code}
+	</update>
+	
+	
+		<!-- 중복된 사용자인지 확인 -->
+	<select id="userDuplicateCheck" parameterType="users" resultType="users">
+		SELECT *
+		FROM tb_user
+		WHERE user_yn = 'Y'
+		AND user_id = #{user_id}
+	</select>
+	
+	   <insert id="userInsertInsert" parameterType="users">
+ INSERT INTO tb_user
+    (user_code,
+     user_id,
+     user_pw,
+     user_name,
+     user_level,
+     user_busu,
+     user_jick,
+     user_phone,
+     st_day)
+  VALUES
+    (#{user_code, jdbcType=INTEGER},
+     #{user_id,   jdbcType=VARCHAR},
+     #{user_pw,   jdbcType=VARCHAR},
+     #{user_name, jdbcType=VARCHAR},
+     #{user_level,jdbcType=INTEGER},
+     #{user_busu, jdbcType=VARCHAR},
+     #{user_jick, jdbcType=VARCHAR},
+     #{user_phone,jdbcType=VARCHAR},
+     #{st_day,    jdbcType=VARCHAR})
+  ON DUPLICATE KEY UPDATE
+    user_id    = VALUES(user_id),
+    user_pw    = VALUES(user_pw),
+    user_name  = VALUES(user_name),
+    user_level = VALUES(user_level),
+    user_busu  = VALUES(user_busu),
+    user_jick  = VALUES(user_jick),
+    user_phone = VALUES(user_phone),
+    st_day     = VALUES(st_day)
+	</insert>
+	
+	<delete id="deleteUser" parameterType="users">
+	  DELETE FROM tb_user
+	  WHERE user_code = #{user_code}
+	</delete>
+	<!-- 선택한 사용자 권한수정 -->
+	<update id="userPermissionUpdate" parameterType="permission">
+		UPDATE tb_permission SET 
+		       a01 = #{a01}, 
+		       a02 = #{a02}, 
+		       a03 = #{a03}, 
+		       a04 = #{a04}, 
+		       a05 = #{a05}, 
+		       a06 = #{a06}, 
+		       a07 = #{a07}, 
+		       b01 = #{b01},
+		       b02 = #{b02}, 
+		       b03 = #{b03}, 
+		       b04 = #{b04}, 
+		       b05 = #{b05}, 
+		       b06 = #{b06}, 
+		       b07 = #{b07}, 
+		       c01 = #{c01}, 
+		       c02 = #{c02}, 
+		       c03 = #{c03}, 
+		       c04 = #{c04}, 
+		       c05 = #{c05}, 
+		       c06 = #{c06}, 
+		       c07 = #{c07}, 
+		       d01 = #{d01}, 
+		       d02 = #{d02},
+		       d03 = #{d03},
+		       d04 = #{d04},
+		       d05 = #{d05},
+		       d06 = #{d06},
+		       d07 = #{d07},
+		       e01 = #{e01},
+		       e02 = #{e02}, 
+		       e03 = #{e03}, 
+		       e04 = #{e04},  
+		       e05 = #{e05},  
+		       e06 = #{e06},
+		       e07 = #{e07},
+		       f01 = #{f01},
+		       f02 = #{f02}, 
+		       f03 = #{f03}, 
+		       f04 = #{f04}, 
+		       f05 = #{f05},  
+		       f06 = #{f06},  
+		       f07 = #{f07},  
+		       g01 = #{g01},
+		       g02 = #{g02}, 
+		       g03 = #{g03}, 
+		       g04 = #{g04}, 
+		       g05 = #{g05}, 
+		       g06 = #{g06}, 
+		       g07 = #{g07}, 
+		       h01 = #{h01},
+		       h02 = #{h02}, 
+		       h03 = #{h03}, 
+		       h04 = #{h04}, 
+		       h05 = #{h05}, 
+		       h06 = #{h06}, 
+		       h07 = #{h07},
+		       h08 = #{h08},
+		       i01 = #{i01},
+		       i02 = #{i02},
+		       i03 = #{i03},
+		       i04 = #{i04},
+		       i05 = #{i05},
+		       i06 = #{i06},
+		       i07 = #{i07},
+		       i05 = #{i05},
+	           i06 = #{i06},
+	           i07 = #{i07},
+	           j01 = #{j01},
+	           j02 = #{j02},
+	           j03 = #{j03},
+	           j04 = #{j04},
+	           j05 = #{j05},
+	           j06 = #{j06},
+	           j07 = #{j07},
+	           k01 = #{k01},
+	           k02 = #{k02},
+	           k03 = #{k03},
+	           k03 = #{k04},
+	           k03 = #{k05},
+	           k03 = #{k06}
+		 WHERE user_code = #{user_code}	
+	</update>
+	
+	
+	
+		<!-- 전체 사용자 목록 조회 -->
+	<select id="userPermissionUserSelect" parameterType="users" resultType="users">
+        SELECT *
+        FROM tb_user
+        WHERE user_level <![CDATA[<>]]> 0 AND user_yn = 'Y'
+    </select>
+	
+</mapper>

@@ -66,6 +66,11 @@ public class FurnaceDaoImpl implements FurnaceDao{
 	public List<GlobalParameter> globalDbList(GlobalParameter globalParameter) {
 		return sqlSession.selectList("recipe.globalDbList", globalParameter);
 	}
+	@Override
+	public List<GlobalParameter> globalDbList0915(GlobalParameter globalParameter) {
+		return sqlSession.selectList("recipe.globalDbList0915", globalParameter);
+	}
+
 	
 
 }

@@ -1,6 +1,7 @@
 package com.ace.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -206,7 +207,7 @@ public class FurnaceController {
 	                short valueShort = pair.getValue();
 
 	                // 시스템 아웃 추가: 쓰려는 값 확인
-	        //        System.out.println("Writing to Node: " + nodeIdStr + ", Value: " + valueShort);
+	               System.out.println("Writing to Node: " + nodeIdStr + ", Value: " + valueShort);
 
 	                NodeId nodeId = new NodeId(namespaceIndex, nodeIdStr);
 	                DataValue dataValue = new DataValue(new Variant(valueShort));
@@ -239,46 +240,109 @@ public class FurnaceController {
 	    return response;
 	}
 
-	// 레시피 이름, 코멘트 쓰기
+	
+	
+	// 레시피 이름, 코멘트 쓰기 0915
 	@RequestMapping(value = "/furnace/recipe/plcWriteString", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, String> recipePlcWriteString(@RequestBody List<NodeValuePair> nodeValuePairs)
 	        throws UaException, InterruptedException, ExecutionException {
 
-//	    System.out.println("==== plcWriteString Start ====");
-	    Map<String, String> response = new HashMap<String, String>();
+	    Map<String, String> response = new HashMap<>();
 
 	    try {
 	        UShort namespaceIndex = Unsigned.ushort(2);
 	        boolean allGood = true;
-
 	        List<CompletableFuture<StatusCode>> futures = new ArrayList<>();
 
+	        // ------------------ 1. string_recipeNumber 먼저 추출 ------------------
+	        List<String> recipeNumberList = new ArrayList<>();
+	        for (NodeValuePair pair : nodeValuePairs) {
+	            if ("string_recipeNumber".equals(pair.getNodeId())) {
+	                String valueString = pair.getValueString();
+	                // 두 글자씩 끊어서 리스트로 변환
+	                for (int j = 0; j < valueString.length(); j += 2) {
+	                    String part = (j + 2 <= valueString.length()) ? valueString.substring(j, j + 2)
+	                                                                 : valueString.substring(j, valueString.length());
+	                    recipeNumberList.add(part);
+	                }
+	            }
+	        }
+
+	     // ------------------ 2. DB 조회 및 시스템 아웃 및 PLC 쓰기 ------------------
+	        for (String rn : recipeNumberList) {
+	            GlobalParameter param = new GlobalParameter();
+	            param.setR_f_data_idx(Integer.parseInt(rn));
+	            List<GlobalParameter> dbList = furnaceService.globalDbList0915(param);
+
+	            System.out.println("==== DB 조회 결과 for RecipeNumber: " + rn + " ====");
+	            for (GlobalParameter gp : dbList) {
+	                System.out.println(
+	                    "idx=" + gp.getIdx() +
+	                    ", r_f_idx=" + gp.getR_f_idx() +
+	                    ", r_f_data_idx=" + gp.getR_f_data_idx() +
+	                    ", input_value_1=" + gp.getInput_value_1() +
+	                    ", input_value_2=" + gp.getInput_value_2() +
+	                    ", input_value_3=" + gp.getInput_value_3() +
+	                    ", input_value_4=" + gp.getInput_value_4() +
+	                    ", input_value_5=" + gp.getInput_value_5() +
+	                    ", input_value_6=" + gp.getInput_value_6() +
+	                    ", input_value_7=" + gp.getInput_value_7() +
+	                    ", input_value_8=" + gp.getInput_value_8() +
+	                    ", input_value_9=" + gp.getInput_value_9() +
+	                    ", input_value_10=" + gp.getInput_value_10() +
+	                    ", input_value_11=" + gp.getInput_value_11() +
+	                    ", input_value_12=" + gp.getInput_value_12() +
+	                    ", input_value_13=" + gp.getInput_value_13() +
+	                    ", input_value_14=" + gp.getInput_value_14() +
+	                    ", input_value_15=" + gp.getInput_value_15() +
+	                    ", input_value_16=" + gp.getInput_value_16() +
+	                    ", input_value_17=" + gp.getInput_value_17()
+	                );
+
+	                // ------------------ PLC 쓰기 ------------------
+	                for (int i = 1; i <= 17; i++) {
+	                    try {
+	                        Method getter = GlobalParameter.class.getMethod("getInput_value_" + i);
+	                        Integer value = (Integer) getter.invoke(gp);
+
+	                        if (value != null) {
+	                            short valueShort = value.shortValue(); // PLC short 타입
+	                            String nodeIdStr = "DONGHWA.PLC.GLOBAL.input-value-" + i;
+	                            NodeId nodeId = new NodeId(namespaceIndex, nodeIdStr);
+	                            DataValue dataValue = new DataValue(new Variant(valueShort));
+	                            futures.add(MainController.client.writeValue(nodeId, dataValue));
+	                        }
+	                    } catch (Exception e) {
+	                        System.out.println("PLC 쓰기 에러 input_value_" + i + ": " + e.getMessage());
+	                    }
+	                }
+	            }
+	            System.out.println("==============================================");
+	        }
+
+
+
+	        // ------------------ 3. 기존 if-else 로직 실행 ------------------
 	        for (NodeValuePair pair : nodeValuePairs) {
 	            String nodeIdStr = pair.getNodeId();
 	            String valueString = pair.getValueString();
-
 	            List<String> stringValueList = new ArrayList<>();
-	            
-	           
-	            
 	            String stringNow = "";
 	            int len = valueString.length();
 
-	            for (int j = 0; j < len; j++) {	            	
+	            for (int j = 0; j < len; j++) {
 	                if (j % 2 == 0) {
-	                	stringNow = valueString.substring(j, j + 1);
-	                	if("string_recipeNumber".equals(nodeIdStr)) {
-	                		stringValueList.add(stringNow);
-	                	}
+	                    stringNow = valueString.substring(j, j + 1);
+	                    if ("string_recipeNumber".equals(nodeIdStr)) {
+	                        stringValueList.add(stringNow);
+	                    }
 	                } else {
 	                    stringNow += valueString.substring(j, j + 1);
 	                    stringValueList.add(stringNow);
 	                    stringNow = "";
 	                }
 	            }
-//	            System.out.println("Node: " + nodeIdStr + ", Original String: " + valueString+"// size : "+stringValueList.size()+"// len : "+len);
-//	            System.out.println("Parsed String List: " + stringValueList);
 
 	            if ("string_name".equals(nodeIdStr)) {
 	                for (int k = 0; k < stringValueList.size(); k++) {
@@ -292,25 +356,20 @@ public class FurnaceController {
 	                    DataValue dataValue = new DataValue(new Variant(stringValueList.get(k)));
 	                    futures.add(MainController.client.writeValue(nodeId, dataValue));
 	                }
-	            }
-	            else if ("string_recipeNumber".equals(nodeIdStr)) {
+	            } else if ("string_recipeNumber".equals(nodeIdStr)) {
 	                for (int k = 0; k < stringValueList.size(); k++) {
-//	                	System.out.println("DONGHWA.PLC.RECIPE.NUMBER.NUMBER" + k+"// "+stringValueList.get(k));
 	                    NodeId nodeId = new NodeId(namespaceIndex, "DONGHWA.PLC.RECIPE.NUMBER.NUMBER" + k);
-	                    DataValue dataValue = new DataValue(new Variant((short)Integer.parseInt(stringValueList.get(k))));
+	                    short plcValue = (short) Integer.parseInt(stringValueList.get(k));
+	                    DataValue dataValue = new DataValue(new Variant(plcValue));
 	                    futures.add(MainController.client.writeValue(nodeId, dataValue));
 	                }
 	            }
 	        }
 
+	        // ------------------ 4. PLC 쓰기 결과 확인 ------------------
 	        for (CompletableFuture<StatusCode> future : futures) {
 	            StatusCode statusCode = future.get();
-	            if (!statusCode.isGood()) {
-	                allGood = false;
-	        //        System.out.println("Write Failed: " + statusCode);
-	            } else {
-	     //           System.out.println("Write Success: " + statusCode);
-	            }
+	            if (!statusCode.isGood()) allGood = false;
 	        }
 
 	        if (allGood) {
@@ -320,15 +379,16 @@ public class FurnaceController {
 	            response.put("status", "failure");
 	            response.put("message", "plcWriteString 실패 Some values failed to write");
 	        }
+
 	    } catch (Exception e) {
-	//        System.out.println(e.getMessage());
+	        e.printStackTrace();
+	        response.put("status", "error");
+	        response.put("message", e.getMessage());
 	    }
 
-	 //   System.out.println("==== plcWriteString End ====");
 	    return response;
 	}
 
-	
 	//레시피값 DB 쓰기
 	@RequestMapping(value = "/furnace/recipe/databaseWrite", method = RequestMethod.POST)
 	@ResponseBody
@@ -945,5 +1005,4 @@ public class FurnaceController {
     	
     	return returnMap;    	
     }
-    
 }

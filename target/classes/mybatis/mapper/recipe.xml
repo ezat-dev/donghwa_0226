@@ -84,5 +84,11 @@
 	</select>
 	
 	
-	
+			<select id="globalDbList0915" resultType="globalParameter" parameterType="globalParameter">
+		SELECT *
+		FROM tb_recipe_data_global
+		WHERE 1=1
+		AND r_f_data_idx = #{r_f_data_idx}
+
+	</select>
 </mapper>

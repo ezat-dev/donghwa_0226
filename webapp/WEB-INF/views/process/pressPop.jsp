@@ -1187,7 +1187,7 @@
   position: absolute;
   left: 801px;
   top: 331px;
-  width: 108px;
+  width: 308px;
   height: 22px;
 }
 .b-2 {
@@ -1235,7 +1235,7 @@
   position: absolute;
   left: 801px;
   top: 405px;
-  width: 107px;
+  width: 307px;
   height: 22px;
 }
 .tem {
@@ -1512,17 +1512,17 @@
     <div class="b-1"></div>
     <div class="b-1-box-1"></div>
     <div class="hydraulic-pressure-cylinder-b-1">
-      Hydraulic pressure cylinder B1
+      Main cooling system
     </div>
-    <div class="b-1-val-1"></div>
-    <div class="pi-22-1-51-4">PI 22.1.51.4</div>
+    <div class="b-1-val-1 D7872"></div>
+    <div class="pi-22-1-51-4">Cooling sater temp.</div>
     <div class="b-2"></div>
     <div class="b-2-box-1"></div>
     <div class="hydraulic-pressure-cylinder-b-2">
-      Hydraulic pressure cylinder B2
+      Chiller cooling system
     </div>
-    <div class="b-2-val-1"></div>
-    <div class="pi-22-1-51-5">PI 22.1.51.5</div>
+    <div class="b-2-val-1 D7870"></div>
+    <div class="pi-22-1-51-5">Cooling water temp.</div>
     <div class="tem"></div>
     <div class="tem-box-1"></div>
     <div class="hydraulic-oil-temperature">Hydraulic Oil Temperature</div>
@@ -1614,13 +1614,13 @@ function value(keys, value) {
     if (/^D79\d{2}$/.test(keys) && parseInt(keys.slice(1)) >= 7981 && parseInt(keys.slice(1)) <= 7995) {
         finalValue = (value / 10).toFixed(1) + " kN";  
     } else if (keys === "D11101" || keys === "D11102") {
-        finalValue = ((value / 100).toFixed(2) + " mm");
+        finalValue = (value / 100).toFixed(2) + " mm";
     } else if (keys === "D11105") {
-        finalValue = ((value * 0.1).toFixed(1) + " kN");
-    } else if (keys === "D11107") {
-        finalValue = (value + " ℃");
+        finalValue = (value * 0.1).toFixed(1) + " kN";
+    } else if (keys === "D11107" || keys === "D7870" || keys === "D7872") {
+        finalValue = value + " ℃";
     } else {
-        finalValue = (value + " kN");
+        finalValue = value + " kN";
     }
 
     $("." + keys).text(finalValue);

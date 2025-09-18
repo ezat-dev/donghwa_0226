@@ -419,7 +419,7 @@ $(document).on("click", ".save-to-plc", function () {
     console.log("📌 [DEBUG] 전송 데이터:", data);
 
 
-    // AJAX 요청 (서버로 데이터 전송)
+/*     // AJAX 요청 (서버로 데이터 전송) 09/18
     $.ajax({
         url: "/donghwa/furnace/recipe/plcWrite",
         type: "POST",
@@ -434,7 +434,7 @@ $(document).on("click", ".save-to-plc", function () {
             console.error("데이터 저장 실패:", error);
             alert("저장 중 오류 발생: " + error);
         }
-    });
+    }); */
 
 
 	var arr = new Array();

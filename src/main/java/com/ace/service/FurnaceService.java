@@ -27,5 +27,5 @@ public interface FurnaceService {
 
 	List<GlobalParameter> globalDbList(GlobalParameter globalParameter);
 
-
+	List<GlobalParameter> globalDbList0915(GlobalParameter globalParameter);
 }

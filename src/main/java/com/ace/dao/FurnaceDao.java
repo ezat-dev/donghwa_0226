@@ -26,5 +26,5 @@ public interface FurnaceDao {
 	void globalDbSave(GlobalParameter globalParameter);
 
 	List<GlobalParameter> globalDbList(GlobalParameter globalParameter);
-
+	List<GlobalParameter> globalDbList0915(GlobalParameter globalParameter);
 }

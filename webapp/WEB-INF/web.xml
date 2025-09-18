@@ -4,16 +4,19 @@
   <welcome-file-list>
     <welcome-file></welcome-file>
   </welcome-file-list>
+  
+  
+  
+  
+  
+  
+  
   <listener>
     <listener-class>
   		org.springframework.web.context.ContextLoaderListener
   	</listener-class>
   	
-  	  <!-- 세션 타임아웃 24시간 (1440분) 설정 추가 -->
-  <session-config>
-    <session-timeout>2440</session-timeout> 
-  </session-config>
-  	
+
   	
   </listener>
   <context-param>

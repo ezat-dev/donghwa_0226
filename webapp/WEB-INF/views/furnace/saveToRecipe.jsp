@@ -132,7 +132,7 @@ function sendPlc(data, callback) {
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
         success: function(response) {
-            console.log('plcWrite 서버 응답:', response);
+          //  console.log('plcWrite 서버 응답:', response);
             callback(true); 
             // sendPlc 성공 시 OK 버튼을 표시
             $("#ok_close_btn").show(); 
@@ -168,6 +168,14 @@ function sendPlcString(data, callback) {
         }
     });
 }
+
+
+
+
+
+
+
+
 document.getElementById("retry_btn").addEventListener("click", function() {
     let loadingBar = document.getElementById("loadingBar");
     let width = 0;
@@ -253,25 +261,32 @@ function startLoadingBarAndSendData() {
 
     // PLC 데이터 전송
     if (sessionData) {  // sessionData가 정의되었는지 확인
+        console.log("sendPlc에 전달할 데이터:", sessionData.data);
         sendPlc(sessionData.data, function(success) {
             if (success) {
-                showMessage("Sending recipe... 진행중. SD");
+                console.log("sendPlc 성공:", sessionData.data);
+                showMessage("Sending recipe... 진행중. PLC(D)");
             } else {
-                showMessage("Sending recipe... 실패. SD");
+                console.error("sendPlc 실패:", sessionData.data);
+                showMessage("Sending recipe... 실패. PLC(D)");
             }
         });
 
+        console.log("sendPlcString에 전달할 데이터:", sessionData.dataString);
         sendPlcString(sessionData.dataString, function(success) {
             if (success) {
-                showMessage("Sending recipe... 진행중. SS");
+                console.log("sendPlcString 성공:", sessionData.dataString);
+                showMessage("Sending recipe... 진행중. PLC(D)");
             } else {
-                showMessage("Sending recipe... 실패. SS");
+                console.error("sendPlcString 실패:", sessionData.dataString);
+                showMessage("Sending recipe... 실패. PLC(D)");
             }
         });
     } else {
         console.error("세션 데이터가 정의되지 않았습니다.");
     }
 }
+
 
 function valueDigitalSend() {
     var sendTagDir = "DONGHWA.PLC.M";  // 고정값

@@ -189,9 +189,9 @@ body {
     <div class="container">
         <!-- 첫 번째 줄 (3개) -->
         <div class="panel">
-            <div class="panel-title">Diffusion Pump Vacuum </div>
+            <div class="panel-title">High Vacuum Pressure Set </div>
             <div class="panel-content">
-                <div class="sub-title">Furnace Vacuum</div>
+                <div class="sub-title">Diffusion Pump Vacuum</div>
                 <table class="table">
                     <tr><td>Booster Set</td><td class="R1000V0"></td></tr>
                     <tr><td>Diffusion Set</td><td class="R1005V0"></td></tr>
@@ -226,7 +226,7 @@ body {
         <div class="panel">
             <div class="panel-title">Evacuate High Pressure Set</div>
             <div class="panel-content">
-                <div class="sub-title">High Vacuum Pressure Set</div>
+                <div class="sub-title">Furnace Vacuum </div>
                 <table class="table">
                     <tr><td>Booster Set</td><td></td></tr>
                     <tr><td>High Set</td><td></td></tr>

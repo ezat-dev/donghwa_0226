@@ -64,6 +64,10 @@ public class FurnaceServiceImpl implements FurnaceService{
 	public List<GlobalParameter> globalDbList(GlobalParameter globalParameter) {
 		return furnaceDao.globalDbList(globalParameter);
 	}
+	@Override
+	public List<GlobalParameter> globalDbList0915(GlobalParameter globalParameter) {
+		return furnaceDao.globalDbList0915(globalParameter);
+	}
 
 	
 
